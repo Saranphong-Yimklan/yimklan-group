@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Yimklan Research Group — coordination polymers, metal–organic frameworks and X-ray crystallography. Department of Chemistry, Faculty of Science, Chiang Mai University.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%239a6a3a' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%239a6a3a'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Yimklan Research Group</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&family=Sarabun:wght@300;400;500&display=swap">
+<style>
+/* Layout: quiet editorial — narrow measure, generous white space, a single bronze accent, hairline rules that echo crystal lattice lines */
+:root{
+  --bg:#f8f6f1;          /* porcelain */
+  --bg-2:#efece4;        /* warm stone band */
+  --ink:#1c2230;         /* deep slate ink */
+  --ink-2:#4a5160;       /* secondary text */
+  --ink-3:#8a8f99;       /* captions */
+  --rule:#d9d4c8;        /* hairline */
+  --accent:#9a6a3a;      /* bronze / Cu(II) */
+  --accent-2:#c9a46a;    /* gold highlight */
+  --card:#ffffff;
+  --display:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --body:"Manrope","Sarabun","Segoe UI",system-ui,sans-serif;
+  --thai:"Sarabun","Manrope",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#13161d;--bg-2:#1a1e27;--ink:#ebe7df;--ink-2:#b8b3a8;--ink-3:#7f7d78;--rule:#2d323c;--accent:#d2a06a;--accent-2:#e3c48f;--card:#1d222c;color-scheme:dark
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#13161d;--bg-2:#1a1e27;--ink:#ebe7df;--ink-2:#b8b3a8;--ink-3:#7f7d78;--rule:#2d323c;--accent:#d2a06a;--accent-2:#e3c48f;--card:#1d222c;color-scheme:dark
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.lead{font-size:1.05rem;color:var(--ink-2);max-width:62ch}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+.brand{font-family:var(--display);font-size:1.3rem;font-weight:600;letter-spacing:.01em}
+.brand span{color:var(--accent)}
+.links{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.links a:hover{color:var(--accent)}
+@media (max-width:720px){.links{display:none}}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding-block:4.5rem 4rem}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);font-weight:400}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.thai-name{font-family:var(--thai);font-size:1.15rem;color:var(--ink-2);margin-top:.6rem}
+.hero .role{margin-top:1.4rem;font-size:.95rem;color:var(--ink-2);line-height:1.7}
+.hero .role strong{color:var(--ink);font-weight:500}
+.keywords{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1.8rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.keywords span::before{content:"◆";font-size:.5rem;color:var(--accent-2);margin-right:.5rem;vertical-align:middle}
+.portrait{position:relative;justify-self:center;width:min(100%,380px)}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:saturate(.92)}
+.portrait::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--accent-2);z-index:-1;border-radius:2px}
+.cta{display:inline-flex;gap:1.6rem;margin-top:2rem;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.cta a{border-bottom:1px solid var(--accent);padding-bottom:.25rem;color:var(--ink)}
+.cta a:hover{color:var(--accent)}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:3rem}.portrait{order:-1;width:min(100%,300px);justify-self:start}}
+
+/* sections */
+section{padding-block:4.5rem}
+section.band{background:var(--bg-2)}
+.sec-head{display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-bottom:2.6rem;align-items:end}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem)}
+@media (max-width:820px){.sec-head{grid-template-columns:1fr;gap:.8rem}}
+
+/* research grid — circular motifs */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem 2rem}
+.area{min-width:0;text-align:center}
+.figlink{display:block;width:min(100%,240px);margin:0 auto 1.2rem;cursor:pointer}
+.figlink:hover .fig{transform:scale(1.04)}
+.figlink:hover .ring text{fill:var(--ink)}
+.figwrap{position:relative;width:100%;aspect-ratio:1/1}
+.pubgroup h3{scroll-margin-top:5rem}
+.area .fig{position:absolute;top:26px;left:26px;width:calc(100% - 52px);height:calc(100% - 52px);object-fit:cover;border-radius:50%;border:1px solid var(--rule);background:#fff;display:block;transition:transform .3s}
+.ring{position:absolute;inset:0;width:100%;height:100%}
+.ring text{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.18em;fill:var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ring{animation:none}}
+.area .num{font-family:var(--display);font-size:1.6rem;color:var(--accent-2);line-height:1}
+.area h3{font-size:1.3rem;margin-top:.5rem}
+.area p{margin-top:.8rem;color:var(--ink-2);font-size:.92rem;text-align:left}
+.area .tags{margin-top:.9rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+@media (max-width:960px){.areas{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.areas{grid-template-columns:1fr}}
+/* statement */
+.statement{font-family:var(--display);font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:400;line-height:1.35;max-width:30ch;font-style:italic;color:var(--ink)}
+.statement b{font-style:normal;font-weight:500;color:var(--accent)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;border-top:1px solid var(--rule);padding-top:2rem}
+.stat .n{font-family:var(--display);font-size:2.4rem;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:.5rem}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* publications */
+.pubgroup{margin-bottom:3rem}
+.pubgroup h3{font-size:1.45rem;padding-bottom:.8rem;border-bottom:1px solid var(--accent-2);margin-bottom:.4rem}
+.pub{display:grid;grid-template-columns:5.5rem 1fr;gap:1.2rem;padding:1rem 0;border-bottom:1px solid var(--rule);min-width:0}
+.pub .yr{font-family:var(--display);font-size:1.25rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.pub .t{font-weight:500;line-height:1.45}
+.pub .t a{border-bottom:1px solid transparent;transition:border-color .15s,color .15s}
+.pub .t a:hover{color:var(--accent);border-bottom-color:var(--accent-2)}
+.pub .au{font-size:.88rem;color:var(--ink-2);margin-top:.3rem}
+.pub .au b{font-weight:600;color:var(--ink)}
+.pub .j{font-size:.85rem;color:var(--ink-3);margin-top:.2rem;font-style:italic}
+.pub .j span{font-style:normal}
+@media (max-width:600px){.pub{grid-template-columns:1fr;gap:.2rem}}
+.pub-note{font-size:.85rem;color:var(--ink-3);margin-top:1rem}
+
+/* timeline lists */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:7.5rem 1fr;gap:1.2rem;padding:.9rem 0;border-bottom:1px solid var(--rule)}
+.tl .d{font-size:.8rem;letter-spacing:.06em;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:.15rem}
+.tl .b{font-weight:500}
+.tl .s{font-size:.88rem;color:var(--ink-2);margin-top:.15rem}
+@media (max-width:600px){.tl li{grid-template-columns:1fr;gap:.2rem}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.two>div{min-width:0}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+h3.sub{font-size:1.45rem;margin-bottom:1rem}
+
+/* teaching */
+.courses{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem;margin-top:1rem}
+.course{background:var(--card);border:1px solid var(--rule);padding:.9rem 1rem;min-width:0}
+.course .code{font-size:.72rem;letter-spacing:.12em;color:var(--accent);font-weight:600}
+.course .name{font-size:.92rem;margin-top:.2rem}
+
+/* olympiad */
+.oly{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.oly>div{background:var(--card);padding:1.6rem 1.6rem;min-width:0}
+.oly .big{font-family:var(--display);font-size:1.5rem;line-height:1.2}
+.oly .small{font-size:.86rem;color:var(--ink-2);margin-top:.5rem}
+.oly .thai{font-family:var(--thai);color:var(--ink-3);font-size:.86rem;margin-top:.3rem}
+@media (max-width:720px){.oly{grid-template-columns:1fr}}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.addr{font-size:.95rem;color:var(--ink-2);line-height:1.8}
+.addr b{color:var(--ink);font-weight:500}
+.mail{display:inline-flex;align-items:center;gap:.8rem;margin-top:1rem;font-family:var(--display);font-size:1.3rem;color:var(--ink)}
+.mail button{font:inherit;font-family:var(--body);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--rule);color:var(--ink-2);padding:.35rem .7rem;cursor:pointer;border-radius:2px}
+.mail button:hover{border-color:var(--accent);color:var(--accent)}
+.join{background:var(--card);border:1px solid var(--rule);padding:1.8rem;min-width:0}
+.join h3{font-size:1.5rem}
+.join p{margin-top:.8rem;color:var(--ink-2);font-size:.95rem}
+@media (max-width:820px){.contact .wrap{grid-template-columns:1fr}}
+
+
+/* news */
+.news{display:grid;grid-template-columns:9rem 1fr;gap:2rem;padding:2rem 0;border-top:1px solid var(--rule)}
+.news:last-child{border-bottom:1px solid var(--rule)}
+.news .when{font-family:var(--display);font-size:1.3rem;color:var(--accent);line-height:1.2}
+.news .photos{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:760px}
+.news .photos img.wide{grid-column:1/-1;aspect-ratio:16/10}
+.news .photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+@media (max-width:600px){.news .photos{grid-template-columns:1fr}}
+.news .photo{width:100%;max-width:760px;aspect-ratio:3/2;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+.news .cap{margin-top:1rem;font-weight:500;line-height:1.5}
+.news .cap-th{font-family:var(--thai);color:var(--ink-2);font-size:.95rem;margin-top:.4rem}
+@media (max-width:720px){.news{grid-template-columns:1fr;gap:.6rem}}
+.roster{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.2rem;font-family:var(--thai)}
+.roster>div{min-width:0}
+.roster-h{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;font-family:var(--body);margin-bottom:.4rem}
+.roster ul{list-style:none;margin:0;padding:0}
+.roster li{font-size:.92rem;padding:.3rem 0;border-bottom:1px solid var(--rule)}
+.roster li span{display:block;color:var(--ink-3);font-size:.82rem}
+@media (max-width:720px){.roster{grid-template-columns:1fr}}
+
+/* alumni */
+.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.alumni>div{min-width:0}
+.alumni h3{font-size:1.45rem;padding-bottom:.6rem;border-bottom:1px solid var(--accent-2);margin-bottom:.6rem}
+.al{list-style:none;margin:0;padding:0}
+.al li{display:grid;grid-template-columns:3.5rem 2.6rem 1fr;gap:.8rem;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+.al .av{width:2.6rem;height:2.6rem;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--bg-2)}
+.al .av.ph{display:block}
+.al .y{font-family:var(--display);font-size:1.1rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.al .n{font-weight:500}
+.al .n span{display:block;font-weight:400;font-size:.85rem;color:var(--ink-3)}
+.al li.empty{color:var(--ink-3);font-style:italic;grid-template-columns:1fr}
+@media (max-width:820px){.alumni{grid-template-columns:1fr}}
+
+/* news cards */
+.ngrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.ncard{display:block;min-width:0;border:1px solid var(--rule);background:var(--card);border-radius:2px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.ncard:hover{transform:translateY(-3px);box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.ncard .thumb{aspect-ratio:4/3;background:var(--bg-2);overflow:hidden}
+.ncard .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.ncard .nothumb{display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem;color:var(--accent-2)}
+.ncap{padding:.9rem 1rem 1.1rem}
+.nwhen{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.nwhen span{color:var(--ink-3);font-weight:400;letter-spacing:.04em;text-transform:none}
+.ntitle{font-weight:500;font-size:.92rem;line-height:1.45;margin-top:.4rem}
+.ncard:nth-child(n+5){display:none}
+.ngrid.all .ncard:nth-child(n+5){display:block}
+.btn{font:inherit;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid var(--accent);color:var(--accent);padding:.7rem 1.6rem;cursor:pointer;border-radius:2px}
+.btn:hover{background:var(--accent);color:var(--bg)}
+#allnews .news{scroll-margin-top:5rem}
+#allnews .news:first-child{border-top:1px solid var(--rule);margin-top:3rem}
+@media (max-width:960px){.ngrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.ngrid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--rule);padding-block:2rem;font-size:.8rem;color:var(--ink-3)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+</style>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Yimklan<span> Group</span></a>
+    <div class="links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#grants">Grants &amp; Awards</a>
+      <a href="#olympiad">Olympiad</a>
+      <a href="#news">News</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#alumni">Alumni</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Department of Chemistry · Chiang Mai University</p>
+      <h1 style="margin-top:1rem">Saranphong <em>Yimklan</em></h1>
+      <p class="thai-name">รองศาสตราจารย์ ดร.ศรัญพงศ์ ยิ้มกลั่น</p>
+      <p class="role"><strong>Associate Professor in Inorganic Chemistry</strong><br>PhD, The University of Liverpool · Coordination polymers, metal–organic frameworks and X-ray crystallography</p>
+      <div class="keywords">
+        <span>Reticular chemistry</span><span>Crystal engineering</span><span>SC-SC transformations</span><span>MOFs from waste</span>
+      </div>
+      <div class="cta">
+        <a href="#research">Our research</a>
+        <a href="#publications">Publications</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="cf028e9618.jpg" alt="Saranphong Yimklan">
+    </div>
+  </div>
+</header>
+
+<section class="band" id="about">
+  <div class="wrap">
+    <p class="statement">We design crystalline frameworks that <b>transform</b> — ligand by ligand, crystal to crystal — into materials for a circular economy.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">30+</div><div class="l">Peer-reviewed papers</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Patent applications</div></div>
+      <div class="stat"><div class="n">5</div><div class="l">Major research grants</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">Years leading CMU Olympiad team</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Research</p><h2 style="margin-top:.6rem">Function-led MOF design, synthesis &amp; structural investigation</h2></div>
+      <p class="lead">Our group sits at the junction of coordination chemistry and materials science. We grow single crystals of new metal–organic frameworks, follow their structural transformations by diffraction, and turn what we learn into photocatalysts, battery anodes, sensors and sorbents, increasingly built from domestic and industrial waste.</p>
+    </div>
+    <div class="areas">
+      <div class="area">
+        <a class="figlink" href="#pub-mofs" title="See publications in this area"><div class="figwrap"><img class="fig" src="ec9daf264e.jpg" alt=""><svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="ring1" d="M120,120 m-106,0 a106,106 0 1,1 212,0 a106,106 0 1,1 -212,0"/></defs><text><textPath href="#ring1" startOffset="0">SCSC TRANSFORMATIONS IN MOFs</textPath></text></svg></div></a>
+        <div class="num">I</div>
+        <h3>New MOFs &amp; single-crystal-to-single-crystal transformations</h3>
+        <p>Anion-, solvent- and base-directed assembly of Zn(II), Cu(II), Co(II) and lanthanide frameworks, and ligand-substitution-induced SC-SC transformations that change coordination geometry, redox state and topology while the crystal stays intact.</p>
+        <div class="tags">Crystal engineering · Interpenetration · Redox-versatile Cu(II)</div>
+      </div>
+      <div class="area">
+        <a class="figlink" href="#pub-mofs" title="See publications in this area"><div class="figwrap"><img class="fig" src="6c2a47a31e.jpg" alt=""><svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="ring2" d="M120,120 m-106,0 a106,106 0 1,1 212,0 a106,106 0 1,1 -212,0"/></defs><text><textPath href="#ring2" startOffset="0">MOFs FOR ENERGY AND THE ENVIRONMENT</textPath></text></svg></div></a>
+        <div class="num">II</div>
+        <h3>MOFs from waste for energy and the environment</h3>
+        <p>High-value Al-MOFs made from PET and aluminium wastes; Co and Zn frameworks as lithium-ion battery anodes; MOF-derived catalysts for dry reforming of methane; and MOF sorbents for CO₂ capture in biogas.</p>
+        <div class="tags">Li-ion anodes · CO₂ capture · Circular economy</div>
+      </div>
+      <div class="area">
+        <a class="figlink" href="#pub-photocat" title="See publications in this area"><div class="figwrap"><img class="fig" src="1084f2a60a.jpg" alt=""><svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="ring3" d="M120,120 m-106,0 a106,106 0 1,1 212,0 a106,106 0 1,1 -212,0"/></defs><text><textPath href="#ring3" startOffset="0">MOFs FOR PHOTOCATALYSIS</textPath></text></svg></div></a>
+        <div class="num">III</div>
+        <h3>Photocatalysis, sensing and oxide–MOF composites</h3>
+        <p>Dye degradation by SC-SC-engineered Zn and Cu MOFs, smartphone-based colorimetric iodide detection, lanthanide photoluminescence, and composites with TiO₂, ZnO, Pt and carbon quantum dots for wastewater treatment and electrochemical sensors.</p>
+        <div class="tags">Photocatalysts · Colorimetric sensors · Heterojunctions</div>
+      </div>
+      <div class="area">
+        <a class="figlink" href="#pub-xray" title="See publications in this area"><div class="figwrap"><img class="fig" src="80339a0c5d.jpg" alt=""><svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="ring4" d="M120,120 m-106,0 a106,106 0 1,1 212,0 a106,106 0 1,1 -212,0"/></defs><text><textPath href="#ring4" startOffset="0">X-RAY CRYSTALLOGRAPHY</textPath></text></svg></div></a>
+        <div class="num">IV</div>
+        <h3>X-ray crystallography for structure determination</h3>
+        <p>Single-crystal structure determination for organic, natural-product and coordination chemistry collaborators, with synchrotron work at Beamline 1.1W (SLRI, Thailand) and Beamline I19 (Diamond Light Source, UK).</p>
+        <div class="tags">SC-XRD · Synchrotron · Absolute configuration</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="publications">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Publications</p><h2 style="margin-top:.6rem">Selected papers</h2></div>
+      <p class="lead">Corresponding-author papers from the group are listed first, followed by collaborative work. An asterisk marks the corresponding author; titles link to the publisher's page.</p>
+    </div>
+
+    <div class="pubgroup">
+      <h3 id="pub-mofs">New MOFs &amp; structural transformations toward environmental applications</h3>
+      <div class="pub"><div class="yr">2026</div><div><div class="t"><a href="https://doi.org/10.1021/acs.inorgchem.5c06095" target="_blank" rel="noopener">Metal-dependent lithiation behaviors in cobalt and zinc metal–organic frameworks as lithium-ion battery anodes</a></div><div class="au">K. Tungad, N. Sammawipawekul, Y. Chimupala, T. Autthawong, P. Falun, S. Suthirakun, N. Semakul, T. Sarakonsri, <b>S. Yimklan*</b></div><div class="j">Inorganic Chemistry <span>2026, 65, 10948–10960</span></div></div></div>
+      <div class="pub"><div class="yr">2024</div><div><div class="t"><a href="https://doi.org/10.1016/j.cej.2024.148904" target="_blank" rel="noopener">Isostructural dual-ligand-based MOFs with different metal centers in response to diverse capacity lithium-ion battery anode</a></div><div class="au">N. Sammawipawekul, N. Kaeosamut, T. Autthawong, A. Watwiangkham, S. Suthirakun, S. Wannapaiboon, N. Mahamai, T. Sarakonsri, Y. Chimupala, <b>S. Yimklan*</b></div><div class="j">Chemical Engineering Journal <span>2024, 482, 148904</span></div></div></div>
+      <div class="pub"><div class="yr">2023</div><div><div class="t"><a href="https://doi.org/10.1021/acs.inorgchem.3c01958" target="_blank" rel="noopener">Synergistic induction of solvent and ligand-substitution in single-crystal to single-crystal transformations toward a MOF with photocatalytic dye degradation</a></div><div class="au">N. Kaeosamut, P. Chaichana, A. Watwiangkham, S. Suthirakun, S. Wannapaiboon, N. Sammawipawekul, Y. Chimupala, <b>S. Yimklan*</b></div><div class="j">Inorganic Chemistry <span>2023, 62, 19908–19921</span></div></div></div>
+      <div class="pub"><div class="yr">2024</div><div><div class="t"><a href="https://doi.org/10.1021/acsomega.3c08506" target="_blank" rel="noopener">Base-directed formation of isostructural lanthanide-sulfate-glutarate coordination polymers with photoluminescence</a></div><div class="au"><b>S. Yimklan*</b>, N. Kaeosamut, N. Sammawipawekul, S. Wongngam, S. Ngamsomrit, A. Rujiwatra, Y. Chimupala</div><div class="j">ACS Omega <span>2024</span></div></div></div>
+      <div class="pub"><div class="yr">2022</div><div><div class="t"><a href="https://doi.org/10.1021/acs.inorgchem.2c03579" target="_blank" rel="noopener">Ligand-substitution-induced single-crystal to single-crystal transformations in a redox-versatile Cu(II) MOF toward smartphone-based colorimetric detection of iodide</a></div><div class="au">N. Kaeosamut, Y. Chimupala, P. Yanu, S. Wannapaiboon, N. Sammawipawekul, S. Tonkaew, J. Jakmunee, <b>S. Yimklan*</b></div><div class="j">Inorganic Chemistry <span>2022, 61, 19612–19623</span></div></div></div>
+      <div class="pub"><div class="yr">2022</div><div><div class="t"><a href="https://doi.org/10.1107/S2056989022000159" target="_blank" rel="noopener">Crystal structure of a three-dimensional neodymium(III) coordination polymer, [Nd₂(H₂O)₆(glutarato)(SO₄)₂]ₙ</a></div><div class="au"><b>S. Yimklan*</b>, Y. Chimupala, S. Wongngam, N. Kaeosamut</div><div class="j">Acta Crystallographica Section E <span>2022, 78(2)</span></div></div></div>
+      <div class="pub"><div class="yr">2021</div><div><div class="t"><a href="https://doi.org/10.1021/acs.cgd.1c00658" target="_blank" rel="noopener">Octahedral to tetrahedral conversion upon a ligand-substitution-induced single-crystal to single-crystal transformation in a rectangular Zn(II) metal–organic framework and its photocatalysis</a></div><div class="au">Y. Chimupala, N. Kaeosamut, <b>S. Yimklan*</b></div><div class="j">Crystal Growth &amp; Design <span>2021, 21, 5373–5382</span></div></div></div>
+      <div class="pub"><div class="yr">2021</div><div><div class="t"><a href="https://doi.org/10.1021/acs.cgd.1c00103" target="_blank" rel="noopener">Anion-controlled synthesis of enantiomeric twofold interpenetrated 3D zinc(II) coordination polymer with ligand substitution-induced single-crystal-to-single-crystal transformation and photocatalysis</a></div><div class="au">N. Kaeosamut, Y. Chimupala, <b>S. Yimklan*</b></div><div class="j">Crystal Growth &amp; Design <span>2021, 21, 2942–2953</span></div></div></div>
+    </div>
+
+    <div class="pubgroup">
+      <h3 id="pub-photocat">Oxide-based materials and MOF composites toward photocatalysis and sensors</h3>
+      <div class="pub"><div class="yr">2025</div><div><div class="t"><a href="https://doi.org/10.1016/j.cscee.2025.101277" target="_blank" rel="noopener">Modification of copper-based zeolite 13X for methanol and aromatic compound synthesis in microwave plasma-assisted carbon dioxide conversion</a></div><div class="au">P. Tapangpan, D. Boonyawan, <b>S. Yimklan</b>, Y. Chimupala, A. Tamman, S. Thammakan, T. Opassuwan, M. Nisoa, C. Sawangrat*</div><div class="j">Case Studies in Chemical and Environmental Engineering <span>2025, 12, 101277</span></div></div></div>
+      <div class="pub"><div class="yr">2025</div><div><div class="t"><a href="https://doi.org/10.1021/acs.iecr.5c02287" target="_blank" rel="noopener">Mesoporous K- and Ca-promoted Ni/Al₂O₃ catalysts derived from MIL-53(Al) for microwave plasma-assisted dry reforming of methane into syngas</a></div><div class="au">S. Thammakan, D. Boonyawan, Y. Chimupala, <b>S. Yimklan</b>, A. Tamman, P. Tapangpan, T. Opassuwan, M. Nisoa, C. Sawangrat</div><div class="j">Industrial &amp; Engineering Chemistry Research <span>2025, 64, 18727–18738</span></div></div></div>
+      <div class="pub"><div class="yr">2025</div><div><div class="t"><a href="https://doi.org/10.1016/j.colsurfb.2024.114461" target="_blank" rel="noopener">Sensitive electrochemical detection of glycated hemoglobin (HbA1c) using cobalt metal-organic framework/2D molybdenum diselenide nanocomposite-based immunosensors amplified by polyoxometalate/DNA aptamer</a></div><div class="au">S. Anuthum, P. Papan, A. Pasena, <b>S. Yimklan</b>, C. Aramrat, P. Sangthong, J. Jakmunee, K. Ounnunkad*</div><div class="j">Colloids and Surfaces B: Biointerfaces <span>2025, 248, 114461</span></div></div></div>
+      <div class="pub"><div class="yr">2024</div><div><div class="t"><a href="https://doi.org/10.1016/j.envres.2024.119627" target="_blank" rel="noopener">High efficiency azo dye removal via a combination of adsorption and photocatalytic processes using heterojunction TiO₂ nanoparticles on hierarchical porous carbon</a></div><div class="au">S. Limsakul, C. Thanachayanont, M. Jaideekard, <b>S. Yimklan</b>, P. Kijjanapanich, Y. Chimupala*</div><div class="j">Environmental Research <span>2024, 260, 119627</span></div></div></div>
+      <div class="pub"><div class="yr">2024</div><div><div class="t"><a href="https://doi.org/10.1016/j.electacta.2024.145003" target="_blank" rel="noopener">Electrodeposited Pt nanoparticles loaded on support composites of metal-organic frameworks and carbon quantum dots for the enhancement of alcohol electrooxidation</a></div><div class="au">S. Saipanya, <b>S. Yimklan</b>, P. Waenkaew, L. Fang, J. Jakmunee, S. Themsirimongkon*</div><div class="j">Electrochimica Acta <span>2024, 506, 145003</span></div></div></div>
+      <div class="pub"><div class="yr">2023</div><div><div class="t"><a href="https://doi.org/10.1016/j.nanoso.2023.101027" target="_blank" rel="noopener">Novel physical sunscreen from one-dimensional TiO₂ nanowire: synthesis, characterization and the effects of morphologies and particle size</a></div><div class="au">S. Limsakul, T. Mahatnirunkul, C. Phromma, T. Chomtong, N. Cholnakasem, <b>S. Yimklan</b>, P. Ruankham, A. Siyasukh, Y. Chimupala*</div><div class="j">Nano-Structures &amp; Nano-Objects <span>2023, 35, 101027</span></div></div></div>
+      <div class="pub"><div class="yr">2020</div><div><div class="t"><a href="https://doi.org/10.1039/D0RA04746E" target="_blank" rel="noopener">Dye wastewater treatment enabled by piezo-enhanced photocatalysis of single-component ZnO nanoparticles</a></div><div class="au">Y. Chimupala, C. Phromma, <b>S. Yimklan</b>, N. Semakul, P. Ruankham*</div><div class="j">RSC Advances <span>2020, 10, 28567–28575</span></div></div></div>
+    </div>
+
+    <div class="pubgroup">
+      <h3 id="pub-xray">X-ray crystallography for organic structure determination</h3>
+      <div class="pub"><div class="yr">2026</div><div><div class="t"><a href="https://doi.org/10.1055/a-2900-9049" target="_blank" rel="noopener">Iodine-mediated reaction of 2-mercaptobenzimidazoles with carbonyl compounds via sulfenamide intermediates: divergent access to imidazo[2,1-b]thiazoles and thioenamines</a></div><div class="au">M. Alfliadhi, R. Khaminthong, M. Pattarawarapan, S. Hongsibsong, <b>S. Yimklan</b>, W. Phakhodee*</div><div class="j">Synthesis <span>2026</span></div></div></div>
+      <div class="pub"><div class="yr">2025</div><div><div class="t"><a href="https://doi.org/10.1021/acs.joc.5c01087" target="_blank" rel="noopener">Dual role of sulfenamides in iodine/Oxone-catalyzed three-component coupling of 2-mercaptobenzoxazoles, amines, and ketones: route toward α-thioenamines and 2-iminothiazolines</a></div><div class="au">M. Alfliadhi, M. Pattarawarapan, S. Hongsibsong, <b>S. Yimklan</b>, W. Phakhodee*</div><div class="j">The Journal of Organic Chemistry <span>2025, 90, 11151–11161</span></div></div></div>
+      <div class="pub"><div class="yr">2025</div><div><div class="t"><a href="https://doi.org/10.1002/ajoc.202500021" target="_blank" rel="noopener">An unexpected iodine-mediated reaction of 2-mercaptobenzoxazoles with bicyclic amidines and methyl ketones: novel route toward 5-sulfenyl-2-iminothiazolines</a></div><div class="au">W. Phakhodee, M. Alfliadhi, <b>S. Yimklan</b>, P. Kongmuang, S. Hongsibsong, M. Pattarawarapan</div><div class="j">Asian Journal of Organic Chemistry <span>2025, e202500021</span></div></div></div>
+      <div class="pub"><div class="yr">2025</div><div><div class="t"><a href="https://doi.org/10.1002/asia.202401718" target="_blank" rel="noopener">Ph₃P–I₂-mediated syntheses of C-12 carboxamide indoloquinazolines and 2-aminosubstituted-indol-3-ones from isatins and amines</a></div><div class="au">M. Pattarawarapan, S. Wet-osot, N. Wiriya, S. Hongsibsong, <b>S. Yimklan</b>, W. Phakhodee*</div><div class="j">Chemistry – An Asian Journal <span>2025, e202401718</span></div></div></div>
+      <div class="pub"><div class="yr">2024</div><div><div class="t"><a href="https://doi.org/10.1021/acs.jnatprod.4c00248" target="_blank" rel="noopener">Tetrahydroxanthene-1,3(2H)-diones and oxidized hexadiene derivatives from <i>Uvaria leptopoda</i> and their biological activities</a></div><div class="au">P. Teerapongpisan, T. Monkantha, <b>S. Yimklan</b>, S. H. Mah, N. V. Gunter, P. Promnart, S. Deachathai, T. Maneerat, T. Duangyod, R. Charoensup, A. Baka, R. J. Andersen, S. Laphookhieo*</div><div class="j">Journal of Natural Products <span>2024, 87, 1611–1617</span></div></div></div>
+      <div class="pub"><div class="yr">2024</div><div><div class="t"><a href="https://doi.org/10.1371/journal.pone.0315570" target="_blank" rel="noopener">Lutein derived from <i>Xenostegia tridentata</i> exhibits anticancer activities against A549 lung cancer cells via hyaluronidase inhibition</a></div><div class="au">J. Chatwichien, N. Semakul, <b>S. Yimklan</b>, N. Suwanwong, P. Naksing, S. Ruchirawat</div><div class="j">PLoS ONE <span>2024, 19(12), e0315570</span></div></div></div>
+      <div class="pub"><div class="yr">2022</div><div><div class="t"><a href="https://doi.org/10.1055/a-1874-6399" target="_blank" rel="noopener">5-Amino-substituted 2-methoxy-1,3,4-oxadiazoles as common precursors toward 1,3,4-oxadiazol-2(3H)-ones and 1,2,4-triazolidine-3,5-diones</a></div><div class="au">D. Yamano, S. Jaita, S. Hongsibsong, <b>S. Yimklan</b>, W. Phakhodee, M. Pattarawarapan*</div><div class="j">Synthesis <span>2022, 54, 4539–4550</span></div></div></div>
+      <div class="pub"><div class="yr">2022</div><div><div class="t"><a href="https://doi.org/10.1055/a-1707-2924" target="_blank" rel="noopener">Phosphonium-mediated synthesis of a new class of indoloquinazoline derivatives bearing C-12 aryloxy ester and spiro-γ-lactone</a></div><div class="au">N. Wiriya, M. Pattarawarapan, <b>S. Yimklan</b>, S. Hongsibsong, W. Phakhodee*</div><div class="j">Synthesis <span>2022, 54, 2070–2080</span></div></div></div>
+      <div class="pub"><div class="yr">2022</div><div><div class="t"><a href="https://doi.org/10.3390/biology11020228" target="_blank" rel="noopener">Identification of microorganisms dwelling on the 19th century Lanna mural paintings from Northern Thailand using culture-dependent and -independent approaches</a></div><div class="au">N. Suphaphimol, N. Suwannarach, W. Purahong, C. Jaikang, K. Pengpat, N. Semakul, <b>S. Yimklan</b>, S. Jongjitngam, S. Jindasu, S. Thiangtham, P. Chantawannakul, T. Disayathanoowat*</div><div class="j">Biology <span>2022, 11, 228</span></div></div></div>
+      <div class="pub"><div class="yr">2021</div><div><div class="t"><a href="https://doi.org/10.1039/D1OB01387D" target="_blank" rel="noopener">Synthesis and application of methyl itaconate–anthracene adducts in configuration assignment of chiral secondary alcohols by ¹H NMR</a></div><div class="au">P. Rithchumpon, N. Intakaew, N. Khamto, <b>S. Yimklan</b>, P. Nimmanpipug, P. Thavornyutikarn, P. Meepowpan*</div><div class="j">Organic &amp; Biomolecular Chemistry <span>2021, 19, 8955–8967</span></div></div></div>
+      <div class="pub"><div class="yr">2020</div><div><div class="t"><a href="https://doi.org/10.1021/acs.joc.0c01979" target="_blank" rel="noopener">Simultaneous formation and functionalization of aryliminophosphoranes using 1,3-dihydro-1H-benzimidazol-2-ones as precursors</a></div><div class="au">M. Pattarawarapan, D. Yamano, N. Wiriya, <b>S. Yimklan</b>, W. Phakhodee*</div><div class="j">The Journal of Organic Chemistry <span>2020, 85, 13330–13338</span></div></div></div>
+      <div class="pub"><div class="yr">2020</div><div><div class="t"><a href="https://doi.org/10.1021/acs.joc.0c00211" target="_blank" rel="noopener">Zwitterionic ring-opened oxyphosphonium species from the Ph₃P–I₂ mediated reactions of benzo[d]oxazol-2(3H)-ones with secondary amines</a></div><div class="au">M. Pattarawarapan, N. Wiriya, <b>S. Yimklan</b>, S. Wangngae, W. Phakhodee*</div><div class="j">The Journal of Organic Chemistry <span>2020, 85, 6151–6158</span></div></div></div>
+      <div class="pub"><div class="yr">2019</div><div><div class="t"><a href="https://doi.org/10.1039/C8OB02662A" target="_blank" rel="noopener">Synthesis and characterization of novel chiral derivatizing agents containing β-keto-anthracene adducts (KAAs) by ¹H NMR</a></div><div class="au">N. Intakaew, P. Rithchumpon, C. Prommin, <b>S. Yimklan</b>, N. Kungwan, P. Thavornyutikarn, P. Meepowpan*</div><div class="j">Organic &amp; Biomolecular Chemistry <span>2019, 3, 541–554</span></div></div></div>
+    </div>
+
+    <div class="pubgroup">
+      <h3 id="pub-werner">Werner's complexes</h3>
+      <div class="pub"><div class="yr">2012</div><div><div class="t"><a href="https://doi.org/10.1016/j.poly.2011.09.046" target="_blank" rel="noopener">A second crystal form of [Ni(2,2′-bipyridine)(H₂O)₃(NO₃)](NO₃) featuring a different molecular orientation</a></div><div class="au">A. Rujiwatra*, <b>S. Yimklan</b>, T. J. Prior</div><div class="j">Polyhedron <span>2012, 31, 345–351</span></div></div></div>
+      <div class="pub"><div class="yr">2009</div><div><div class="t"><a href="https://doi.org/10.1007/s10904-009-9271-y" target="_blank" rel="noopener">Microwave assisted crystal growth of a new organic-decavanadate assembly</a></div><div class="au">B. Yotnoi, <b>S. Yimklan</b>, T. J. Prior, A. Rujiwatra*</div><div class="j">Journal of Inorganic and Organometallic Polymers and Materials <span>2009, 19, 306</span></div></div></div>
+      <div class="pub"><div class="yr">2009</div><div><div class="t"><a href="https://doi.org/10.1039/B815001J" target="_blank" rel="noopener">Synthesis and characterization of redox-active tris(pyrazolyl)borate cobalt complexes</a></div><div class="au">D. J. Harding*, P. Harding, R. Daengngern, <b>S. Yimklan</b>, H. Adams</div><div class="j">Dalton Transactions <span>2009, 1314–1320</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="grants">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Funding</p>
+      <h3 class="sub" style="margin-top:.6rem">Selected research grants</h3>
+      <ul class="tl">
+        <li><span class="d">2025–2028</span><div><div class="b">Metal-organic frameworks from domestic and industrial wastes for novel advanced photocatalysts for wastewater treatment</div><div class="s">Mid-Career Research Grant, National Research Council of Thailand (NRCT)</div></div></li>
+        <li><span class="d">2023–2024</span><div><div class="b">Application of MOF from wastes for sustainable CO₂ capturing in biogas</div><div class="s">Electricity Generating Authority of Thailand (EGAT)</div></div></li>
+        <li><span class="d">2023–2024</span><div><div class="b">High-value metal-organic framework (MOF) from PET and aluminium wastes</div><div class="s">Identified Technology to CMU Innovation, CMU Science and Technology Park</div></div></li>
+        <li><span class="d">2021–2022</span><div><div class="b">Functionalisation of aluminium MOFs from wastes for anode materials in lithium-ion batteries</div><div class="s">The Murata Science Foundation Research Grant 2022</div></div></li>
+        <li><span class="d">2017–2020</span><div><div class="b">Design and synthesis of new metal-organic frameworks for catalysis</div><div class="s">Research Fund for DPST Graduate with First Placement, IPST</div></div></li>
+      </ul>
+      <h3 class="sub" style="margin-top:2.5rem">Patent applications</h3>
+      <ul class="tl">
+        <li><span class="d">Aug 2026</span><div><div class="b"><a href="https://patents.google.com/patent/US20260242323A1/en" target="_blank" rel="noopener" style="border-bottom:1px solid var(--accent-2)">Manufacturing process of metal-organic framework porous material of aluminium and terephthalic acid</a></div><div class="s">US Patent Application US 2026/0242323 A1 (App. No. 19/164,583), published 20 Aug 2026 · Inventors: S. Yimklan, Y. Chimupala, N. Semakul, C. Phromma, N. Sammawipawekul · Al-MOF from aluminium waste and PET-derived terephthalic acid</div></div></li>
+        <li><span class="d">Aug 2023</span><div><div class="b">Manufacturing process of metal-organic framework porous material of aluminium and terephthalic acid</div><div class="s">PCT/TH2023/050022 · international application</div></div></li>
+        <li><span class="d">Aug 2023</span><div><div class="b">The production process of nanoparticle zinc oxide</div><div class="s">PCT/TH2023/050020</div></div></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Recognition</p>
+      <h3 class="sub" style="margin-top:.6rem">Awards &amp; honours</h3>
+      <ul class="tl">
+        <li><span class="d">2025</span><div><div class="b">Visiting Researcher, Masaoka Laboratory, Osaka University</div><div class="s">JST NEXUS framework (Japan–ASEAN)</div></div></li>
+        <li><span class="d">2024</span><div><div class="b">Outstanding Teaching Award</div><div class="s">Faculty of Science, Chiang Mai University</div></div></li>
+        <li><span class="d">2023</span><div><div class="b">Outstanding Personnel Award</div><div class="s">Faculty of Science, Chiang Mai University</div></div></li>
+        <li><span class="d">2023</span><div><div class="b">The Best Foreign Invention, IWIS 2023, Warsaw</div><div class="s">Association of Polish Inventors and Rationalizers, for the circular-economy production of porous Al-MOFs</div></div></li>
+        <li><span class="d">2022, 2023</span><div><div class="b">Outstanding Researcher Honours</div><div class="s">Faculty of Science, CMU, for articles in Nature Index journals</div></div></li>
+        <li><span class="d">2010</span><div><div class="b">Professor Dr Tab Nilanidhi Foundation Medal</div><div class="s">MSc Chemistry, Chiang Mai University, GPAX 4.00</div></div></li>
+        <li><span class="d">2004–2016</span><div><div class="b">DPST Scholar</div><div class="s">Development and Promotion of Science and Technology Talent Project, BSc to PhD abroad</div></div></li>
+      </ul>
+      <h3 class="sub" style="margin-top:2.5rem">Invited lectures</h3>
+      <ul class="tl">
+        <li><span class="d">2026</span><div><div class="b">Coordination polymers &amp; MOFs: from molecular architecture to potential applications</div><div class="s">Webinar, Sichuan Vocational College of Chemical Technology, China</div></div></li>
+        <li><span class="d">2024</span><div><div class="b">Ligand substitution in MOFs toward photocatalysts and Li-ion battery anodes</div><div class="s">Thailand–Japan Symposium in Chemistry 2024</div></div></li>
+        <li><span class="d">2023</span><div><div class="b">Ligand substitution-induced structural transformations in coordination polymers</div><div class="s">Chiang Mai University–Osaka University Symposium</div></div></li>
+        <li><span class="d">2022</span><div><div class="b">Roles of anions in the formation and structural transformation of coordination polymers</div><div class="s">STT48, Walailak University</div></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="olympiad">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Chemistry Olympiad</p><h2 style="margin-top:.6rem">From POSN student to IChO head mentor</h2></div>
+      <p class="lead">A POSN-CMU Olympiad student in 2001, Saranphong has led the Chiang Mai centre's team since 2016 and now serves on the national subcommittee that sends Thailand's delegation to the International Chemistry Olympiad.</p>
+    </div>
+    <div class="oly">
+      <div><div class="big">Head Mentor, Thailand · IChO 2025</div><div class="small">57th International Chemistry Olympiad, Dubai, UAE</div><div class="thai">หัวหน้าทีมผู้แทนประเทศไทย</div></div>
+      <div><div class="big">Mentor, Thailand · IChO 2024</div><div class="small">56th International Chemistry Olympiad, Riyadh, Saudi Arabia · Observer at IChO 2023, Zürich</div><div class="thai">รองหัวหน้าทีมผู้แทนประเทศไทย</div></div>
+      <div><div class="big">Committee &amp; Secretary, POSN-CMU</div><div class="small">Head Mentor of the CMU team at the 13th–21st Thailand Chemistry Olympiads, 2016–present</div><div class="thai">กรรมการและเลขานุการ ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</div></div>
+      <div><div class="big">National subcommittee, 2023–present</div><div class="small">Organising Thai participation in IChO; Scientific Committee, IChO 2017 (Thailand); author of POSN <i>Chemistry I</i> chapters on atomic structure and main-group elements</div><div class="thai">คณะอนุกรรมการดำเนินการจัดส่งผู้แทนประเทศไทยไปแข่งขันเคมีโอลิมปิกระหว่างประเทศ</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Group News</p><h2 style="margin-top:.6rem">Recent highlights</h2></div>
+      <p class="lead">Milestones from the laboratory, the lecture hall and the Olympiad circuit. Click a card to read the full story.</p>
+    </div>
+    <div class="ngrid" id="ngrid">
+      <a class="ncard" href="#news-0" data-target="news-0">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">September 2026 · <span>DPST scholarship for MSc–PhD study abroad</span></div><div class="ntitle">Somin wins a DPST scholarship for MSc–PhD study abroad</div></div>
+      </a>
+      <a class="ncard" href="#news-1" data-target="news-1">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">September 2026 · <span>MSc thesis defence</span></div><div class="ntitle">Kwanchanok Tungad passes her MSc thesis defence</div></div>
+      </a>
+      <a class="ncard" href="#news-2" data-target="news-2">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">June 2026 · <span>Collaboration visit · University of Science and Technology Beijing</span></div><div class="ntitle">Collaboration visit to Prof. Peng Jiang, USTB Beijing</div></div>
+      </a>
+      <a class="ncard" href="#news-3" data-target="news-3">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">May 2026 · <span>MSc thesis defence</span></div><div class="ntitle">Nithiwat Sammawipawekul passes his MSc thesis defence</div></div>
+      </a>
+      <a class="ncard" href="#news-4" data-target="news-4">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">May 2026 · <span>Publication · <i>Inorganic Chemistry</i> (ACS, open access)</span></div><div class="ntitle">Metal-dependent lithiation in Co and Zn MOFs published in <i>Inorganic Chemistry</i></div></div>
+      </a>
+      <a class="ncard" href="#news-5" data-target="news-5">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">March 2026 · <span>Best oral presentation · Undergraduate research conference</span></div><div class="ntitle">Somin wins the Oral Presentation Award in Chemistry</div></div>
+      </a>
+      <a class="ncard" href="#news-6" data-target="news-6">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">October 2025 · <span>TEM experiments · Kyoto University, Uji (IJURC)</span></div><div class="ntitle">STEM-EELS experiments at Kyoto University under IJURC</div></div>
+      </a>
+      <a class="ncard" href="#news-7" data-target="news-7">
+        <div class="thumb"><div class="nothumb">◆</div></div>
+        <div class="ncap"><div class="nwhen">October 2025 · <span>Nobel Prize in Chemistry 2025</span></div><div class="ntitle">Nobel Prize in Chemistry 2025 goes to metal–organic frameworks</div></div>
+      </a>
+      <a class="ncard" href="#news-8" data-target="news-8">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">September 2025 · <span>Invited lecturer · Lab safety workshop, Maejo University</span></div><div class="ntitle">ESPReL Checklist lab-safety workshop at Maejo University</div></div>
+      </a>
+      <a class="ncard" href="#news-9" data-target="news-9">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">August 2025 · <span>CMU Annual Research Summit 2025 · 18–19 Aug, Chiang Mai Marriott Hotel</span></div><div class="ntitle">Chiang Mai MOFs meet PTT at the CMU Annual Research Summit</div></div>
+      </a>
+      <a class="ncard" href="#news-10" data-target="news-10">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">July 2025 · <span>IChO 57 · Dubai, UAE</span></div><div class="ntitle">Thailand wins gold, two silver and bronze at IChO 57, Dubai</div></div>
+      </a>
+      <a class="ncard" href="#news-11" data-target="news-11">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">June 2025 · <span>Royal audience · Sra Pathum Palace</span></div><div class="ntitle">Royal audience before the 2025 International Olympiads</div></div>
+      </a>
+      <a class="ncard" href="#news-12" data-target="news-12">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">June 2025 · <span>Final training camp for IChO 57 · Chiang Mai University</span></div><div class="ntitle">CMU hosts the final IChO 57 training camp</div></div>
+      </a>
+      <a class="ncard" href="#news-13" data-target="news-13">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">May 2025 · <span>TChO21 · 19–23 May, Srinakharinwirot University, Bangkok</span></div><div class="ntitle">Three gold and two bronze for POSN-CMU at TChO21</div></div>
+      </a>
+      <a class="ncard" href="#news-14" data-target="news-14">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">April 2025 · <span>POSN-CMU Chemistry Camp 2 · 24 Mar – 7 Apr, 25th cohort</span></div><div class="ntitle">Closing the 25th POSN-CMU Chemistry Camp 2</div></div>
+      </a>
+      <a class="ncard" href="#news-15" data-target="news-15">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">April 2025 · <span>Promotion to Associate Professor</span></div><div class="ntitle">Promotion to Associate Professor of Inorganic Chemistry</div></div>
+      </a>
+      <a class="ncard" href="#news-16" data-target="news-16">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">March 2025 · <span>Senior project defences</span></div><div class="ntitle">Two senior project defences passed</div></div>
+      </a>
+      <a class="ncard" href="#news-17" data-target="news-17">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">March 2025 · <span>Research internship · University of Bristol, UK</span></div><div class="ntitle">Somin departs for a Bristol research internship</div></div>
+      </a>
+      <a class="ncard" href="#news-18" data-target="news-18">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">December 2024 · <span>Outstanding Teaching Award &amp; Outstanding Research Article Awards</span></div><div class="ntitle">Outstanding Teaching Award and two research article awards</div></div>
+      </a>
+      <a class="ncard" href="#news-19" data-target="news-19">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">October 2024 · <span>Panel discussion · MSAT "Carbon Negative BECCUS"</span></div><div class="ntitle">Panel on MOFs vs amine absorption at MSAT BECCUS</div></div>
+      </a>
+      <a class="ncard" href="#news-20" data-target="news-20">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">September 2024 · <span>Big Cleaning Day · IPCRL</span></div><div class="ntitle">Big Cleaning Day: a new glass-walled office for IPCRL</div></div>
+      </a>
+      <a class="ncard" href="#news-21" data-target="news-21">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">July 2024 · <span>IChO 56 · Riyadh, Saudi Arabia</span></div><div class="ntitle">Three silver and one bronze at IChO 56, Riyadh</div></div>
+      </a>
+      <a class="ncard" href="#news-22" data-target="news-22">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">June 2024 · <span>Royal audience · Sra Pathum Palace</span></div><div class="ntitle">Royal audience before the 2024 International Olympiads</div></div>
+      </a>
+      <a class="ncard" href="#news-23" data-target="news-23">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">June 2024 · <span>Invited lecturer · CMU SHE lab safety training "SAFER"</span></div><div class="ntitle">Lecturing on chemical waste at the CMU SHE "SAFER" training</div></div>
+      </a>
+      <a class="ncard" href="#news-24" data-target="news-24">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">July 2023 · <span>IChO 55 · Zürich, Switzerland</span></div><div class="ntitle">Observer and assistant mentor at IChO 55, Zürich</div></div>
+      </a>
+      <a class="ncard" href="#news-25" data-target="news-25">
+        <div class="thumb"></div>
+        <div class="ncap"><div class="nwhen">July 2017 · <span>IChO 49 · Nakhon Pathom, Thailand</span></div><div class="ntitle">Scientific Committee at IChO 49, hosted by Thailand</div></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2rem"><button type="button" class="btn" id="moreNews">View all news</button></div>
+    <div id="allnews" hidden>
+    <div class="news" id="news-0">
+      <div class="when">September 2026<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">DPST scholarship for MSc–PhD study abroad</span></div>
+      <div>
+        <div class="photos"><img src="d50737c584.jpg" alt="Preechayaporn Jaikead at Westminster, London" style="object-position:center 60%"><img src="abc8691da6.jpg" alt="Preechayaporn Jaikead" style="object-position:center 30%"></div>
+        <p class="cap">Congratulations to Preechayaporn Jaikead (Somin) on being awarded the DPST scholarship for MSc–PhD study abroad, academic year 2026, announced by IPST on 7 September 2026. After her three-month DPST internship at the University of Bristol she came home to a stack of textbooks and a month of practice problems, determined to return to the United Kingdom for graduate study.</p>
+        <p class="cap-th">ขอแสดงความยินดีกับโซมิน ที่ได้รับทุนพัฒนาและส่งเสริมผู้มีความสามารถพิเศษทางวิทยาศาสตร์และเทคโนโลยี (ทุน พสวท.) ระดับปริญญาโท–เอก เพื่อศึกษา ณ ต่างประเทศ ประจำปีการศึกษา 2569 น้องได้รับโอกาสจากทุน พสวท. ไปฝึกงานระยะสั้น 3 เดือนที่ The University of Bristol, UK แต่ได้เดินทางไปแล้วกว่าครึ่งเกาะบริเตนใหญ่ กลับมาก็ใช้ชีวิตอยู่กับกอง Textbooks ทำแบบฝึกหัดร่วมเดือน บอกตั้งใจจะไปเรียนต่อที่อังกฤษให้ได้</p>
+        <p class="cap-th" style="margin-top:.6rem">ขอชื่นชมในความตั้งใจและพยายามของโซมิน เป็นแบบอย่างให้นักเรียนทุน พสวท. รุ่นน้องที่มีความฝันจะเรียนต่อ ณ ต่างประเทศได้เดินตามต่อไป ในฐานะอาจารย์ที่ปรึกษาที่เห็นกันมาตั้งแต่เป็นนักเรียนค่ายโอลิมปิก สอวน. รู้สึกภูมิใจแทนครอบครัวน้อง ขอให้ประสบความสำเร็จในการเรียนต่อครับ</p>
+      </div>
+    </div>
+    <div class="news" id="news-1">
+      <div class="when">September 2026<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">MSc thesis defence</span></div>
+      <div>
+        <div class="photos"><img src="b64fc7ddef.jpg" alt="Thesis defence committee with Kwanchanok Tungad"><img src="07a18d984a.jpg" alt="Group photo after the thesis defence"></div>
+        <p class="cap">Congratulations to Kwanchanok Tungad (Ping Ping) on passing her MSc thesis defence, "Design and synthesis of polyethylene terephthalate waste-derived metal-organic frameworks for use as sustainable anode materials in lithium-ion batteries", on 5 September 2026. Her work is published open access as the first-author article "Metal-dependent lithiation behaviors in cobalt and zinc metal–organic frameworks as lithium-ion battery anodes", <i>Inorganic Chemistry</i> 2026, 65, 10948–10960.</p>
+        <p class="cap-th">ขอแสดงความยินดีกับปิงปิง ขวัญชนก ที่ผ่านการสอบวิทยานิพนธ์ระดับปริญญาโท เรื่อง Design and Synthesis of Polyethylene Terephthalate Waste-derived Metal-Organic Frameworks for Use as Sustainable Anode Materials in Lithium-Ion Batteries อย่างสมบูรณ์แบบ ขอบคุณคณะกรรมการสอบวิทยานิพนธ์และผู้เข้าฟังการสอบทุกท่านที่ร่วมแลกเปลี่ยนความรู้และประสบการณ์ ตั้งคำถาม และข้อเสนอแนะให้ได้อภิปรายร่วมกัน และขอขอบคุณผู้ร่วมวิจัยทุกท่านที่ได้มีส่วนสำคัญในการสร้างประสบการณ์วิจัยและการทำงานร่วมกันทั้งในและต่างประเทศให้แก่ปิงปิงในทุก ๆ โอกาส อีกหนึ่งความภูมิใจของ IPCRL ที่ได้บ่มเพาะมหาบัณฑิตมหาวิทยาลัยเชียงใหม่ของเรา</p>
+      </div>
+    </div>
+    <div class="news" id="news-2">
+      <div class="when">June 2026<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Collaboration visit · University of Science and Technology Beijing</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="7e12ff6405.jpg" alt="Thai team at the University of Science and Technology Beijing"><img src="779cf7c272.jpg" alt="Collaboration visit to USTB, Beijing"><img src="a6ee861c1f.jpg" alt="Collaboration visit to USTB, Beijing"></div>
+        <p class="cap">A collaboration visit to Prof. Peng Jiang at the University of Science and Technology Beijing, China. The Thai team, led by Assoc. Prof. Dr. Theeranun Siritanon with Saranphong Yimklan, Asst. Prof. Dr. Yothin Chimupala and Assoc. Prof. Dr. Suwit Suthirakun, works across materials synthesis, characterisation and performance testing, combined with DFT calculations and machine learning to design better-performing materials. Saranphong gave the seminar "Coordination Polymers &amp; Metal-Organic Frameworks: From Molecular Architecture to Applications".</p>
+        <p class="cap-th">6 มิถุนายน 2569 · ทริปความร่วมมือกับ Prof. Peng Jiang จาก University of Science and Technology Beijing ประเทศจีน โดยฝ่ายทีมไทยนำโดย รศ. ดร.ธีรนันท์ ศิริตานนท์ พร้อมด้วย รศ. ดร.ศรัญพงศ์ ยิ้มกลั่น และ ผศ. ดร.โยธิน ฉิมอุปละ งานวิจัยของทีมเป็นด้าน materials science ทั้งการสังเคราะห์ characterization การทดสอบประสิทธิภาพของวัสดุ ผสานกับการคำนวณด้าน DFT และ machine learning เพื่อออกแบบวัสดุให้มีประสิทธิภาพที่ดียิ่งขึ้น</p>
+      </div>
+    </div>
+    <div class="news" id="news-3">
+      <div class="when">May 2026<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">MSc thesis defence</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="93072d286e.jpg" alt="Thesis defence of Nithiwat Sammawipawekul with committee and labmates"><img src="eb482d6678.jpg" alt="MSc thesis defence and research life of Nithiwat Sammawipawekul"><img src="68958a93f0.jpg" alt="MSc thesis defence and research life of Nithiwat Sammawipawekul"><img src="249b1274d0.jpg" alt="MSc thesis defence and research life of Nithiwat Sammawipawekul"><img src="f21c3a1832.jpg" alt="MSc thesis defence and research life of Nithiwat Sammawipawekul"><img src="7e3ff1f2ae.jpg" alt="MSc thesis defence and research life of Nithiwat Sammawipawekul"><img src="961268a9a2.jpg" alt="MSc thesis defence and research life of Nithiwat Sammawipawekul"></div>
+        <p class="cap">Congratulations to Nithiwat Sammawipawekul (Webb) on passing his MSc thesis defence, "Structural engineering of dual-ligand-based metal-organic frameworks for use as novel anode materials in next-generation lithium-ion batteries", on 21 May 2026. He is the second MSc graduate of the laboratory and first author of our <i>Chemical Engineering Journal</i> 2024 paper on isostructural dual-ligand MOF anodes; part of his work was carried out at the SLRI synchrotron Beamline 1.1W.</p>
+        <p class="cap-th">ขอแสดงความยินดีกับนายนิธิวัต สัมมาวิภาวีกุล (เวป) ที่ผ่านการสอบวิทยานิพนธ์ระดับปริญญาโท เรื่อง Structural Engineering of Dual-Ligand-Based Metal-Organic Frameworks for Use as Novel Anode Materials in Next-generation Lithium Ion Batteries อย่างสมบูรณ์แบบ ขอบคุณคณะกรรมการสอบวิทยานิพนธ์และผู้เข้าฟังการสอบทุกท่านที่ตั้งคำถามและข้อเสนอแนะให้ได้อภิปรายร่วมกัน และขอขอบคุณผู้ร่วมวิจัยที่ได้มีส่วนสำคัญในการให้ประสบการณ์ ฝึกวิจัย ฝึกการทำงานร่วมกันผ่านงานวิจัยปริญญานิพนธ์ระดับปริญญาโททั้งในและต่างประเทศให้เวปในทุก ๆ โอกาส ผมภูมิใจในลูกศิษย์ปริญญาโทคนที่ 2 ของแล็บมาก ๆ ครับ</p>
+      </div>
+    </div>
+    <div class="news" id="news-4">
+      <div class="when">May 2026<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Publication · <i>Inorganic Chemistry</i> (ACS, open access)</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="81c25a5e70.jpg" alt="Research team group photo" style="aspect-ratio:4/3;max-width:560px"><img src="1de106238b.jpg" alt="Electrochemical performance of Co and Zn MOF anodes" style="object-fit:contain;background:#fff"><img src="1bedf407da.jpg" alt="DFT lithium insertion in Co and Zn MOFs" style="object-fit:contain;background:#fff"></div>
+        <p class="cap">"Metal-dependent lithiation behaviors in cobalt and zinc metal–organic frameworks as lithium-ion battery anodes" is published in <i>Inorganic Chemistry</i> (2026, 65, 10948–10960), with Kwanchanok Tungad and Nithiwat Sammawipawekul as first authors. Congratulations to Ping Ping, Webb and the whole team.</p>
+        <p class="cap-th">หนึ่งใน manuscript ของเราได้รับการตอบรับให้ตีพิมพ์ในวารสาร Inorganic Chemistry (Nature Index Journal) ของ American Chemical Society และเผยแพร่อย่างเป็นทางการแล้ว ขอแสดงความยินดีกับปิงปิง เวป และทีมวิจัยที่เข้มแข็งทุกคน งานนี้เริ่มต้นจาก MOFs ในอนุกรมที่แม้จะไม่ได้มีสถาปัตยกรรมเชิงโครงสร้างที่แปลกใหม่ แต่กลับซ่อนพฤติกรรมการเปลี่ยนแปลงโครงสร้างแบบผลึกเดี่ยวสู่ผลึกเดี่ยว (SCSC transformation) ผ่านปฏิกิริยาการแทนที่ลิแกนด์ ซึ่งยังไม่เคยมีใครรายงานอย่างละเอียดมาก่อน และพบว่า MOF โครงสร้างเดียวกันแต่โลหะอะตอมกลางต่างกันมีสมบัติทางเคมีไฟฟ้าต่างกัน ซึ่งอธิบายได้ด้วยเคมีเชิงคำนวณ</p>
+        <div class="roster" style="margin-top:1rem">
+          <div><div class="roster-h">From crystal growth to SCSC transformation</div><p class="cap-th" style="margin-top:.3rem">ปิงปิงและเวปค้นพบพฤติกรรม SCSC จากการสังเกตด้วยตาในห้องแล็บ บันทึกวิดีโอใต้กล้องจุลทรรศน์สเตอริโอ จนถึงการพิสูจน์ด้วย single-crystal X-ray diffraction ปิงปิงทำงานหนักกับการ validate กระบวนการสังเคราะห์ที่อ่อนไหว scale up และ scale out จนผลิตวัสดุได้เพียงพอสำหรับการทดสอบทางเคมีไฟฟ้า และพบศักยภาพสำหรับใช้เป็นแอโนดในแบตเตอรี่ลิเทียมไอออน</p></div>
+          <div><div class="roster-h">Old-school MOFs with energy-related potential</div><p class="cap-th" style="margin-top:.3rem">เหมือนเจอบ้านเก่าที่มีสถาปัตยกรรมน่าสนใจแล้วนำมาปัดฝุ่นหาฟังก์ชันใหม่ MOF อนุกรมนี้มีรายงานเชิงโครงสร้างมาก่อนแล้ว มีสมบัติ piezochromic การเร่งปฏิกิริยา และการกักเก็บแก๊ส แต่ยังไม่มีรายงานในบริบทเคมีไฟฟ้า เราเสนอแนวคิด metal-centre-dependent lithiation mechanism ของ isostructural MOFs ผ่านเคมีเชิงคำนวณโดย อ.สุวิทย์ และปริวุฒิ จาก มทส.</p></div>
+          <div><div class="roster-h">From plastic waste to functional MOFs</div><p class="cap-th" style="margin-top:.3rem">ลิแกนด์เตรียมจากการย่อยขยะขวดพลาสติก PET จริง ๆ ที่เก็บจากถังขยะในมหาวิทยาลัยเชียงใหม่และจากบ้านที่เชียงราย ด้วยปฏิกิริยาเคมีอย่างง่าย เชื่อมโยง waste valorisation ไปจนถึง advanced energy materials โดย อ.นัทธวัฒน์ ช่วยแนะแนวทางการสังเคราะห์และการแปลผล NMR ของลิแกนด์</p></div>
+          <div><div class="roster-h">Collaboration makes science complete</div><p class="cap-th" style="margin-top:.3rem">งานเคมีไฟฟ้าขอขอบคุณ อ.ฐปนีย์ และ อ.โยธิน สำหรับเครื่องมือในแล็บ Sci-CMU Battery Research อ.ธนภัทร กับการ validate ผล รวมถึงวินและน็อต งานนี้ได้รับการสนับสนุนจาก Fundamental Fund มช. ทุนการศึกษาจากมูลนิธิ ดร. บรูโน แวร์เดลมาน์ และโครงการ Open Access Publishing Agreement ภายใต้ ACS Thailand Consortium</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="news" id="news-5">
+      <div class="when">March 2026<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Best oral presentation · Undergraduate research conference</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="ffbd3e2cbe.jpg" alt="Group with award certificate in front of the Faculty of Science"><img src="32a01a1d8f.jpg" alt="Undergraduate oral presentation, Faculty of Science CMU"><img src="a2636e4ea4.jpg" alt="Undergraduate oral presentation, Faculty of Science CMU"><img src="6fbbf3e609.jpg" alt="Undergraduate oral presentation, Faculty of Science CMU"><img src="dcc324ced7.jpg" alt="Undergraduate oral presentation, Faculty of Science CMU"></div>
+        <p class="cap">Congratulations to Preechayaporn Jaikead (Somin) on winning the Oral Presentation Award in Chemistry at the Faculty of Science undergraduate research presentations, academic year 2025, for her project on coordination-compound photocatalysts, co-supervised with Asst. Prof. Dr. Yothin Chimupala.</p>
+        <p class="cap-th">12 มีนาคม 2569 · ยินดีกับโซมินที่รับรางวัลการนำเสนอผลงานแบบบรรยาย (Oral Presentation) สาขาวิชาเคมี ในการเสนอผลงานวิชาการของนักศึกษาระดับปริญญาตรี ปีการศึกษา 2568 และขอแสดงความยินดีกับนักศึกษาทุกคนที่ผ่านการนำเสนอผลงานทั้งแบบบรรยายและโปสเตอร์ประจำปีนี้</p>
+      </div>
+    </div>
+    <div class="news" id="news-6">
+      <div class="when">October 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">TEM experiments · Kyoto University, Uji (IJURC)</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="6f246f6de1.jpg" alt="Team at the High-Resolution Electron Spectromicroscope Building, ICR Kyoto University"><img src="08a5a67f0f.jpg" alt="STEM-EELS experiments at Kyoto University"><img src="08f7bfe16a.jpg" alt="STEM-EELS experiments at Kyoto University"></div>
+        <p class="cap">Back at the Institute for Chemical Research, Kyoto University (Uji campus), for TEM experiments under the International Joint Usage/Research Center (IJURC) programme. STEM-EELS spectrum imaging on the aberration-corrected JEM-ARM200F at the High-Resolution Electron Spectromicroscope Building, with Assoc. Prof. Dr. Thapanee Sarakonsri and the Sci-CMU Battery Research team.</p>
+        <p class="cap-th">30 ตุลาคม 2568 · กลับมาทำการทดลอง TEM อีกครั้งที่ Institute for Chemical Research มหาวิทยาลัยเกียวโต วิทยาเขตอุจิ ภายใต้โครงการ IJURC ร่วมกับ รศ. ดร.ฐปนีย์ สารครศรี และทีมวิจัยแบตเตอรี่ คณะวิทยาศาสตร์ มช.</p>
+      </div>
+    </div>
+    <div class="news" id="news-7">
+      <div class="when">October 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Nobel Prize in Chemistry 2025</span></div>
+      <div>
+        <p class="statement" style="font-size:clamp(1.3rem,2.2vw,1.7rem);max-width:40ch">"for the development of <b>metal–organic frameworks</b>"</p>
+        <p class="cap" style="margin-top:1rem">Congratulations to Susumu Kitagawa, Richard Robson and Omar M. Yaghi, awarded the 2025 Nobel Prize in Chemistry by the Royal Swedish Academy of Sciences on 8 October 2025. A landmark day for everyone who works on coordination polymers and MOFs, the very materials at the heart of our laboratory. <a href="https://www.nobelprize.org/prizes/chemistry/2025/summary/" style="color:var(--accent);border-bottom:1px solid var(--accent-2)">Read the announcement</a>.</p>
+        <p class="cap-th">8 ตุลาคม 2568 · ขอแสดงความยินดีกับ Susumu Kitagawa, Richard Robson และ Omar M. Yaghi ที่ได้รับรางวัลโนเบลสาขาเคมี ประจำปี 2025 จาก Royal Swedish Academy of Sciences "for the development of metal–organic frameworks" วันสำคัญของทุกคนที่ทำงานด้าน coordination polymers และ MOFs ซึ่งเป็นหัวใจของห้องปฏิบัติการของเรา</p>
+      </div>
+    </div>
+    <div class="news" id="news-8">
+      <div class="when">September 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Invited lecturer · Lab safety workshop, Maejo University</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="728dde63a1.jpg" alt="ESPReL Checklist workshop participants, Faculty of Science, Maejo University"></div>
+        <p class="cap">Invited lecturer at the workshop "Chemical laboratory safety standards (ESPReL Checklist)" held by the Faculty of Science, Maejo University, on 3 September 2025, speaking on national policy for chemical laboratory safety and on ESPReL components 2 and 3, chemical management and waste management. Asst. Prof. Dr. Yuttana Tongtuam (Faculty of Architecture, CMU) covered component 4, physical characteristics of the laboratory.</p>
+        <p class="cap-th">3 กันยายน 2568 · คณะวิทยาศาสตร์ มหาวิทยาลัยแม่โจ้ จัดการอบรมเชิงปฏิบัติการ เรื่อง มาตรฐานความปลอดภัยห้องปฏิบัติการที่เกี่ยวกับสารเคมี (ESPReL Checklist) ณ ห้องเอกภพวิทยา โดย รศ. ดร.ศรัญพงศ์ ยิ้มกลั่น บรรยายในหัวข้อ "นโยบายส่งเสริมความปลอดภัยของห้องปฏิบัติการที่เกี่ยวกับสารเคมีและการขับเคลื่อน" และ "การประเมินในระบบการสำรวจสภาพความปลอดภัยของห้องปฏิบัติการ องค์ประกอบที่ 2 และ 3: การจัดการสารเคมีและการจัดการของเสีย" และ ผศ. ดร.ยุทธนา ทองท้วม คณะสถาปัตยกรรมศาสตร์ มช. บรรยายองค์ประกอบที่ 4: ลักษณะทางกายภาพของห้องปฏิบัติการ โดยมี รศ.จักรพงษ์ พิมพ์พิมล รองอธิการบดี เป็นประธานเปิดโครงการ</p>
+      </div>
+    </div>
+    <div class="news" id="news-9">
+      <div class="when">August 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">CMU Annual Research Summit 2025 · 18–19 Aug, Chiang Mai Marriott Hotel</span></div>
+      <div>
+        <div class="photos"><img src="8ee45c21db.jpg" alt="CMU Annual Research Summit 2025"><img src="6139ae7389.jpg" alt="CMU Annual Research Summit 2025"><img src="2408d5f659.jpg" alt="CMU Annual Research Summit 2025"><img src="77caf9e500.jpg" alt="CMU Annual Research Summit 2025"></div>
+        <p class="cap">Chiang Mai MOFs meet potential users. At the CMU Annual Research Summit 2025 the group introduced researchers from PTT to our Chiang Mai MOF portfolio for carbon capture, green hydrogen production and storage, and Li-ion battery electrodes, and presented the scale-up of MOF production toward Li-ion anodes (Chem. Eng. J. 2024, 482, 148904) with Assoc. Prof. Dr. Thapanee Sarakonsri, Asst. Prof. Dr. Yothin Chimupala, Asst. Prof. Dr. Nathawat Semakul, Dr. Thanaphat Autthawong and the research team.</p>
+        <p class="cap-th">งาน CMU Annual Research Summit 2025 เชื่อมสะพานระหว่างนักวิจัย มช. ให้พบกับ Potential Users มีโอกาสได้เป็นตัวแทนกลุ่มวิจัยฯ แนะนำให้นักวิจัยจาก ปตท. รู้จักกับ Chiang Mai MOFs ทั้งหมด ที่มุ่งไปสู่การประยุกต์เป็นตัวเร่งปฏิกิริยา Carbon Capture การผลิตและการกักเก็บ Green Hydrogen รวมถึงวัสดุอิเล็กโทรดสำหรับแบตเตอรี่ลิเทียมไอออน เพื่อสนับสนุนเทคโนโลยีด้านการกักเก็บและผลิตพลังงานสะอาดร่วมกันในอนาคต ในโอกาสเดียวกันนี้ มีนักวิจัยเชิงรุกหลังปริญญาเอกภาคอุตสาหกรรม และนักศึกษาปริญญาตรี นักเรียนทุน พสวท. ที่ผ่านการฝึกงานกระบวนวิชา 203398 ณ The University of Bristol, UK เกี่ยวกับ MOF สำหรับเทคโนโลยีไฮโดรเจนเข้าร่วมด้วย</p>
+        <p class="cap-th" style="margin-top:.6rem">ร่วมนำเสนอการพัฒนา MOF และการขยายขนาดกำลังการผลิตไปสู่การใช้งานใน Li-ion Batteries งานวิจัยร่วมกับ รศ. ดร.ฐปนีย์ สารครศรี ผศ. ดร.โยธิน ฉิมอุปละ ผศ. ดร.นัทธวัฒน์ เสมากูล อ. ดร.ธนภัทร อัฐวงค์ และทีมวิจัย ขอขอบคุณศูนย์วิจัยวัสดุศาสตร์ คณะวิทยาศาสตร์ และมหาวิทยาลัยเชียงใหม่ ที่สร้างระบบนิเวศวิจัยให้บุคลากรทำงานร่วมกัน สนับสนุนทุนวิจัย และผลักดันการนำงานวิจัยสู่การใช้งานจริง</p>
+      </div>
+    </div>
+    <div class="news" id="news-10">
+      <div class="when">July 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">IChO 57 · Dubai, UAE</span></div>
+      <div>
+        <img class="photo" src="09f2490281.jpg" alt="Thailand delegation with their medals at the 57th International Chemistry Olympiad, Dubai">
+        <p class="cap">One gold, two silver and one bronze: congratulations to the Thai delegation at the 57th International Chemistry Olympiad, Dubai, United Arab Emirates, 5–14 July 2025. Saranphong served as Head Mentor of the Thai team.</p>
+        <p class="cap-th">ปรบมือดัง ๆ กับผลงานของผู้แทนเคมีโอลิมปิกประจำปีนี้ เปิดฉากวิชาแรกด้วย 1 เหรียญทอง 2 เหรียญเงิน และ 1 เหรียญทองแดง จากการแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 57 ระหว่างวันที่ 5–14 กรกฎาคม 2568 ณ เมืองดูไบ สหรัฐอาหรับเอมิเรตส์</p>
+        <div class="roster">
+          <div><div class="roster-h">Thai delegation · ผู้แทนประเทศไทย</div><ul><li>นางสาวรวิสรา โชคดีพาณิชย์ <span>เหรียญทอง · โรงเรียนกำเนิดวิทย์</span></li><li>นายพีรกร ตรีจักรขจร <span>เหรียญเงิน · โรงเรียนกำเนิดวิทย์</span></li><li>นายปัญญ์ แซ่จาง <span>เหรียญเงิน · โรงเรียนมหิดลวิทยานุสรณ์</span></li><li>นายดรัณ แม้นโกศล <span>เหรียญทองแดง · โรงเรียนสามเสนวิทยาลัย</span></li></ul></div>
+          <div><div class="roster-h">Mentor team · คณะอาจารย์ผู้ควบคุมทีม</div><ul><li>รศ. ดร.ศรัญพงศ์ ยิ้มกลั่น <span>หัวหน้าทีม · มหาวิทยาลัยเชียงใหม่</span></li><li>ผศ. ดร.ณัฐพงศ์ ไพบูลย์วรชาติ <span>รองหัวหน้าทีม · จุฬาลงกรณ์มหาวิทยาลัย</span></li><li>ผศ. ดร.ภูมิเดช พู่ทองคำ <span>ผู้ช่วยหัวหน้าทีม · จุฬาลงกรณ์มหาวิทยาลัย</span></li><li>รศ. ดร.จตุรงค์ สุภาพพร้อม <span>ผู้ช่วยหัวหน้าทีม (ผู้แทนมูลนิธิ สอวน.) · มหาวิทยาลัยนเรศวร</span></li><li>นายเจริญศักดิ์ เมืองแก้ว <span>ผู้จัดการทีม · สสวท.</span></li></ul></div>
+        </div>
+        <p class="cap-th" style="margin-top:1rem">คณะผู้แทนประเทศไทยเดินทางถึงประเทศไทยวันจันทร์ที่ 14 กรกฎาคม 2568 โดย สสวท. จัดพิธีแสดงความยินดี เวลา 20.30 น. บริเวณประตู 1 ชั้น 2 อาคารผู้โดยสารขาเข้า ท่าอากาศยานสุวรรณภูมิ</p>
+      </div>
+    </div>
+    <div class="news" id="news-11">
+      <div class="when">June 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Royal audience · Sra Pathum Palace</span></div>
+      <div>
+        <img class="photo" src="6155e7886d.jpg" alt="Thai Olympiad delegations and mentors granted an audience with HRH Princess Maha Chakri Sirindhorn at Sra Pathum Palace" style="aspect-ratio:4/3;max-width:100%">
+        <p class="cap">Her Royal Highness Princess Maha Chakri Sirindhorn graciously granted an audience to the Thai delegations to the 2025 International Mathematics and Science Olympiads and their mentors at Sra Pathum Palace, Bangkok, on 20 June 2025, before their departure. Saranphong was appointed Head Mentor of the chemistry team for the 57th International Chemistry Olympiad in Dubai.</p>
+        <p class="cap-th">สมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ สยามบรมราชกุมารี ทรงพระกรุณาโปรดเกล้าฯ ให้คณะผู้แทนประเทศไทยไปแข่งขันคณิตศาสตร์ วิทยาศาสตร์โอลิมปิกระหว่างประเทศ ประจำปี พ.ศ. 2568 และคณะอาจารย์ผู้ควบคุมทีมเข้าเฝ้าฯ ก่อนเดินทางไปแข่งขันโอลิมปิกวิชาการระหว่างประเทศ ในวันศุกร์ที่ 20 มิถุนายน 2568 เวลา 15.30 น. ณ วังสระปทุม กรุงเทพมหานคร ปีนี้ได้รับมอบหมายให้ปฏิบัติหน้าที่หัวหน้าทีมวิชาเคมี ร่วมนำคณะผู้แทนประเทศไทยไปแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 57 (IChO57) ณ เมืองดูไบ สหรัฐอาหรับเอมิเรตส์</p>
+      </div>
+    </div>
+    <div class="news" id="news-12">
+      <div class="when">June 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Final training camp for IChO 57 · Chiang Mai University</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="6608b479cb.jpg" alt="IChO 57 Thai team at Wat Phra That Doi Suthep"><img src="46efc95fec.jpg" alt="Final intensive training camp for IChO 57 at Chiang Mai University"><img src="6cefa3f81b.jpg" alt="Final intensive training camp for IChO 57 at Chiang Mai University"><img src="f8fc15d070.jpg" alt="Final intensive training camp for IChO 57 at Chiang Mai University"><img src="9aa6305395.jpg" alt="Final intensive training camp for IChO 57 at Chiang Mai University"><img src="681fd9d1e8.jpg" alt="Final intensive training camp for IChO 57 at Chiang Mai University"><img src="1c1ea36b9c.jpg" alt="Final intensive training camp for IChO 57 at Chiang Mai University"></div>
+        <p class="cap">Chiang Mai University hosted the Thai delegation to the 57th International Chemistry Olympiad for their final intensive training camp before departing for Dubai, taking over from Chulalongkorn University. Theory and practical sessions in the Department of Chemistry laboratories were rounded off with visits to Wat Phra That Doi Suthep and the NARIT Planetarium.</p>
+        <p class="cap-th">8 มิถุนายน 2568 · มหาวิทยาลัยเชียงใหม่เปิดบ้านต้อนรับผู้แทนประเทศไทยไปแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 57 รับไม้ต่อจากจุฬาฯ มาเข้าค่ายเตรียมความพร้อมแบบเข้มข้นที่ มช. ในรอบสุดท้ายก่อนเดินทาง</p>
+      </div>
+    </div>
+    <div class="news" id="news-13">
+      <div class="when">May 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">TChO21 · 19–23 May, Srinakharinwirot University, Bangkok</span></div>
+      <div>
+        <div class="photos"><img src="75a5744aba.jpg" alt="TChO21 at Srinakharinwirot University"><img src="55a0442a14.jpg" alt="TChO21 at Srinakharinwirot University"><img src="1458f3e9ef.jpg" alt="TChO21 at Srinakharinwirot University"><img src="e07a8376d3.jpg" alt="TChO21 at Srinakharinwirot University"><img src="d18e2f7d65.jpg" alt="TChO21 at Srinakharinwirot University"><img src="cc99117cca.jpg" alt="TChO21 at Srinakharinwirot University"></div>
+        <p class="cap">Three gold and two bronze medals for the POSN-CMU team at the 21st Thailand Chemistry Olympiad, with Jiraphat Amphai (Bunyawat Witthayalai School) taking the national top overall score, top theory score and top score in the North. Team mentors: Assoc. Prof. Dr. Saranphong Yimklan, Asst. Prof. Dr. Nathawat Semakul and Asst. Prof. Dr. Onanong Archiropanyo.</p>
+        <p class="cap-th">ขอแสดงความยินดีกับนักเรียนผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ คว้ารางวัลในการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 21 (TChO21) ณ มหาวิทยาลัยศรีนครินทรวิโรฒ กรุงเทพมหานคร</p>
+        <div class="roster">
+          <div><div class="roster-h">Medals · เหรียญรางวัล</div><ul>
+            <li>นายจิรพัส อำไพ <span>เหรียญทอง · โรงเรียนบุญวาทย์วิทยาลัย</span></li>
+            <li>นายณัฐวุฒิ ตั้งตัว <span>เหรียญทอง · โรงเรียนลำปางกัลยาณี</span></li>
+            <li>นายปัณณพงศ์ สงขกุล <span>เหรียญทอง · โรงเรียนมงฟอร์ตวิทยาลัย</span></li>
+            <li>นางสาวปิยมน คำลือ <span>เหรียญทองแดง · โรงเรียนสามัคคีวิทยาคม</span></li>
+            <li>นายวรัต เขมาลีลากุล <span>เหรียญทองแดง · โรงเรียนปรินส์รอยแยลส์วิทยาลัย</span></li>
+            <li>นายธนวิชญ์ เอื้อหยิ่งศักดิ์ <span>เกียรติบัตรเข้าร่วม · โรงเรียนปรินส์รอยแยลส์วิทยาลัย</span></li>
+          </ul></div>
+          <div><div class="roster-h">Special awards · รางวัลพิเศษ</div><ul>
+            <li>รางวัลคะแนนรวมสูงสุดของประเทศ <span>นายจิรพัส อำไพ · โรงเรียนบุญวาทย์วิทยาลัย</span></li>
+            <li>รางวัลคะแนนทฤษฎีสูงสุด <span>นายจิรพัส อำไพ · โรงเรียนบุญวาทย์วิทยาลัย</span></li>
+            <li>รางวัลคะแนนรวมสูงสุดภาคเหนือ <span>นายจิรพัส อำไพ · โรงเรียนบุญวาทย์วิทยาลัย</span></li>
+          </ul>
+          <div class="roster-h" style="margin-top:1rem">Mentors · อาจารย์ผู้ควบคุมทีม</div><ul>
+            <li>รศ. ดร.ศรัญพงศ์ ยิ้มกลั่น</li>
+            <li>ผศ. ดร.นัทธวัฒน์ เสมากูล</li>
+            <li>ผศ. ดร.อรอนงค์ อาร์คีโรปัญโญ</li>
+          </ul></div>
+        </div>
+        <p class="cap-th" style="margin-top:1rem">ขอขอบคุณทีมวิทยากรค่าย 1–2 วิทยากรค่ายอบรมเข้ม นักวิทยาศาสตร์และเจ้าหน้าที่ที่ร่วมกันส่งเสริมโอลิมปิกวิชาการและพัฒนามาตรฐานเคมีศึกษาแก่นักเรียนและครูใน 8 จังหวัดภาคเหนือตอนบนเรื่อยมานับตั้งแต่ปีการศึกษา 2543 สิ่งที่มีค่ามากกว่ารางวัลใด ๆ คือ ประสบการณ์ น้ำใจนักกีฬา และมิตรภาพอันดีระหว่างนักเรียน ครู อาจารย์จากการเข้าร่วมการแข่งขันครั้งนี้</p>
+      </div>
+    </div>
+    <div class="news" id="news-14">
+      <div class="when">April 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">POSN-CMU Chemistry Camp 2 · 24 Mar – 7 Apr, 25th cohort</span></div>
+      <div>
+        <div class="photos"><img src="33830b7e12.jpg" alt="POSN-CMU Chemistry Olympiad Camp 2, 2025"><img src="a356a26024.jpg" alt="POSN-CMU Chemistry Olympiad Camp 2, 2025"><img src="2088c4bbc3.jpg" alt="POSN-CMU Chemistry Olympiad Camp 2, 2025"><img src="0d3acbd307.jpg" alt="POSN-CMU Chemistry Olympiad Camp 2, 2025"><img src="439cc20f55.jpg" alt="POSN-CMU Chemistry Olympiad Camp 2, 2025"><img src="68afb220b7.jpg" alt="POSN-CMU Chemistry Olympiad Camp 2, 2025"></div>
+        <p class="cap">The 25th POSN-CMU Chemistry Olympiad Camp 2 closed on 7 April 2025 after a year like no other: floods in Nan, Phrae and Chiang Rai forced the Camp 1 entrance exam to be rescheduled and rewritten, Chiang Mai's worst flooding in a century struck just before Camp 1, and a major earthquake arrived during Camp 2. A record number of alumni returned to help, laboratory safety was tightened using the previous year's near-miss and incident log, and the curriculum and teaching format saw their largest revision in 25 years.</p>
+        <p class="cap-th">ปิดค่ายเคมีโอลิมปิก รุ่นที่ 25 เรียบร้อย ปีนี้ต้องบันทึกไว้ว่าเจอภัยพิบัติตั้งแต่สอบคัดเข้าค่าย 1 น้ำท่วมใหญ่เมืองน่าน-แพร่ และครึ่งหนึ่งของเชียงรายจำเป็นต้องเลื่อนสอบให้และออกข้อสอบใหม่ ก่อนเปิดค่าย 1 น้ำท่วมเมืองเชียงใหม่หนักสุดในรอบร้อยปี บ้านนักเรียนหลายคนจมน้ำก่อนไปเข้าค่ายที่ลำปาง มาค่าย 2 เจอแผ่นดินไหวใหญ่อีกครั้ง เจอภัยพิบัติแต่พี่ ๆ ค่ายเก่าก็กลับมาหาน้องมากที่สุดในประวัติศาสตร์เช่นกัน ห้องแล็บมีการจัดการความปลอดภัยในห้องปฏิบัติการโดยใช้บันทึก near-miss &amp; incident จากปีก่อนทำให้ปีนี้ปลอดภัยมากขึ้น หลักสูตรและรูปแบบการสอนปรับใหม่ครั้งใหญ่ที่สุดในรอบ 25 ปี คณาจารย์ พี่ ๆ น้อง ๆ เจ้าหน้าที่ห้องปฏิบัติการ พี่เลี้ยงค่าย ดูแลนักเรียนจนทุกคนถึงบ้าน นักเรียนภูมิลำเนาไกลจากเชียงใหม่ 420 กิโลเมตรเดินทางถึงบ้าน จ.น่าน โดยปลอดภัย ถือว่าสิ้นสุดค่ายที่น่าจดจำและควรบันทึกไว้อีก 1 ปี</p>
+      </div>
+    </div>
+    <div class="news" id="news-15">
+      <div class="when">April 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Promotion to Associate Professor</span></div>
+      <div>
+        <div class="photos"><img style="aspect-ratio:1/1" src="4e14cee768.jpg" alt="Department of Chemistry announcement of promotion to Associate Professor"><img src="6c62b7ab70.jpg" alt="Preparing the academic promotion dossier at the lab" style="aspect-ratio:1/1"><img src="0151716a1a.jpg" alt="Preparing the academic promotion dossier at the lab" style="aspect-ratio:1/1"><img src="f8261c1d95.jpg" alt="Preparing the academic promotion dossier at the lab" style="aspect-ratio:1/1"><img src="d9d01a3203.jpg" alt="Preparing the academic promotion dossier at the lab" style="aspect-ratio:1/1"><img src="d6bdab1ba1.jpg" alt="Preparing the academic promotion dossier at the lab" style="aspect-ratio:1/1"></div>
+        <p class="cap">Saranphong Yimklan has been promoted to Associate Professor of Inorganic Chemistry by resolution of the Chiang Mai University Council (meeting 3/2025), effective 17 June 2024. He joined the Department of Chemistry in 2016 after completing his PhD at the University of Liverpool, and was appointed Assistant Professor in 2022.</p>
+        <p class="cap-th">ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่ ขอแสดงความยินดีในโอกาสที่ ผศ. ดร.ศรัญพงศ์ ยิ้มกลั่น ได้รับการเลื่อนตำแหน่งเป็นรองศาสตราจารย์ สาขาเคมีอนินทรีย์ โดยมติของสภามหาวิทยาลัยเชียงใหม่ ครั้งที่ 3/2568 มีผลตั้งแต่วันที่ 17 มิถุนายน พ.ศ. 2567</p>
+        <p class="cap-th" style="margin-top:.6rem">รศ. ดร.ศรัญพงศ์ สำเร็จการศึกษาระดับปริญญาตรีและปริญญาโท สาขาเคมี จากมหาวิทยาลัยเชียงใหม่ ในปี พ.ศ. 2550 และ 2553 ตามลำดับ และสำเร็จการศึกษาระดับปริญญาเอก สาขาเคมี จาก University of Liverpool ในปี พ.ศ. 2559 จากนั้นได้เป็นอาจารย์ภาควิชาเคมี มหาวิทยาลัยเชียงใหม่ในปีเดียวกัน และได้รับการแต่งตั้งเป็นผู้ช่วยศาสตราจารย์ในปี พ.ศ. 2565 งานวิจัยในกลุ่มของ รศ. ดร.ศรัญพงศ์ เน้นเกี่ยวกับการสังเคราะห์สารอนินทรีย์ เคมีวัสดุ และผลิกศาสตร์รังสีเอกซ์ เพื่อศึกษาและแก้ไขปัญหาท้าทายในด้านการเร่งปฏิกิริยาเชิงแสง การกักเก็บพลังงาน และการประยุกต์ใช้อื่น ๆ ที่เกี่ยวข้อง</p>
+        <p class="cap-th" style="margin-top:.6rem">ภาพบรรยากาศการจัดเตรียมเอกสารประกอบการขอกำหนดตำแหน่งทางวิชาการ ทั้งผลงานวิจัยและเอกสารประกอบการสอน ที่ห้องปฏิบัติการ IPCRL โดยมีนักศึกษาช่วยบรรจุกล่อง</p>
+      </div>
+    </div>
+    <div class="news" id="news-16">
+      <div class="when">March 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Senior project defences</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="946b19d017.jpg" alt="Senior project defence, March 2025"><img src="9cccd928b7.jpg" alt="Senior project defence presentation"><img src="56e17b17c9.jpg" alt="Senior project defence presentation"><img src="ac096a06b8.jpg" alt="Senior project defence presentation"><img src="d88bbf62ed.jpg" alt="Senior project defence presentation"></div>
+        <p class="cap">Congratulations to our two final-year students on passing their senior project defences on 27 March 2025. Natthanon Arunmueang presented "Challenges in the synthesis of CO₂-based MOFs: investigating the sensitiveness of synthetic parameters for practical applications", and his labmate presented single-crystal X-ray studies of a zinc coordination polymer.</p>
+        <p class="cap-th">ยินดีกับนักศึกษาทั้งสองคนที่สอบผ่านปริญญานิพนธ์ระดับปริญญาตรีครับ</p>
+      </div>
+    </div>
+    <div class="news" id="news-17">
+      <div class="when">March 2025<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Research internship · University of Bristol, UK</span></div>
+      <div>
+        <div class="photos"><img src="06a839f660.jpg" alt="Send-off at Chiang Mai airport"><img src="c5a9b563c3.jpg" alt="Preechayaporn Jaikead in Bristol" style="object-position:center 35%"></div>
+        <p class="cap">Sending off Preechayaporn Jaikead, a DPST scholar in the group, for a three-month research internship (course 203398) at the University of Bristol, United Kingdom, working on MOFs for hydrogen technologies.</p>
+        <p class="cap-th">27 มีนาคม 2568 · ส่งนางสาวปรีชญาพร ใจเกิด นักศึกษาทุน พสวท. ไปฝึกงานระยะสั้น 3 เดือน ท่องยุทธจักรเคมีซีกโลกตะวันตกที่ The University of Bristol สหราชอาณาจักร</p>
+      </div>
+    </div>
+    <div class="news" id="news-18">
+      <div class="when">December 2024<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Outstanding Teaching Award &amp; Outstanding Research Article Awards</span></div>
+      <div>
+        <div class="photos"><img src="f742a91f20.jpg" alt="Outstanding Teaching Award ceremony, Faculty of Science CMU, 25 December 2024" style="aspect-ratio:1/1"><img src="242b5f69b0.jpg" alt="Outstanding Teaching Award ceremony, Faculty of Science CMU, 25 December 2024" style="aspect-ratio:1/1"><img src="6a21087fae.jpg" alt="Outstanding Teaching Award ceremony, Faculty of Science CMU, 25 December 2024" style="aspect-ratio:1/1"><img src="e560841be7.jpg" alt="Outstanding Teaching Award ceremony, Faculty of Science CMU, 25 December 2024" style="aspect-ratio:1/1"></div>
+        <p class="cap">At the Faculty of Science annual staff meeting on 25 December 2024, Saranphong received the Outstanding Teaching Award, Faculty of Science, Chiang Mai University, academic year 2024, together with two Outstanding Research Article Awards for "Isostructural dual-ligand-based MOFs with different metal centers in response to diverse capacity lithium-ion battery anode" (<i>Chemical Engineering Journal</i>, IF 13.4): highest-impact-factor journal article in JCR, and 98th percentile in Industrial and Manufacturing Engineering.</p>
+        <p class="cap-th">ขอขอบคุณกำลังใจจากทุกท่านเนื่องในโอกาสได้รับรางวัลอาจารย์ผู้สอนดีเด่น คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่ ประจำปีการศึกษา 2567 รางวัลบทความวิจัยดีเด่นที่ได้รับการตีพิมพ์ในวารสารวิชาการนานาชาติที่มีค่า Impact Factor ใน JCR สูงสุด และรางวัลบทความวิจัยดีเด่นที่ได้รับการตีพิมพ์ในวารสารเปอร์เซ็นไทล์ที่ 98 สาขา Industrial and Manufacturing Engineering เรื่อง Isostructural dual-ligand-based MOFs with different metal centers in response to diverse capacity lithium-ion battery anode ในวารสาร Chemical Engineering Journal (Impact Factor 13.4) ขอส่งต่อความปรารถนาดีไปยังลูกศิษย์และทีมวิจัย Sci-CMU Battery Research ทุกท่านที่ร่วมกันสร้างสรรค์ผลงานวิจัยร่วมกัน</p>
+      </div>
+    </div>
+    <div class="news" id="news-19">
+      <div class="when">October 2024<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Panel discussion · MSAT "Carbon Negative BECCUS"</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="5e94fe2a9d.jpg" alt="Panel discussion on MOFs vs amine absorption at MSAT" style="aspect-ratio:4/3;max-width:560px"><img src="5d62feacfb.jpg" alt="Saranphong Yimklan presenting MOF introduction at MSAT BECCUS" style="aspect-ratio:1/1"><img src="7e42496f8a.jpg" alt="Saranphong Yimklan presenting MOF introduction at MSAT BECCUS" style="aspect-ratio:1/1"></div>
+        <p class="cap">Panellist in "Metal-Organic Frameworks (MOFs) vs Amine Absorption: Thailand's opportunity?" at the Materials Science and Technology Conference (MSAT) "Carbon Negative BECCUS", 25 October 2024, giving a brief introduction to MOFs, from Prussian blue to reticular chemistry, and to anion-controlled synthesis in our Cu(II) frameworks.</p>
+        <p class="cap-th">25 ตุลาคม 2567 · ร่วมเสวนาในหัวข้อ "Metal-Organic Frameworks (MOFs) vs Amine Absorption: Thailand's opportunity?" ในงานประชุมวิชาการ Materials Science and Technology Conference (MSAT) "Carbon Negative BECCUS" ร่วมกับ ผศ. ดร.โยธิน ฉิมอุปละ</p>
+      </div>
+    </div>
+    <div class="news" id="news-20">
+      <div class="when">September 2024<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Big Cleaning Day · IPCRL</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="d9eea286c6.jpg" alt="Big Cleaning Day collage: students repainting and rebuilding the lab office" style="aspect-ratio:1/1;max-width:560px"><img src="1f7d89c6bf.jpg" alt="Students in the renovated IPCRL office" style="aspect-ratio:1/1"><img src="922ab2cf67.jpg" alt="Students in the renovated IPCRL office" style="aspect-ratio:1/1"></div>
+        <p class="cap">Big Cleaning Day at the laboratory. Students pitched in to repaint and rebuild the glass-walled office, gaining seven square metres of workspace in exchange for seven square metres of bench space, so that everyone can use our limited room as efficiently and safely as possible.</p>
+        <p class="cap-th">15 กันยายน 2567 · Big Cleaning Day นักศึกษามาช่วยจัดห้อง ขยายห้องทำงานเพิ่ม 7 ตารางเมตร แลกกับพื้นที่ทำแล็บที่ลดลง 7 ตารางเมตร พยายามบริหารจัดการทรัพยากรที่มีอย่างจำกัดให้สมาชิกใช้พื้นที่คุ้มและปลอดภัยที่สุด</p>
+      </div>
+    </div>
+    <div class="news" id="news-21">
+      <div class="when">July 2024<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">IChO 56 · Riyadh, Saudi Arabia</span></div>
+      <div>
+        <img class="photo" src="b30ec38447.jpg" alt="Thailand delegation send-off ceremony at Suvarnabhumi Airport">
+        <p class="cap">Three silver medals and one bronze for the Thai delegation at the 56th International Chemistry Olympiad, Riyadh, Kingdom of Saudi Arabia, 21–30 July 2024. Saranphong travelled as Mentor (Deputy Head) of the team.</p>
+        <p class="cap-th">ยินดีกับผู้แทนประเทศไทย คว้า 3 เหรียญเงิน 1 เหรียญทองแดง จากการแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 56 ระหว่างวันที่ 21–30 กรกฎาคม 2567 ณ กรุงริยาด ราชอาณาจักรซาอุดีอาระเบีย</p>
+        <div class="roster">
+          <div><div class="roster-h">Thai delegation · ผู้แทนประเทศไทย</div><ul><li>นายกานต์ธเนศ เนตรประภิศ <span>โรงเรียนกรรณสูตศึกษาลัย</span></li><li>นายแทนชนม์ บุญครอง <span>โรงเรียนกำเนิดวิทย์</span></li><li>นายพีรกร ตรีจักรขจร <span>โรงเรียนกำเนิดวิทย์</span></li><li>นายพีรดนย์ แซ่จึง <span>โรงเรียนมหิดลวิทยานุสรณ์</span></li></ul></div>
+          <div><div class="roster-h">Mentor team · คณะอาจารย์ผู้ควบคุมทีม</div><ul><li>รศ. ดร.ไพบูลย์ เงินมีศรี <span>หัวหน้าทีม · มหาวิทยาลัยเกษตรศาสตร์</span></li><li>ผศ. ดร.ศรัญพงศ์ ยิ้มกลั่น <span>รองหัวหน้าทีม · มหาวิทยาลัยเชียงใหม่</span></li><li>ผศ. ดร.ณัฐพงศ์ ไพบูลย์วรชาติ <span>ผู้ช่วยหัวหน้าทีม · จุฬาลงกรณ์มหาวิทยาลัย</span></li><li>นายเจริญศักดิ์ เมืองแก้ว <span>ผู้จัดการทีม · สสวท.</span></li><li>ผศ. ดร.ภูมิเดช พู่ทองคำ <span>ผู้สังเกตการณ์ สอวน. · จุฬาลงกรณ์มหาวิทยาลัย</span></li></ul></div>
+        </div>
+        <p class="cap-th" style="margin-top:1rem">พิธีส่งผู้แทนประเทศไทย วันที่ 20 กรกฎาคม 2567 เวลา 23.00 น. ณ ท่าอากาศยานสุวรรณภูมิ โดย ดร.ชัยวุฒิ เลิศวนสิริวรรณ ผู้ช่วยผู้อำนวยการ สสวท. เป็นประธานในพิธี</p>
+      </div>
+    </div>
+    <div class="news" id="news-22">
+      <div class="when">June 2024<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Royal audience · Sra Pathum Palace</span></div>
+      <div>
+        <img class="photo" src="d9871e8577.jpg" alt="Thai Olympiad delegations and mentors granted an audience with HRH Princess Maha Chakri Sirindhorn at Sra Pathum Palace, 2024" style="aspect-ratio:3/2;max-width:100%">
+        <p class="cap">Her Royal Highness Princess Maha Chakri Sirindhorn graciously granted an audience to the Thai delegations to the 2024 International Mathematics and Science Olympiads and their mentors at Sra Pathum Palace, Bangkok, on 20 June 2024, before their departure. Saranphong was appointed Mentor (Deputy Head) of the chemistry team for the 56th International Chemistry Olympiad in Riyadh.</p>
+        <p class="cap-th">สมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ สยามบรมราชกุมารี ทรงพระกรุณาโปรดเกล้าฯ ให้คณะผู้แทนประเทศไทยไปแข่งขันคณิตศาสตร์ วิทยาศาสตร์โอลิมปิกระหว่างประเทศ ประจำปี พ.ศ. 2567 และคณะอาจารย์ผู้ควบคุมทีมเข้าเฝ้าฯ ก่อนเดินทางไปแข่งขันโอลิมปิกวิชาการระหว่างประเทศ ในวันพฤหัสบดีที่ 20 มิถุนายน 2567 เวลา 09.00 น. ณ วังสระปทุม กรุงเทพมหานคร ปีนี้ได้รับมอบหมายให้ปฏิบัติหน้าที่รองหัวหน้าทีมวิชาเคมี ร่วมนำคณะผู้แทนประเทศไทยไปแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 56 (IChO56) ณ กรุงริยาด ราชอาณาจักรซาอุดีอาระเบีย</p>
+      </div>
+    </div>
+    <div class="news" id="news-23">
+      <div class="when">June 2024<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">Invited lecturer · CMU SHE lab safety training "SAFER"</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="639ec4ffa6.jpg" alt="Speakers and audience at the CMU SHE lab safety training 2024" style="aspect-ratio:4/3;max-width:560px"><img src="41aad6cd7c.jpg" alt="Saranphong Yimklan lecturing on waste treatment and disposal"><img src="4f9baf2ab7.jpg" alt="Speakers of the CMU SHE training" style="aspect-ratio:1/1;object-fit:contain;background:#fff"></div>
+        <p class="cap">Invited lecturer on chemical waste treatment and disposal at "Chemical &amp; Hazardous Waste Management and Laboratory Safety, Chiang Mai University 2024" (theme SAFER), organised by the CMU Safety, Occupational Health and Environment Centre (CMU SHE) on 26 June 2024, on site and via Zoom, with more than 600 participants.</p>
+        <p class="cap-th">26 มิถุนายน 2567 · ศูนย์บริหารจัดการความปลอดภัย อาชีวอนามัยและสภาพแวดล้อมในการทำงาน มหาวิทยาลัยเชียงใหม่ (CMU SHE) จัดอบรม "การจัดการสารเคมี ของเสียอันตรายและความปลอดภัยในห้องปฏิบัติการ มหาวิทยาลัยเชียงใหม่ ประจำปี 2567" ใน Theme SAFER ณ ห้องประชุม 201 สำนักบริการเทคโนโลยีสารสนเทศ และผ่าน Zoom มีผู้เข้าร่วมมากกว่า 600 คน โดย ผศ. ดร.ศรัญพงศ์ ยิ้มกลั่น ร่วมเป็นวิทยากรบรรยายเรื่องการบำบัดและกำจัดของเสีย ร่วมกับ รศ. ดร.พัชณี แสงทอง ผศ. ดร.ยุทธนา ทองท้วม รศ. ดร.นัทธี สุรีย์ และ ผศ. นพ.กัมปนาท วังแสน</p>
+      </div>
+    </div>
+    <div class="news" id="news-24">
+      <div class="when">July 2023<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">IChO 55 · Zürich, Switzerland</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="26cdce9a21.jpg" alt="Thai team with medals at IChO 55, Zurich" style="aspect-ratio:4/3;max-width:560px"><img src="683cc21143.jpg" alt="IChO 55 Zurich"><img src="e0745d32bf.jpg" alt="IChO 55 Zurich"><img src="d9c837c094.jpg" alt="IChO 55 Zurich"><img src="7e86a6f585.jpg" alt="IChO 55 Zurich"></div>
+        <p class="cap">Four medals for the Thai delegation at the 55th International Chemistry Olympiad in Zürich, Switzerland, 16–25 July 2023. Saranphong joined the delegation as POSN observer and assistant mentor, meeting team leaders from around the world and bringing home ideas for the Thailand Chemistry Olympiad and for chemistry education standards at the POSN-CMU centre and nationwide.</p>
+        <p class="cap-th">25 กรกฎาคม 2566 · ออกเดินทางกลับประเทศไทย หลังสิ้นสุดการปฏิบัติหน้าที่สังเกตการณ์และทำหน้าที่ผู้ช่วยหัวหน้าทีมประเทศไทยในการแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 55 (IChO55) ณ เมืองซูริก สมาพันธรัฐสวิส ทีมผู้แทนประเทศไทยคว้า 4 เหรียญรางวัลจากการแข่งขันครั้งนี้ การเป็นอาจารย์ผู้แทนศูนย์ สอวน. เข้าร่วมครั้งนี้ได้เจอผู้คุมทีมจากประเทศต่าง ๆ ได้รับประสบการณ์และไอเดียมากมายในการพัฒนาการแข่งขันเคมีโอลิมปิกระดับชาติ ประเทศไทย และการพัฒนามาตรฐานเคมีศึกษาของศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่และทั่วประเทศ ขอขอบคุณมูลนิธิ สอวน. และ สสวท. สำหรับโอกาสดี ๆ และการสนับสนุนค่าใช้จ่ายทั้งหมดตลอดการเดินทางท่องยุทธจักรเคมีซีกโลกตะวันตกครั้งนี้</p>
+      </div>
+    </div>
+    <div class="news" id="news-25">
+      <div class="when">July 2017<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">IChO 49 · Nakhon Pathom, Thailand</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="de92646079.jpg" alt="International Jury voting session at IChO 49"><img src="ec0d4ea11f.jpg" alt="Scientific Committee members at the IChO 49 entrance gate" style="object-position:center 40%"><img src="04194f5cc9.jpg" alt="Arbitration session at IChO 49"><img src="8a68900117.jpg" alt="Arbitration session at IChO 49"><img src="6bc658b278.jpg" alt="Arbitration session at IChO 49"></div>
+        <p class="cap">Thailand hosted the 49th International Chemistry Olympiad, 6–15 July 2017, under the theme "Bonding the World with Chemistry". Saranphong served on the Scientific Committee, grading examination papers and sitting in arbitration sessions with mentors from around the world.</p>
+        <p class="cap-th">14 กรกฎาคม 2560 · สิ้นสุดภารกิจกรรมการฝ่ายวิชาการ-ตรวจข้อสอบ และ Arbitration ในการแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 49 (IChO49) ได้รับประสบการณ์มากมาย นักเรียนจากหลายประเทศเก่งมาก ๆ หวังว่าการแข่งขันเคมีโอลิมปิกระหว่างประเทศจะเป็นกลไกหนึ่งที่ช่วยพัฒนาเคมีศึกษา (Chemistry Education) ในแต่ละประเทศที่เข้าแข่งขันได้ตามวัตถุประสงค์</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Teaching</p><h2 style="margin-top:.6rem">Courses at Chiang Mai University</h2></div>
+      <p class="lead">Inorganic chemistry from first principles to the research frontier, for BSc and BEd (Chemistry) students and the graduate programme. Recipient of the Faculty of Science Outstanding Teaching Award 2024.</p>
+    </div>
+    <h3 class="sub">Undergraduate</h3>
+    <div class="courses">
+      <div class="course"><div class="code">CHEM 211</div><div class="name">Fundamental Inorganic Chemistry</div></div>
+      <div class="course"><div class="code">CHEM 315</div><div class="name">Symmetry &amp; Bonding</div></div>
+      <div class="course"><div class="code">CHEM 413</div><div class="name">Inorganic Spectroscopy</div></div>
+      <div class="course"><div class="code">CHEM 415</div><div class="name">Frontier Inorganic Materials Chemistry</div></div>
+      <div class="course"><div class="code">CHEM 458</div><div class="name">Reticular Chemistry and Crystal Engineering</div></div>
+      <div class="course"><div class="code">CHEM 459</div><div class="name">X-ray Crystallography in Practice</div></div>
+      <div class="course"><div class="code">CHEM 300</div><div class="name">Basic Skills &amp; Ethics in Science</div></div>
+      <div class="course"><div class="code">CHEM 352</div><div class="name">Safety in Chemistry Laboratory</div></div>
+      <div class="course"><div class="code">CHEM 115</div><div class="name">Chemistry Laboratory</div></div>
+    </div>
+    <h3 class="sub" style="margin-top:2.5rem">Graduate</h3>
+    <div class="courses">
+      <div class="course"><div class="code">CHEM 714</div><div class="name">Comprehensive Inorganic Chemistry</div></div>
+      <div class="course"><div class="code">CHEM 812</div><div class="name">Coordination Chemistry</div></div>
+      <div class="course"><div class="code">CHEM 815</div><div class="name">Coordination Polymers &amp; Metal-organic Frameworks</div></div>
+      <div class="course"><div class="code">CHEM 823</div><div class="name">Molecular Structures and Interactions</div></div>
+      <div class="course"><div class="code">CHEM 755</div><div class="name">Professional Handling and Management of Chemical Hazards</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="alumni">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Alumni</p><h2 style="margin-top:.6rem">Where our people have been</h2></div>
+      <p class="lead">Postdoctoral researchers, graduate students, undergraduate project students and interns who have trained in the laboratory since 2016.</p>
+    </div>
+    <div class="alumni">
+      <div>
+        <h3>Postdoctoral researcher</h3>
+        <ul class="al">
+          <li><span class="y"></span><img class="av" src="2e14774c3a.jpg" alt="Satienrapong Ngamsomrit"><div class="n">Satienrapong Ngamsomrit</div></li>
+        </ul>
+        <h3 style="margin-top:2rem">MSc</h3>
+        <ul class="al">
+          <li><span class="y">2021</span><img class="av" src="37c2c84c30.jpg" alt="Nippich Kaeosamut"><div class="n">Nippich Kaeosamut<span>Synthesis of new coordination polymers of zinc with structural transformation and photocatalysis</span></div></li>
+          <li><span class="y">2025</span><img class="av" src="bd253c155f.jpg" alt="Nithiwat Sammawipawekul"><div class="n">Nithiwat Sammawipawekul<span>Structural engineering of dual-ligand MOF anodes for Li-ion batteries</span></div></li>
+          <li><span class="y">2026</span><img class="av" src="c01de4b532.jpg" alt="Kwanchanok Tungad"><div class="n">Kwanchanok Tungad<span>PET waste-derived MOFs as sustainable Li-ion battery anodes</span></div></li>
+        </ul>
+      </div>
+      <div>
+        <h3>BSc</h3>
+        <ul class="al">
+          <li><span class="y">2017</span><img class="av" src="5e64ee1f7e.jpg" alt="Siam Pipatpunlop"><div class="n">Siam Pipatpunlop</div></li>
+          <li><span class="y">2018</span><img class="av" src="f92fd2ac6e.jpg" alt="Saran Sukchit"><div class="n">Saran Sukchit</div></li>
+          <li><span class="y">2019</span><img class="av" src="f79b65a129.jpg" alt="Pasu Inphak"><div class="n">Pasu Inphak</div></li>
+          <li><span class="y">2021</span><img class="av" src="b9307116c1.jpg" alt="Sahadsawat Tonkaew"><div class="n">Sahadsawat Tonkaew</div></li>
+          <li><span class="y">2022</span><img class="av" src="bd253c155f.jpg" alt="Nithiwat Sammawipawekul"><div class="n">Nithiwat Sammawipawekul</div></li>
+          <li><span class="y">2023</span><img class="av" src="c01de4b532.jpg" alt="Kwanchanok Tungad"><div class="n">Kwanchanok Tungad</div></li>
+          <li><span class="y">2024</span><img class="av" src="ee04ef86d0.jpg" alt="Pattarapon Kwangusen"><div class="n">Pattarapon Kwangusen</div></li>
+          <li><span class="y">2024</span><img class="av" src="3211084405.jpg" alt="Natthanon Arunmueang"><div class="n">Natthanon Arunmueang</div></li>
+          <li><span class="y">2025</span><img class="av" src="b4ed33c702.jpg" alt="Preechayaporn Jaikead"><div class="n">Preechayaporn Jaikead</div></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Internship students</h3>
+        <ul class="al">
+          <li><span class="y"></span><img class="av" src="d0fefc58d7.jpg" alt="Natdanai Saipan"><div class="n">Natdanai Saipan<span>Cooperative education student, BSc Physics, Walailak University · DPST scholar</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2 style="margin-top:.6rem;font-size:clamp(2rem,3.6vw,2.8rem)">Get in touch</h2>
+      <img src="a0054b7e23.jpg" alt="Office SCB2306, Science Complex Building II (SCB2), Faculty of Science" style="width:100%;max-width:520px;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule);margin-top:1.4rem">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;max-width:520px;margin-top:.5rem"><img src="0c54352b1a.jpg" alt="Office SCB2306 and its window orchids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;border:1px solid var(--rule)"><img src="9b0da18996.jpg" alt="Office SCB2306 and its window orchids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;border:1px solid var(--rule)"><img src="f75f6590d2.jpg" alt="Office SCB2306 and its window orchids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;border:1px solid var(--rule)"><img src="7ae3193cf6.jpg" alt="Office SCB2306 and its window orchids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;border:1px solid var(--rule)"></div>
+      <p class="cap-th" style="margin-top:.5rem;font-size:.85rem;color:var(--ink-3)">ห้องทำงาน SCB2306 อาคาร 40 ปี คณะวิทยาศาสตร์</p>
+      <p class="addr" style="margin-top:1rem"><b>Assoc. Prof. Dr. Saranphong Yimklan</b><br>Office SCB2306, Science Complex Building II (SCB2)<br>Department of Chemistry, Faculty of Science<br>Chiang Mai University<br>239 Huay Kaew Road, Suthep, Chiang Mai 50200, Thailand</p>
+      <div class="mail"><span id="email">Saranphong.Yimklan@cmu.ac.th</span><button type="button" id="copyBtn">Copy</button></div>
+    </div>
+    <div class="join">
+      <h3>Join the group</h3>
+      <p>We welcome undergraduate project students, MSc and PhD candidates, and visiting researchers interested in coordination polymers, MOFs, single-crystal X-ray diffraction and materials for energy and the environment. Write to us with a short CV and a few lines on what you would like to work on.</p>
+      <p style="margin-top:1rem">Synchrotron users at SLRI Beamline 1.1W; alumni of Beamline I19, Diamond Light Source.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Yimklan Research Group · Department of Chemistry, Chiang Mai University</span>
+    <span>Coordination polymers · MOFs · Crystallography</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('copyBtn'),e=document.getElementById('email');
+  if(!b)return;
+  b.addEventListener('click',function(){
+    var t=e.textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(e);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)}).catch(sel);
+    }else sel();
+  });
+})();
+
+(function(){
+  var grid=document.getElementById('ngrid'),all=document.getElementById('allnews'),btn=document.getElementById('moreNews');
+  if(!grid)return;
+  function showAll(){all.hidden=false;grid.classList.add('all');btn.textContent='Hide full stories';}
+  function hideAll(){all.hidden=true;grid.classList.remove('all');btn.textContent='View all news';}
+  // fill card thumbnails from the first photo of each full story (no duplicate data)
+  Array.prototype.forEach.call(grid.querySelectorAll('.ncard'),function(a){
+    var t=document.getElementById(a.getAttribute('data-target')); var th=a.querySelector('.thumb');
+    var im=t&&t.querySelector('img'); if(im&&th&&!th.firstChild){var c=document.createElement('img');c.src=im.src;c.alt='';th.appendChild(c);}
+    else if(th&&!th.firstChild){th.innerHTML='<div class="nothumb">◆</div>';}
+  });
+  btn.addEventListener('click',function(){all.hidden?showAll():hideAll();});
+  grid.addEventListener('click',function(e){
+    var a=e.target.closest('.ncard'); if(!a)return;
+    e.preventDefault(); showAll();
+    var t=document.getElementById(a.getAttribute('data-target'));
+    if(t){t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+  if(location.hash&&/^#news-\d+$/.test(location.hash)){showAll();var t=document.querySelector(location.hash);if(t)setTimeout(function(){t.scrollIntoView();},50);}
+})();
+</script>
+
+</body>
+</html>
