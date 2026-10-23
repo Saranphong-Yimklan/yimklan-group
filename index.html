@@ -53,7 +53,31 @@ p{margin:0}
 .brand span{color:var(--accent)}
 .links{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
 .links a:hover{color:var(--accent)}
-@media (max-width:720px){.links{display:none}}
+.navright{display:flex;align-items:center;gap:.6rem;flex:0 0 auto}
+.langsw{display:flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden;flex:0 0 auto}
+.langsw .lang{padding:.4rem .6rem;font-size:.72rem;letter-spacing:.06em;background:var(--card);color:var(--ink-2);border:0;cursor:pointer;font-family:var(--body);line-height:1.2}
+.langsw .lang+.lang{border-left:1px solid var(--rule)}
+.langsw .lang[aria-pressed="true"]{background:var(--accent);color:#fff}
+:root[data-lang="th"] .news div:has(> .cap-th) > .cap{display:none}
+.menubtn{display:none;width:2.5rem;height:2.5rem;align-items:center;justify-content:center;border:1px solid var(--rule);border-radius:3px;background:var(--card);cursor:pointer;flex:0 0 auto;padding:0}
+.menubtn i{display:block;width:1.05rem;height:1.5px;background:var(--ink);position:relative;transition:background .2s}
+.menubtn i::before,.menubtn i::after{content:"";position:absolute;left:0;width:100%;height:1.5px;background:var(--ink);transition:transform .25s,top .25s}
+.menubtn i::before{top:-5px}
+.menubtn i::after{top:5px}
+.menubtn[aria-expanded="true"] i{background:transparent}
+.menubtn[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+.menubtn[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+section[id],header[id]{scroll-margin-top:4.6rem}
+@media (max-width:720px){
+  .menubtn{display:flex}
+  .nav .wrap{flex-wrap:nowrap;gap:.8rem}
+  .brand{font-size:1.05rem}
+  .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;flex-wrap:nowrap;gap:0;background:var(--bg);border-bottom:1px solid var(--rule);box-shadow:0 20px 34px -24px rgba(0,0,0,.5);padding:.25rem 0;max-height:74vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .links.open{display:flex}
+  .links a{padding:.9rem 1.3rem;font-size:.78rem;border-bottom:1px solid var(--rule)}
+  .links a:last-child{border-bottom:0}
+  section[id],header[id]{scroll-margin-top:4rem}
+}
 
 /* hero */
 .labhero{border-bottom:1px solid var(--rule)}
@@ -325,7 +349,7 @@ h3.sub{font-size:1.45rem;margin-bottom:1rem}
 .pgal{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.7rem;margin-top:1.4rem}
 .pgal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
 .profile .now{color:var(--ink);font-weight:500;border-top:1px solid var(--rule);padding-top:.9rem}
-@media (max-width:560px){.profile{grid-template-columns:1fr}.profile>img{width:150px;height:150px}.pgal{grid-template-columns:1fr}}
+@media (max-width:560px){.profile{grid-template-columns:1fr}.profile>img{width:150px;height:150px}.pgal{grid-template-columns:1fr}.pbox{padding:1.5rem 1.2rem;max-height:92vh}}
 footer{border-top:1px solid var(--rule);padding-block:2rem;font-size:.8rem;color:var(--ink-3)}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 </style>
@@ -333,40 +357,47 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <nav class="nav">
   <div class="wrap">
     <a class="brand" href="#top">IPCRL<span> Yimklan Group</span></a>
-    <div class="links">
-      <a href="#sy">Saranphong</a>
-      <a href="#members">Members</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#grants">Grants &amp; Awards</a>
-      <a href="#news">News</a>
-      <a href="#olympiad">Olympiad</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#lablife">Lab Life</a>
-      <a href="#alumni">Alumni</a>
-      <a href="#structures">Structures</a>
-      <a href="#contact">Contact</a>
+    <div class="links" id="navlinks">
+      <a href="#sy" data-th="ศรัญพงศ์">Saranphong</a>
+      <a href="#members" data-th="สมาชิก">Members</a>
+      <a href="#research" data-th="งานวิจัย">Research</a>
+      <a href="#publications" data-th="ผลงานตีพิมพ์">Publications</a>
+      <a href="#grants" data-th="ทุนวิจัยและรางวัล">Grants &amp; Awards</a>
+      <a href="#news" data-th="ข่าว">News</a>
+      <a href="#olympiad" data-th="โอลิมปิก">Olympiad</a>
+      <a href="#teaching" data-th="การสอน">Teaching</a>
+      <a href="#lablife" data-th="ชีวิตในแล็บ">Lab Life</a>
+      <a href="#alumni" data-th="ศิษย์เก่า">Alumni</a>
+      <a href="#structures" data-th="โครงสร้าง">Structures</a>
+      <a href="#contact" data-th="ติดต่อ">Contact</a>
+    </div>
+    <div class="navright">
+      <div class="langsw" role="group" aria-label="Language / ภาษา">
+        <button type="button" class="lang" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang" data-lang="th" aria-pressed="false">ไทย</button>
+      </div>
+      <button class="menubtn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><i></i></button>
     </div>
   </div>
 </nav>
 
 <header class="labhero" id="top">
   <div class="wrap">
-    <p class="eyebrow">Inorganic Polymer Chemistry Research Laboratory</p>
-    <h1>IPCRL — where crystals are made to <em>change</em></h1>
-    <p class="thai">ห้องปฏิบัติการวิจัยเคมีพอลิเมอร์อนินทรีย์ · ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
+    <p class="eyebrow" data-th="ห้องปฏิบัติการวิจัยเคมีพอลิเมอร์อนินทรีย์">Inorganic Polymer Chemistry Research Laboratory</p>
+    <h1 data-th="IPCRL — ที่ซึ่งผลึกถูกออกแบบให้ &lt;em&gt;เปลี่ยนแปลง&lt;/em&gt;">IPCRL — where crystals are made to <em>change</em></h1>
+    <p class="thai" data-th="Inorganic Polymer Chemistry Research Laboratory · Department of Chemistry, Faculty of Science, Chiang Mai University">ห้องปฏิบัติการวิจัยเคมีพอลิเมอร์อนินทรีย์ · ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
     <figure class="labshot">
       <img src="0cee406104.jpg" alt="Members of the Inorganic Polymer Chemistry Research Laboratory on the Faculty of Science lawn on graduation day">
-      <figcaption>Graduation day with labmates on the Faculty of Science lawn, Chiang Mai University.</figcaption>
+      <figcaption data-th="วันรับปริญญากับเพื่อนร่วมแล็บ ณ สนามหญ้าคณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่">Graduation day with labmates on the Faculty of Science lawn, Chiang Mai University.</figcaption>
     </figure>
     <div class="labintro">
       <div>
-        <p class="first">IPCRL is a small group of graduate, undergraduate and internship students working on coordination polymers and metal–organic frameworks — crystalline solids built from metal ions and organic linkers, whose pores and structures we design on purpose.</p>
-        <p>We grow single crystals, solve their structures by X-ray diffraction, and then push them: swap a ligand, let water in, change the counter-anion, and watch the whole framework rearrange while the crystal stays a crystal. Following those single-crystal-to-single-crystal transformations step by step is what the laboratory is known for, and it is how we learn what a framework will tolerate.</p>
+        <p class="first" data-th="IPCRL เป็นกลุ่มวิจัยขนาดเล็กที่ประกอบด้วยนักศึกษาระดับบัณฑิตศึกษา ปริญญาตรี และนักศึกษาฝึกงาน ทำงานด้านพอลิเมอร์โคออร์ดิเนชันและโครงข่ายโลหะอินทรีย์ (MOF) ซึ่งเป็นของแข็งผลึกที่ประกอบขึ้นจากไอออนโลหะและลิแกนด์อินทรีย์ โดยเราออกแบบรูพรุนและโครงสร้างของมันอย่างจงใจ">IPCRL is a small group of graduate, undergraduate and internship students working on coordination polymers and metal–organic frameworks — crystalline solids built from metal ions and organic linkers, whose pores and structures we design on purpose.</p>
+        <p data-th="เราปลูกผลึกเดี่ยว แก้โครงสร้างด้วยการเลี้ยวเบนรังสีเอกซ์ แล้วทดลองผลักให้มันเปลี่ยน ไม่ว่าจะเป็นการแทนที่ลิแกนด์ การให้น้ำเข้าไปในโครงข่าย หรือการเปลี่ยนเคาน์เทอร์แอนไอออน แล้วเฝ้าดูโครงข่ายทั้งก้อนจัดเรียงตัวใหม่โดยที่ผลึกยังคงเป็นผลึกอยู่ การติดตามการเปลี่ยนรูปจากผลึกเดี่ยวสู่ผลึกเดี่ยวทีละขั้นคืองานที่ห้องปฏิบัติการของเราเป็นที่รู้จัก และเป็นวิธีที่เราเรียนรู้ว่าโครงข่ายหนึ่ง ๆ ทนต่ออะไรได้บ้าง">We grow single crystals, solve their structures by X-ray diffraction, and then push them: swap a ligand, let water in, change the counter-anion, and watch the whole framework rearrange while the crystal stays a crystal. Following those single-crystal-to-single-crystal transformations step by step is what the laboratory is known for, and it is how we learn what a framework will tolerate.</p>
       </div>
       <div>
-        <p>What we learn goes into materials. The group makes aluminium and zinc frameworks from aluminium cans and PET bottles, and turns them into photocatalysts for dye-laden wastewater, sorbents for CO₂ capture in biogas, and anodes for lithium-ion batteries — work that has gone from the bench to pilot-scale production with STeP CMU, EGAT Mae Moh and the National Research Council of Thailand.</p>
-        <p>The laboratory also runs the group's single-crystal diffraction service, solving structures for collaborators across the Faculty and beyond, and it doubles as the home of the Chiang Mai chemistry olympiad team.</p>
+        <p data-th="สิ่งที่เราเรียนรู้ถูกนำไปสร้างเป็นวัสดุ กลุ่มวิจัยผลิตโครงข่ายอะลูมิเนียมและสังกะสีจากกระป๋องอะลูมิเนียมและขวด PET แล้วเปลี่ยนให้เป็นตัวเร่งปฏิกิริยาด้วยแสงสำหรับบำบัดน้ำเสียที่ปนเปื้อนสีย้อม ตัวดูดซับคาร์บอนไดออกไซด์ในไบโอแก๊ส และขั้วแอโนดของแบตเตอรี่ลิเทียมไอออน งานเหล่านี้เดินทางจากโต๊ะปฏิบัติการสู่การผลิตระดับนำร่องร่วมกับอุทยานวิทยาศาสตร์ มช. (STeP) กฟผ. แม่เมาะ และสำนักงานการวิจัยแห่งชาติ (วช.)">What we learn goes into materials. The group makes aluminium and zinc frameworks from aluminium cans and PET bottles, and turns them into photocatalysts for dye-laden wastewater, sorbents for CO₂ capture in biogas, and anodes for lithium-ion batteries — work that has gone from the bench to pilot-scale production with STeP CMU, EGAT Mae Moh and the National Research Council of Thailand.</p>
+        <p data-th="นอกจากนี้ห้องปฏิบัติการยังให้บริการวิเคราะห์โครงสร้างด้วยการเลี้ยวเบนรังสีเอกซ์จากผลึกเดี่ยว แก้โครงสร้างให้ผู้ร่วมวิจัยทั้งภายในคณะและภายนอก และยังเป็นบ้านของทีมเคมีโอลิมปิกเชียงใหม่อีกด้วย">The laboratory also runs the group's single-crystal diffraction service, solving structures for collaborators across the Faculty and beyond, and it doubles as the home of the Chiang Mai chemistry olympiad team.</p>
       </div>
     </div>
   </div>
@@ -374,12 +405,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 <section class="band" id="about">
   <div class="wrap">
-    <p class="statement">We design crystalline frameworks that <b>transform</b> — ligand by ligand, crystal to crystal — into materials for a circular economy.</p>
+    <p class="statement" data-th="เราออกแบบโครงข่ายผลึกที่ &lt;b&gt;เปลี่ยนแปลงได้&lt;/b&gt; — ทีละลิแกนด์ จากผลึกสู่ผลึก — ให้กลายเป็นวัสดุเพื่อเศรษฐกิจหมุนเวียน">We design crystalline frameworks that <b>transform</b> — ligand by ligand, crystal to crystal — into materials for a circular economy.</p>
     <div class="stats">
-      <div class="stat"><div class="n">30+</div><div class="l">Peer-reviewed papers</div></div>
-      <div class="stat"><div class="n">3</div><div class="l">Patent applications</div></div>
-      <div class="stat"><div class="n">5</div><div class="l">Major research grants</div></div>
-      <div class="stat"><div class="n">10</div><div class="l">Years leading CMU Olympiad team</div></div>
+      <div class="stat"><div class="n">30+</div><div class="l" data-th="บทความที่ผ่านการพิจารณา">Peer-reviewed papers</div></div>
+      <div class="stat"><div class="n">3</div><div class="l" data-th="คำขอสิทธิบัตร">Patent applications</div></div>
+      <div class="stat"><div class="n">5</div><div class="l" data-th="ทุนวิจัยหลัก">Major research grants</div></div>
+      <div class="stat"><div class="n">10</div><div class="l" data-th="ปีที่ดูแลทีมโอลิมปิก มช.">Years leading CMU Olympiad team</div></div>
     </div>
   </div>
 </section>
@@ -387,17 +418,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <header class="hero" id="sy">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Department of Chemistry · Chiang Mai University</p>
+      <p class="eyebrow" data-th="ภาควิชาเคมี · มหาวิทยาลัยเชียงใหม่">Department of Chemistry · Chiang Mai University</p>
       <h1 style="margin-top:1rem">Saranphong <em>Yimklan</em></h1>
       <p class="thai-name">รองศาสตราจารย์ ดร.ศรัญพงศ์ ยิ้มกลั่น</p>
-      <p class="role"><strong>Associate Professor in Inorganic Chemistry</strong><br>PhD, The University of Liverpool · Coordination polymers, metal–organic frameworks and X-ray crystallography</p>
-      <p class="bio">Saranphong Yimklan read chemistry at Chiang Mai University, graduating with first-class honours before completing an MSc there, and took his PhD at the University of Liverpool on a Thai government DPST scholarship. He returned to the Department of Chemistry at Chiang Mai University, where he founded the Inorganic Polymer Chemistry Research Laboratory and was promoted to Associate Professor in 2025. Once a POSN-CMU olympiad student himself, he was Head Mentor of the Thai team at the 57th International Chemistry Olympiad (IChO 2025, Dubai), and now leads the Chiang Mai team and sits on the national subcommittee that sends Thailand's representatives to the IChO.</p>
+      <p class="role" data-th="&lt;strong&gt;รองศาสตราจารย์ สาขาเคมีอนินทรีย์&lt;/strong&gt;&lt;br&gt;Ph.D., The University of Liverpool · พอลิเมอร์โคออร์ดิเนชัน โครงข่ายโลหะอินทรีย์ และผลิกศาสตร์รังสีเอกซ์"><strong>Associate Professor in Inorganic Chemistry</strong><br>PhD, The University of Liverpool · Coordination polymers, metal–organic frameworks and X-ray crystallography</p>
+      <p class="bio" data-th="เคมีโอลิมปิก">Saranphong Yimklan read chemistry at Chiang Mai University, graduating with first-class honours before completing an MSc there, and took his PhD at the University of Liverpool on a Thai government DPST scholarship. He returned to the Department of Chemistry at Chiang Mai University, where he founded the Inorganic Polymer Chemistry Research Laboratory and was promoted to Associate Professor in 2025. Once a POSN-CMU olympiad student himself, he was Head Mentor of the Thai team at the 57th International Chemistry Olympiad (IChO 2025, Dubai), and now leads the Chiang Mai team and sits on the national subcommittee that sends Thailand's representatives to the IChO.</p>
       <div class="keywords">
-        <span>Reticular chemistry</span><span>Crystal engineering</span><span>SC-SC transformations</span><span>MOFs from waste</span>
+        <span data-th="เคมีโครงข่าย">Reticular chemistry</span><span data-th="วิศวกรรมผลึก">Crystal engineering</span><span data-th="การเปลี่ยนรูปผลึกเดี่ยวสู่ผลึกเดี่ยว">SC-SC transformations</span><span data-th="MOF จากขยะ">MOFs from waste</span>
       </div>
       <div class="cta">
-        <a href="#research">Our research</a>
-        <a href="#publications">Publications</a>
+        <a href="#research" data-th="งานวิจัยของเรา">Our research</a>
+        <a href="#publications" data-th="ผลงานตีพิมพ์">Publications</a>
       </div>
     </div>
     <div class="portrait">
@@ -409,8 +440,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section id="members">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Group Members</p><h2 style="margin-top:.6rem">The team</h2></div>
-      <p class="lead">Research coordinators, graduate and undergraduate students and interns working in IPCRL, led by Assoc. Prof. Dr. Saranphong Yimklan.</p>
+      <div><p class="eyebrow" data-th="สมาชิกกลุ่มวิจัย">Group Members</p><h2 style="margin-top:.6rem" data-th="ทีมของเรา">The team</h2></div>
+      <p class="lead" data-th="ผู้ประสานงานวิจัย นักศึกษาระดับบัณฑิตศึกษาและปริญญาตรี และนักศึกษาฝึกงานที่ทำงานใน IPCRL ภายใต้การดูแลของ รศ.ดร.ศรัญพงศ์ ยิ้มกลั่น">Research coordinators, graduate and undergraduate students and interns working in IPCRL, led by Assoc. Prof. Dr. Saranphong Yimklan.</p>
     </div>
     <div class="members">
       <div class="member plink" data-profile="p-nithiwat-sammawipawekul" tabindex="0" role="button"><img src="bd253c155f.jpg" alt="Nithiwat Sammawipawekul"><div class="mname">Nithiwat Sammawipawekul</div><div class="mrole">Research Coordinator</div></div>
@@ -425,36 +456,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section id="research">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Research</p><h2 style="margin-top:.6rem">Function-led MOF design, synthesis &amp; structural investigation</h2></div>
-      <p class="lead">Our group sits at the junction of coordination chemistry and materials science. We grow single crystals of new metal–organic frameworks, follow their structural transformations by diffraction, and turn what we learn into photocatalysts, battery anodes, sensors and sorbents, increasingly built from domestic and industrial waste.</p>
+      <div><p class="eyebrow" data-th="งานวิจัย">Research</p><h2 style="margin-top:.6rem" data-th="การออกแบบ สังเคราะห์ และศึกษาโครงสร้าง MOF ที่มุ่งเป้าการใช้งาน">Function-led MOF design, synthesis &amp; structural investigation</h2></div>
+      <p class="lead" data-th="กลุ่มวิจัยของเราอยู่ตรงรอยต่อระหว่างเคมีโคออร์ดิเนชันกับวัสดุศาสตร์ เราปลูกผลึกเดี่ยวของโครงข่ายโลหะอินทรีย์ชนิดใหม่ ติดตามการเปลี่ยนแปลงโครงสร้างด้วยการเลี้ยวเบนรังสีเอกซ์ แล้วนำสิ่งที่เรียนรู้ไปสร้างเป็นตัวเร่งปฏิกิริยาด้วยแสง ขั้วแอโนดแบตเตอรี่ เซนเซอร์ และตัวดูดซับ โดยใช้ขยะจากครัวเรือนและอุตสาหกรรมเป็นวัตถุดิบมากขึ้นเรื่อย ๆ">Our group sits at the junction of coordination chemistry and materials science. We grow single crystals of new metal–organic frameworks, follow their structural transformations by diffraction, and turn what we learn into photocatalysts, battery anodes, sensors and sorbents, increasingly built from domestic and industrial waste.</p>
     </div>
     <div class="areas">
       <div class="area">
         <a class="figlink" href="#pub-mofs" title="See publications in this area"><div class="figwrap"><img class="fig" src="ec9daf264e.jpg" alt=""><svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="ring1" d="M120,120 m-106,0 a106,106 0 1,1 212,0 a106,106 0 1,1 -212,0"/></defs><text><textPath href="#ring1" startOffset="0">SCSC TRANSFORMATIONS IN MOFs</textPath></text></svg></div></a>
         <div class="num">I</div>
-        <h3>New MOFs &amp; single-crystal-to-single-crystal transformations</h3>
-        <p>Anion-, solvent- and base-directed assembly of Zn(II), Cu(II), Co(II) and lanthanide frameworks, and ligand-substitution-induced SC-SC transformations that change coordination geometry, redox state and topology while the crystal stays intact.</p>
-        <div class="tags">Crystal engineering · Interpenetration · Redox-versatile Cu(II)</div>
+        <h3 data-th="MOF ชนิดใหม่และการเปลี่ยนรูปจากผลึกเดี่ยวสู่ผลึกเดี่ยว">New MOFs &amp; single-crystal-to-single-crystal transformations</h3>
+        <p data-th="การประกอบโครงข่ายของ Zn(II), Cu(II), Co(II) และแลนทาไนด์ที่ควบคุมด้วยแอนไอออน ตัวทำละลายและเบส รวมถึงการเปลี่ยนรูปผลึกเดี่ยวสู่ผลึกเดี่ยวที่เหนี่ยวนำด้วยการแทนที่ลิแกนด์ ซึ่งเปลี่ยนเรขาคณิตการโคออร์ดิเนต สถานะออกซิเดชัน และทอพอโลยี โดยที่ผลึกยังคงสภาพเดิม">Anion-, solvent- and base-directed assembly of Zn(II), Cu(II), Co(II) and lanthanide frameworks, and ligand-substitution-induced SC-SC transformations that change coordination geometry, redox state and topology while the crystal stays intact.</p>
+        <div class="tags" data-th="วิศวกรรมผลึก · การสอดประสานโครงข่าย · Cu(II) ที่เปลี่ยนสถานะรีดอกซ์ได้">Crystal engineering · Interpenetration · Redox-versatile Cu(II)</div>
       </div>
       <div class="area">
         <a class="figlink" href="#pub-mofs" title="See publications in this area"><div class="figwrap"><img class="fig" src="6c2a47a31e.jpg" alt=""><svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="ring2" d="M120,120 m-106,0 a106,106 0 1,1 212,0 a106,106 0 1,1 -212,0"/></defs><text><textPath href="#ring2" startOffset="0">MOFs FOR ENERGY AND THE ENVIRONMENT</textPath></text></svg></div></a>
         <div class="num">II</div>
-        <h3>MOFs from waste for energy and the environment</h3>
-        <p>High-value Al-MOFs made from PET and aluminium wastes; Co and Zn frameworks as lithium-ion battery anodes; MOF-derived catalysts for dry reforming of methane; and MOF sorbents for CO₂ capture in biogas.</p>
-        <div class="tags">Li-ion anodes · CO₂ capture · Circular economy</div>
+        <h3 data-th="MOF จากขยะเพื่อพลังงานและสิ่งแวดล้อม">MOFs from waste for energy and the environment</h3>
+        <p data-th="Al-MOF มูลค่าสูงที่ผลิตจากขวด PET และเศษอะลูมิเนียม โครงข่าย Co และ Zn สำหรับเป็นขั้วแอโนดแบตเตอรี่ลิเทียมไอออน ตัวเร่งปฏิกิริยาที่ได้จาก MOF สำหรับ dry reforming ของมีเทน และตัวดูดซับ MOF สำหรับดักจับ CO₂ ในไบโอแก๊ส">High-value Al-MOFs made from PET and aluminium wastes; Co and Zn frameworks as lithium-ion battery anodes; MOF-derived catalysts for dry reforming of methane; and MOF sorbents for CO₂ capture in biogas.</p>
+        <div class="tags" data-th="ขั้วแอโนดลิเทียมไอออน · การดักจับ CO₂ · เศรษฐกิจหมุนเวียน">Li-ion anodes · CO₂ capture · Circular economy</div>
       </div>
       <div class="area">
         <a class="figlink" href="#pub-photocat" title="See publications in this area"><div class="figwrap"><img class="fig" src="1084f2a60a.jpg" alt=""><svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="ring3" d="M120,120 m-106,0 a106,106 0 1,1 212,0 a106,106 0 1,1 -212,0"/></defs><text><textPath href="#ring3" startOffset="0">MOFs FOR PHOTOCATALYSIS</textPath></text></svg></div></a>
         <div class="num">III</div>
-        <h3>Photocatalysis, sensing and oxide–MOF composites</h3>
-        <p>Dye degradation by SC-SC-engineered Zn and Cu MOFs, smartphone-based colorimetric iodide detection, lanthanide photoluminescence, and composites with TiO₂, ZnO, Pt and carbon quantum dots for wastewater treatment and electrochemical sensors.</p>
+        <h3 data-th="โฟโตแคแทลิซิส เซนเซอร์ และวัสดุผสมออกไซด์–MOF">Photocatalysis, sensing and oxide–MOF composites</h3>
+        <p data-th="การสลายสีย้อมด้วย Zn- และ Cu-MOF ที่ออกแบบผ่านการเปลี่ยนรูปผลึกเดี่ยว การตรวจวัดไอโอไดด์เชิงสีด้วยสมาร์ตโฟน การเปล่งแสงของแลนทาไนด์ และวัสดุผสมกับ TiO₂, ZnO, Pt และคาร์บอนควอนตัมดอต สำหรับบำบัดน้ำเสียและเซนเซอร์เคมีไฟฟ้า">Dye degradation by SC-SC-engineered Zn and Cu MOFs, smartphone-based colorimetric iodide detection, lanthanide photoluminescence, and composites with TiO₂, ZnO, Pt and carbon quantum dots for wastewater treatment and electrochemical sensors.</p>
         <div class="tags">Photocatalysts · Colorimetric sensors · Heterojunctions</div>
       </div>
       <div class="area">
         <a class="figlink" href="#pub-xray" title="See publications in this area"><div class="figwrap"><img class="fig" src="80339a0c5d.jpg" alt=""><svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="ring4" d="M120,120 m-106,0 a106,106 0 1,1 212,0 a106,106 0 1,1 -212,0"/></defs><text><textPath href="#ring4" startOffset="0">X-RAY CRYSTALLOGRAPHY</textPath></text></svg></div></a>
         <div class="num">IV</div>
-        <h3>X-ray crystallography for structure determination</h3>
-        <p>Single-crystal structure determination for organic, natural-product and coordination chemistry collaborators, with synchrotron work at Beamline 1.1W (SLRI, Thailand) and Beamline I19 (Diamond Light Source, UK).</p>
+        <h3 data-th="ผลิกศาสตร์รังสีเอกซ์เพื่อการวิเคราะห์โครงสร้าง">X-ray crystallography for structure determination</h3>
+        <p data-th="การวิเคราะห์โครงสร้างผลึกเดี่ยวให้แก่ผู้ร่วมวิจัยด้านเคมีอินทรีย์ ผลิตภัณฑ์ธรรมชาติ และเคมีโคออร์ดิเนชัน รวมถึงงานซินโครตรอนที่ Beamline 1.1W (สซ. ประเทศไทย) และ Beamline I19 (Diamond Light Source สหราชอาณาจักร)">Single-crystal structure determination for organic, natural-product and coordination chemistry collaborators, with synchrotron work at Beamline 1.1W (SLRI, Thailand) and Beamline I19 (Diamond Light Source, UK).</p>
         <div class="tags">SC-XRD · Synchrotron · Absolute configuration</div>
       </div>
     </div>
@@ -464,16 +495,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="band" id="publications">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Publications</p><h2 style="margin-top:.6rem">Selected papers</h2></div>
-      <p class="lead">Corresponding-author papers from the group are listed first, followed by collaborative work. An asterisk marks the corresponding author; titles link to the publisher's page.</p>
+      <div><p class="eyebrow" data-th="ผลงานตีพิมพ์">Publications</p><h2 style="margin-top:.6rem" data-th="ผลงานตีพิมพ์คัดสรร">Selected papers</h2></div>
+      <p class="lead" data-th="บทความที่กลุ่มวิจัยเป็นผู้นิพนธ์ประสานงานแสดงก่อน ตามด้วยงานที่ร่วมมือกับกลุ่มอื่น เครื่องหมายดอกจันระบุผู้นิพนธ์ประสานงาน และชื่อเรื่องเชื่อมไปยังหน้าของสำนักพิมพ์">Corresponding-author papers from the group are listed first, followed by collaborative work. An asterisk marks the corresponding author; titles link to the publisher's page.</p>
     </div>
 
     <div class="pubctl">
       <input type="search" id="pubsearch" placeholder="Search title, author or journal" aria-label="Search publications">
-      <select id="pubyear" aria-label="Filter by year"><option value="">All years</option></select>
+      <select id="pubyear" aria-label="Filter by year"><option value="" data-th="ทุกปี">All years</option></select>
       <div class="segs" role="group" aria-label="Group publications by">
-        <button type="button" class="seg" id="segTopic" data-view="topic" aria-pressed="true">By topic</button>
-        <button type="button" class="seg" id="segYear" data-view="year" aria-pressed="false">By year</button>
+        <button type="button" class="seg" id="segTopic" data-view="topic" aria-pressed="true" data-th="ตามหัวข้อ">By topic</button>
+        <button type="button" class="seg" id="segYear" data-view="year" aria-pressed="false" data-th="ตามปี">By year</button>
       </div>
     </div>
     <p class="pubcount" id="pubcount"></p>
@@ -531,16 +562,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section id="grants">
   <div class="wrap two">
     <div>
-      <p class="eyebrow">Funding</p>
-      <h3 class="sub" style="margin-top:.6rem">Selected research grants</h3>
+      <p class="eyebrow" data-th="ทุนวิจัย">Funding</p>
+      <h3 class="sub" style="margin-top:.6rem" data-th="ทุนวิจัยคัดสรร">Selected research grants</h3>
       <ul class="tl">
         <li><span class="d">2025–2028</span><div><div class="b">Metal-organic frameworks from domestic and industrial wastes for novel advanced photocatalysts for wastewater treatment</div><div class="s">Mid-Career Research Grant, National Research Council of Thailand (NRCT)</div><img class="glogo" src="bbee8b0297.jpg" alt="Ministry of Higher Education, Science, Research and Innovation · National Research Council of Thailand (NRCT)" loading="lazy"></div></li>
         <li><span class="d">2023–2024</span><div><div class="b">Application of MOF from wastes for sustainable CO₂ capturing in biogas</div><div class="s">Electricity Generating Authority of Thailand (EGAT)</div><img class="glogo" src="045210ae11.jpg" alt="Electricity Generating Authority of Thailand (EGAT)" loading="lazy"></div></li>
         <li><span class="d">2023–2024</span><div><div class="b">High-value metal-organic framework (MOF) from PET and aluminium wastes</div><div class="s">Identified Technology to CMU Innovation, CMU Science and Technology Park</div><img class="glogo" src="ccf3603217.jpg" alt="Science and Technology Park, Chiang Mai University (STeP)" loading="lazy"></div></li>
         <li><span class="d">2021–2022</span><div><div class="b">Functionalisation of aluminium MOFs from wastes for anode materials in lithium-ion batteries</div><div class="s">The Murata Science Foundation Research Grant 2022</div><img class="glogo" src="3dcc841433.jpg" alt="Murata Science Foundation" loading="lazy"></div></li>
-        <li><span class="d">2017–2020</span><div><div class="b">Design and synthesis of new metal-organic frameworks for catalysis</div><div class="s">Research Fund for DPST Graduate with First Placement, IPST</div><img class="glogo" src="dfd899ea7d.jpg" alt="Development and Promotion of Science and Technology Talents Project (DPST)" style="width:7rem" loading="lazy"></div></li>
+        <li><span class="d">2017–2020</span><div><div class="b">Design and synthesis of new metal-organic frameworks for catalysis</div><div class="s" data-th="ระดับบัณฑิตศึกษา">Research Fund for DPST Graduate with First Placement, IPST</div><img class="glogo" src="dfd899ea7d.jpg" alt="Development and Promotion of Science and Technology Talents Project (DPST)" style="width:7rem" loading="lazy"></div></li>
       </ul>
-      <h3 class="sub" style="margin-top:2.5rem">Patent applications</h3>
+      <h3 class="sub" style="margin-top:2.5rem" data-th="คำขอสิทธิบัตร">Patent applications</h3>
       <ul class="tl">
         <li><span class="d">Aug 2026</span><div><div class="b"><a href="https://patents.google.com/patent/US20260242323A1/en" target="_blank" rel="noopener" style="border-bottom:1px solid var(--accent-2)">Manufacturing process of metal-organic framework porous material of aluminium and terephthalic acid</a></div><div class="s">US Patent Application US 2026/0242323 A1 (App. No. 19/164,583), published 20 Aug 2026 · Inventors: S. Yimklan, Y. Chimupala, N. Semakul, C. Phromma, N. Sammawipawekul · Al-MOF from aluminium waste and PET-derived terephthalic acid</div></div></li>
         <li><span class="d">Aug 2023</span><div><div class="b">Manufacturing process of metal-organic framework porous material of aluminium and terephthalic acid</div><div class="s">PCT/TH2023/050022 · international application</div></div></li>
@@ -548,8 +579,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       </ul>
     </div>
     <div>
-      <p class="eyebrow">Recognition</p>
-      <h3 class="sub" style="margin-top:.6rem">Awards &amp; honours</h3>
+      <p class="eyebrow" data-th="รางวัลและเกียรติคุณ">Recognition</p>
+      <h3 class="sub" style="margin-top:.6rem" data-th="รางวัลและเกียรติคุณที่ได้รับ">Awards &amp; honours</h3>
       <ul class="tl">
         <li><span class="d">2025</span><div><div class="b">Visiting Researcher, Masaoka Laboratory, Osaka University</div><div class="s">JST NEXUS framework (Japan–ASEAN)</div><div class="glogos"><img class="glogo" src="1ae4d3d23d.jpg" alt="Japan Science and Technology Agency (JST)" loading="lazy"><img class="glogo" src="489de85033.jpg" alt="The University of Osaka" loading="lazy"></div></div></li>
         <li><span class="d">2024</span><div><div class="b">Outstanding Teaching Award</div><div class="s">Faculty of Science, Chiang Mai University</div><img class="glogo" src="ec0e0660d7.jpg" alt="Faculty of Science, Chiang Mai University" style="width:13rem" loading="lazy"></div></li>
@@ -559,7 +590,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
         <li><span class="d">2010</span><div><div class="b">Professor Dr Tab Nilanidhi Foundation Medal</div><div class="s">MSc Chemistry, Chiang Mai University, GPAX 4.00</div><img class="glogo" src="fbeea7c9b5.jpg" alt="The Professor Dr Tab Nilanidhi Foundation" style="width:6rem" loading="lazy"></div></li>
         <li><span class="d">2004–2016</span><div><div class="b">DPST Scholar</div><div class="s">Development and Promotion of Science and Technology Talent Project, BSc to PhD abroad</div><img class="glogo" src="b8506f3681.jpg" alt="Development and Promotion of Science and Technology Talents Project (DPST)" style="width:6rem" loading="lazy"></div></li>
       </ul>
-      <h3 class="sub" style="margin-top:2.5rem">Invited lectures</h3>
+      <h3 class="sub" style="margin-top:2.5rem" data-th="การบรรยายรับเชิญ">Invited lectures</h3>
       <ul class="tl">
         <li><span class="d">2026</span><div><div class="b">Coordination polymers &amp; MOFs: from molecular architecture to potential applications</div><div class="s">Webinar, Sichuan Vocational College of Chemical Technology, China</div></div></li>
         <li><span class="d">2024</span><div><div class="b">Ligand substitution in MOFs toward photocatalysts and Li-ion battery anodes</div><div class="s">Thailand–Japan Symposium in Chemistry 2024</div></div></li>
@@ -573,8 +604,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section id="news">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Group News</p><h2 style="margin-top:.6rem">Recent highlights</h2></div>
-      <p class="lead">Milestones from the laboratory, the lecture hall and the Olympiad circuit. Click a card to read the full story.</p>
+      <div><p class="eyebrow" data-th="ข่าวกลุ่มวิจัย">Group News</p><h2 style="margin-top:.6rem" data-th="ความเคลื่อนไหวล่าสุด">Recent highlights</h2></div>
+      <p class="lead" data-th="เหตุการณ์สำคัญจากห้องปฏิบัติการ ห้องบรรยาย และเวทีโอลิมปิก คลิกที่การ์ดเพื่ออ่านเรื่องเต็ม">Milestones from the laboratory, the lecture hall and the Olympiad circuit. Click a card to read the full story.</p>
     </div>
     <div class="ngrid" id="ngrid">
       <a class="ncard" href="#news-0" data-target="news-0">
@@ -599,7 +630,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       </a>
       <a class="ncard" href="#news-5" data-target="news-5">
         <div class="thumb"></div>
-        <div class="ncap"><div class="nwhen">March 2026 · <span>Best oral presentation · Undergraduate research conference</span></div><div class="ntitle">Somin wins the Oral Presentation Award in Chemistry</div></div>
+        <div class="ncap"><div class="nwhen">March 2026 · <span data-th="ระดับปริญญาตรี">Best oral presentation · Undergraduate research conference</span></div><div class="ntitle">Somin wins the Oral Presentation Award in Chemistry</div></div>
       </a>
       <a class="ncard" href="#news-32" data-target="news-32">
         <div class="thumb"></div>
@@ -754,7 +785,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
         <div class="ncap"><div class="nwhen">July 2017 · <span>IChO 49 · Nakhon Pathom, Thailand</span></div><div class="ntitle">Scientific Committee at IChO 49, hosted by Thailand</div></div>
       </a>
     </div>
-    <div style="text-align:center;margin-top:2rem"><button type="button" class="btn" id="moreNews">View all news</button></div>
+    <div style="text-align:center;margin-top:2rem"><button type="button" class="btn" id="moreNews" data-th="ดูข่าวทั้งหมด">View all news</button></div>
     <div id="allnews" hidden>
     <div class="news" id="news-0">
       <div class="when">September 2026<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">DPST scholarship for MSc–PhD study abroad</span></div>
@@ -1158,8 +1189,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="band" id="olympiad">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Chemistry Olympiad</p><h2 style="margin-top:.6rem">From POSN student to IChO head mentor</h2></div>
-      <p class="lead">A POSN-CMU Olympiad student in 2001, Saranphong has led the Chiang Mai centre's team since 2016 and now serves on the national subcommittee that sends Thailand's delegation to the International Chemistry Olympiad.</p>
+      <div><p class="eyebrow">Chemistry Olympiad</p><h2 style="margin-top:.6rem" data-th="จากนักเรียน สอวน. สู่หัวหน้าทีมผู้แทนประเทศไทยใน IChO">From POSN student to IChO head mentor</h2></div>
+      <p class="lead" data-th="ศรัญพงศ์เคยเป็นนักเรียนโอลิมปิกวิชาการ ศูนย์ สอวน. มช. เมื่อปี 2544 ดูแลทีมของศูนย์เชียงใหม่มาตั้งแต่ปี 2559 และปัจจุบันเป็นอนุกรรมการระดับประเทศในการจัดส่งผู้แทนประเทศไทยไปแข่งขันเคมีโอลิมปิกระหว่างประเทศ">A POSN-CMU Olympiad student in 2001, Saranphong has led the Chiang Mai centre's team since 2016 and now serves on the national subcommittee that sends Thailand's delegation to the International Chemistry Olympiad.</p>
     </div>
     <div class="oly">
       <div><img class="oly-img" src="9a005ea0b8.jpg" alt="Thai team with medals at IChO 57, Dubai"><div class="big">Head Mentor, Thailand · IChO 2025</div><div class="small">57th International Chemistry Olympiad, Dubai, UAE</div><div class="thai">หัวหน้าทีมผู้แทนประเทศไทย</div></div>
@@ -1173,8 +1204,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section id="teaching">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Teaching</p><h2 style="margin-top:.6rem">Courses at Chiang Mai University</h2></div>
-      <p class="lead">Inorganic chemistry from first principles to the research frontier, for BSc and BEd (Chemistry) students and the graduate programme. Recipient of the Faculty of Science Outstanding Teaching Award 2024.</p>
+      <div><p class="eyebrow" data-th="การเรียนการสอน">Teaching</p><h2 style="margin-top:.6rem" data-th="กระบวนวิชาที่สอน มหาวิทยาลัยเชียงใหม่">Courses at Chiang Mai University</h2></div>
+      <p class="lead" data-th="เคมีอนินทรีย์ตั้งแต่หลักการพื้นฐานจนถึงแนวหน้าของงานวิจัย สำหรับนักศึกษาระดับปริญญาตรีหลักสูตร วท.บ. และ ศษ.บ. (เคมี) และหลักสูตรบัณฑิตศึกษา ได้รับรางวัลอาจารย์ดีเด่นด้านการสอน คณะวิทยาศาสตร์ ประจำปี 2567">Inorganic chemistry from first principles to the research frontier, for BSc and BEd (Chemistry) students and the graduate programme. Recipient of the Faculty of Science Outstanding Teaching Award 2024.</p>
     </div>
     <h3 class="sub">Undergraduate</h3>
     <div class="courses">
@@ -1202,8 +1233,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section id="lablife">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Lab Life</p><h2 style="margin-top:.6rem">Life in the group</h2></div>
-      <p class="lead">Crystals do not grow to a schedule, so the group's year is a mix of long days at the diffractometer, trips to synchrotrons and collaborators abroad, conference talks, defences, and the celebrations in between.</p>
+      <div><p class="eyebrow" data-th="ชีวิตในห้องปฏิบัติการ">Lab Life</p><h2 style="margin-top:.6rem" data-th="ชีวิตในกลุ่มวิจัย">Life in the group</h2></div>
+      <p class="lead" data-th="ผลึกไม่ได้โตตามตารางเวลา ปีหนึ่ง ๆ ของกลุ่มวิจัยจึงเป็นส่วนผสมของวันยาว ๆ หน้าเครื่องเลี้ยวเบนรังสีเอกซ์ การเดินทางไปซินโครตรอนและหาผู้ร่วมวิจัยในต่างประเทศ การนำเสนอในที่ประชุมวิชาการ การสอบป้องกันวิทยานิพนธ์ และงานฉลองคั่นระหว่างทาง">Crystals do not grow to a schedule, so the group's year is a mix of long days at the diffractometer, trips to synchrotrons and collaborators abroad, conference talks, defences, and the celebrations in between.</p>
     </div>
     <div class="lablife">
       <figure class="lifefig"><img src="9ca4f57936.jpg" alt="Blue copper crystals grown at the bottom of a beaker, seen from above." loading="lazy"><figcaption><b>Looking in</b>Blue copper crystals grown at the bottom of a beaker, seen from above.</figcaption></figure>
@@ -1293,8 +1324,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="band" id="alumni">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Alumni</p><h2 style="margin-top:.6rem">Where our people have been</h2></div>
-      <p class="lead">Postdoctoral researchers, graduate students, undergraduate project students and interns who have trained in the laboratory since 2016.</p>
+      <div><p class="eyebrow" data-th="ศิษย์เก่า">Alumni</p><h2 style="margin-top:.6rem" data-th="เส้นทางของคนของเรา">Where our people have been</h2></div>
+      <p class="lead" data-th="นักวิจัยหลังปริญญาเอก นักศึกษาบัณฑิตศึกษา นักศึกษาปริญญานิพนธ์ระดับปริญญาตรี และนักศึกษาฝึกงาน ที่ผ่านการฝึกฝนในห้องปฏิบัติการนี้ตั้งแต่ปี 2559">Postdoctoral researchers, graduate students, undergraduate project students and interns who have trained in the laboratory since 2016.</p>
     </div>
     <div class="alumni">
       <div>
@@ -1341,8 +1372,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section id="structures">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Our Structures</p><h2 style="margin-top:.6rem">Published frameworks in the CSD</h2></div>
-      <p class="lead">Every structure the group has published — our own frameworks and coordination polymers, and the organic, natural-product and coordination compounds we solve for collaborators — is deposited with the Cambridge Crystallographic Data Centre. Refcodes link to the entry in Access Structures, where the structure can be viewed and the CIF downloaded.</p>
+      <div><p class="eyebrow" data-th="โครงสร้างของเรา">Our Structures</p><h2 style="margin-top:.6rem" data-th="โครงสร้างที่ตีพิมพ์และฝากไว้ใน CSD">Published frameworks in the CSD</h2></div>
+      <p class="lead" data-th="ทุกโครงสร้างที่กลุ่มวิจัยตีพิมพ์ ทั้งโครงข่ายและพอลิเมอร์โคออร์ดิเนชันของเราเอง และสารอินทรีย์ ผลิตภัณฑ์ธรรมชาติ และสารประกอบโคออร์ดิเนชันที่เราแก้โครงสร้างให้ผู้ร่วมวิจัย ล้วนฝากไว้กับ Cambridge Crystallographic Data Centre รหัส refcode เชื่อมไปยังรายการใน Access Structures ซึ่งสามารถดูโครงสร้างและดาวน์โหลดไฟล์ CIF ได้">Every structure the group has published — our own frameworks and coordination polymers, and the organic, natural-product and coordination compounds we solve for collaborators — is deposited with the Cambridge Crystallographic Data Centre. Refcodes link to the entry in Access Structures, where the structure can be viewed and the CIF downloaded.</p>
     </div>
     <div class="structs">
     <p class="spart">Frameworks and coordination polymers</p>
@@ -1457,13 +1488,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="contact" id="contact">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Contact</p>
-      <h2 style="margin-top:.6rem;font-size:clamp(2rem,3.6vw,2.8rem)">Get in touch</h2>
+      <p class="eyebrow" data-th="ติดต่อ">Contact</p>
+      <h2 style="margin-top:.6rem;font-size:clamp(2rem,3.6vw,2.8rem)" data-th="ติดต่อเรา">Get in touch</h2>
       <img src="a0054b7e23.jpg" alt="Office SCB2306, Science Complex Building II (SCB2), Faculty of Science" style="width:100%;max-width:520px;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule);margin-top:1.4rem">
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;max-width:520px;margin-top:.5rem"><img src="0c54352b1a.jpg" alt="Office SCB2306 and its window orchids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;border:1px solid var(--rule)"><img src="9b0da18996.jpg" alt="Office SCB2306 and its window orchids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;border:1px solid var(--rule)"><img src="f75f6590d2.jpg" alt="Office SCB2306 and its window orchids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;border:1px solid var(--rule)"><img src="7ae3193cf6.jpg" alt="Office SCB2306 and its window orchids" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;border:1px solid var(--rule)"></div>
       <p class="cap-th" style="margin-top:.5rem;font-size:.85rem;color:var(--ink-3)">ห้องทำงาน SCB2306 อาคาร 40 ปี คณะวิทยาศาสตร์</p>
       <p class="addr" style="margin-top:1rem"><b>Assoc. Prof. Dr. Saranphong Yimklan</b><br>Office SCB2306, Science Complex Building II (SCB2)<br>Department of Chemistry, Faculty of Science<br>Chiang Mai University<br>239 Huay Kaew Road, Suthep, Chiang Mai 50200, Thailand</p>
-      <div class="mail"><span id="email">Saranphong.Yimklan@cmu.ac.th</span><button type="button" id="copyBtn">Copy</button></div>
+      <div class="mail"><span id="email">Saranphong.Yimklan@cmu.ac.th</span><button type="button" id="copyBtn" data-th="คัดลอก">Copy</button></div>
     </div>
     <div class="join">
       <h3>Join the group</h3>
@@ -1718,6 +1749,52 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   });
 })();
 </script>
+
+<script>
+(function(){
+  var btn=document.getElementById('menubtn'), links=document.getElementById('navlinks');
+  if(!btn||!links) return;
+  function set(open){ links.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false'); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); set(!links.classList.contains('open')); });
+  links.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('click',function(e){ if(links.classList.contains('open')&&!links.contains(e.target)&&e.target!==btn) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+  window.addEventListener('resize',function(){ if(window.innerWidth>720) set(false); });
+})();
+</script>
+
+<script>
+(function(){
+  var ROLE={'Research Coordinator':'ผู้ประสานงานวิจัย','MSc Student':'นักศึกษาปริญญาโท','BSc Student':'นักศึกษาปริญญาตรี','Internship Student':'นักศึกษาฝึกงาน','Postdoctoral Researcher':'นักวิจัยหลังปริญญาเอก'};
+  var root=document.documentElement;
+  function apply(lang){
+    document.querySelectorAll('[data-th]').forEach(function(el){
+      if(!el.hasAttribute('data-en')) el.setAttribute('data-en', el.innerHTML);
+      var want = lang==='th' ? el.getAttribute('data-th') : el.getAttribute('data-en');
+      if(el.innerHTML!==want) el.innerHTML = want;
+    });
+    document.querySelectorAll('.mrole').forEach(function(el){
+      if(!el.hasAttribute('data-role-en')) el.setAttribute('data-role-en', el.textContent.trim());
+      var en=el.getAttribute('data-role-en');
+      el.textContent = (lang==='th' && ROLE[en]) ? ROLE[en] : en;
+    });
+    root.setAttribute('data-lang',lang);
+    root.setAttribute('lang', lang==='th' ? 'th' : 'en');
+    document.querySelectorAll('.langsw .lang').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang')===lang ? 'true' : 'false');
+    });
+    try{ localStorage.setItem('ipcrl-lang',lang); }catch(e){}
+  }
+  var saved='en';
+  try{ saved=localStorage.getItem('ipcrl-lang')||'en'; }catch(e){}
+  document.querySelectorAll('.langsw .lang').forEach(function(b){
+    b.addEventListener('click',function(){ apply(b.getAttribute('data-lang')); });
+  });
+  apply(saved==='th'?'th':'en');
+})();
+</script>
+
+
 
 </body>
 </html>
