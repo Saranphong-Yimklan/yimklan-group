@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<title>สาขาวิชาเคมี ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Sarabun:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: quiet editorial — narrow measure, generous white space, a single bronze accent, hairline rules that echo crystal lattice lines */
+:root{
+  --bg:#ffffff;          /* white */
+  --bg-2:#f4f6f8;        /* cool paper band */
+  --ink:#1b2430;         /* near-black, cool cast */
+  --ink-2:#4e5a68;       /* secondary text */
+  --ink-3:#848e9a;       /* captions */
+  --rule:#e2e7ec;        /* hairline */
+  --accent:#1a5f83;      /* deep petrol blue */
+  --accent-2:#3f90b4;    /* lighter blue */
+  --card:#ffffff;
+  --display:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --body:"Roboto","Sarabun","Helvetica Neue",Arial,sans-serif;
+  --thai:"Sarabun","Roboto",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1319;--bg-2:#161b23;--ink:#e8edf2;--ink-2:#aab6c2;--ink-3:#7c8793;--rule:#28303a;--accent:#63b3d6;--accent-2:#8fcde8;--card:#161b23;color-scheme:dark
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1319;--bg-2:#161b23;--ink:#e8edf2;--ink-2:#aab6c2;--ink-3:#7c8793;--rule:#28303a;--accent:#63b3d6;--accent-2:#8fcde8;--card:#161b23;color-scheme:dark
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:300;line-height:1.15;letter-spacing:-.015em;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.lead{font-size:1.05rem;color:var(--ink-2);max-width:62ch}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+.brand{font-family:var(--display);font-size:1.15rem;font-weight:500;letter-spacing:.02em}
+.brand span{color:var(--accent)}
+.links{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.links a:hover{color:var(--accent)}
+.navright{display:flex;align-items:center;gap:.6rem;flex:0 0 auto}
+.menubtn{display:none;width:2.5rem;height:2.5rem;align-items:center;justify-content:center;border:1px solid var(--rule);border-radius:3px;background:var(--card);cursor:pointer;flex:0 0 auto;padding:0}
+.menubtn i{display:block;width:1.05rem;height:1.5px;background:var(--ink);position:relative;transition:background .2s}
+.menubtn i::before,.menubtn i::after{content:"";position:absolute;left:0;width:100%;height:1.5px;background:var(--ink);transition:transform .25s,top .25s}
+.menubtn i::before{top:-5px}
+.menubtn i::after{top:5px}
+.menubtn[aria-expanded="true"] i{background:transparent}
+.menubtn[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+.menubtn[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+section[id],header[id]{scroll-margin-top:4.6rem}
+@media (max-width:720px){
+  .menubtn{display:flex}
+  .nav .wrap{flex-wrap:nowrap;gap:.8rem}
+  .brand{font-size:1.05rem}
+  .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;flex-wrap:nowrap;gap:0;background:var(--bg);border-bottom:1px solid var(--rule);box-shadow:0 20px 34px -24px rgba(0,0,0,.5);padding:.25rem 0;max-height:74vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .links.open{display:flex}
+  .links a{padding:.9rem 1.3rem;font-size:.78rem;border-bottom:1px solid var(--rule)}
+  .links a:last-child{border-bottom:0}
+  section[id],header[id]{scroll-margin-top:4rem}
+}
+
+/* hero */
+.labhero{border-bottom:1px solid var(--rule)}
+.labhero .wrap{padding-block:4rem 3.4rem}
+.labhero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:300;letter-spacing:-.03em;margin-top:.9rem;max-width:22ch}
+.labhero h1 em{font-style:normal;font-weight:500;color:var(--accent)}
+.labhero .thai{margin-top:.7rem;font-size:1rem;color:var(--ink-2)}
+.labshot{margin:2.4rem 0 0}
+.labshot img{width:100%;display:block;border-radius:3px;border:1px solid var(--rule);box-shadow:0 18px 40px -28px rgba(0,0,0,.5)}
+.labshot figcaption{margin-top:.7rem;font-size:.82rem;color:var(--ink-3);line-height:1.6}
+.labintro{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;margin-top:2.6rem}
+.labintro p{font-size:.97rem;line-height:1.8;color:var(--ink-2)}
+.labintro p+p{margin-top:1.1rem}
+.labintro .first{font-size:1.08rem;line-height:1.75;color:var(--ink)}
+@media(max-width:860px){.labintro{grid-template-columns:1fr;gap:1.4rem}}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding-block:4.5rem 4rem}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:300;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;font-weight:500;color:var(--accent)}
+.thai-name{font-family:var(--thai);font-size:1.15rem;color:var(--ink-2);margin-top:.6rem}
+.hero .role{margin-top:1.4rem;font-size:.95rem;color:var(--ink-2);line-height:1.7}
+.hero .role strong{color:var(--ink);font-weight:500}
+.hero .bio{margin-top:1.1rem;font-size:.95rem;line-height:1.75;color:var(--ink-2);max-width:56ch}
+.keywords{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1.8rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.keywords span::before{content:"◆";font-size:.5rem;color:var(--accent-2);margin-right:.5rem;vertical-align:middle}
+.portrait{position:relative;justify-self:center;width:min(100%,380px)}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:saturate(.92)}
+.portrait::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--rule);z-index:-1;border-radius:2px}
+.cta{display:inline-flex;gap:1.6rem;margin-top:2rem;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.cta a{border-bottom:1px solid var(--accent);padding-bottom:.25rem;color:var(--ink)}
+.cta a:hover{color:var(--accent)}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:3rem}.portrait{order:-1;width:min(100%,300px);justify-self:start}}
+
+/* sections */
+section{padding-block:4.5rem}
+section.band{background:var(--bg-2)}
+.sec-head{display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-bottom:2.6rem;align-items:end}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem)}
+@media (max-width:820px){.sec-head{grid-template-columns:1fr;gap:.8rem}}
+
+/* research grid — circular motifs */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem 2rem}
+.area{min-width:0;text-align:center}
+.figlink{display:block;width:min(100%,240px);margin:0 auto 1.2rem;cursor:pointer}
+.figlink:hover .fig{transform:scale(1.04)}
+.figlink:hover .ring text{fill:var(--ink)}
+.figwrap{position:relative;width:100%;aspect-ratio:1/1}
+.pubgroup h3{scroll-margin-top:5rem}
+.area .fig{position:absolute;top:26px;left:26px;width:calc(100% - 52px);height:calc(100% - 52px);object-fit:cover;border-radius:50%;border:1px solid var(--rule);background:#fff;display:block;transition:transform .3s}
+.ring{position:absolute;inset:0;width:100%;height:100%}
+.ring text{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.18em;fill:var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ring{animation:none}}
+.area .num{font-family:var(--display);font-size:1.6rem;color:var(--accent-2);line-height:1}
+.area h3{font-size:1.3rem;margin-top:.5rem}
+.area p{margin-top:.8rem;color:var(--ink-2);font-size:.92rem;text-align:left}
+.area .tags{margin-top:.9rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+@media (max-width:960px){.areas{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.areas{grid-template-columns:1fr}}
+/* statement */
+.statement{font-family:var(--display);font-size:clamp(1.45rem,2.6vw,2rem);font-weight:300;line-height:1.4;letter-spacing:-.02em;max-width:32ch;color:var(--ink)}
+.statement b{font-style:normal;font-weight:500;color:var(--accent)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;border-top:1px solid var(--rule);padding-top:2rem}
+.stat .n{font-family:var(--display);font-size:2.4rem;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:.5rem}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* publications */
+/* lab life */
+.lablife{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem 1.2rem;margin-top:2.2rem}
+.lifefig{margin:0;min-width:0}
+.lifefig img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule);transition:transform .35s}
+.lifefig:hover img{transform:scale(1.025)}
+.lifefig figcaption{margin-top:.55rem;font-size:.82rem;line-height:1.55;color:var(--ink-3)}
+.lifefig figcaption b{display:block;color:var(--ink-2);font-weight:500}
+@media (max-width:960px){.lablife{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.lablife{grid-template-columns:repeat(2,1fr);gap:1.1rem .8rem}}
+
+/* our structures */
+.structs{margin-top:1rem}
+.spart{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:3.4rem}
+.spart:first-child{margin-top:1.6rem}
+.sgroup{border-top:1px solid var(--rule);padding-top:1.5rem;margin-top:2.4rem}
+.sgroup h3{font-size:1.2rem;font-weight:400;line-height:1.3}
+.sgroup .src{font-size:.82rem;color:var(--ink-3);margin-top:.45rem}
+.sgroup .src a{color:var(--accent);border-bottom:1px solid transparent}
+.sgroup .src a:hover{border-bottom-color:var(--accent)}
+.strow{display:grid;grid-template-columns:11rem 1fr 7.5rem;gap:1.2rem;align-items:baseline;padding:.8rem 0;border-bottom:1px dashed var(--rule)}
+.strow:first-of-type{margin-top:1.1rem;border-top:1px dashed var(--rule)}
+.strow:has(.stimg){align-items:start}
+.strow .stimg{display:block;width:100%;max-width:9.5rem;margin-bottom:.55rem;background:transparent;mix-blend-mode:multiply}
+:root[data-theme="dark"] .strow .stimg{mix-blend-mode:normal;background:#fff;border-radius:2px;padding:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .strow .stimg{mix-blend-mode:normal;background:#fff;border-radius:2px;padding:2px}}
+.strow .rc{font-size:.82rem;letter-spacing:.1em;font-weight:600;text-transform:uppercase;color:var(--accent)}
+.strow .rc a{border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+.strow .rc a:hover{border-bottom-color:var(--accent)}
+.strow .rc small{display:block;letter-spacing:.06em;font-weight:400;text-transform:none;color:var(--ink-3);font-size:.76rem;margin-top:.15rem}
+.strow .nm{font-size:.93rem;color:var(--ink-2);line-height:1.5}
+.strow .cell{display:block;margin-top:.3rem;font-size:.78rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.strow .sg{font-size:.82rem;color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .strow{grid-template-columns:1fr;gap:.25rem;padding:.9rem 0}
+  .strow .sg{text-align:left}
+}
+.pubctl{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:1.6rem 0 .6rem}
+.pubctl input[type=search],.pubctl select{font:inherit;font-size:.88rem;color:var(--ink);background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:.5rem .7rem}
+.pubctl input[type=search]{flex:1 1 20rem;min-width:0}
+.pubctl input[type=search]::placeholder{color:var(--ink-3)}
+.segs{display:flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.seg{font:inherit;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:var(--card);border:0;padding:.55rem .9rem;cursor:pointer}
+.seg+.seg{border-left:1px solid var(--rule)}
+.seg[aria-pressed=true]{background:var(--accent);color:#fff}
+.pubcount{font-size:.8rem;color:var(--ink-3);margin-bottom:1.4rem}
+.pub[hidden],.pubgroup[hidden]{display:none}
+.pubmedia{display:flex;gap:.55rem;align-items:flex-start}
+.pubmedia>a:first-child{flex:0 0 4.2rem}
+.pubmedia>a:last-child{flex:1 1 auto;min-width:0}
+.pub .yr a{display:block}
+.pub .jcov{width:100%;margin-top:.6rem;border:1px solid var(--rule);border-radius:2px;box-shadow:0 2px 8px -4px rgba(0,0,0,.35);transition:opacity .15s}
+.pub .yr a:hover .jcov{opacity:.82}
+.pub .tocg{width:100%;margin-top:.6rem;transition:opacity .15s}
+.pubmedia .tocg{min-width:0}
+.pub .yr a:hover .tocg{opacity:.78}
+.pub .tocg{width:100%;margin-top:.6rem;border:0;border-radius:2px;background:transparent;mix-blend-mode:multiply}
+:root[data-theme="dark"] .pub .tocg{mix-blend-mode:normal;background:#fff;padding:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pub .tocg{mix-blend-mode:normal;background:#fff;padding:2px}}
+@media (max-width:860px){.pub{grid-template-columns:12rem 1fr;gap:1.1rem}.pubmedia>a:first-child{flex-basis:3.4rem}}
+@media (max-width:560px){.pub{grid-template-columns:1fr;gap:.5rem}.pubmedia{max-width:20rem}}
+@media (max-width:640px){.pubctl input[type=search]{flex-basis:100%}}
+.pubgroup{margin-bottom:3rem}
+.pubgroup h3{font-size:1.45rem;padding-bottom:.8rem;border-bottom:1px solid var(--accent-2);margin-bottom:.4rem}
+.pub{display:grid;grid-template-columns:17.5rem 1fr;gap:1.6rem;padding:1rem 0;border-bottom:1px solid var(--rule);min-width:0}
+.pub .yr{font-family:var(--display);font-size:1.25rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.pub .t{font-weight:500;line-height:1.45}
+.pub .t a{border-bottom:1px solid transparent;transition:border-color .15s,color .15s}
+.pub .t a:hover{color:var(--accent);border-bottom-color:var(--accent-2)}
+.pub .au{font-size:.88rem;color:var(--ink-2);margin-top:.3rem}
+.pub .au b{font-weight:600;color:var(--ink)}
+.pub .j{font-size:.85rem;color:var(--ink-3);margin-top:.2rem;font-style:italic}
+.pub .j span{font-style:normal}
+@media (max-width:600px){.pub{grid-template-columns:1fr;gap:.2rem}}
+.pub-note{font-size:.85rem;color:var(--ink-3);margin-top:1rem}
+
+/* timeline lists */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:7.5rem 1fr;gap:1.2rem;padding:.9rem 0;border-bottom:1px solid var(--rule)}
+.tl .d{font-size:.8rem;letter-spacing:.06em;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:.15rem}
+.tl .b{font-weight:500}
+.tl .s{font-size:.88rem;color:var(--ink-2);margin-top:.15rem}
+@media (max-width:600px){.tl li{grid-template-columns:1fr;gap:.2rem}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.two>div{min-width:0}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+h3.sub{font-size:1.45rem;margin-bottom:1rem}
+
+/* teaching */
+.courses{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem;margin-top:1rem}
+.course{background:var(--card);border:1px solid var(--rule);padding:.9rem 1rem;min-width:0}
+.course .code{font-size:.72rem;letter-spacing:.12em;color:var(--accent);font-weight:600}
+.course .name{font-size:.92rem;margin-top:.2rem}
+
+/* olympiad */
+.oly{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.oly>div{background:var(--card);padding:1.6rem 1.6rem;min-width:0}
+.oly .oly-img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px;border:1px solid var(--rule);margin-bottom:1rem;display:block}
+.oly .big{font-family:var(--display);font-size:1.5rem;line-height:1.2}
+.oly .small{font-size:.86rem;color:var(--ink-2);margin-top:.5rem}
+.oly .thai{font-family:var(--thai);color:var(--ink-3);font-size:.86rem;margin-top:.3rem}
+@media (max-width:720px){.oly{grid-template-columns:1fr}}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact .wrap>*{min-width:0}
+.addr,.mail{overflow-wrap:anywhere}
+.addr{font-size:.95rem;color:var(--ink-2);line-height:1.8}
+.addr b{color:var(--ink);font-weight:500}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin-top:1rem;font-family:var(--display);font-size:1.3rem;color:var(--ink)}
+.mail button{font:inherit;font-family:var(--body);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--rule);color:var(--ink-2);padding:.35rem .7rem;cursor:pointer;border-radius:2px}
+.mail button:hover{border-color:var(--accent);color:var(--accent)}
+.join{background:var(--card);border:1px solid var(--rule);padding:1.8rem;min-width:0}
+.join h3{font-size:1.5rem}
+.join p{margin-top:.8rem;color:var(--ink-2);font-size:.95rem}
+@media (max-width:820px){.contact .wrap{grid-template-columns:1fr}}
+
+
+/* news */
+.news{display:grid;grid-template-columns:9rem 1fr;gap:2rem;padding:2rem 0;border-top:1px solid var(--rule)}
+.news:last-child{border-bottom:1px solid var(--rule)}
+.news .when{font-family:var(--display);font-size:1.3rem;color:var(--accent);line-height:1.2}
+.news .photos{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:760px}
+.news .photos img.wide{grid-column:1/-1;aspect-ratio:16/10}
+.news .photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+@media (max-width:600px){.news .photos{grid-template-columns:1fr}}
+.news .photo{width:100%;max-width:760px;aspect-ratio:3/2;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+.news .cap{margin-top:1rem;font-weight:500;line-height:1.5}
+.news .cap-th{font-family:var(--thai);color:var(--ink-2);font-size:.95rem;margin-top:.4rem}
+@media (max-width:720px){.news{grid-template-columns:1fr;gap:.6rem}}
+.roster{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.2rem;font-family:var(--thai)}
+.roster>div{min-width:0}
+.roster-h{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;font-family:var(--body);margin-bottom:.4rem}
+.roster ul{list-style:none;margin:0;padding:0}
+.roster li{font-size:.92rem;padding:.3rem 0;border-bottom:1px solid var(--rule)}
+.roster li span{display:block;color:var(--ink-3);font-size:.82rem}
+@media (max-width:720px){.roster{grid-template-columns:1fr}}
+
+/* alumni */
+.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.alumni>div{min-width:0}
+.alumni h3{font-size:1.45rem;padding-bottom:.6rem;border-bottom:1px solid var(--accent-2);margin-bottom:.6rem}
+.al{list-style:none;margin:0;padding:0}
+.al li{display:grid;grid-template-columns:3.5rem 3.6rem 1fr;gap:.9rem;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--rule)}
+.al .av{width:3.6rem;height:3.6rem;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--bg-2)}
+.al .av.ph{display:block}
+.al .y{font-family:var(--display);font-size:1.1rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.al .n{font-weight:500}
+.al .n span{display:block;font-weight:400;font-size:.85rem;color:var(--ink-3)}
+.al li.empty{color:var(--ink-3);font-style:italic;grid-template-columns:1fr}
+@media (max-width:820px){.alumni{grid-template-columns:1fr}}
+
+/* news cards */
+.ngrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.ncard{display:block;min-width:0;border:1px solid var(--rule);background:var(--card);border-radius:2px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.ncard:hover{transform:translateY(-3px);box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.ncard .thumb{aspect-ratio:4/3;background:var(--bg-2);overflow:hidden}
+.ncard .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.ncard .nothumb{display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem;color:var(--accent-2)}
+.ncap{padding:.9rem 1rem 1.1rem}
+.nwhen{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.nwhen span{color:var(--ink-3);font-weight:400;letter-spacing:.04em;text-transform:none}
+.ntitle{font-weight:500;font-size:.92rem;line-height:1.45;margin-top:.4rem}
+.ncard:nth-child(n+5){display:none}
+.ngrid.all .ncard:nth-child(n+5){display:block}
+.btn{font:inherit;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid var(--accent);color:var(--accent);padding:.7rem 1.6rem;cursor:pointer;border-radius:2px}
+.btn:hover{background:var(--accent);color:var(--bg)}
+#allnews .news{scroll-margin-top:5rem}
+#allnews .news:first-child{border-top:1px solid var(--rule);margin-top:3rem}
+@media (max-width:960px){.ngrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.ngrid{grid-template-columns:1fr}}
+
+/* members */
+.members{display:grid;grid-template-columns:repeat(5,1fr);gap:2rem 1.5rem}
+.member{text-align:center;min-width:0}
+.member img{width:min(100%,150px);aspect-ratio:1/1;border-radius:50%;object-fit:cover;border:1px solid var(--rule);box-shadow:0 0 0 6px var(--bg),0 0 0 7px var(--accent-2);margin:0 auto 1rem;display:block}
+.mname{font-weight:500;line-height:1.3}
+.mrole{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-top:.3rem}
+@media (max-width:960px){.members{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.members{grid-template-columns:repeat(2,1fr)}}
+
+/* profiles */
+.plink{cursor:pointer}
+.al li.plink:hover .n,.member.plink:hover .mname{color:var(--accent)}
+.pmodal[hidden]{display:none}
+.pmodal{position:fixed;inset:0;z-index:50;background:color-mix(in srgb,var(--ink) 55%,transparent);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-left,0px))}
+.pbox{position:relative;background:var(--card);color:var(--ink);max-width:900px;width:100%;max-height:90vh;overflow:auto;border:1px solid var(--rule);border-radius:2px;padding:2.2rem;box-shadow:0 30px 80px -30px rgba(0,0,0,.5)}
+.pclose{position:absolute;top:.8rem;right:1rem;font:inherit;font-size:1.6rem;line-height:1;background:none;border:0;color:var(--ink-3);cursor:pointer}
+.pclose:hover{color:var(--accent)}
+.glogos{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.glogos .glogo{width:8.5rem;flex:0 0 auto}
+.glogo{display:block;width:11rem;max-width:60%;margin-top:.7rem;background:transparent;mix-blend-mode:multiply}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .glogo{mix-blend-mode:normal;background:#fff;padding:.35rem;border-radius:2px}}
+:root[data-theme="dark"] .glogo{mix-blend-mode:normal;background:#fff;padding:.35rem;border-radius:2px}
+.profile[hidden]{display:none}
+.profile{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:start}
+.profile:not(:has(>img)){grid-template-columns:1fr}
+.profile>img{width:200px;height:200px;border-radius:50%;object-fit:cover;border:1px solid var(--rule);box-shadow:0 0 0 8px var(--bg),0 0 0 9px var(--accent-2)}
+.profile h3{font-size:1.55rem;font-weight:400;margin-top:.4rem}
+.profile p{margin-top:.9rem;color:var(--ink-2);font-size:.95rem}
+.pgal{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.7rem;margin-top:1.4rem}
+.pgal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+.profile .now{color:var(--ink);font-weight:500;border-top:1px solid var(--rule);padding-top:.9rem}
+@media (max-width:560px){.profile{grid-template-columns:1fr}.profile>img{width:150px;height:150px}.pgal{grid-template-columns:1fr}.pbox{padding:1.5rem 1.2rem;max-height:92vh}}
+footer{border-top:1px solid var(--rule);padding-block:2rem;font-size:.8rem;color:var(--ink-3)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+</style>
+<style>
+:root{--display:"Roboto","Sarabun","Helvetica Neue",Arial,sans-serif}
+.th-lead{font-family:var(--thai)}
+.camps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:2.6rem}
+.camp{border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--card);display:flex;flex-direction:column}
+.camp img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-bottom:1px solid var(--rule)}
+.camp .cbody{padding:1.3rem 1.3rem 1.5rem}
+.camp .cno{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.camp h3{font-size:1.2rem;font-weight:500;margin-top:.5rem;line-height:1.4}
+.camp .cwhen{margin-top:.6rem;font-size:.86rem;color:var(--ink);font-weight:500}
+.camp .cwhere{margin-top:.2rem;font-size:.86rem;color:var(--ink-3)}
+.camp p{margin-top:.8rem;font-size:.92rem;line-height:1.75;color:var(--ink-2)}
+@media(max-width:900px){.camps{grid-template-columns:1fr}}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2.4rem}
+.step{border-top:2px solid var(--accent);padding-top:1rem}
+.step .sn{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.step h4{font-size:1.02rem;font-weight:500;margin-top:.45rem;line-height:1.45}
+.step p{margin-top:.5rem;font-size:.88rem;line-height:1.7;color:var(--ink-2)}
+@media(max-width:900px){.path{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.path{grid-template-columns:1fr}}
+.syl{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;margin-top:2.4rem}
+.syl h3{font-size:1.1rem;font-weight:500;padding-bottom:.6rem;border-bottom:1px solid var(--rule)}
+.syl ul{margin-top:1rem;list-style:none}
+.syl li{padding:.55rem 0;border-bottom:1px dashed var(--rule);font-size:.93rem;color:var(--ink-2);line-height:1.6}
+.syl li b{color:var(--ink);font-weight:500}
+@media(max-width:820px){.syl{grid-template-columns:1fr;gap:1.6rem}}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+@media(max-width:960px){.gal{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.gal{grid-template-columns:repeat(2,1fr);gap:.7rem}}
+.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2.4rem;margin-top:2.2rem}
+.doc{border-left:2px solid var(--rule);padding:.3rem 0 .3rem 1.1rem}
+.doc b{display:block;font-weight:500;color:var(--ink);font-size:.98rem}
+.doc span{display:block;margin-top:.35rem;font-size:.88rem;color:var(--ink-2);line-height:1.7}
+@media(max-width:820px){.docs{grid-template-columns:1fr}}
+.backlink{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.6rem;font-size:.85rem;color:var(--accent);border-bottom:1px solid var(--accent-2);padding-bottom:.15rem}
+</style>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">POSN<span> CMU Chemistry</span></a>
+    <div class="links" id="navlinks">
+      <a href="#about">เกี่ยวกับศูนย์</a>
+      <a href="#path">เส้นทางนักเรียน</a>
+      <a href="#camps">ค่ายอบรม</a>
+      <a href="#syllabus">หลักสูตร</a>
+      <a href="#tcho">ผลงาน</a>
+      <a href="#materials">เอกสารและสื่อ</a>
+      <a href="#gallery">ภาพกิจกรรม</a>
+      <a href="#contact">ติดต่อ</a>
+    </div>
+    <div class="navright">
+      <button class="menubtn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><i></i></button>
+    </div>
+  </div>
+</nav>
+
+<header class="labhero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">มูลนิธิ สอวน. · ศูนย์มหาวิทยาลัยเชียงใหม่</p>
+    <h1>สาขาวิชา<em>เคมี</em> ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</h1>
+    <p class="thai">Chemistry · POSN Centre, Chiang Mai University — Promotion of Academic Olympiad and Development of Science Education Foundation</p>
+    <figure class="labshot">
+      <img src="e5d0759bdf.jpg" alt="นักเรียนและคณาจารย์ค่ายเคมีโอลิมปิก ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่">
+      <figcaption>นักเรียนและคณาจารย์ค่ายอบรมเคมีโอลิมปิก ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</figcaption>
+    </figure>
+    <div class="labintro">
+      <div>
+        <p class="first">ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ สาขาวิชาเคมี รับผิดชอบการอบรมและคัดเลือกนักเรียนจาก <b>8 จังหวัดภาคเหนือตอนบน</b> ได้แก่ เชียงใหม่ เชียงราย ลำปาง ลำพูน แพร่ น่าน พะเยา และแม่ฮ่องสอน เข้าสู่การแข่งขันเคมีโอลิมปิกระดับชาติและระดับนานาชาติ</p>
+        <p>การดำเนินงานอยู่ภายใต้มูลนิธิส่งเสริมโอลิมปิกวิชาการและพัฒนามาตรฐานวิทยาศาสตร์ศึกษา ในพระอุปถัมภ์สมเด็จพระเจ้าพี่นางเธอ เจ้าฟ้ากัลยาณิวัฒนา กรมหลวงนราธิวาสราชนครินทร์ (สอวน.) โดยมีคณาจารย์จากภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่ เป็นผู้สอนและออกข้อสอบ</p>
+      </div>
+      <div>
+        <p>หลักสูตรของศูนย์ครอบคลุมทั้งภาคทฤษฎีและภาคปฏิบัติการ โดยเทียบเคียงกับหลักสูตร สอวน. ส่วนกลาง และ IChO Syllabus เพื่อให้นักเรียนพร้อมทั้งความรู้เชิงลึก ทักษะการแก้ปัญหาในบริบทที่ไม่คุ้นเคย และทักษะปฏิบัติการที่ใช้จริงในสนามแข่งขัน</p>
+        <p>ศูนย์เชียงใหม่ส่งผู้แทนเข้าแข่งขันเคมีโอลิมปิกระดับชาติ (TChO) อย่างต่อเนื่อง และมีนักเรียนที่ผ่านเส้นทางนี้ไปเป็นผู้แทนประเทศไทยในการแข่งขันเคมีโอลิมปิกระหว่างประเทศ (IChO)</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="about">
+  <div class="wrap">
+    <p class="statement">จากห้องเรียนในโรงเรียน สู่ห้องปฏิบัติการของมหาวิทยาลัย <b>และเวทีโลก</b></p>
+    <div class="stats">
+      <div class="stat"><div class="n">8</div><div class="l">จังหวัดภาคเหนือตอนบน</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">ค่ายอบรมต่อปีการศึกษา</div></div>
+      <div class="stat"><div class="n">~80</div><div class="l">นักเรียนค่าย 1 ต่อรุ่น</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">ปีที่ดูแลทีมผู้แทนศูนย์</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="path">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">เส้นทางนักเรียน</p><h2 style="margin-top:.6rem">จากค่าย 1 สู่เวทีนานาชาติ</h2></div>
+      <p class="lead">นักเรียนที่สอบคัดเลือกเข้าศูนย์จะผ่านการอบรมเป็นขั้น ๆ โดยแต่ละขั้นมีการคัดเลือกเพื่อเข้าสู่ขั้นถัดไป</p>
+    </div>
+    <div class="path">
+      <div class="step">
+        <div class="sn">ขั้นที่ 1</div>
+        <h4>สอบคัดเลือกเข้าค่าย 1</h4>
+        <p>นักเรียนระดับมัธยมศึกษาตอนปลายจาก 8 จังหวัดภาคเหนือตอนบนสมัครสอบคัดเลือกเข้าค่าย 1 ผ่านโรงเรียนต้นสังกัด</p>
+      </div>
+      <div class="step">
+        <div class="sn">ขั้นที่ 2</div>
+        <h4>ค่าย 1 และการแข่งขันระดับภูมิภาค</h4>
+        <p>อบรมเนื้อหาพื้นฐานและปฏิบัติการ จากนั้นสอบคัดเลือกในการแข่งขันเคมีโอลิมปิกระดับภูมิภาค (LChO) ทั้งภาคทฤษฎีและภาคปฏิบัติ</p>
+      </div>
+      <div class="step">
+        <div class="sn">ขั้นที่ 3</div>
+        <h4>ค่าย 2 และผู้แทนศูนย์</h4>
+        <p>อบรมเข้มข้นที่ภาควิชาเคมี มหาวิทยาลัยเชียงใหม่ แล้วคัดเลือกผู้แทนศูนย์ไปแข่งขันเคมีโอลิมปิกระดับชาติ (TChO)</p>
+      </div>
+      <div class="step">
+        <div class="sn">ขั้นที่ 4</div>
+        <h4>TChO และ IChO</h4>
+        <p>ผู้ที่ทำคะแนนในระดับสูงจาก TChO จะเข้าสู่การคัดเลือกผู้แทนประเทศไทยไปแข่งขันเคมีโอลิมปิกระหว่างประเทศ (IChO)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="camps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">ค่ายอบรม</p><h2 style="margin-top:.6rem">ค่ายอบรมของศูนย์</h2></div>
+      <p class="lead">ศูนย์จัดค่ายอบรมปีละสองค่ายตามปฏิทินของมูลนิธิ สอวน. และจัดค่ายอบรมเข้มเพิ่มเติมสำหรับผู้แทนศูนย์ก่อนไปแข่งขันระดับชาติ</p>
+    </div>
+    <div class="camps">
+      <div class="camp">
+        <img src="e5d0759bdf.jpg" alt="ค่าย 1 วิชาเคมี ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่">
+        <div class="cbody">
+          <div class="cno">ค่าย 1</div>
+          <h3>ปรับพื้นฐานและเปิดโลกเคมีโอลิมปิก</h3>
+          <div class="cwhen">3–17 ตุลาคม 2569</div>
+          <div class="cwhere">โรงเรียนบุญวาทย์วิทยาลัย และโรงเรียนลำปางกัลยาณี จังหวัดลำปาง</div>
+          <p>เนื้อหาครอบคลุมโครงสร้างอะตอม พันธะเคมี ปริมาณสัมพันธ์ แก๊ส เคมีนิวเคลียร์ และโครงสร้างสารอินทรีย์ พร้อมปฏิบัติการพื้นฐานและชั่วโมงฝึกแก้โจทย์ทุกวัน</p>
+        </div>
+      </div>
+      <div class="camp">
+        <img src="33830b7e12.jpg" alt="ค่าย 2 วิชาเคมี ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่">
+        <div class="cbody">
+          <div class="cno">ค่าย 2</div>
+          <h3>เจาะลึกเนื้อหาและปฏิบัติการขั้นสูง</h3>
+          <div class="cwhen">21–26 กุมภาพันธ์ 2570</div>
+          <div class="cwhere">ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</div>
+          <p>สมดุลเคมี สมดุลไอออน จลนพลศาสตร์ อุณหเคมี และเคมีไฟฟ้า เรียนในห้องปฏิบัติการจริงของภาควิชา พร้อมโจทย์ประจำวันและโจทย์ท้าทายที่บูรณาการเนื้อหาค่าย 1</p>
+        </div>
+      </div>
+      <div class="camp">
+        <img src="46efc95fec.jpg" alt="ค่ายอบรมเข้มเตรียมตัวไปแข่งขันเคมีโอลิมปิกระดับชาติ">
+        <div class="cbody">
+          <div class="cno">ค่ายอบรมเข้ม</div>
+          <h3>เตรียมผู้แทนศูนย์สู่ TChO</h3>
+          <div class="cwhen">14 มีนาคม – 5 เมษายน 2570</div>
+          <div class="cwhere">ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</div>
+          <p>อบรมเข้มสำหรับผู้แทนศูนย์ก่อนการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 23 ด้วยโจทย์ประจำวันและโจทย์ท้าทายรายสาขา พร้อมการฝึกปฏิบัติการตามแนวข้อสอบ TChO</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="syllabus">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">หลักสูตร</p><h2 style="margin-top:.6rem">เนื้อหาและผลลัพธ์การเรียนรู้</h2></div>
+      <p class="lead">หลักสูตรของศูนย์จัดทำเป็นเอกสาร Programme Learning Outcome (PLO) รายค่าย โดยเทียบเคียงกับหลักสูตร สอวน. ส่วนกลาง IChO Syllabus และข้อสอบ TChO ย้อนหลัง เพื่อให้ทุกหัวข้อมีตัวชี้วัดและโจทย์ตัวอย่างกำกับ</p>
+    </div>
+    <div class="syl">
+      <div>
+        <h3>ภาคทฤษฎี</h3>
+        <ul>
+          <li><b>โครงสร้างอะตอมและพันธะเคมี</b> — แบบจำลองอะตอม ควอนตัมเบื้องต้น ตารางธาตุ พันธะไอออนิก พันธะโคเวเลนต์ รูปร่างโมเลกุล แรงระหว่างโมเลกุล</li>
+          <li><b>ปริมาณสัมพันธ์</b> — มวลอะตอมและโมเลกุล สูตรเคมี สมการเคมี สารกำหนดปริมาณ ผลได้ร้อยละ และการคำนวณแบบเทียบหน่วย</li>
+          <li><b>แก๊สและเคมีนิวเคลียร์</b> — กฎของแก๊ส แก๊สจริง ทฤษฎีจลน์ การสลายกัมมันตรังสี และปฏิกิริยานิวเคลียร์</li>
+          <li><b>สมดุลเคมีและสมดุลไอออน</b> — ค่าคงที่สมดุล กรด–เบส บัฟเฟอร์ การไทเทรต และการละลายของสารประกอบที่ละลายน้อย</li>
+          <li><b>อุณหเคมีและจลนพลศาสตร์</b> — เอนทาลปี เอนโทรปี พลังงานกิบส์ อัตราการเกิดปฏิกิริยา กฎอัตรา และกลไกปฏิกิริยา</li>
+          <li><b>เคมีไฟฟ้า</b> — ปฏิกิริยารีดอกซ์ เซลล์กัลวานิก เซลล์อิเล็กโทรไลต์ สมการเนินสต์ และการประยุกต์</li>
+          <li><b>เคมีอินทรีย์</b> — หมู่ฟังก์ชัน การเรียกชื่อ สเตอริโอเคมี และปฏิกิริยาพื้นฐาน</li>
+        </ul>
+      </div>
+      <div>
+        <h3>ภาคปฏิบัติการ</h3>
+        <ul>
+          <li><b>ความปลอดภัยในห้องปฏิบัติการ</b> — สัญลักษณ์ความเป็นอันตราย การจัดเก็บสารเคมี และการปฏิบัติเมื่อเกิดเหตุ</li>
+          <li><b>เทคนิคพื้นฐาน</b> — การชั่ง การตวง การเตรียมสารละลาย การเจือจาง และการบันทึกผลพร้อมเลขนัยสำคัญ</li>
+          <li><b>การไทเทรต</b> — กรด–เบส รีดอกซ์ และการไทเทรตแบบย้อนกลับ พร้อมการเลือกอินดิเคเตอร์และการคำนวณ</li>
+          <li><b>อุณหเคมีเชิงปฏิบัติ</b> — การวัดการเปลี่ยนแปลงอุณหภูมิ การหาค่าความจุความร้อนของแคลอริมิเตอร์ และการคำนวณเอนทาลปี</li>
+          <li><b>การวิเคราะห์เชิงคุณภาพ</b> — การทดสอบไอออนบวกและไอออนลบในสเกลเล็ก (small-scale)</li>
+          <li><b>การสังเกตและรายงานผล</b> — การเขียนข้อสังเกต การประมวลผลข้อมูล การประเมินความคลาดเคลื่อน และการบริหารเวลาในห้องสอบ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="materials">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">เอกสารและสื่อ</p><h2 style="margin-top:.6rem">สื่อการเรียนของศูนย์</h2></div>
+      <p class="lead">ศูนย์จัดทำเอกสารประกอบการอบรมขึ้นเองทุกปี เพื่อให้สอดคล้องกับหลักสูตรที่ปรับปรุงและแนวข้อสอบล่าสุด</p>
+    </div>
+    <div class="docs">
+      <div class="doc"><b>Programme Learning Outcome (PLO) ค่าย 1 และค่าย 2</b><span>เอกสารกำหนดผลลัพธ์การเรียนรู้รายหัวข้อ พร้อมการวิเคราะห์ข้อสอบ TChO ย้อนหลังและโจทย์แนะนำกำกับทุกตัวชี้วัด ทั้งภาคทฤษฎีและภาคปฏิบัติการ</span></div>
+      <div class="doc"><b>คู่มือปฏิบัติการ ค่าย 1</b><span>คู่มือการทดลองฉบับปรับปรุง ครอบคลุมเทคนิคพื้นฐาน การไทเทรต อุณหเคมี และการวิเคราะห์เชิงคุณภาพ พร้อมแบบบันทึกผลการทดลอง</span></div>
+      <div class="doc"><b>หนังสือ “15 วัน วันละนิด ปรับพื้นเคมีสู่ค่าย 1 สอวน.”</b><span>หนังสือเตรียมความพร้อมก่อนเข้าค่าย 1 แบ่งเนื้อหาเป็น 15 วัน พร้อมแบบฝึกหัดและเฉลยอย่างละเอียด</span></div>
+      <div class="doc"><b>โจทย์ประจำวันและโจทย์ท้าทาย</b><span>ชุดโจทย์รายวันสำหรับค่าย 1 ค่าย 2 และค่ายอบรมเข้ม คัดและดัดแปลงจากข้อสอบ TChO IChO และ Preparatory Problems พร้อมเฉลยอย่างละเอียด</span></div>
+      <div class="doc"><b>สไลด์โจทย์ฝึกแก้ปัญหารายบท</b><span>สไลด์ประกอบชั่วโมงฝึกแก้โจทย์ จัดตามบทของหลักสูตร เน้นวิธีคิด การเทียบหน่วย และการบริหารเวลา</span></div>
+      <div class="doc"><b>แนวทางการเขียนตอบข้อสอบ TChO</b><span>เอกสารวิเคราะห์การเขียนตอบจากกระดาษคำตอบจริง ชี้จุดที่นักเรียนมักเสียคะแนน พร้อมตัวอย่างการเขียนตอบที่ได้คะแนนเต็ม</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="tcho">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">ผลงานและการแข่งขัน</p><h2 style="margin-top:.6rem">ผู้แทนศูนย์บนเวทีระดับชาติ</h2></div>
+      <p class="lead">ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ ส่งผู้แทนเข้าร่วมการแข่งขันเคมีโอลิมปิกระดับชาติ (TChO) อย่างต่อเนื่องทุกปี</p>
+    </div>
+    <div style="margin-top:2.2rem">
+
+    <div class="news">
+      <div class="when">2567<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">TChO 20 · มหาวิทยาลัยขอนแก่น</span></div>
+      <div>
+        <div class="photos"><img src="4e1d8b5625.jpg" alt="ผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ ก่อนออกเดินทางไป TChO20" loading="lazy"><img src="ed55e70490.jpg" alt="ทีมศูนย์เชียงใหม่กับธงประจำมหาวิทยาลัย" loading="lazy"><img src="0444eda47d.jpg" alt="เตรียมตัวออกเดินทางที่ภาควิชาเคมี" loading="lazy"><img src="7e0215eb96.jpg" alt="ผู้แทนศูนย์เชียงใหม่หน้าตารางธาตุที่ภาควิชาเคมี" loading="lazy"></div>
+        <p class="cap">12 พฤษภาคม 2567 — ทีมผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ พร้อมออกเดินทางไปเข้าร่วมการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 20 ณ มหาวิทยาลัยขอนแก่น</p>
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="when">2565<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">TChO 18 · โรงเรียนมหิดลวิทยานุสรณ์</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="4c6ab2738e.jpg" alt="ผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ หน้าฉากการแข่งขัน TChO18" loading="lazy"><img src="bcedd48ca6.jpg" alt="ทีมศูนย์เชียงใหม่ที่โรงเรียนมหิดลวิทยานุสรณ์" loading="lazy"><img src="7966ec74d8.jpg" alt="ชั่วโมงติวของทีมศูนย์เชียงใหม่ระหว่างการแข่งขัน" loading="lazy"><img src="44bbb7326a.jpg" alt="พิธีเปิดการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 18" loading="lazy"><img src="7d9dbb6024.jpg" alt="คณาจารย์ผู้ควบคุมทีมในการประชุมตรวจข้อสอบ" loading="lazy"><img src="81299814d9.jpg" alt="ทีมศูนย์เชียงใหม่กับคณาจารย์ในงานเลี้ยงปิดการแข่งขัน" loading="lazy"></div>
+        <p class="cap">24–28 กรกฎาคม 2565 — ผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ และคณาจารย์ผู้ควบคุมทีม เข้าร่วมการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 18 ณ โรงเรียนมหิดลวิทยานุสรณ์ จังหวัดนครปฐม</p>
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="when">2564<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">TChO 17 · Remote Access Exam</span></div>
+      <div>
+        <img class="photo" src="fd029cb882.jpg" alt="การแข่งขัน TChO17 รูปแบบ Remote Access Exam ผ่านระบบออนไลน์" loading="lazy">
+        <p class="cap">15 ธันวาคม 2564 — ผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ เข้าร่วมการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 17 ในรูปแบบ Remote Access Exam โดยสอบจากศูนย์ของตนเองผ่านระบบออนไลน์</p>
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="when">2561<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">การประชุมสรุปผลการดำเนินงาน</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="976637be91.jpg" alt="คณะกรรมการสาขาวิชาเคมี ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ ในการประชุมสรุปผลการดำเนินงาน" loading="lazy"><img src="12dd7c645d.jpg" alt="การประชุมสรุปผลการดำเนินงานค่ายโอลิมปิก สาขาวิชาเคมี ประจำปีการศึกษา 2560" loading="lazy"><img src="87a4d93166.jpg" alt="ที่ประชุมรวบรวมข้อคิดเห็นก่อนเข้าประชุมที่ส่วนกลาง" loading="lazy"></div>
+        <p class="cap">13 กรกฎาคม 2561 — คณะกรรมการสาขาวิชาเคมี ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ ประชุมสรุปผลการดำเนินงานค่ายโอลิมปิก ประจำปีการศึกษา 2560 และการเข้าร่วมการแข่งขัน TChO14 เพื่อรวบรวมข้อคิดเห็นก่อนนำเข้าหารือในที่ประชุมส่วนกลาง ระหว่างวันที่ 13–14 กรกฎาคม 2561 ณ กรุงเทพมหานคร</p>
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="when">2561<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">TChO 14 · มหาวิทยาลัยอุบลราชธานี</span></div>
+      <div>
+        <div class="photos"><img class="wide" src="868c8d8900.jpg" alt="ผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ พร้อมคณาจารย์ผู้ควบคุมทีม ในการแข่งขัน TChO14" loading="lazy"><img src="3026d40aa3.jpg" alt="พิธีเปิดการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 14 มหาวิทยาลัยอุบลราชธานี" loading="lazy"><img src="87484c0973.jpg" alt="ทีมศูนย์เชียงใหม่ระหว่างการแข่งขัน TChO14" loading="lazy"><img src="37356df127.jpg" alt="คณาจารย์ผู้ควบคุมทีมศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่" loading="lazy"><img src="36aa91c484.jpg" alt="ภาพหมู่ผู้แทนศูนย์เชียงใหม่กับคณะกรรมการในพิธีปิด TChO14" loading="lazy"></div>
+        <p class="cap">11–15 มิถุนายน 2561 — ผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ คว้า 3 เหรียญเงิน 4 เหรียญทองแดง พร้อมใบประกาศเกียรติคุณ เกียรติบัตรเยาวชนเคมี และรางวัลคะแนนรวมสูงสุดของภูมิภาค จากการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 14 ณ มหาวิทยาลัยอุบลราชธานี อำเภอวารินชำราบ จังหวัดอุบลราชธานี ซึ่งมีนักเรียนจากศูนย์ สอวน. ทั่วประเทศเข้าร่วมแข่งขันทั้งภาคทฤษฎีและภาคปฏิบัติ 106 คน</p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">ภาพกิจกรรม</p><h2 style="margin-top:.6rem">บรรยากาศค่ายและการแข่งขัน</h2></div>
+      <p class="lead">ภาพจากค่ายอบรมของศูนย์ การแข่งขันเคมีโอลิมปิกระดับชาติ และค่ายอบรมเข้มของผู้แทนประเทศไทย</p>
+    </div>
+    <div class="gal">
+      <img src="33830b7e12.jpg" alt="ค่าย 2 วิชาเคมี ศูนย์ สอวน. มช. ปี 2568" loading="lazy">
+      <img src="a356a26024.jpg" alt="ค่าย 2 วิชาเคมี ศูนย์ สอวน. มช. ปี 2568" loading="lazy">
+      <img src="2088c4bbc3.jpg" alt="ค่าย 2 วิชาเคมี ศูนย์ สอวน. มช. ปี 2568" loading="lazy">
+      <img src="0d3acbd307.jpg" alt="ค่าย 2 วิชาเคมี ศูนย์ สอวน. มช. ปี 2568" loading="lazy">
+      <img src="439cc20f55.jpg" alt="ค่าย 2 วิชาเคมี ศูนย์ สอวน. มช. ปี 2568" loading="lazy">
+      <img src="75a5744aba.jpg" alt="การแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 21 มหาวิทยาลัยศรีนครินทรวิโรฒ" loading="lazy">
+      <img src="55a0442a14.jpg" alt="การแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 21" loading="lazy">
+      <img src="e07a8376d3.jpg" alt="การแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 21" loading="lazy">
+      <img src="46efc95fec.jpg" alt="ค่ายอบรมเข้มผู้แทนประเทศไทยก่อนไป IChO 57 ที่มหาวิทยาลัยเชียงใหม่" loading="lazy">
+      <img src="6cefa3f81b.jpg" alt="ค่ายอบรมเข้มผู้แทนประเทศไทยที่มหาวิทยาลัยเชียงใหม่" loading="lazy">
+      <img src="1c1ea36b9c.jpg" alt="ค่ายอบรมเข้มผู้แทนประเทศไทยที่มหาวิทยาลัยเชียงใหม่" loading="lazy">
+      <img src="09f2490281.jpg" alt="ผู้แทนประเทศไทยกับเหรียญรางวัลในการแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 57 ดูไบ" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">ติดต่อ</p>
+      <h2 style="margin-top:.6rem;font-size:clamp(2rem,3.6vw,2.8rem)">ติดต่อศูนย์</h2>
+      <p class="addr" style="margin-top:1rem"><b>สาขาวิชาเคมี ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</b><br>ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่<br>239 ถนนห้วยแก้ว ตำบลสุเทพ อำเภอเมือง จังหวัดเชียงใหม่ 50200</p>
+      <p class="mail" style="margin-top:.8rem"><a href="mailto:Saranphong.Yimklan@cmu.ac.th">Saranphong.Yimklan@cmu.ac.th</a></p>
+      <a class="backlink" href="index.html#olympiad">← กลับไปยัง Yimklan Research Group</a>
+    </div>
+    <div>
+      <h3 class="sub">สำหรับนักเรียนและครู</h3>
+      <p style="margin-top:1rem;font-size:.95rem;line-height:1.8;color:var(--ink-2)">การรับสมัครสอบคัดเลือกเข้าค่าย 1 ดำเนินการผ่านโรงเรียนต้นสังกัดตามปฏิทินของมูลนิธิ สอวน. ในแต่ละปีการศึกษา ครูผู้ประสานงานของโรงเรียนสามารถติดตามประกาศรับสมัครและกำหนดการได้จากศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</p>
+      <p style="margin-top:1rem;font-size:.95rem;line-height:1.8;color:var(--ink-2)">นักเรียนที่สนใจสามารถเตรียมตัวล่วงหน้าได้จากเอกสารและสื่อการเรียนของศูนย์ และจากการฝึกทำข้อสอบ TChO ย้อนหลังควบคู่กับหลักสูตรของค่าย</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 สาขาวิชาเคมี ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ · ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</div>
+    <div>เคมีโอลิมปิก · TChO · IChO</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menubtn'), links=document.getElementById('navlinks');
+  if(!btn||!links) return;
+  function set(open){ links.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false'); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); set(!links.classList.contains('open')); });
+  links.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('click',function(e){ if(links.classList.contains('open')&&!links.contains(e.target)&&e.target!==btn) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+  window.addEventListener('resize',function(){ if(window.innerWidth>720) set(false); });
+})();
+</script>
+
+</body>
+</html>
