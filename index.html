@@ -56,6 +56,19 @@ p{margin:0}
 @media (max-width:720px){.links{display:none}}
 
 /* hero */
+.labhero{border-bottom:1px solid var(--rule)}
+.labhero .wrap{padding-block:4rem 3.4rem}
+.labhero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:300;letter-spacing:-.03em;margin-top:.9rem;max-width:22ch}
+.labhero h1 em{font-style:normal;font-weight:500;color:var(--accent)}
+.labhero .thai{margin-top:.7rem;font-size:1rem;color:var(--ink-2)}
+.labshot{margin:2.4rem 0 0}
+.labshot img{width:100%;display:block;border-radius:3px;border:1px solid var(--rule);box-shadow:0 18px 40px -28px rgba(0,0,0,.5)}
+.labshot figcaption{margin-top:.7rem;font-size:.82rem;color:var(--ink-3);line-height:1.6}
+.labintro{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;margin-top:2.6rem}
+.labintro p{font-size:.97rem;line-height:1.8;color:var(--ink-2)}
+.labintro p+p{margin-top:1.1rem}
+.labintro .first{font-size:1.08rem;line-height:1.75;color:var(--ink)}
+@media(max-width:860px){.labintro{grid-template-columns:1fr;gap:1.4rem}}
 .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding-block:4.5rem 4rem}
 .hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:300;letter-spacing:-.03em}
 .hero h1 em{font-style:normal;font-weight:500;color:var(--accent)}
@@ -319,16 +332,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 <nav class="nav">
   <div class="wrap">
-    <a class="brand" href="#top">Yimklan<span> Group</span></a>
+    <a class="brand" href="#top">IPCRL<span> Yimklan Group</span></a>
     <div class="links">
+      <a href="#sy">Saranphong</a>
+      <a href="#members">Members</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#grants">Grants &amp; Awards</a>
       <a href="#olympiad">Olympiad</a>
+      <a href="#teaching">Teaching</a>
       <a href="#news">News</a>
       <a href="#lablife">Lab Life</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#members">Members</a>
       <a href="#alumni">Alumni</a>
       <a href="#structures">Structures</a>
       <a href="#contact">Contact</a>
@@ -336,7 +350,41 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </div>
 </nav>
 
-<header class="hero" id="top">
+<header class="labhero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Inorganic Polymer Chemistry Research Laboratory</p>
+    <h1>IPCRL — where crystals are made to <em>change</em></h1>
+    <p class="thai">ห้องปฏิบัติการวิจัยเคมีพอลิเมอร์อนินทรีย์ · ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
+    <figure class="labshot">
+      <img src="ca07300c95.jpg" alt="Members of the Inorganic Polymer Chemistry Research Laboratory in the laboratory, SCB2306">
+      <figcaption>The group in IPCRL, Department of Chemistry, Faculty of Science, Chiang Mai University.</figcaption>
+    </figure>
+    <div class="labintro">
+      <div>
+        <p class="first">IPCRL is a small group of graduate, undergraduate and internship students working on coordination polymers and metal–organic frameworks — crystalline solids built from metal ions and organic linkers, whose pores and structures we design on purpose.</p>
+        <p>We grow single crystals, solve their structures by X-ray diffraction, and then push them: swap a ligand, let water in, change the counter-anion, and watch the whole framework rearrange while the crystal stays a crystal. Following those single-crystal-to-single-crystal transformations step by step is what the laboratory is known for, and it is how we learn what a framework will tolerate.</p>
+      </div>
+      <div>
+        <p>What we learn goes into materials. The group makes aluminium and zinc frameworks from aluminium cans and PET bottles, and turns them into photocatalysts for dye-laden wastewater, sorbents for CO₂ capture in biogas, and anodes for lithium-ion batteries — work that has gone from the bench to pilot-scale production with STeP CMU, EGAT Mae Moh and the National Research Council of Thailand.</p>
+        <p>The laboratory also runs the group's single-crystal diffraction service, solving structures for collaborators across the Faculty and beyond, and it doubles as the home of the Chiang Mai chemistry olympiad team.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="about">
+  <div class="wrap">
+    <p class="statement">We design crystalline frameworks that <b>transform</b> — ligand by ligand, crystal to crystal — into materials for a circular economy.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">30+</div><div class="l">Peer-reviewed papers</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Patent applications</div></div>
+      <div class="stat"><div class="n">5</div><div class="l">Major research grants</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">Years leading CMU Olympiad team</div></div>
+    </div>
+  </div>
+</section>
+
+<header class="hero" id="sy">
   <div class="wrap">
     <div>
       <p class="eyebrow">Department of Chemistry · Chiang Mai University</p>
@@ -358,14 +406,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </div>
 </header>
 
-<section class="band" id="about">
+<section id="members">
   <div class="wrap">
-    <p class="statement">We design crystalline frameworks that <b>transform</b> — ligand by ligand, crystal to crystal — into materials for a circular economy.</p>
-    <div class="stats">
-      <div class="stat"><div class="n">30+</div><div class="l">Peer-reviewed papers</div></div>
-      <div class="stat"><div class="n">3</div><div class="l">Patent applications</div></div>
-      <div class="stat"><div class="n">5</div><div class="l">Major research grants</div></div>
-      <div class="stat"><div class="n">10</div><div class="l">Years leading CMU Olympiad team</div></div>
+    <div class="sec-head">
+      <div><p class="eyebrow">Group Members</p><h2 style="margin-top:.6rem">The team</h2></div>
+      <p class="lead">Research coordinators, graduate and undergraduate students and interns working in IPCRL, led by Assoc. Prof. Dr. Saranphong Yimklan.</p>
+    </div>
+    <div class="members">
+      <div class="member plink" data-profile="p-nithiwat-sammawipawekul" tabindex="0" role="button"><img src="bd253c155f.jpg" alt="Nithiwat Sammawipawekul"><div class="mname">Nithiwat Sammawipawekul</div><div class="mrole">Research Coordinator</div></div>
+      <div class="member plink" data-profile="p-kwanchanok-tungad" tabindex="0" role="button"><img src="c01de4b532.jpg" alt="Kwanchanok Tungad"><div class="mname">Kwanchanok Tungad</div><div class="mrole">Research Coordinator</div></div>
+      <div class="member plink" data-profile="p-preechayaporn-jaikead" tabindex="0" role="button"><img src="b4ed33c702.jpg" alt="Preechayaporn Jaikead"><div class="mname">Preechayaporn Jaikead</div><div class="mrole">MSc Student</div></div>
+      <div class="member plink" data-profile="p-kittipitch-kaeosamut" tabindex="0" role="button"><img src="47d17b4a2e.jpg" alt="Kittipitch Kaeosamut"><div class="mname">Kittipitch Kaeosamut</div><div class="mrole">BSc Student</div></div>
+      <div class="member plink" data-profile="p-natdanai-saipan" tabindex="0" role="button"><img src="d0fefc58d7.jpg" alt="Natdanai Saipan"><div class="mname">Natdanai Saipan</div><div class="mrole">Internship Student</div></div>
     </div>
   </div>
 </section>
@@ -529,6 +581,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <div><img class="oly-img" src="4692047e33.jpg" alt="IPST send-off of the Thai delegations at Suvarnabhumi Airport, 2024"><div class="big">Mentor, Thailand · IChO 2024</div><div class="small">56th International Chemistry Olympiad, Riyadh, Saudi Arabia · Observer at IChO 2023, Zürich</div><div class="thai">รองหัวหน้าทีมผู้แทนประเทศไทย</div></div>
       <div><img class="oly-img" src="e5d0759bdf.jpg" alt="POSN-CMU chemistry camp students and mentors"><div class="big">Committee &amp; Secretary, POSN-CMU</div><div class="small">Head Mentor of the CMU team at the 13th–21st Thailand Chemistry Olympiads, 2016–present</div><div class="thai">กรรมการและเลขานุการ สาขาเคมี ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</div></div>
       <div><img class="oly-img" src="db30f6925d.jpg" alt="IChO 57 Thai team visiting Wat Phra That Doi Suthep during the CMU training camp"><div class="big">National subcommittee, 2023–present</div><div class="small">Organising Thai participation in IChO; Scientific Committee, IChO 2017 (Thailand); author of POSN <i>Chemistry I</i> chapters on atomic structure and main-group elements</div><div class="thai">คณะอนุกรรมการดำเนินการจัดส่งผู้แทนประเทศไทยไปแข่งขันเคมีโอลิมปิกระหว่างประเทศ</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Teaching</p><h2 style="margin-top:.6rem">Courses at Chiang Mai University</h2></div>
+      <p class="lead">Inorganic chemistry from first principles to the research frontier, for BSc and BEd (Chemistry) students and the graduate programme. Recipient of the Faculty of Science Outstanding Teaching Award 2024.</p>
+    </div>
+    <h3 class="sub">Undergraduate</h3>
+    <div class="courses">
+      <div class="course"><div class="code">CHEM 211</div><div class="name">Fundamental Inorganic Chemistry</div></div>
+      <div class="course"><div class="code">CHEM 315</div><div class="name">Symmetry &amp; Bonding</div></div>
+      <div class="course"><div class="code">CHEM 413</div><div class="name">Inorganic Spectroscopy</div></div>
+      <div class="course"><div class="code">CHEM 415</div><div class="name">Frontier Inorganic Materials Chemistry</div></div>
+      <div class="course"><div class="code">CHEM 458</div><div class="name">Reticular Chemistry and Crystal Engineering</div></div>
+      <div class="course"><div class="code">CHEM 459</div><div class="name">X-ray Crystallography in Practice</div></div>
+      <div class="course"><div class="code">CHEM 300</div><div class="name">Basic Skills &amp; Ethics in Science</div></div>
+      <div class="course"><div class="code">CHEM 352</div><div class="name">Safety in Chemistry Laboratory</div></div>
+      <div class="course"><div class="code">CHEM 115</div><div class="name">Chemistry Laboratory</div></div>
+    </div>
+    <h3 class="sub" style="margin-top:2.5rem">Graduate</h3>
+    <div class="courses">
+      <div class="course"><div class="code">CHEM 714</div><div class="name">Comprehensive Inorganic Chemistry</div></div>
+      <div class="course"><div class="code">CHEM 812</div><div class="name">Coordination Chemistry</div></div>
+      <div class="course"><div class="code">CHEM 815</div><div class="name">Coordination Polymers &amp; Metal-organic Frameworks</div></div>
+      <div class="course"><div class="code">CHEM 823</div><div class="name">Molecular Structures and Interactions</div></div>
+      <div class="course"><div class="code">CHEM 755</div><div class="name">Professional Handling and Management of Chemical Hazards</div></div>
     </div>
   </div>
 </section>
@@ -1205,51 +1286,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <figure class="lifefig"><img src="f492ee784f.jpg" alt="The group at Sai Thara Khun Chae — coffee in hand after the drive over the ridge." loading="lazy"><figcaption><b>At the sign</b>The group at Sai Thara Khun Chae — coffee in hand after the drive over the ridge.</figcaption></figure>
       <figure class="lifefig"><img src="5e31cee712.jpg" alt="Pausing on the rope swings in the shade." loading="lazy"><figcaption><b>Swings under the trees</b>Pausing on the rope swings in the shade.</figcaption></figure>
       <figure class="lifefig"><img src="9b83378c16.jpg" alt="Chayanid and Siam between the big trees at Khun Chae." loading="lazy"><figcaption><b>Two on a swing</b>Chayanid and Siam between the big trees at Khun Chae.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="teaching">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><p class="eyebrow">Teaching</p><h2 style="margin-top:.6rem">Courses at Chiang Mai University</h2></div>
-      <p class="lead">Inorganic chemistry from first principles to the research frontier, for BSc and BEd (Chemistry) students and the graduate programme. Recipient of the Faculty of Science Outstanding Teaching Award 2024.</p>
-    </div>
-    <h3 class="sub">Undergraduate</h3>
-    <div class="courses">
-      <div class="course"><div class="code">CHEM 211</div><div class="name">Fundamental Inorganic Chemistry</div></div>
-      <div class="course"><div class="code">CHEM 315</div><div class="name">Symmetry &amp; Bonding</div></div>
-      <div class="course"><div class="code">CHEM 413</div><div class="name">Inorganic Spectroscopy</div></div>
-      <div class="course"><div class="code">CHEM 415</div><div class="name">Frontier Inorganic Materials Chemistry</div></div>
-      <div class="course"><div class="code">CHEM 458</div><div class="name">Reticular Chemistry and Crystal Engineering</div></div>
-      <div class="course"><div class="code">CHEM 459</div><div class="name">X-ray Crystallography in Practice</div></div>
-      <div class="course"><div class="code">CHEM 300</div><div class="name">Basic Skills &amp; Ethics in Science</div></div>
-      <div class="course"><div class="code">CHEM 352</div><div class="name">Safety in Chemistry Laboratory</div></div>
-      <div class="course"><div class="code">CHEM 115</div><div class="name">Chemistry Laboratory</div></div>
-    </div>
-    <h3 class="sub" style="margin-top:2.5rem">Graduate</h3>
-    <div class="courses">
-      <div class="course"><div class="code">CHEM 714</div><div class="name">Comprehensive Inorganic Chemistry</div></div>
-      <div class="course"><div class="code">CHEM 812</div><div class="name">Coordination Chemistry</div></div>
-      <div class="course"><div class="code">CHEM 815</div><div class="name">Coordination Polymers &amp; Metal-organic Frameworks</div></div>
-      <div class="course"><div class="code">CHEM 823</div><div class="name">Molecular Structures and Interactions</div></div>
-      <div class="course"><div class="code">CHEM 755</div><div class="name">Professional Handling and Management of Chemical Hazards</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="members">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><p class="eyebrow">Group Members</p><h2 style="margin-top:.6rem">The team</h2></div>
-      <p class="lead">Research coordinators, graduate and undergraduate students and interns working in IPCRL, led by Assoc. Prof. Dr. Saranphong Yimklan.</p>
-    </div>
-    <div class="members">
-      <div class="member plink" data-profile="p-nithiwat-sammawipawekul" tabindex="0" role="button"><img src="bd253c155f.jpg" alt="Nithiwat Sammawipawekul"><div class="mname">Nithiwat Sammawipawekul</div><div class="mrole">Research Coordinator</div></div>
-      <div class="member plink" data-profile="p-kwanchanok-tungad" tabindex="0" role="button"><img src="c01de4b532.jpg" alt="Kwanchanok Tungad"><div class="mname">Kwanchanok Tungad</div><div class="mrole">Research Coordinator</div></div>
-      <div class="member plink" data-profile="p-preechayaporn-jaikead" tabindex="0" role="button"><img src="b4ed33c702.jpg" alt="Preechayaporn Jaikead"><div class="mname">Preechayaporn Jaikead</div><div class="mrole">MSc Student</div></div>
-      <div class="member plink" data-profile="p-kittipitch-kaeosamut" tabindex="0" role="button"><img src="47d17b4a2e.jpg" alt="Kittipitch Kaeosamut"><div class="mname">Kittipitch Kaeosamut</div><div class="mrole">BSc Student</div></div>
-      <div class="member plink" data-profile="p-natdanai-saipan" tabindex="0" role="button"><img src="d0fefc58d7.jpg" alt="Natdanai Saipan"><div class="mname">Natdanai Saipan</div><div class="mrole">Internship Student</div></div>
     </div>
   </div>
 </section>
