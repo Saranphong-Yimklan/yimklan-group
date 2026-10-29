@@ -351,6 +351,16 @@ h3.sub{font-size:1.45rem;margin-bottom:1rem}
 @media (max-width:560px){.profile{grid-template-columns:1fr}.profile>img{width:150px;height:150px}.pgal{grid-template-columns:1fr}.pbox{padding:1.5rem 1.2rem;max-height:92vh}}
 footer{border-top:1px solid var(--rule);padding-block:2rem;font-size:.8rem;color:var(--ink-3)}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.tools{display:grid;grid-template-columns:1.2fr 1fr;gap:2.4rem;margin-top:2.4rem;align-items:start}
+@media(max-width:860px){.tools{grid-template-columns:1fr;gap:1.4rem}}
+.tools .tcard{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:1.4rem 1.5rem}
+.tools h3{font-size:1.1rem;font-weight:500;line-height:1.35}
+.tools ul{margin:.7rem 0 0;padding-left:1.2em;font-size:.92rem;color:var(--ink-2)}
+.tools li{margin:.3rem 0}
+.toollink{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.2rem;font-size:.92rem;color:#fff;
+  background:var(--accent);border:1px solid var(--accent);border-radius:3px;padding:.6rem 1.1rem;text-decoration:none}
+.toollink:hover{background:var(--accent-2);border-color:var(--accent-2)}
+.toolnote{margin-top:1rem;font-size:.84rem;color:var(--ink-3)}
 </style>
 
 <nav class="nav">
@@ -368,6 +378,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <a href="#lablife">Lab Life</a>
       <a href="#alumni">Alumni</a>
       <a href="#structures">Structures</a>
+      <a href="#tools">Lab Tools</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="navright">
@@ -1476,6 +1487,40 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <div class="strow"><div class="rc"><img class="stimg" src="cff7c2db9b.jpg" alt="ORTEP diagram of a beta-keto-anthracene adduct"><a href="https://www.ccdc.cam.ac.uk/structures/Search?Ccdcid=1881998" target="_blank" rel="noopener">ZIRGOZ</a><small>CCDC 1881998</small></div><div class="nm">(−)-(1′S,1″S,11R)-methyl 11-[1,3-dioxo-1-phenyl-3-(1-phenylethoxy)propan-2-yl]-9,10-dihydro-9,10-ethanoanthracene-11-carboxylate<span class="cell"><i>a</i> 11.3620, <i>b</i> 15.3627, <i>c</i> 16.0741 Å</span></div><div class="sg">P2₁2₁2₁ (19)</div></div>
       <div class="strow"><div class="rc"><img class="stimg" src="cff7c2db9b.jpg" alt="ORTEP diagram of a beta-keto-anthracene adduct"><a href="https://www.ccdc.cam.ac.uk/structures/Search?Ccdcid=1873118" target="_blank" rel="noopener">ZIRGUF</a><small>CCDC 1873118</small></div><div class="nm">(−)-(1′S,1″R,11R)-methyl 11-[1,3-dioxo-1-phenyl-3-(1-phenylethoxy)propan-2-yl]-9,10-dihydro-9,10-ethanoanthracene-11-carboxylate<span class="cell"><i>a</i> 13.391, <i>b</i> 10.239, <i>c</i> 21.40 Å · <i>β</i> 106.18°</span></div><div class="sg">P2₁ (4)</div></div>
     </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Lab Tools</p><h2 style="margin-top:.6rem">Tools we built for the bench</h2></div>
+      <p class="lead">Software the group writes for its own experiments. These pages are for people working in SCB2306 and are protected by a group PIN.</p>
+    </div>
+    <div class="tools">
+      <div class="tcard">
+        <h3>Synthesis planner · เครื่องคำนวณการสังเคราะห์</h3>
+        <ul>
+          <li>Stoichiometry for a metal source, one or two linkers and a modulator, scaled from metal concentration, amount in mmol, or a weighed mass</li>
+          <li>Reagent list drawn from the laboratory chemical inventory, with molar mass, bottle code and remaining stock</li>
+          <li>Solubility and expected pH at Chiang Mai bench temperature, including the pH at which the metal hydroxide starts to precipitate</li>
+          <li>Vessel fill, autogenous pressure and furnace programme checks for microwave, conventional heating, hydrothermal, solvothermal and layer diffusion</li>
+          <li>Exports a COSHH assessment with GHS pictograms, a weighing sheet and a lab-book page as A4 PDFs</li>
+        </ul>
+        <a class="toollink" href="https://claude.ai/artifact/Bvg6XE3L1HswoqSWLZ7Prp">เข้าสู่ระบบด้วย PIN ของกลุ่ม →</a>
+        <p class="toolnote">Group members sign in with the four-digit PIN handed out in the laboratory. Ask Saranphong if you do not have it yet.</p>
+      </div>
+      <div class="tcard">
+        <h3>วิธีใช้</h3>
+        <ul>
+          <li>เลือกแหล่งโลหะและลิแกนด์จากบัญชีสารเคมีของห้องปฏิบัติการ ใส่อัตราส่วนโมลหรือจำนวน mmol</li>
+          <li>เลือกตัวทำละลายและปริมาตรรวม ระบบคำนวณมวลที่ต้องชั่งเป็นกรัมและปริมาตรที่ต้องตวงเป็นมิลลิลิตรให้</li>
+          <li>เลือกเทคนิคและใส่ปริมาตรภาชนะ ระบบจะตรวจสัดส่วนการบรรจุ อุณหภูมิเทียบจุดเดือด และความดันไอ</li>
+          <li>ตั้งชื่อสูตรแล้วกดบันทึก เพื่อให้สมาชิกคนอื่นเปิดดูและโหลดมาใช้ซ้ำได้</li>
+          <li>กดออกไฟล์ PDF เพื่อเสนอฟอร์ม COSHH ขออนุมัติ ก่อนเริ่มการทดลอง</li>
+        </ul>
+        <p class="toolnote">หน้านี้เป็นของกลุ่มวิจัยเท่านั้น ไม่ได้เปิดสาธารณะ</p>
+      </div>
     </div>
   </div>
 </section>
