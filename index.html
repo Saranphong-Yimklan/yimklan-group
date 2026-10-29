@@ -1512,9 +1512,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
         <a class="toollink" href="https://claude.ai/artifact/Bvg6XE3L1HswoqSWLZ7Prp">เปิดโปรแกรม →</a>
       </div>
       <div class="tcard">
-        <h3>Isostructurality index<br><span class="tth">ดัชนีความเป็นไอโซสตรักเจอรัล</span></h3>
+        <h3>Isostructurality index<br><span class="tth">ดัชนีความเป็นไอโซสตรักเจอรัลของโครงสร้าง</span></h3>
         <ul>
-          <li>Reads two CIF files and compares their unit cells side by side</li>
+          <li>Reads up to six CIF files at once and compares every pair, as a &pi; matrix and an <i>I</i><sub>s</sub> matrix</li>
+          <li>Unit cells of any chosen pair side by side, with the per-atom deviations</li>
+          <li>Both structures are symmetry-expanded around a reference atom and overlaid, so deposited files that chose different symmetry images still compare correctly, and metals of different elements pair across a series</li>
           <li>Cell similarity index <i>&pi;</i> = |(a+b+c)/(a&prime;+b&prime;+c&prime;) &minus; 1|</li>
           <li>Isostructurality index <i>I</i><sub>s</sub>(n) = |[&Sigma;(&Delta;R<sub>i</sub>)&sup2;/n]<sup>1/2</sup> &minus; 1| &times; 100&nbsp;%, over matched non-hydrogen atoms</li>
           <li>Picks the lattice image, and optionally the symmetry operation, that minimises &Delta;R, and lists the per-atom deviations</li>
@@ -1523,7 +1525,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
         <a class="toollink" href="https://claude.ai/artifact/9asXmRM8V1AuWHX5fXCfxf">เปิดโปรแกรม →</a>
       </div>
       <div class="tcard">
-        <h3>Coordination geometry distortion<br><span class="tth">ความบิดเบี้ยวของเรขาคณิตการประสาน</span></h3>
+        <h3>Coordination geometry distortion<br><span class="tth">ความบิดเบี้ยวของเรขาคณิตเชิงโคออร์ดิเนชัน</span></h3>
         <ul>
           <li>Upload a CIF, pick the metal centre, and the coordination sphere is built with the crystal symmetry applied</li>
           <li>Six-coordinate: &zeta;, &Delta;, &Sigma; and &Theta; exactly as defined in OctaDist, with the eight per-face &Theta; values and the cis and trans angle lists</li>
