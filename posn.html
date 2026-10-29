@@ -379,6 +379,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
 @media(max-width:960px){.gal{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.gal{grid-template-columns:repeat(2,1fr);gap:.7rem}}
+.prepcard{display:grid;grid-template-columns:1.25fr 1fr;gap:2.4rem;margin-top:2.4rem;align-items:start}
+@media(max-width:860px){.prepcard{grid-template-columns:1fr;gap:1.4rem}}
+.prepcard .box{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:1.4rem 1.5rem}
+.prepcard h3{font-size:1.1rem;font-weight:500}
+.prepcard ul{margin:.7rem 0 0;padding-left:1.2em;font-family:var(--thai);font-size:.92rem;color:var(--ink-2)}
+.prepcard li{margin:.3rem 0}
+.preplink{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.2rem;font-family:var(--thai);font-size:.92rem;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:3px;padding:.6rem 1.1rem}
+.prepnote{margin-top:1rem;font-family:var(--thai);font-size:.84rem;color:var(--ink-3)}
 .docs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2.4rem;margin-top:2.2rem}
 .doc{border-left:2px solid var(--rule);padding:.3rem 0 .3rem 1.1rem}
 .doc b{display:block;font-weight:500;color:var(--ink);font-size:.98rem}
@@ -483,6 +491,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <a href="#syllabus">หลักสูตร</a>
       <a href="#tcho">ผลงาน</a>
       <a href="#alumni">ทำเนียบรุ่น</a>
+      <a href="#prep">เตรียม TChO</a>
       <a href="#materials">เอกสารและสื่อ</a>
       <a href="#gallery">ภาพกิจกรรม</a>
       <a href="#contact">ติดต่อ</a>
@@ -641,6 +650,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
           <li><b>การประมวลผล</b> — การใช้เครื่องมือดิจิทัลอย่างง่าย การพล็อตข้อมูลเป็นกราฟ และการวิเคราะห์กราฟ</li>
           <li><b>ความปลอดภัย</b> — สัญลักษณ์และรหัสความเป็นอันตรายตามระบบ GHS การจัดการสารอันตราย และการทิ้งของเสียตามที่กำหนด ทั้งนี้ธรรมนูญการแข่งขัน (ฉบับปรับปรุง 2569) ห้ามใช้สารที่เป็นพิษเฉียบพลัน (H300, H310, H330) และสารก่อมะเร็งหรือก่อความผิดปกติต่อทารกในครรภ์ (H340, H350, H360) โดยเด็ดขาด</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prep">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">สำหรับผู้แทนศูนย์</p><h2 style="margin-top:.6rem">เตรียม TChO 23</h2></div>
+      <p class="lead">แผนอ่านหนังสือและฝึกทำโจทย์ 30 วันก่อนการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 23 สำหรับผู้แทนศูนย์ทั้งเจ็ดคน ผู้แทนศูนย์เข้าสู่ระบบด้วยรหัสประจำตัวและ PIN ที่ได้รับจากอาจารย์ แล้วติ๊กงานที่ทำเสร็จในแต่ละวัน</p>
+    </div>
+    <div class="prepcard">
+      <div class="box">
+        <h3>แผน 30 วัน ชุดหลักคิดและวิธีหาคำตอบ</h3>
+        <ul>
+          <li><b>สัปดาห์ที่ 1</b> สมดุลเคมีและสมดุลไอออนขั้นสูง</li>
+          <li><b>สัปดาห์ที่ 2</b> อุณหพลศาสตร์และเคมีไฟฟ้า</li>
+          <li><b>สัปดาห์ที่ 3</b> จลนพลศาสตร์และทฤษฎีพันธะ</li>
+          <li><b>สัปดาห์ที่ 4</b> ของแข็ง ธาตุปริศนา และสอบจำลองสามชุด</li>
+        </ul>
+        <p class="prepnote">วันละ 3–4 ชั่วโมง รวม 156 งาน แบ่งเป็นอ่านเล่มหลัก แบบฝึกหัด โจทย์อินทรีย์ และบันทึกข้อผิดพลาด พร้อมวันทบทวนท้ายสัปดาห์ และสอบจำลองจับเวลา 3 ชั่วโมงในสามวันสุดท้าย</p>
+        <a class="preplink" href="https://claude.ai/artifact/RFQgKjTrKSJeAneW4aaWQo">เข้าสู่ระบบเพื่อใช้แผน 30 วัน →</a>
+      </div>
+      <div class="box">
+        <h3>วิธีเข้าใช้</h3>
+        <ul>
+          <li>เลือกรหัสประจำตัวของตนเอง แล้วใส่ PIN สี่หลักที่ได้รับจากอาจารย์</li>
+          <li>ติ๊กงานที่ทำเสร็จในแต่ละวัน แถบสรุปด้านบนจะนับให้เองว่าทำไปแล้วกี่งานและครบทุกงานกี่วัน</li>
+          <li>ตั้ง “วันเริ่มแผน” ครั้งเดียว ระบบจะไฮไลต์การ์ดของวันปัจจุบันให้</li>
+          <li>วันสอบจำลอง กรอกคะแนนที่ให้ตนเองเต็ม 60 เพื่อเทียบกับเกณฑ์ในคู่มือ</li>
+          <li>ความก้าวหน้าบันทึกอัตโนมัติ ปิดแล้วเปิดใหม่ยังอยู่ครบ</li>
+        </ul>
+        <p class="prepnote">อาจารย์ผู้ดูแลศูนย์จะเห็นตารางความก้าวหน้าของทั้งเจ็ดคนเมื่อเปิดหน้านี้ด้วยบัญชีของตนเอง</p>
       </div>
     </div>
   </div>
