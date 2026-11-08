@@ -375,6 +375,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .syl li{padding:.55rem 0;border-bottom:1px dashed var(--rule);font-size:.93rem;color:var(--ink-2);line-height:1.6}
 .syl li b{color:var(--ink);font-weight:500}
 @media(max-width:820px){.syl{grid-template-columns:1fr;gap:1.6rem}}
+.lifegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem 1.2rem;margin-top:1.6rem}
+@media(max-width:960px){.lifegrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.lifegrid{grid-template-columns:repeat(2,1fr);gap:1.1rem .8rem}}
+.lifeset{margin-top:2.6rem}
+.lifeset>h3{font-size:1.15rem;margin:0;padding-bottom:.5rem;border-bottom:1px solid var(--rule)}
+.lifeset>p.sub{margin:.6rem 0 0;color:var(--ink-3);font-size:.9rem;line-height:1.6;max-width:62ch}
+.newsflag{display:inline-block;font-family:var(--display);font-size:.72rem;letter-spacing:.08em;
+  text-transform:uppercase;padding:.18rem .5rem;border:1px solid var(--accent);color:var(--accent);
+  border-radius:2px;margin-bottom:.6rem}
+.news h3{font-size:1.2rem;margin:0 0 .5rem}
+.news .meta{color:var(--ink-3);font-size:.88rem;margin:.1rem 0 .7rem}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
 .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
 @media(max-width:960px){.gal{grid-template-columns:repeat(3,1fr)}}
@@ -485,6 +496,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <a class="brand" href="#top">POSN<span> CMU Chemistry</span></a>
     <div class="links" id="navlinks">
+      <a href="#news">ข่าว</a>
       <a href="#about">เกี่ยวกับศูนย์</a>
       <a href="#path">เส้นทางนักเรียน</a>
       <a href="#camps">ค่ายอบรม</a>
@@ -493,6 +505,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <a href="#alumni">ทำเนียบรุ่น</a>
       <a href="#prep">เตรียม TChO</a>
       <a href="#materials">เอกสารและสื่อ</a>
+      <a href="#life">ชีวิตในค่าย</a>
       <a href="#gallery">ภาพกิจกรรม</a>
       <a href="#contact">ติดต่อ</a>
     </div>
@@ -523,6 +536,76 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     </div>
   </div>
 </header>
+
+
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">ข่าวและประกาศ</p><h2 style="margin-top:.6rem">ความเคลื่อนไหวของศูนย์</h2></div>
+      <p class="lead">กำหนดการค่ายอบรม การคัดเลือกผู้แทนศูนย์ และการแข่งขันที่กำลังจะถึง บันทึกเหตุการณ์ย้อนหลังทั้งหมดอยู่ในหัวข้อ <a href="#tcho">ผลงานและการแข่งขัน</a></p>
+    </div>
+
+    <div class="news">
+      <div class="when">2572<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">TChO25 · เจ้าภาพเชียงใหม่</span></div>
+      <div>
+        <span class="newsflag">ประกาศ</span>
+        <h3>มหาวิทยาลัยเชียงใหม่เป็นเจ้าภาพการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 25</h3>
+        <p class="meta">2–6 เมษายน 2572 · คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
+        <p class="cap">ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่ รับเป็นเจ้าภาพจัดการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 25 ภายใต้คำขวัญ <i>The Magic of Chemistry, the Beauty of Art and Culture, the Wonder of Diversity.</i> โดยมี ผศ.ดร. กฤษณะ จิตมณี หัวหน้าภาควิชาเคมี เป็นประธานคณะกรรมการจัดการแข่งขัน</p>
+        <p class="cap">นับเป็นครั้งที่สามที่มหาวิทยาลัยเชียงใหม่เป็นเจ้าภาพ ต่อจาก POSN-ChO ครั้งที่ 3 (พ.ศ. 2550) และ TChO ครั้งที่ 9 (พ.ศ. 2556) ครั้งนี้ขยายกำหนดการจากเดิม 4 วันเป็น 5 วัน ลงทะเบียนที่อาคารเคมี 1 และสอบทั้งภาคปฏิบัติการและภาคทฤษฎีที่อาคาร 30 ปี คณะวิทยาศาสตร์</p>
+        <p class="cap"><a href="https://saranphong-yimklan.github.io/tcho25/">เว็บไซต์การแข่งขัน TChO25 →</a></p>
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="when">2570<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">ค่ายอบรมเข้ม · TChO23</span></div>
+      <div>
+        <span class="newsflag">กำหนดการ</span>
+        <h3>ค่ายอบรมเข้มเตรียมผู้แทนศูนย์สู่การแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 23</h3>
+        <p class="meta">14 มีนาคม – 5 เมษายน 2570 · ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
+        <p class="cap">ผู้แทนศูนย์ที่ผ่านการคัดเลือกจะเข้ารับการอบรมเข้มก่อนเดินทางไปแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 23 ณ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ด้วยโจทย์ประจำวันและโจทย์ท้าทายรายสาขา พร้อมการฝึกปฏิบัติการตามแนวข้อสอบ TChO</p>
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="when">2570<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">ค่าย 2 · ปีการศึกษา 2569</span></div>
+      <div>
+        <span class="newsflag">กำหนดการ</span>
+        <h3>ค่าย 2 วิชาเคมี เจาะลึกเนื้อหาและปฏิบัติการขั้นสูง</h3>
+        <p class="meta">21–26 กุมภาพันธ์ 2570 · ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
+        <p class="cap">นักเรียนที่ผ่านการคัดเลือกจากค่าย 1 เข้าอบรมหัวข้อที่ 15–22 ของหลักสูตร ตั้งแต่สารประกอบโคออร์ดิเนชัน ของแข็ง อุณหพลศาสตร์เคมี เคมีไฟฟ้า 2 ปฏิกิริยาเคมีอินทรีย์ การใช้หมู่ป้องกัน การหาโครงสร้างด้วยเทคนิคสเปกโทรสโกปี จนถึงจลนพลศาสตร์เคมี 2 รวมบรรยาย 57 ชั่วโมง ฝึกแก้ปัญหา 12 ชั่วโมง และปฏิบัติการ 21 ชั่วโมง ในห้องปฏิบัติการจริงของภาควิชา</p>
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="when">2569<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">เคมีโอลิมปิกระดับภูมิภาค ครั้งที่ 27</span></div>
+      <div>
+        <span class="newsflag">ข่าว</span>
+        <h3>การแข่งขันเคมีโอลิมปิกระดับภูมิภาค ครั้งที่ 27 คัดเลือกนักเรียนเข้าค่าย 2 และผู้แทนศูนย์สู่ TChO23</h3>
+        <p class="meta">11 ตุลาคม 2569 &middot; สนามสอบโรงเรียนบุญวาทย์วิทยาลัย และโรงเรียนลำปางกัลยาณี จังหวัดลำปาง</p>
+        <div class="photos"><img class="wide" src="3f731e0775.jpg" alt="หอประชุมสนามสอบขณะสอบภาคทฤษฎี รอบที่ 1 พร้อมจอแสดงเวลาที่เหลือ" loading="lazy"><img src="f7520f02a2.jpg" alt="ห้องสอบพื้นไม้ นักเรียนทำข้อสอบภาคทฤษฎีบนโต๊ะเดี่ยว" loading="lazy"><img src="badf2a161f.jpg" alt="หอประชุมสนามสอบอีกแห่ง โต๊ะคลุมผ้าสีน้ำเงินพร้อมจอจับเวลา" loading="lazy"><img src="823c738223.jpg" alt="มุมหลังห้องสอบ นักเรียนสวมแจ็กเก็ตเคมีของโรงเรียนระหว่างทำข้อสอบ" loading="lazy"><img src="a41c442b4a.jpg" alt="คณะกรรมการและครูวิทยากรที่สนามสอบแห่งหนึ่ง" loading="lazy"><img src="c9e1861b60.jpg" alt="คณะกรรมการและครูวิทยากรที่สนามสอบอีกแห่ง" loading="lazy"><img src="103d786904.jpg" alt="รายการโจทย์ภาคทฤษฎีสิบข้อภายใต้ธีม ลำปาง ดินแดนที่ปริศนาแห่งเคมีผลิบานในจิตวิญญาณล้านนา" loading="lazy"><img src="3929ccf6b0.jpg" alt="ปกข้อสอบภาคทฤษฎีและกระดาษคำตอบ รอบที่ 1 วันอาทิตย์ที่ 11 ตุลาคม 2569" loading="lazy"></div>
+        <p class="cap">ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ ร่วมกับศูนย์โอลิมปิกวิชาการ สอวน. ค่าย 1 วิชาเคมี โรงเรียนบุญวาทย์วิทยาลัย และโรงเรียนลำปางกัลยาณี จังหวัดลำปาง จัดการแข่งขันเคมีโอลิมปิกระดับภูมิภาค ครั้งที่ 27 เพื่อคัดเลือกนักเรียนเข้ารับการอบรมค่าย 2 ณ มหาวิทยาลัยเชียงใหม่ และคัดเลือกผู้แทนศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ เข้าร่วมการแข่งขันเคมีโอลิมปิกระดับชาติ ครั้งที่ 23 (TChO23) ณ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี กรุงเทพมหานคร พร้อมทั้งส่งเสริมการพัฒนามาตรฐานเคมีศึกษา (Chemical Education) ใน 8 จังหวัดภาคเหนือตอนบน โดยครูวิทยากรค่ายจากโรงเรียนต่าง ๆ ทั่วภาคเหนือได้ร่วมสังเกตการณ์การสอบและพิจารณาข้อสอบภาคทฤษฎีในระหว่างการสอบ</p>
+        <p class="cap">การสอบคัดเลือกจัดขึ้นโดยจำลองรูปแบบการแข่งขันเคมีโอลิมปิกระดับชาติ ประกอบด้วยการสอบภาคทฤษฎี (Theoretical) และการสอบภาคปฏิบัติ (Practical) ข้อสอบเน้นโจทย์ปัญหาที่บูรณาการเนื้อหาวิชาเคมีตามหลักสูตร สอวน. (ฉบับปรับปรุง พ.ศ. 2569) เพื่อส่งเสริมการประยุกต์ความรู้จากหลายบทในการแก้โจทย์ปัญหาที่ซับซ้อน โดยเชื่อมโยงกับบริบททางเคมีของท้องถิ่น ทั้งนี้ การออกข้อสอบสอดคล้องกับแนวโน้มข้อสอบการแข่งขันเคมีโอลิมปิกระดับชาติ (TChO) และแนวทางการฝึกนักเรียนค่าย 1 ถึงค่าย 2 สอวน. ที่ได้รับจากคณะกรรมการกลางการแข่งขันเคมีโอลิมปิกระดับชาติ เพื่อเป็นค่ายฝึกอบรมเตรียมความพร้อมให้นักเรียนก้าวสู่การแข่งขันโอลิมปิกวิชาการระหว่างประเทศต่อไป</p>
+        <p class="cap">ข้อสอบภาคทฤษฎีรอบที่ 1 จัดขึ้นวันอาทิตย์ที่ 11 ตุลาคม 2569 เวลา 08.00 ถึง 12.00 น. ภายใต้ธีม <i>ลำปาง: ดินแดนที่ปริศนาแห่งเคมีผลิบานในจิตวิญญาณล้านนา (Lampang: Where Chemical Mysteries Bloom in the Spirit of Lan Na)</i> ประกอบด้วยโจทย์สิบข้อที่ผูกกับบริบทของพื้นที่ ตั้งแต่เกลือแร่ในขวด ปุ๋ยไนโตรเจนในนาข้าว เครื่องกำเนิดออกซิเจนฉุกเฉิน เคมีสีเขียว จากไร่แม่เมาะถึงน้ำพุร้อนแจ้ซ้อน ครั่ง ทองคำแดงแห่งล้านนา แร่หนักสีน้ำตาลดำจากลำห้วยวังเหนือ การย่างแร่ทองแดงสำหรับทำทองจังโกพระธาตุลำปางหลวง อากาศในโรงต้มหน่อไม้ที่สะเอียบ จนถึงการแผ่รังสีของกล้วย</p>
+        <p class="cap"><b>#BondingLanNaWithChemistry</b> &middot; <b>#CMUChemistryOlympiad</b></p>
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="when">2569<br><span style="font-size:.95rem;color:var(--ink-3);font-family:var(--body)">IChO 58 &middot; ทาชเคนต์</span></div>
+      <div>
+        <span class="newsflag">ข่าว</span>
+        <h3>ผู้แทนประเทศไทยคว้า 2 เหรียญเงินและ 2 เหรียญทองแดง จากเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 58</h3>
+        <p class="meta">10 ถึง 19 กรกฎาคม 2569 &middot; กรุงทาชเคนต์ สาธารณรัฐอุซเบกิสถาน</p>
+        <div class="photos"><img class="wide" src="6ba8c26ef9.jpg" alt="คณะผู้แทนประเทศไทยพร้อมเหรียญรางวัลและเกียรติบัตรบนเวที IChO 58" loading="lazy"><img src="65a6ed2a00.jpg" alt="ผู้แทนประเทศไทยทั้งสี่คนกับธงชาติไทยหน้าเวทีพิธีประกาศเหรียญรางวัล IChO 58" loading="lazy"><img src="3f3d1f7d97.jpg" alt="ภาพประชาสัมพันธ์พิธีต้อนรับคณะผู้แทนประเทศไทย IChO 2026 ณ ท่าอากาศยานสุวรรณภูมิ" loading="lazy"></div>
+        <p class="cap">พิธีประกาศเหรียญรางวัลจัดขึ้นเมื่อวันที่ 18 กรกฎาคม 2569 ณ กรุงทาชเคนต์ โดยมีนักเรียน ครู และคณาจารย์จากศูนย์ สอวน. ทั่วประเทศร่วมส่งแรงใจเชียร์ทีมผู้แทนประเทศไทย</p>
+        <p class="cap">คณะผู้แทนประเทศไทยในการแข่งขันเคมีโอลิมปิกระหว่างประเทศ ครั้งที่ 58 ซึ่งมีผู้เข้าแข่งขัน 362 คน จาก 92 ประเทศ คว้ามาได้ 2 เหรียญเงินและ 2 เหรียญทองแดง และสถาบันส่งเสริมการสอนวิทยาศาสตร์และเทคโนโลยี (สสวท.) จัดพิธีต้อนรับคณะผู้แทนฯ ณ ท่าอากาศยานสุวรรณภูมิ เมื่อวันที่ 20 กรกฎาคม 2569</p>
+        <p class="cap">ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่ มีส่วนร่วมในเส้นทางนี้ทั้งในฐานะสถานที่จัดค่ายอบรมเข้มของผู้แทนประเทศไทย และในฐานะศูนย์ต้นทางของนักเรียนที่ก้าวขึ้นสู่เวทีระหว่างประเทศ รายละเอียดรายบุคคลอยู่ในหัวข้อ <a href="#tcho">ผลงานและการแข่งขัน</a></p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <section class="band" id="about">
   <div class="wrap">
@@ -1269,6 +1352,41 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </div>
 </section>
 
+
+<section class="band" id="life">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">ชีวิตในค่าย</p><h2 style="margin-top:.6rem">วันหนึ่งในค่ายเคมีโอลิมปิก</h2></div>
+      <p class="lead">เบื้องหลังการเตรียมสาร ห้องสอบภาคปฏิบัติการ และช่วงเวลาที่นักเรียนกับครูวิทยากรอยู่ด้วยกัน ภาพชุดนี้มาจากค่าย 1 วิชาเคมีและการสอบคัดเลือกที่จังหวัดลำปาง ปีการศึกษา 2569</p>
+    </div>
+
+    <div class="lifeset">
+      <h3>ก่อนเสียงนาฬิกาเริ่มเดิน</h3>
+      <p class="sub">ครูวิทยากรจากโรงเรียนทั่วภาคเหนือและนักวิทยาศาสตร์ประจำห้องปฏิบัติการ ร่วมกันชั่ง เตรียม และบรรจุสารให้ครบทุกที่นั่งก่อนวันสอบ</p>
+      <div class="lifegrid"><figure class="lifefig"><img src="a9030e8a0d.jpg" alt="ครูวิทยากรหลายคนชั่งสารด้วยเครื่องชั่งวิเคราะห์พร้อมกัน ขวดแก้วสำหรับผู้เข้าสอบเรียงเต็มตะกร้าบนโต๊ะ" loading="lazy"><figcaption><b>ห้องเตรียมสาร</b>ครูวิทยากรหลายคนชั่งสารด้วยเครื่องชั่งวิเคราะห์พร้อมกัน ขวดแก้วสำหรับผู้เข้าสอบเรียงเต็มตะกร้าบนโต๊ะ</figcaption></figure><figure class="lifefig"><img src="80bf73a590.jpg" alt="ทีมเตรียมสอบบรรจุสารมาตรฐานลงขวด ปิดผนึกด้วยพาราฟิล์มก่อนติดฉลากประจำที่นั่ง" loading="lazy"><figcaption><b>สารมาตรฐาน A</b>ทีมเตรียมสอบบรรจุสารมาตรฐานลงขวด ปิดผนึกด้วยพาราฟิล์มก่อนติดฉลากประจำที่นั่ง</figcaption></figure><figure class="lifefig"><img src="66ec0c94aa.jpg" alt="ขวดสารละลายฝาน้ำเงินที่บรรจุและติดรหัสเสร็จแล้ว รอส่งเข้าห้องสอบ" loading="lazy"><figcaption><b>บรรจุสารละลาย</b>ขวดสารละลายฝาน้ำเงินที่บรรจุและติดรหัสเสร็จแล้ว รอส่งเข้าห้องสอบ</figcaption></figure><figure class="lifefig"><img src="18e622f9e0.jpg" alt="ครูวิทยากรและนักวิทยาศาสตร์ช่วยกันแบ่งสารลงหลอดทดลองตามรหัส R10 และ R17 ของโจทย์วิเคราะห์เชิงคุณภาพ" loading="lazy"><figcaption><b>แบ่งสารตามรหัส</b>ครูวิทยากรและนักวิทยาศาสตร์ช่วยกันแบ่งสารลงหลอดทดลองตามรหัส R10 และ R17 ของโจทย์วิเคราะห์เชิงคุณภาพ</figcaption></figure></div>
+    </div>
+
+    <div class="lifeset">
+      <h3>ในห้องปฏิบัติการ</h3>
+      <p class="sub">การสอบภาคปฏิบัติการจำลองรูปแบบเดียวกับการแข่งขันระดับชาติ ทั้งการจับเวลา ชุดอุปกรณ์ประจำที่นั่ง และเกณฑ์การให้คะแนน</p>
+      <div class="lifegrid"><figure class="lifefig"><img src="f4482fdee4.jpg" alt="อาจารย์และครูวิทยากรยืนดูแลการสอบภาคปฏิบัติการหน้าป้ายค่ายโอลิมปิกวิชาการ สอวน. ค่าย 1 วิชาเคมี" loading="lazy"><figcaption><b>คุมสอบหน้าป้ายค่าย</b>อาจารย์และครูวิทยากรยืนดูแลการสอบภาคปฏิบัติการหน้าป้ายค่ายโอลิมปิกวิชาการ สอวน. ค่าย 1 วิชาเคมี</figcaption></figure><figure class="lifefig"><img src="049e50323c.jpg" alt="ห้องปฏิบัติการของโรงเรียนจัดตะกร้าอุปกรณ์ LChO ประจำที่นั่งให้ผู้เข้าสอบทุกคน" loading="lazy"><figcaption><b>ตะกร้าประจำที่นั่ง</b>ห้องปฏิบัติการของโรงเรียนจัดตะกร้าอุปกรณ์ LChO ประจำที่นั่งให้ผู้เข้าสอบทุกคน</figcaption></figure><figure class="lifefig"><img src="7f0c574a5a.jpg" alt="ผู้เข้าสอบลงมือไทเทรตพร้อมกันทั้งห้องตามเวลาที่กำหนด" loading="lazy"><figcaption><b>ไทเทรตพร้อมกันทั้งห้อง</b>ผู้เข้าสอบลงมือไทเทรตพร้อมกันทั้งห้องตามเวลาที่กำหนด</figcaption></figure><figure class="lifefig"><img src="33149f4593.jpg" alt="นักเรียนใช้ลูกยางดูดสารด้วยปิเปตต์ ทักษะพื้นฐานที่ใช้จริงในสนามแข่งขัน" loading="lazy"><figcaption><b>ดูดสารด้วยปิเปตต์</b>นักเรียนใช้ลูกยางดูดสารด้วยปิเปตต์ ทักษะพื้นฐานที่ใช้จริงในสนามแข่งขัน</figcaption></figure></div>
+    </div>
+
+    <div class="lifeset">
+      <h3>สมาธิของผู้เข้าสอบ</h3>
+      <p class="sub">ทักษะที่วัดกันจริงในห้องสอบคือการสังเกต การบันทึกผลอย่างเป็นระบบ และการคำนวณที่ตรวจสอบย้อนกลับได้</p>
+      <div class="lifegrid"><figure class="lifefig"><img src="6e56433abe.jpg" alt="นักเรียนบันทึกผลการทดสอบลงตารางวิเคราะห์เชิงคุณภาพ พร้อมหลอดทดลองและเครื่องคิดเลข" loading="lazy"><figcaption><b>บันทึกผลเชิงคุณภาพ</b>นักเรียนบันทึกผลการทดสอบลงตารางวิเคราะห์เชิงคุณภาพ พร้อมหลอดทดลองและเครื่องคิดเลข</figcaption></figure><figure class="lifefig"><img src="cab4fe76d4.jpg" alt="ผู้เข้าสอบยกหลอดทดลองขึ้นสังเกตสีอย่างใกล้ชิด ข้าง ๆ เป็นขวดกรดไฮโดรคลอริกและสารละลาย B" loading="lazy"><figcaption><b>สังเกตสีในหลอดทดลอง</b>ผู้เข้าสอบยกหลอดทดลองขึ้นสังเกตสีอย่างใกล้ชิด ข้าง ๆ เป็นขวดกรดไฮโดรคลอริกและสารละลาย B</figcaption></figure><figure class="lifefig"><img src="4f196134eb.jpg" alt="นักเรียนคำนวณและบันทึกคำตอบ โดยมีตารางธาตุและขวดสารที่ติดฉลากความปลอดภัยวางอยู่บนโต๊ะ" loading="lazy"><figcaption><b>ตารางธาตุข้างมือ</b>นักเรียนคำนวณและบันทึกคำตอบ โดยมีตารางธาตุและขวดสารที่ติดฉลากความปลอดภัยวางอยู่บนโต๊ะ</figcaption></figure><figure class="lifefig"><img src="87869350d9.jpg" alt="ห้องสอบภาคปฏิบัติการจัดโต๊ะเดี่ยวเรียงแถวให้แต่ละคนมีชุดอุปกรณ์ของตนเอง" loading="lazy"><figcaption><b>โต๊ะเดี่ยวเรียงแถว</b>ห้องสอบภาคปฏิบัติการจัดโต๊ะเดี่ยวเรียงแถวให้แต่ละคนมีชุดอุปกรณ์ของตนเอง</figcaption></figure></div>
+    </div>
+
+    <div class="lifeset">
+      <h3>และอีกด้านหนึ่งของค่าย</h3>
+      <p class="sub">ระหว่างความเคร่งเครียดของการสอบ ยังมีมิตรภาพระหว่างนักเรียนต่างโรงเรียน และความใกล้ชิดกับครูที่ดูแลกันมาตลอดค่าย</p>
+      <div class="lifegrid"><figure class="lifefig"><img src="b4362a5555.jpg" alt="นักเรียนเขย่าขวดรูปกรวยที่มีสารละลายสีเหลืองระหว่างการไทเทรต" loading="lazy"><figcaption><b>ทั้งห้องลงมือพร้อมกัน</b>ห้องปฏิบัติการที่จัดเป็นสนามสอบ นักเรียนเขย่าขวดรูปกรวยที่มีสารละลายสีเหลืองระหว่างการไทเทรต</figcaption></figure><figure class="lifefig"><img src="557023fec0.jpg" alt="ครูวิทยากรและนักเรียนที่มุมเตรียมอุปกรณ์หลังเสร็จสิ้นการทดลอง" loading="lazy"><figcaption><b>ครูกับนักเรียน</b>ครูวิทยากรและนักเรียนที่มุมเตรียมอุปกรณ์หลังเสร็จสิ้นการทดลอง</figcaption></figure><figure class="lifefig"><img src="feb72bb465.jpg" alt="นักเรียนกลุ่มหนึ่งถ่ายภาพร่วมกันหน้าโต๊ะปฏิบัติการหลังเก็บอุปกรณ์เรียบร้อย" loading="lazy"><figcaption><b>ภาพหมู่ท้ายคาบ</b>นักเรียนกลุ่มหนึ่งถ่ายภาพร่วมกันหน้าโต๊ะปฏิบัติการหลังเก็บอุปกรณ์เรียบร้อย</figcaption></figure></div>
+    </div>
+
+  </div>
+</section>
+
 <section id="gallery">
   <div class="wrap">
     <div class="sec-head">
@@ -1332,7 +1450,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 <script>
 (function(){
-  var SEL='.news .photos img,.news .photo,.gal img,.camp img';
+  var SEL='.news .photos img,.news .photo,.gal img,.camp img,.lifefig img';
   function tag(i){
     if(!i.naturalWidth||!i.naturalHeight) return;
     var b=i.getBoundingClientRect();
