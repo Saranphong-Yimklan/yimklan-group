@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>เตรียมความพร้อมค่าย 2 · ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</title>
-<meta name="description" content="บทเรียนล่วงหน้าแปดหัวข้อของค่าย 2 วิชาเคมี พร้อมแบบฝึกหัดและเฉลย">
+<meta name="description" content="เอกสารบทเรียน คลิปบรรยาย และแบบฝึกหัดล่วงหน้าของค่าย 2 วิชาเคมี">
 </head>
 <body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Sarabun:wght@300;400;500;600&display=swap">
@@ -490,9 +490,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 :root[data-theme="dark"] .rmed.b{background:#3a2a20;color:#dfa884;border-color:#7d543a}
 @media(max-width:560px){.rstats{gap:1.6rem}.rstats b{font-size:1.5rem}}
 .backlink{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.6rem;font-size:.85rem;color:var(--accent);border-bottom:1px solid var(--accent-2);padding-bottom:.15rem}
+.callout2{border-left:3px solid var(--accent);background:var(--bg-2);padding:1.1rem 1.3rem;margin-top:2.4rem}
+.callout2 p{margin:0;font-size:.95rem;line-height:1.75;color:var(--ink-2)}
+.callout2 b{color:var(--ink)}
 </style>
 <style>
-/* page-specific: pre-camp lessons */
+/* page-specific: camp-2 preparation hub */
 .c2hero{padding:clamp(3rem,6vw,5rem) 0 clamp(2rem,4vw,3rem);border-bottom:1px solid var(--rule)}
 .c2hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:300;letter-spacing:-.02em;margin:.6rem 0 0;
   line-height:1.12;text-wrap:balance}
@@ -504,53 +507,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .facts .fv{margin-top:.45rem;font-size:.95rem;line-height:1.5}
 @media(max-width:860px){.facts{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:460px){.facts{grid-template-columns:1fr}}
-
 .callout{border-left:3px solid var(--accent);background:var(--bg-2);padding:1.2rem 1.4rem;margin-top:2.4rem}
 .callout h4{margin:0;font-size:1rem;font-weight:600}
 .callout p{margin:.5rem 0 0;font-size:.93rem;color:var(--ink-2);line-height:1.75}
-
-.prog{display:flex;align-items:center;gap:1rem;margin:0 0 2.4rem}
-.pbar{flex:1;height:6px;background:var(--rule);border-radius:3px;overflow:hidden}
-.pbar span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
-@media(prefers-reduced-motion:reduce){.pbar span{transition:none}}
-.pnum{font-size:.85rem;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums}
-
-.les{border-top:1px solid var(--rule);padding:2.4rem 0 2.8rem}
-.les:first-of-type{border-top:2px solid var(--accent)}
-.lhead{display:flex;justify-content:space-between;align-items:flex-start;gap:1.4rem;flex-wrap:wrap}
-.lnum{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
-.les h3{font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:500;margin:.4rem 0 0;line-height:1.3}
-.done{font-size:.85rem;color:var(--ink-3);display:flex;align-items:center;gap:.45rem;cursor:pointer;
-  white-space:nowrap;user-select:none}
-.done input{width:1.05rem;height:1.05rem;accent-color:var(--accent);cursor:pointer}
-.lgoal{margin:1rem 0 1.4rem;font-size:.95rem;color:var(--accent);line-height:1.7;max-width:70ch}
-.les p{margin:0 0 1rem;max-width:72ch;line-height:1.85}
-.keybox{background:var(--bg-2);border:1px solid var(--rule);padding:1.2rem 1.4rem;margin:1.6rem 0}
-.keybox h4{margin:0 0 .6rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.keybox ul{margin:0;padding-left:1.1rem}
-.keybox li{margin:.4rem 0;font-size:.93rem;line-height:1.75;color:var(--ink-2)}
-.ex{margin-top:1.8rem}
-.ex h4{margin:0 0 .8rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.ex ol{margin:0;padding-left:1.3rem}
-.ex>ol>li{margin:0 0 1.3rem;line-height:1.85;max-width:72ch}
-details{margin-top:.6rem}
-summary{cursor:pointer;display:inline-block;font-size:.85rem;color:var(--accent);font-weight:500;
-  border:1px solid var(--rule);border-radius:3px;padding:.3rem .8rem;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary:hover{border-color:var(--accent)}
-summary:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px}
-details[open] summary{margin-bottom:.7rem}
-.ans{border-left:2px solid var(--accent-2);padding:.2rem 0 .2rem 1rem;background:transparent}
-.ans p{margin:0 0 .55rem;font-size:.93rem;color:var(--ink-2);line-height:1.8}
-.ans p:last-child{margin-bottom:0}
-.link1{margin-top:1.6rem;font-size:.88rem;color:var(--ink-3);border-top:1px dotted var(--rule);padding-top:.9rem}
+.topics{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.4rem}
+@media(max-width:860px){.topics{grid-template-columns:1fr}}
+.tp{border:1px solid var(--rule);background:var(--card);padding:1.3rem 1.4rem 1.1rem;
+  display:flex;flex-direction:column}
+.tp .thead{border-bottom:1px solid var(--rule);padding-bottom:.9rem}
+.tnum{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.tp h3{font-size:1.12rem;font-weight:500;margin:.4rem 0 0;line-height:1.4}
+.slots{margin-top:.3rem}
+.slot{display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:.7rem 0;border-bottom:1px dotted var(--rule)}
+.slot:last-child{border-bottom:0}
+.sname{font-size:.92rem;color:var(--ink-2)}
+.sstate{font-size:.78rem;color:var(--ink-3);white-space:nowrap}
+.slot a.sstate{color:var(--accent);font-weight:500}
+.slot.ready .sname{color:var(--ink)}
 .plan{margin:0;padding-left:1.2rem;max-width:72ch}
 .plan li{margin:.55rem 0;line-height:1.8;color:var(--ink-2)}
 .plan b{color:var(--ink);font-weight:600}
 .c2foot{border-top:1px solid var(--rule);margin-top:3rem;padding:2.4rem 0 3.2rem;color:var(--ink-3);font-size:.88rem}
 .c2foot p{margin:0 0 .45rem;line-height:1.7}
 </style>
-<style>.links a.here{color:var(--accent);font-weight:600}</style>
 <nav class="nav">
   <div class="wrap">
     <a class="brand" href="posn.html">POSN<span> CMU Chemistry</span></a>
@@ -560,7 +540,6 @@ details[open] summary{margin-bottom:.7rem}
       <a href="posn.html#path">เส้นทางนักเรียน</a>
       <a href="posn.html#camps">ค่ายอบรม</a>
       <a href="posn.html#syllabus">หลักสูตร</a>
-      <a class="here" href="camp2.html">เตรียมค่าย 2</a>
       <a href="posn.html#tcho">ผลงาน</a>
       <a href="posn.html#alumni">ทำเนียบผู้แทน</a>
       <a href="posn.html#materials">เอกสารและสื่อ</a>
@@ -575,7 +554,7 @@ details[open] summary{margin-bottom:.7rem}
   <div class="wrap">
     <p class="eyebrow">ค่าย 2 วิชาเคมี · ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</p>
     <h1>เตรียมความพร้อมค่าย 2</h1>
-    <p class="lead">บทเรียนล่วงหน้าแปดหัวข้อของค่าย 2 พร้อมแบบฝึกหัดและเฉลย สำหรับนักเรียนที่ผ่านค่าย 1 แล้วและกำลังรอเปิดค่าย อ่านก่อนเข้าค่ายเพื่อให้ชั่วโมงบรรยายจริงเป็นการต่อยอด ไม่ใช่การเริ่มจากศูนย์</p>
+    <p class="lead">หน้ารวมเอกสารบทเรียน คลิปบรรยาย และแบบฝึกหัดล่วงหน้าของค่าย 2 สำหรับนักเรียนที่ผ่านค่าย 1 แล้ว เนื้อหาจะทยอยเพิ่มขึ้นทีละหัวข้อ</p>
     <div class="facts">
       <div><div class="fk">ช่วงค่าย</div><div class="fv">20 กุมภาพันธ์ ถึง 7 มีนาคม 2570</div></div>
       <div><div class="fk">เวลาเรียน</div><div class="fv">08:30 ถึง 17:00 น.</div></div>
@@ -585,444 +564,192 @@ details[open] summary{margin-bottom:.7rem}
   </div>
 </header>
 
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div><p class="eyebrow">วิธีใช้หน้านี้</p><h2 style="margin-top:.6rem">อ่านอย่างไรให้ได้ผล</h2></div>
-      <p class="lead">แต่ละหัวข้อใช้เวลาอ่านราว 20 นาที ทำแบบฝึกหัดอีก 20 ถึง 40 นาที ถ้าทำวันละหัวข้อจะจบทั้งแปดหัวข้อในแปดวัน</p>
-    </div>
-    <div class="path">
-      <div class="step"><div class="sn">ขั้นที่ 1</div><h4>อ่านเป้าหมายก่อน</h4><p>ทุกหัวข้อขึ้นต้นด้วยบรรทัดเป้าหมาย บอกว่าเมื่ออ่านจบต้องทำอะไรได้ ถ้าอ่านจบแล้วยังทำไม่ได้ แปลว่ายังไม่ควรข้ามไปหัวข้อถัดไป</p></div>
-      <div class="step"><div class="sn">ขั้นที่ 2</div><h4>ปิดเฉลยก่อนลงมือ</h4><p>เฉลยซ่อนอยู่ใต้ปุ่ม กดเปิดได้ก็ต่อเมื่อเขียนคำตอบของตัวเองลงกระดาษแล้ว การอ่านเฉลยก่อนทำให้รู้สึกว่าเข้าใจ ทั้งที่ยังทำเองไม่ได้</p></div>
-      <div class="step"><div class="sn">ขั้นที่ 3</div><h4>เขียนหน่วยทุกบรรทัด</h4><p>ข้อสอบค่าย 2 เป็นโจทย์บูรณาการที่ยาวหลายบรรทัด การเขียนหน่วยกำกับทุกขั้นคือวิธีจับความผิดพลาดของตัวเองที่ถูกที่สุด</p></div>
-      <div class="step"><div class="sn">ขั้นที่ 4</div><h4>ทบทวนค่าย 1 ควบคู่</h4><p>ท้ายทุกหัวข้อมีบรรทัดบอกว่าเรื่องนี้ต่อยอดจากหัวข้อใดของค่าย 1 เพราะข้อสอบค่าย 2 รวมเนื้อหาค่าย 1 เข้ามาด้วยเสมอ</p></div>
-    </div>
-    <div class="callout">
-      <h4>หน้านี้ไม่ใช่เอกสารของค่าย</h4>
-      <p>บทเรียนและแบบฝึกหัดในหน้านี้เขียนขึ้นใหม่สำหรับเผยแพร่สาธารณะ เอกสารประกอบค่าย ชุดแบบฝึกหัดประจำค่าย และข้อสอบ เป็นเอกสารภายในของทีม ไม่เผยแพร่ในหน้านี้และไม่ควรส่งต่อออกนอกทีม</p>
-    </div>
-  </div>
-</section>
-
 <section class="band">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">บทเรียนล่วงหน้า</p><h2 style="margin-top:.6rem">แปดหัวข้อของค่าย 2</h2></div>
-      <p class="lead">ติ๊กช่องเมื่ออ่านจบและทำแบบฝึกหัดครบ ความคืบหน้าเก็บไว้ในเบราว์เซอร์เครื่องนี้เท่านั้น</p>
+      <p class="lead">แต่ละหัวข้อมีสามรายการ เอกสารบทเรียน คลิปบรรยาย และแบบฝึกหัด รายการที่ยังไม่ขึ้นลิงก์คือรายการที่ยังไม่ได้อัปโหลด</p>
     </div>
-    <div class="prog"><div class="pbar"><span id="pfill"></span></div><div class="pnum" id="pnum">0 จาก 8 หัวข้อ</div></div>
-
-<article class="les" id="t15">
-  <div class="lhead">
-    <div><div class="lnum">หัวข้อ 15</div><h3>สารประกอบโคออร์ดิเนชัน</h3></div>
-    <label class="done"><input type="checkbox" data-k="t15"> อ่านจบแล้ว</label>
-  </div>
-  <p class="lgoal">เป้าหมาย เรียกชื่อและวาดไอโซเมอร์ของสารเชิงซ้อนได้ ทำนายจำนวนอิเล็กตรอนเดี่ยวและคำนวณพลังงานเสถียรภาพสนามผลึกของสารเชิงซ้อนแปดหน้าได้</p>
-  <p>สารเชิงซ้อนคือโลหะทรานซิชันที่มีลิแกนด์ล้อมรอบด้วยพันธะโคออร์ดิเนต สิ่งที่ต้องระบุให้ได้ก่อนเสมอมีสามอย่าง คือสถานะออกซิเดชันของโลหะ จำนวนอิเล็กตรอน d และเลขโคออร์ดิเนชัน จากนั้นจึงพูดถึงรูปทรงและสมบัติได้</p>
-  <p>ในสนามแปดหน้า ออร์บิทัล d ห้าออร์บิทัลแยกเป็นชุดล่าง t<sub>2g</sub> สามออร์บิทัล และชุดบน e<sub>g</sub> สองออร์บิทัล ห่างกันเป็นพลังงาน &Delta;<sub>o</sub> การที่อิเล็กตรอนจะเข้าคู่กันในชุดล่าง หรือกระโดดขึ้นชุดบนแบบเดี่ยว ขึ้นกับว่า &Delta;<sub>o</sub> ใหญ่กว่าหรือเล็กกว่าพลังงานการจับคู่ P ถ้า &Delta;<sub>o</sub> &gt; P จะได้สปินต่ำ ถ้า &Delta;<sub>o</sub> &lt; P จะได้สปินสูง</p>
-  <p>ลิแกนด์ชนิดใดให้ &Delta;<sub>o</sub> มากน้อยเพียงใด ดูจากอนุกรมสเปกโทรเคมี เรียงจากอ่อนไปแก่ I<sup>&minus;</sup> &lt; Br<sup>&minus;</sup> &lt; Cl<sup>&minus;</sup> &lt; F<sup>&minus;</sup> &lt; OH<sup>&minus;</sup> &lt; H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; en &lt; NO<sub>2</sub><sup>&minus;</sup> &lt; CN<sup>&minus;</sup> &asymp; CO ลิแกนด์สนามแก่ทางขวามือมักให้สารเชิงซ้อนสปินต่ำ ไม่มีสี หรือสีเข้มต่างจากลิแกนด์น้ำอย่างชัดเจน</p>
-  <div class="keybox">
-    <h4>ต้องจำให้ได้</h4>
-    <ul>
-      <li>CFSE ของสนามแปดหน้า เท่ากับ (&minus;0.4 n<sub>t2g</sub> + 0.6 n<sub>eg</sub>) &Delta;<sub>o</sub> บวกพลังงานการจับคู่ที่เพิ่มขึ้นจากสถานะอิสระ</li>
-      <li>โมเมนต์แม่เหล็กสปินอย่างเดียว &mu; = &radic;(n(n+2)) หน่วยโบร์แมกนีตอน เมื่อ n คือจำนวนอิเล็กตรอนเดี่ยว</li>
-      <li>ไอโซเมอร์ที่ต้องแยกออก เรขาคณิต (cis กับ trans, fac กับ mer) แสง ลิงก์เกจ และไอออไนเซชัน</li>
-      <li>ลิแกนด์คีเลตให้สารเชิงซ้อนเสถียรกว่าลิแกนด์เดี่ยวที่เทียบเคียงกัน เพราะเอนโทรปีของระบบเพิ่มขึ้น</li>
-    </ul>
-  </div>
-  <div class="ex">
-    <h4>แบบฝึกหัด</h4>
-    <ol>
-      <li>คำนวณ CFSE ในหน่วย &Delta;<sub>o</sub> ของ [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> และ [Fe(CN)<sub>6</sub>]<sup>4&minus;</sup> พร้อมระบุจำนวนอิเล็กตรอนเดี่ยวของแต่ละชนิด
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ทั้งสองชนิดเหล็กมีสถานะออกซิเดชัน +2 จึงเป็น d<sup>6</sup> เหมือนกัน</p>
-        <p>น้ำเป็นลิแกนด์สนามอ่อน ได้สปินสูง t<sub>2g</sub><sup>4</sup> e<sub>g</sub><sup>2</sup> อิเล็กตรอนเดี่ยว 4 ตัว<br>CFSE = (&minus;0.4 &times; 4 + 0.6 &times; 2) &Delta;<sub>o</sub> = &minus;0.4 &Delta;<sub>o</sub></p>
-        <p>ไซยาไนด์เป็นลิแกนด์สนามแก่ ได้สปินต่ำ t<sub>2g</sub><sup>6</sup> อิเล็กตรอนเดี่ยว 0 ตัว<br>CFSE = (&minus;0.4 &times; 6 + 0.6 &times; 0) &Delta;<sub>o</sub> = &minus;2.4 &Delta;<sub>o</sub> และต้องบวกพลังงานการจับคู่ที่เพิ่มขึ้นอีกสองคู่</p>
-        <p>สารเชิงซ้อนไซยาไนด์จึงเสถียรกว่ามาก และเป็นไดอะแมกเนติก ขณะที่สารเชิงซ้อนน้ำเป็นพาราแมกเนติก</p>
-        </div></details>
-      </li>
-      <li>คำนวณโมเมนต์แม่เหล็กสปินอย่างเดียวของ [Mn(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>แมงกานีสสถานะออกซิเดชัน +2 เป็น d<sup>5</sup> กับลิแกนด์สนามอ่อน จึงเป็นสปินสูง t<sub>2g</sub><sup>3</sup> e<sub>g</sub><sup>2</sup> มีอิเล็กตรอนเดี่ยว 5 ตัว</p>
-        <p>&mu; = &radic;(5 &times; 7) = &radic;35 = 5.92 โบร์แมกนีตอน</p>
-        <p>สังเกตว่า d<sup>5</sup> สปินสูงมี CFSE เท่ากับศูนย์พอดี จึงอธิบายได้ว่าทำไมไอออน Mn<sup>2+</sup> ในน้ำจึงมีสีจางมาก</p>
-        </div></details>
-      </li>
-      <li>[Co(en)<sub>2</sub>Cl<sub>2</sub>]<sup>+</sup> มีสเตอริโอไอโซเมอร์กี่ชนิด อะไรบ้าง
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>สามชนิด</p>
-        <p>แบบ trans ที่คลอไรด์สองตัวอยู่ตรงข้ามกัน มีระนาบสมมาตร จึงไม่มีแสงไอโซเมอร์</p>
-        <p>แบบ cis ที่คลอไรด์สองตัวอยู่ติดกัน ไม่มีระนาบสมมาตร จึงเป็นไครัล แยกได้เป็นคู่เอแนนทิโอเมอร์สองชนิด</p>
-        <p>รวมเป็น trans หนึ่งชนิด กับ cis สองชนิด</p>
-        </div></details>
-      </li>
-    </ol>
-  </div>
-  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อโครงสร้างอะตอมและพันธะเคมี การเขียนโครงแบบอิเล็กตรอนของไอออนโลหะทรานซิชันต้องแม่นก่อน จึงจะนับ d<sup>n</sup> ได้ถูก</p>
-</article>
-
-<article class="les" id="t16">
-  <div class="lhead">
-    <div><div class="lnum">หัวข้อ 16</div><h3>ของแข็ง</h3></div>
-    <label class="done"><input type="checkbox" data-k="t16"> อ่านจบแล้ว</label>
-  </div>
-  <p class="lgoal">เป้าหมาย คำนวณความหนาแน่นจากหน่วยเซลล์ได้ เชื่อมความยาวขอบเซลล์กับรัศมีอะตอมได้ และใช้กฎของแบรกก์หาระยะระหว่างระนาบได้</p>
-  <p>ผลึกคือการวางหน่วยเซลล์ซ้ำกันในสามมิติ สิ่งที่ต้องนับให้เป็นคือจำนวนอนุภาคต่อหนึ่งหน่วยเซลล์ อนุภาคที่มุมนับเป็นหนึ่งในแปด ที่หน้านับเป็นครึ่ง ที่ขอบนับเป็นหนึ่งในสี่ และที่ใจกลางนับเต็มหนึ่ง เซลล์ลูกบาศก์กลางหน้าจึงมี 4 อนุภาค และเซลล์ลูกบาศก์กลางตัวมี 2 อนุภาค</p>
-  <p>ความสัมพันธ์ระหว่างความยาวขอบ a กับรัศมี r ต่างกันตามชนิดเซลล์ ลูกบาศก์อย่างง่าย a = 2r ลูกบาศก์กลางตัวสัมผัสกันตามแนวทแยงมุมตัว &radic;3 a = 4r และลูกบาศก์กลางหน้าสัมผัสกันตามแนวทแยงมุมหน้า &radic;2 a = 4r สามบรรทัดนี้ต้องนึกออกจากรูป ไม่ใช่จากการท่อง</p>
-  <p>เมื่อยิงรังสีเอกซ์เข้าไปในผลึก ระนาบของอะตอมจะสะท้อนรังสีเสริมกันเมื่อผลต่างทางเดินเท่ากับจำนวนเต็มเท่าของความยาวคลื่นพอดี นั่นคือกฎของแบรกก์ และสำหรับผลึกลูกบาศก์ ระยะระหว่างระนาบคำนวณได้จากดัชนีมิลเลอร์โดยตรง</p>
-  <div class="keybox">
-    <h4>ต้องจำให้ได้</h4>
-    <ul>
-      <li>ความหนาแน่น &rho; = ZM / (a<sup>3</sup> N<sub>A</sub>) เมื่อ Z คือจำนวนหน่วยสูตรต่อเซลล์</li>
-      <li>กฎของแบรกก์ n&lambda; = 2d sin&theta;</li>
-      <li>ผลึกลูกบาศก์ d<sub>hkl</sub> = a / &radic;(h<sup>2</sup> + k<sup>2</sup> + l<sup>2</sup>)</li>
-      <li>สัดส่วนการบรรจุ ลูกบาศก์กลางหน้าและการบรรจุชิดแบบหกเหลี่ยม 74% ลูกบาศก์กลางตัว 68% ลูกบาศก์อย่างง่าย 52%</li>
-      <li>ช่องว่างแบบแปดหน้าต่อหนึ่งอนุภาคในการบรรจุชิด มี 1 ช่อง ช่องว่างแบบสี่หน้ามี 2 ช่อง</li>
-    </ul>
-  </div>
-  <div class="ex">
-    <h4>แบบฝึกหัด</h4>
-    <ol>
-      <li>ทองแดงตกผลึกแบบลูกบาศก์กลางหน้า รัศมีอะตอม 128 pm มวลอะตอม 63.55 g/mol คำนวณความยาวขอบเซลล์และความหนาแน่น
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ลูกบาศก์กลางหน้า อะตอมสัมผัสกันตามแนวทแยงมุมหน้า &radic;2 a = 4r</p>
-        <p>a = 4r / &radic;2 = 2&radic;2 r = 2 &times; 1.414 &times; 128 pm = 362 pm = 3.62 &times; 10<sup>&minus;8</sup> cm</p>
-        <p>a<sup>3</sup> = 4.74 &times; 10<sup>&minus;23</sup> cm<sup>3</sup> และ Z = 4</p>
-        <p>&rho; = (4 &times; 63.55 g/mol) / (4.74 &times; 10<sup>&minus;23</sup> cm<sup>3</sup> &times; 6.022 &times; 10<sup>23</sup> /mol) = 254.2 / 28.6 = 8.89 g/cm<sup>3</sup></p>
-        <p>ค่าที่วัดได้จริงคือ 8.96 g/cm<sup>3</sup> ต่างกันราวร้อยละหนึ่ง</p>
-        </div></details>
-      </li>
-      <li>ใช้ผลึกทองแดงจากข้อที่แล้ว ยิงด้วยรังสีเอกซ์ความยาวคลื่น 154 pm คำนวณมุมแบรกก์อันดับหนึ่งของระนาบ (111)
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>d<sub>111</sub> = a / &radic;(1 + 1 + 1) = 362 / 1.732 = 209 pm</p>
-        <p>sin&theta; = n&lambda; / (2d) = 154 / (2 &times; 209) = 0.368</p>
-        <p>&theta; = 21.6 องศา</p>
-        </div></details>
-      </li>
-      <li>โซเดียมคลอไรด์มีโครงสร้างแบบเกลือหิน ความยาวขอบเซลล์ 564 pm คำนวณความหนาแน่น กำหนดมวลสูตร 58.44 g/mol
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>โครงสร้างเกลือหินมี Z = 4 หน่วยสูตรต่อเซลล์</p>
-        <p>a<sup>3</sup> = (5.64 &times; 10<sup>&minus;8</sup> cm)<sup>3</sup> = 1.794 &times; 10<sup>&minus;22</sup> cm<sup>3</sup></p>
-        <p>&rho; = (4 &times; 58.44) / (1.794 &times; 10<sup>&minus;22</sup> &times; 6.022 &times; 10<sup>23</sup>) = 233.8 / 108.0 = 2.16 g/cm<sup>3</sup></p>
-        </div></details>
-      </li>
-    </ol>
-  </div>
-  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อแรงยึดเหนี่ยวระหว่างโมเลกุลและสถานะของสาร ชนิดของแรงที่ยึดผลึกเป็นตัวกำหนดจุดหลอมเหลวและความแข็ง</p>
-</article>
-
-<article class="les" id="t17">
-  <div class="lhead">
-    <div><div class="lnum">หัวข้อ 17</div><h3>อุณหพลศาสตร์เคมี</h3></div>
-    <label class="done"><input type="checkbox" data-k="t17"> อ่านจบแล้ว</label>
-  </div>
-  <p class="lgoal">เป้าหมาย แยกให้ออกว่าปริมาณใดเป็นฟังก์ชันสถานะ คำนวณ &Delta;H &Delta;S และ &Delta;G ของปฏิกิริยาได้ และเชื่อม &Delta;G&deg; กับค่าคงที่สมดุลได้</p>
-  <p>กฎข้อที่หนึ่งบอกว่าพลังงานภายในเปลี่ยนไปเท่ากับความร้อนที่ระบบรับบวกงานที่ทำต่อระบบ สำหรับปฏิกิริยาในภาชนะเปิดที่ความดันคงที่ ความร้อนที่วัดได้คือการเปลี่ยนแปลงเอนทาลปีพอดี นี่คือเหตุผลที่ตำราใช้ &Delta;H มากกว่า &Delta;U</p>
-  <p>กฎข้อที่สองเพิ่มทิศทางเข้ามา กระบวนการจะเกิดเองได้เมื่อเอนโทรปีรวมของจักรวาลเพิ่มขึ้น แต่การคำนวณเอนโทรปีของสิ่งแวดล้อมทุกครั้งไม่สะดวก จึงรวบเป็นพลังงานเสรีกิบส์ของระบบแทน เครื่องหมายลบของ &Delta;G ที่อุณหภูมิและความดันคงที่จึงหมายถึงเกิดเองได้</p>
-  <p>จุดที่นักเรียนพลาดบ่อยคือการสับสนระหว่าง &Delta;G&deg; กับ &Delta;G ค่าแรกเป็นค่าคงที่ของปฏิกิริยาที่สภาวะมาตรฐานและผูกกับ K โดยตรง ส่วนค่าหลังขึ้นกับความเข้มข้นขณะนั้นและเป็นศูนย์เมื่อระบบถึงสมดุล</p>
-  <div class="keybox">
-    <h4>ต้องจำให้ได้</h4>
-    <ul>
-      <li>&Delta;G = &Delta;H &minus; T&Delta;S ที่อุณหภูมิคงที่</li>
-      <li>&Delta;G&deg; = &minus;RT ln K และ &Delta;G = &Delta;G&deg; + RT ln Q</li>
-      <li>สมการของฟานต์ฮอฟฟ์ ln(K<sub>2</sub>/K<sub>1</sub>) = &minus;(&Delta;H&deg;/R)(1/T<sub>2</sub> &minus; 1/T<sub>1</sub>)</li>
-      <li>กฎของเฮสส์ เอนทาลปีเป็นฟังก์ชันสถานะ จึงบวกลบเส้นทางได้</li>
-      <li>เมื่อ &Delta;H และ &Delta;S เป็นบวกทั้งคู่ ปฏิกิริยาจะเกิดเองได้เมื่ออุณหภูมิสูงกว่า &Delta;H/&Delta;S</li>
-    </ul>
-  </div>
-  <div class="ex">
-    <h4>แบบฝึกหัด</h4>
-    <ol>
-      <li>ปฏิกิริยาหนึ่งมีค่าคงที่สมดุล 4.0 &times; 10<sup>3</sup> ที่ 298 K คำนวณ &Delta;G&deg;
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>&Delta;G&deg; = &minus;RT ln K = &minus;(8.314 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>)(298 K) ln(4.0 &times; 10<sup>3</sup>)</p>
-        <p>ln(4.0 &times; 10<sup>3</sup>) = 8.294</p>
-        <p>&Delta;G&deg; = &minus;8.314 &times; 298 &times; 8.294 = &minus;2.05 &times; 10<sup>4</sup> J mol<sup>&minus;1</sup> = &minus;20.5 kJ mol<sup>&minus;1</sup></p>
-        </div></details>
-      </li>
-      <li>การสลายตัวของแคลเซียมคาร์บอเนตมี &Delta;H&deg; = +178 kJ mol<sup>&minus;1</sup> และ &Delta;S&deg; = +161 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup> คำนวณอุณหภูมิต่ำสุดที่ปฏิกิริยาเกิดเองได้ สมมติว่าทั้งสองค่าไม่ขึ้นกับอุณหภูมิ
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ที่จุดเปลี่ยน &Delta;G = 0 จึง T = &Delta;H&deg; / &Delta;S&deg;</p>
-        <p>T = (178 &times; 10<sup>3</sup> J mol<sup>&minus;1</sup>) / (161 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>) = 1.11 &times; 10<sup>3</sup> K</p>
-        <p>คือราว 1106 K หรือ 833 องศาเซลเซียส สูงกว่านี้ปฏิกิริยาจึงเกิดเองได้ สอดคล้องกับการเผาปูนในเตาเผาจริง</p>
-        </div></details>
-      </li>
-      <li>ค่าคงที่สมดุลของปฏิกิริยาหนึ่งเพิ่มเป็นสองเท่าเมื่ออุณหภูมิเพิ่มจาก 300 K เป็น 320 K คำนวณ &Delta;H&deg;
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ln(K<sub>2</sub>/K<sub>1</sub>) = &minus;(&Delta;H&deg;/R)(1/T<sub>2</sub> &minus; 1/T<sub>1</sub>) = (&Delta;H&deg;/R)(1/T<sub>1</sub> &minus; 1/T<sub>2</sub>)</p>
-        <p>1/300 &minus; 1/320 = 3.333 &times; 10<sup>&minus;3</sup> &minus; 3.125 &times; 10<sup>&minus;3</sup> = 2.083 &times; 10<sup>&minus;4</sup> K<sup>&minus;1</sup></p>
-        <p>&Delta;H&deg; = R ln2 / 2.083 &times; 10<sup>&minus;4</sup> = (8.314 &times; 0.693) / 2.083 &times; 10<sup>&minus;4</sup> = 2.77 &times; 10<sup>4</sup> J mol<sup>&minus;1</sup></p>
-        <p>เท่ากับ +27.7 kJ mol<sup>&minus;1</sup> เครื่องหมายบวกสอดคล้องกับที่ K เพิ่มเมื่ออุณหภูมิสูงขึ้น ตามหลักของเลอชาเตอลิเอ</p>
-        </div></details>
-      </li>
-    </ol>
-  </div>
-  <p class="link1">ต่อยอดจากค่าย 1 หัวข้ออุณหเคมีและสมดุลเคมี การเขียนนิพจน์ K และการอ่านทิศทางการเลื่อนสมดุลต้องคล่องก่อน</p>
-</article>
-
-<article class="les" id="t18">
-  <div class="lhead">
-    <div><div class="lnum">หัวข้อ 18</div><h3>เคมีไฟฟ้า 2</h3></div>
-    <label class="done"><input type="checkbox" data-k="t18"> อ่านจบแล้ว</label>
-  </div>
-  <p class="lgoal">เป้าหมาย ใช้สมการเนินสท์กับเซลล์ที่ไม่อยู่ที่สภาวะมาตรฐานได้ เชื่อม E&deg; กับ &Delta;G&deg; และ K ได้ และคำนวณปริมาณสารจากการแยกสลายด้วยไฟฟ้าได้</p>
-  <p>ศักย์ไฟฟ้าของเซลล์คือพลังงานเสรีต่อประจุหนึ่งหน่วย ความสัมพันธ์ &Delta;G = &minus;nFE จึงเป็นสะพานเชื่อมอุณหพลศาสตร์กับเคมีไฟฟ้าทั้งหมด เมื่อใดที่โจทย์ให้ E&deg; มาแล้วถามเรื่องสมดุล ให้นึกถึงสะพานเส้นนี้ก่อน</p>
-  <p>สมการเนินสท์บอกว่าศักย์ไฟฟ้าลดลงตามลอการิทึมของผลหารปฏิกิริยา ที่ 298 K พจน์ RT/F คิดเป็น 0.0592 V เมื่อใช้ลอการิทึมฐานสิบ ค่านี้ใช้บ่อยจนควรจำ แต่ต้องรู้ว่ามันผูกกับอุณหภูมิ 298 K เท่านั้น</p>
-  <p>เซลล์ความเข้มข้นเป็นกรณีพิเศษที่ขั้วทั้งสองเป็นสารเดียวกัน ทำให้ E&deg; เท่ากับศูนย์ ศักย์ไฟฟ้าที่วัดได้มาจากพจน์ความเข้มข้นล้วน ๆ โจทย์ชนิดนี้ใช้วัดค่าคงที่การละลายหรือค่า pH ได้</p>
-  <div class="keybox">
-    <h4>ต้องจำให้ได้</h4>
-    <ul>
-      <li>&Delta;G&deg; = &minus;nFE&deg; เมื่อ F = 96485 C mol<sup>&minus;1</sup></li>
-      <li>สมการเนินสท์ที่ 298 K E = E&deg; &minus; (0.0592/n) log Q</li>
-      <li>log K = nE&deg; / 0.0592 ที่ 298 K</li>
-      <li>กฎของฟาราเดย์ ประจุ Q = It และจำนวนโมลอิเล็กตรอนเท่ากับ Q/F</li>
-      <li>แคโทดคือขั้วที่เกิดรีดักชันเสมอ ทั้งในเซลล์กัลวานิกและเซลล์อิเล็กโทรลิติก</li>
-    </ul>
-  </div>
-  <div class="ex">
-    <h4>แบบฝึกหัด</h4>
-    <ol>
-      <li>เซลล์ Zn | Zn<sup>2+</sup> (0.10 M) || Cu<sup>2+</sup> (1.00 M) | Cu มี E&deg; = 1.10 V คำนวณศักย์ไฟฟ้าของเซลล์ที่ 298 K
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ปฏิกิริยารวม Zn(s) + Cu<sup>2+</sup> &rarr; Zn<sup>2+</sup> + Cu(s) และ n = 2</p>
-        <p>Q = [Zn<sup>2+</sup>] / [Cu<sup>2+</sup>] = 0.10 / 1.00 = 0.10</p>
-        <p>E = 1.10 &minus; (0.0592/2) log(0.10) = 1.10 &minus; 0.0296 &times; (&minus;1) = 1.13 V</p>
-        <p>ศักย์ไฟฟ้าสูงกว่าค่ามาตรฐาน เพราะความเข้มข้นของผลิตภัณฑ์ต่ำกว่ามาตรฐาน</p>
-        </div></details>
-      </li>
-      <li>คำนวณค่าคงที่สมดุลของปฏิกิริยาในข้อที่แล้วที่ 298 K
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>log K = nE&deg; / 0.0592 = (2 &times; 1.10) / 0.0592 = 37.2</p>
-        <p>K = 10<sup>37.2</sup> = 1.5 &times; 10<sup>37</sup></p>
-        <p>ค่ามหาศาลนี้หมายความว่าปฏิกิริยาเกิดไปจนแทบสมบูรณ์ ซึ่งตรงกับที่แผ่นสังกะสีจุ่มในสารละลายคอปเปอร์ซัลเฟตแล้วมีทองแดงเกาะจนสีฟ้าจางหายไป</p>
-        </div></details>
-      </li>
-      <li>ผ่านกระแส 1.50 A เป็นเวลา 30.0 นาทีลงในสารละลายคอปเปอร์ซัลเฟต คำนวณมวลทองแดงที่เกาะบนแคโทด
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>Q = It = 1.50 A &times; 1800 s = 2700 C</p>
-        <p>n(e<sup>&minus;</sup>) = 2700 C &times; (1 mol e<sup>&minus;</sup> / 96485 C) = 2.798 &times; 10<sup>&minus;2</sup> mol e<sup>&minus;</sup></p>
-        <p>Cu<sup>2+</sup> + 2 e<sup>&minus;</sup> &rarr; Cu ดังนั้น n(Cu) = 2.798 &times; 10<sup>&minus;2</sup> / 2 = 1.399 &times; 10<sup>&minus;2</sup> mol Cu</p>
-        <p>m = 1.399 &times; 10<sup>&minus;2</sup> mol Cu &times; (63.55 g Cu / 1 mol Cu) = 0.889 g Cu</p>
-        </div></details>
-      </li>
-    </ol>
-  </div>
-  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อเคมีไฟฟ้า 1 และปฏิกิริยารีดอกซ์ การดุลสมการรีดอกซ์ในกรดและเบสต้องทำได้โดยไม่ต้องคิดนาน</p>
-</article>
-
-<article class="les" id="t19">
-  <div class="lhead">
-    <div><div class="lnum">หัวข้อ 19</div><h3>จลนพลศาสตร์เคมี 2</h3></div>
-    <label class="done"><input type="checkbox" data-k="t19"> อ่านจบแล้ว</label>
-  </div>
-  <p class="lgoal">เป้าหมาย หาอันดับปฏิกิริยาจากข้อมูลการทดลองได้ ใช้สมการอาร์เรเนียสหาพลังงานกระตุ้นได้ และอนุมานกฎอัตราจากกลไกที่กำหนดให้ได้</p>
-  <p>กฎอัตรามาจากการทดลอง ไม่ได้มาจากสัมประสิทธิ์ในสมการเคมี ข้อนี้เป็นกับดักที่นักเรียนค่าย 2 ยังพลาดอยู่บ่อย วิธีหาอันดับที่เร็วที่สุดคือดูว่าเมื่อความเข้มข้นของสารหนึ่งเพิ่มเป็นสองเท่าโดยสารอื่นคงที่ อัตราเปลี่ยนไปกี่เท่า</p>
-  <p>สมการอัตราเชิงปริพันธ์ของแต่ละอันดับให้กราฟเส้นตรงคนละแบบ อันดับศูนย์เขียน [A] กับ t อันดับหนึ่งเขียน ln[A] กับ t และอันดับสองเขียน 1/[A] กับ t ถ้าโจทย์ให้ตารางความเข้มข้นกับเวลา ให้ลองพล็อตในใจทั้งสามแบบ</p>
-  <p>เมื่อโจทย์ให้กลไกมา ให้หาขั้นกำหนดอัตราก่อน แล้วเขียนอัตราจากขั้นนั้น ถ้าในนิพจน์มีสารมัธยันตร์ปรากฏอยู่ ต้องกำจัดออกด้วยสมมติฐานสมดุลเร็วหรือสมมติฐานสภาวะคงตัว ให้เหลือเฉพาะสารตั้งต้นที่วัดความเข้มข้นได้จริง</p>
-  <div class="keybox">
-    <h4>ต้องจำให้ได้</h4>
-    <ul>
-      <li>อันดับหนึ่ง ln[A]<sub>t</sub> = ln[A]<sub>0</sub> &minus; kt และครึ่งชีวิต t<sub>1/2</sub> = 0.693/k ไม่ขึ้นกับความเข้มข้นเริ่มต้น</li>
-      <li>อันดับสอง 1/[A]<sub>t</sub> = 1/[A]<sub>0</sub> + kt และครึ่งชีวิตขึ้นกับความเข้มข้นเริ่มต้น</li>
-      <li>สมการอาร์เรเนียส k = A e<sup>&minus;E<sub>a</sub>/RT</sup> และรูปสองอุณหภูมิ ln(k<sub>2</sub>/k<sub>1</sub>) = &minus;(E<sub>a</sub>/R)(1/T<sub>2</sub> &minus; 1/T<sub>1</sub>)</li>
-      <li>ตัวเร่งปฏิกิริยาลดพลังงานกระตุ้นของทั้งไปและกลับเท่ากัน จึงไม่เปลี่ยนค่าคงที่สมดุล</li>
-    </ul>
-  </div>
-  <div class="ex">
-    <h4>แบบฝึกหัด</h4>
-    <ol>
-      <li>ปฏิกิริยาอันดับหนึ่งมี k = 2.00 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup> ต้องใช้เวลาเท่าใดจึงจะเหลือสารตั้งต้นร้อยละ 12.5
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ร้อยละ 12.5 คือหนึ่งในแปด จึงเท่ากับผ่านไปสามครึ่งชีวิตพอดี</p>
-        <p>t<sub>1/2</sub> = 0.693 / (2.00 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup>) = 347 s</p>
-        <p>t = 3 &times; 347 s = 1.04 &times; 10<sup>3</sup> s หรือราว 17 นาที</p>
-        </div></details>
-      </li>
-      <li>ค่าคงที่อัตราของปฏิกิริยาหนึ่งเท่ากับ 2.00 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup> ที่ 300 K และ 8.00 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup> ที่ 320 K คำนวณพลังงานกระตุ้น
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ln(k<sub>2</sub>/k<sub>1</sub>) = ln 4 = 1.386</p>
-        <p>1/T<sub>1</sub> &minus; 1/T<sub>2</sub> = 1/300 &minus; 1/320 = 2.083 &times; 10<sup>&minus;4</sup> K<sup>&minus;1</sup></p>
-        <p>E<sub>a</sub> = R ln(k<sub>2</sub>/k<sub>1</sub>) / (1/T<sub>1</sub> &minus; 1/T<sub>2</sub>) = (8.314 &times; 1.386) / (2.083 &times; 10<sup>&minus;4</sup>)</p>
-        <p>E<sub>a</sub> = 5.53 &times; 10<sup>4</sup> J mol<sup>&minus;1</sup> = 55.3 kJ mol<sup>&minus;1</sup></p>
-        </div></details>
-      </li>
-      <li>ปฏิกิริยา 2 NO + O<sub>2</sub> &rarr; 2 NO<sub>2</sub> เสนอกลไกสองขั้น ขั้นแรก 2 NO &rightleftharpoons; N<sub>2</sub>O<sub>2</sub> เกิดเร็วและเข้าสู่สมดุล ขั้นที่สอง N<sub>2</sub>O<sub>2</sub> + O<sub>2</sub> &rarr; 2 NO<sub>2</sub> เกิดช้า จงหากฎอัตรา
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ขั้นช้าเป็นขั้นกำหนดอัตรา จึง อัตรา = k<sub>2</sub>[N<sub>2</sub>O<sub>2</sub>][O<sub>2</sub>]</p>
-        <p>N<sub>2</sub>O<sub>2</sub> เป็นสารมัธยันตร์ ต้องกำจัดออก จากสมดุลเร็วในขั้นแรก K<sub>1</sub> = [N<sub>2</sub>O<sub>2</sub>]/[NO]<sup>2</sup> ดังนั้น [N<sub>2</sub>O<sub>2</sub>] = K<sub>1</sub>[NO]<sup>2</sup></p>
-        <p>แทนกลับ อัตรา = k<sub>2</sub>K<sub>1</sub>[NO]<sup>2</sup>[O<sub>2</sub>] = k<sub>obs</sub>[NO]<sup>2</sup>[O<sub>2</sub>]</p>
-        <p>ได้อันดับสองเทียบกับ NO อันดับหนึ่งเทียบกับ O<sub>2</sub> รวมเป็นอันดับสาม ซึ่งตรงกับผลการทดลอง</p>
-        </div></details>
-      </li>
-    </ol>
-  </div>
-  <p class="link1">ต่อยอดจากค่าย 1 หัวข้ออัตราการเกิดปฏิกิริยาเคมี ความต่างคือค่าย 2 เพิ่มกลไกและการจัดการสารมัธยันตร์เข้ามา</p>
-</article>
-
-<article class="les" id="t20">
-  <div class="lhead">
-    <div><div class="lnum">หัวข้อ 20</div><h3>ปฏิกิริยาเคมีอินทรีย์</h3></div>
-    <label class="done"><input type="checkbox" data-k="t20"> อ่านจบแล้ว</label>
-  </div>
-  <p class="lgoal">เป้าหมาย เลือกได้ว่าสภาวะที่กำหนดจะพาไปทางการแทนที่หรือการขจัด ทำนายผลิตภัณฑ์หลักพร้อมสเตอริโอเคมี และอธิบายผลของหมู่แทนที่ต่อวงแอโรแมติกได้</p>
-  <p>ปฏิกิริยาอินทรีย์ในค่าย 2 แทบทั้งหมดอธิบายได้ด้วยคำถามสามข้อ คือตรงไหนเป็นนิวคลีโอไฟล์ ตรงไหนเป็นอิเล็กโทรไฟล์ และอิเล็กตรอนคู่ไหนเคลื่อนไปที่ใด การวาดลูกศรหัวโค้งให้ถูกจึงสำคัญกว่าการท่องชื่อปฏิกิริยา</p>
-  <p>การแข่งกันระหว่าง S<sub>N</sub>1 S<sub>N</sub>2 E1 และ E2 ตัดสินด้วยสามปัจจัย คือระดับขั้นของคาร์บอนที่ถูกโจมตี ความแรงและความเกะกะของนิวคลีโอไฟล์หรือเบส และชนิดของตัวทำละลาย คาร์บอนตติยภูมิกับเบสแก่ที่เกะกะมักให้ E2 ส่วนคาร์บอนปฐมภูมิกับนิวคลีโอไฟล์แรงมักให้ S<sub>N</sub>2</p>
-  <p>ในวงแอโรแมติก หมู่แทนที่ที่ให้อิเล็กตรอนทำให้วงว่องไวขึ้นและนำหมู่ใหม่เข้าที่ออร์โทกับพารา ส่วนหมู่ที่ดึงอิเล็กตรอนทำให้วงเฉื่อยลงและนำเข้าที่เมทา ยกเว้นแฮโลเจนซึ่งทำให้วงเฉื่อยลงแต่ยังนำเข้าที่ออร์โทกับพารา ข้อยกเว้นนี้ออกสอบบ่อย</p>
-  <div class="keybox">
-    <h4>ต้องจำให้ได้</h4>
-    <ul>
-      <li>S<sub>N</sub>2 เกิดการกลับด้านของโครงแบบที่คาร์บอนไครัล ส่วน S<sub>N</sub>1 ผ่านคาร์โบแคตไอออนแบนราบ จึงได้ผลิตภัณฑ์ราซีมิก</li>
-      <li>E2 ต้องการให้ไฮโดรเจนกับหมู่ที่หลุดอยู่ในระนาบเดียวกันแบบแอนไทเพริเพลนาร์</li>
-      <li>กฎของซัยต์เซฟให้แอลคีนที่มีหมู่แทนที่มากกว่าเป็นผลิตภัณฑ์หลัก แต่เบสที่เกะกะอย่าง tert-butoxide ให้ผลิตภัณฑ์ตามกฎของฮอฟมันน์</li>
-      <li>การเติม HBr แบบปกติเป็นไปตามกฎของมาร์คอฟนิคอฟ แต่เมื่อมีเพอร์ออกไซด์จะเกิดผ่านอนุมูลอิสระและได้ผลตรงข้าม</li>
-      <li>ความเสถียรของคาร์โบแคตไอออน ตติยภูมิ &gt; ทุติยภูมิ &gt; ปฐมภูมิ และการจัดเรียงตัวใหม่เกิดได้เสมอเมื่อทำให้เสถียรขึ้น</li>
-    </ul>
-  </div>
-  <div class="ex">
-    <h4>แบบฝึกหัด</h4>
-    <ol>
-      <li>2-โบรโม-2-เมทิลโพรเพน ทำปฏิกิริยากับเอทานอลที่อุณหภูมิห้อง เทียบกับทำปฏิกิริยากับโซเดียมเอทอกไซด์ในเอทานอลร้อน จงทำนายผลิตภัณฑ์หลักและกลไกของแต่ละกรณี
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>กรณีแรก เอทานอลเป็นนิวคลีโอไฟล์อ่อนและเป็นตัวทำละลายมีขั้วโปรติก คาร์บอนเป็นตติยภูมิ จึงเกิดผ่านคาร์โบแคตไอออนแบบ S<sub>N</sub>1 ได้ 2-เอทอกซี-2-เมทิลโพรเพนเป็นผลิตภัณฑ์หลัก พร้อมผลิตภัณฑ์ขจัดแบบ E1 ปนเล็กน้อย</p>
-        <p>กรณีที่สอง เอทอกไซด์เป็นเบสแก่และความร้อนเอื้อการขจัด จึงเกิด E2 ได้ 2-เมทิลโพรพีนเป็นผลิตภัณฑ์หลัก</p>
-        <p>หลักที่ใช้ตัดสิน คาร์บอนตติยภูมิไม่เกิด S<sub>N</sub>2 เพราะเกะกะเกินไป เบสแก่จึงพาไปทางการขจัดเสมอ</p>
-        </div></details>
-      </li>
-      <li>โพรพีนทำปฏิกิริยากับ HBr ในสภาวะปกติ และในสภาวะที่มีเพอร์ออกไซด์ จงเปรียบเทียบผลิตภัณฑ์พร้อมเหตุผล
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>สภาวะปกติ โปรตอนเข้าที่คาร์บอนปลายเพื่อให้ได้คาร์โบแคตไอออนทุติยภูมิที่เสถียรกว่า โบรไมด์จึงเข้าที่คาร์บอนกลาง ได้ 2-โบรโมโพรเพน ตามกฎของมาร์คอฟนิคอฟ</p>
-        <p>มีเพอร์ออกไซด์ กลไกเปลี่ยนเป็นอนุมูลอิสระ อะตอมโบรมีนเข้าที่คาร์บอนปลายเพื่อให้ได้อนุมูลคาร์บอนทุติยภูมิที่เสถียรกว่า ได้ 1-โบรโมโพรเพน</p>
-        <p>ทั้งสองกรณีตัวกลางที่เสถียรกว่าเป็นตัวกำหนดเหมือนกัน แต่ตัวกลางคนละชนิด ผลจึงกลับกัน</p>
-        </div></details>
-      </li>
-      <li>เปรียบเทียบอัตราการเกิดไนเทรชันของโทลูอีนกับไนโตรเบนซีนเทียบกับเบนซีน พร้อมระบุตำแหน่งที่หมู่ไนโทรเข้าไป
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>โทลูอีนเร็วกว่าเบนซีน เพราะหมู่เมทิลให้อิเล็กตรอนด้วยผลเหนี่ยวนำและไฮเพอร์คอนจูเกชัน ทำให้วงมีอิเล็กตรอนหนาแน่นขึ้นและทำให้ตัวกลางอะริเนียมเสถียรขึ้น หมู่ไนโทรเข้าที่ออร์โทและพารา</p>
-        <p>ไนโตรเบนซีนช้ากว่าเบนซีนมาก เพราะหมู่ไนโทรดึงอิเล็กตรอนทั้งด้วยผลเหนี่ยวนำและเรโซแนนซ์ หมู่ไนโทรตัวใหม่เข้าที่เมทา เพราะเป็นตำแหน่งที่ประจุบวกในตัวกลางไม่ไปอยู่บนคาร์บอนที่ติดหมู่ไนโทรเดิม</p>
-        </div></details>
-      </li>
-    </ol>
-  </div>
-  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อเคมีอินทรีย์เบื้องต้น การเรียกชื่อตามระบบ IUPAC และการระบุหมู่ฟังก์ชันต้องทำได้ทันที</p>
-</article>
-
-<article class="les" id="t21">
-  <div class="lhead">
-    <div><div class="lnum">หัวข้อ 21</div><h3>การใช้หมู่ป้องกัน</h3></div>
-    <label class="done"><input type="checkbox" data-k="t21"> อ่านจบแล้ว</label>
-  </div>
-  <p class="lgoal">เป้าหมาย บอกได้ว่าเมื่อใดจำเป็นต้องป้องกันหมู่ฟังก์ชัน เลือกหมู่ป้องกันที่เหมาะกับสภาวะ และวางลำดับขั้นการสังเคราะห์ที่มีการป้องกันและการถอดได้</p>
-  <p>ปัญหาที่หมู่ป้องกันแก้คือการที่โมเลกุลมีหมู่ฟังก์ชันมากกว่าหนึ่งหมู่ซึ่งว่องไวต่อรีเอเจนต์เดียวกัน เช่นจะใช้รีเอเจนต์กรีญารด์เข้าที่เอสเทอร์ แต่ในโมเลกุลมีคีโตนอยู่ด้วย คีโตนว่องไวกว่าจึงถูกโจมตีก่อน ทางแก้คือปิดคีโตนไว้ชั่วคราว</p>
-  <p>หมู่ป้องกันที่ดีต้องใส่ง่าย ทนต่อสภาวะของขั้นกลาง และถอดออกได้ด้วยสภาวะที่ไม่ทำลายส่วนอื่นของโมเลกุล แนวคิดสำคัญคือออร์โทโกนัลลิตี นั่นคือเลือกหมู่ป้องกันสองชนิดที่ถอดด้วยสภาวะคนละแบบ จึงถอดทีละหมู่ได้ตามต้องการ</p>
-  <p>คีโตนและแอลดีไฮด์นิยมป้องกันเป็นอะซีทัลด้วยไดออลในกรด แอลกอฮอล์นิยมป้องกันเป็นซิลิลอีเทอร์ซึ่งถอดด้วยไอออนฟลูออไรด์ ส่วนเอมีนนิยมป้องกันด้วยหมู่ Boc ที่ถอดด้วยกรด หรือหมู่ Cbz ที่ถอดด้วยไฮโดรจิโนไลซิส สองหมู่หลังนี้เป็นคู่ออร์โทโกนัลที่ใช้กันมากที่สุด</p>
-  <div class="keybox">
-    <h4>ต้องจำให้ได้</h4>
-    <ul>
-      <li>อะซีทัลเสถียรในเบสแต่สลายในกรดที่มีน้ำ จึงใช้ป้องกันคาร์บอนิลระหว่างทำปฏิกิริยากับเบสแก่หรือรีเอเจนต์กรีญารด์</li>
-      <li>ซิลิลอีเทอร์เช่น TBS ถอดด้วยแหล่งฟลูออไรด์เช่น TBAF ซึ่งไม่กระทบหมู่อื่นเลย</li>
-      <li>Boc ถอดด้วยกรด ส่วน Cbz ถอดด้วยไฮโดรเจนกับตัวเร่งแพลเลเดียม สองสภาวะนี้ไม่รบกวนกัน</li>
-      <li>ทุกขั้นของการป้องกันและการถอดคือขั้นที่เสียผลได้ จึงใช้เมื่อจำเป็นเท่านั้น</li>
-    </ul>
-  </div>
-  <div class="ex">
-    <h4>แบบฝึกหัด</h4>
-    <ol>
-      <li>ต้องการเปลี่ยนหมู่เอสเทอร์ในโมเลกุลที่มีทั้งคีโตนและเอสเทอร์ ให้กลายเป็นแอลกอฮอล์ตติยภูมิด้วยรีเอเจนต์กรีญารด์ โดยคงคีโตนไว้ จงวางลำดับขั้น
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>ขั้นที่ 1 ป้องกันคีโตนเป็นอะซีทัล ด้วย 1,2-เอเทนไดออล และกรดเร่งปฏิกิริยา พร้อมกำจัดน้ำออกเพื่อดันสมดุล</p>
-        <p>ขั้นที่ 2 ทำปฏิกิริยากับรีเอเจนต์กรีญารด์สองสมมูล เพราะเอสเทอร์ต้องการสองสมมูลจึงจะได้แอลกอฮอล์ตติยภูมิ แล้วทำปฏิกิริยากับน้ำในขั้นตอนท้าย</p>
-        <p>ขั้นที่ 3 ถอดอะซีทัลด้วยกรดเจือจางที่มีน้ำ ได้คีโตนกลับคืน</p>
-        <p>เหตุผลที่ต้องป้องกัน คีโตนว่องไวต่อรีเอเจนต์กรีญารด์มากกว่าเอสเทอร์ ถ้าไม่ป้องกันจะถูกโจมตีก่อน</p>
-        </div></details>
-      </li>
-      <li>โมเลกุลหนึ่งมีเอมีนสองหมู่ ต้องการดัดแปลงทีละหมู่ จงเลือกคู่หมู่ป้องกันที่เหมาะสมพร้อมสภาวะการถอด
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>เลือกคู่ออร์โทโกนัล Boc กับ Cbz</p>
-        <p>ถอด Boc ด้วยกรด เช่นกรดไตรฟลูออโรแอซีติก โดย Cbz ยังอยู่ครบ จึงดัดแปลงเอมีนตัวแรกได้</p>
-        <p>จากนั้นถอด Cbz ด้วยไฮโดรเจนกับแพลเลเดียมบนถ่าน ซึ่งเป็นสภาวะกลาง ไม่กระทบส่วนอื่น จึงดัดแปลงเอมีนตัวที่สองต่อได้</p>
-        <p>ข้อควรระวัง ถ้าโมเลกุลมีพันธะคู่หรือหมู่เบนซิลอื่น ไฮโดรจิโนไลซิสอาจไปลดหมู่เหล่านั้นด้วย ต้องเปลี่ยนไปใช้คู่อื่นเช่น Fmoc ที่ถอดด้วยเบสอ่อนแทน</p>
-        </div></details>
-      </li>
-      <li>เหตุใดจึงไม่ควรใช้หมู่อะซีทัลป้องกันคีโตน ในขั้นที่ต้องทำปฏิกิริยาในสารละลายกรดที่มีน้ำ
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>เพราะการเกิดอะซีทัลเป็นสมดุลที่ย้อนกลับได้ และกรดกับน้ำคือสภาวะที่ใช้ถอดอะซีทัลพอดี หมู่ป้องกันจะหลุดออกระหว่างปฏิกิริยา ทำให้คีโตนกลับมาว่องไวอีกครั้ง</p>
-        <p>ในกรณีเช่นนี้ควรเลือกหมู่ป้องกันที่ทนกรด เช่นเปลี่ยนไปใช้ไดไทโอเอซีทัล ซึ่งถอดด้วยรีเอเจนต์ปรอทหรือตัวออกซิไดซ์แทน</p>
-        </div></details>
-      </li>
-    </ol>
-  </div>
-  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อปฏิกิริยาของหมู่ฟังก์ชัน ต้องรู้ลำดับความว่องไวของคาร์บอนิลก่อนจึงจะเห็นว่าทำไมต้องป้องกัน</p>
-</article>
-
-<article class="les" id="t22">
-  <div class="lhead">
-    <div><div class="lnum">หัวข้อ 22</div><h3>การหาโครงสร้างด้วยเทคนิคสเปกโทรสโกปี</h3></div>
-    <label class="done"><input type="checkbox" data-k="t22"> อ่านจบแล้ว</label>
-  </div>
-  <p class="lgoal">เป้าหมาย คำนวณจำนวนดีกรีความไม่อิ่มตัวจากสูตรโมเลกุล อ่าน IR และ <sup>1</sup>H NMR เพื่อระบุหมู่ฟังก์ชันและโครงร่าง และใช้รูปแบบไอโซโทปใน MS ระบุแฮโลเจนได้</p>
-  <p>การหาโครงสร้างเริ่มจากสูตรโมเลกุลเสมอ คำนวณดีกรีความไม่อิ่มตัวเพื่อรู้ว่าต้องมีวงหรือพันธะไพกี่หน่วย ตัวเลขนี้จำกัดความเป็นไปได้ลงมากก่อนที่จะดูสเปกตรัมใด ๆ</p>
-  <p>IR ใช้ตอบคำถามเดียวคือมีหมู่ฟังก์ชันใดบ้าง แถบที่ต้องจำมีไม่กี่แถบ คาร์บอนิลราว 1700 cm<sup>&minus;1</sup> ไฮดรอกซิลเป็นแถบกว้างราว 3300 cm<sup>&minus;1</sup> และพันธะสามของไนไทรล์ราว 2250 cm<sup>&minus;1</sup> ตำแหน่งที่เลื่อนไปจากค่ากลางบอกข้อมูลเพิ่ม เช่นคาร์บอนิลของเอสเทอร์อยู่สูงกว่าของคีโตน</p>
-  <p><sup>1</sup>H NMR ให้ข้อมูลสามชั้นพร้อมกัน ค่าการเลื่อนทางเคมีบอกสภาพแวดล้อมอิเล็กตรอน พื้นที่ใต้พีคบอกอัตราส่วนจำนวนโปรตอน และการแยกพีคบอกจำนวนโปรตอนข้างเคียงตามกฎ n บวกหนึ่ง การอ่านทั้งสามชั้นพร้อมกันคือทักษะที่ต้องฝึก</p>
-  <div class="keybox">
-    <h4>ต้องจำให้ได้</h4>
-    <ul>
-      <li>ดีกรีความไม่อิ่มตัว DBE = C &minus; H/2 + N/2 + 1 โดยไม่นับออกซิเจน และนับแฮโลเจนเหมือนไฮโดรเจน</li>
-      <li>วงเบนซีนคิดเป็น 4 หน่วย คือหนึ่งวงบวกสามพันธะคู่</li>
-      <li>ค่าการเลื่อนที่ใช้บ่อย โปรตอนแอโรแมติก 6.5 ถึง 8.0 ppm โปรตอนข้างคาร์บอนิล 2.0 ถึง 2.6 ppm โปรตอนบนคาร์บอนที่ติดออกซิเจน 3.5 ถึง 4.5 ppm</li>
-      <li>รูปแบบไอโซโทปใน MS อัตราส่วน M ต่อ M+2 ราว 3 ต่อ 1 บ่งชี้คลอรีนหนึ่งอะตอม และราว 1 ต่อ 1 บ่งชี้โบรมีนหนึ่งอะตอม</li>
-    </ul>
-  </div>
-  <div class="ex">
-    <h4>แบบฝึกหัด</h4>
-    <ol>
-      <li>สารมีสูตรโมเลกุล C<sub>4</sub>H<sub>8</sub>O<sub>2</sub> IR แสดงแถบแรงที่ 1740 cm<sup>&minus;1</sup> และไม่มีแถบกว้างบริเวณ 3300 cm<sup>&minus;1</sup> <sup>1</sup>H NMR แสดงพีคที่ 4.1 ppm สี่แฉก 2H, 2.0 ppm พีคเดี่ยว 3H และ 1.25 ppm สามแฉก 3H จงระบุโครงสร้าง
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>DBE = 4 &minus; 8/2 + 1 = 1 จึงมีพันธะไพหรือวงเพียงหนึ่งหน่วย</p>
-        <p>IR ที่ 1740 cm<sup>&minus;1</sup> เป็นคาร์บอนิล และตำแหน่งที่สูงกว่าคีโตนทั่วไปบ่งชี้เอสเทอร์ การไม่มีแถบกว้างตัดกรดคาร์บอกซิลิกออก</p>
-        <p>NMR อ่านได้ว่ามีหมู่เอทิลที่ติดออกซิเจน คือสามแฉก 3H คู่กับสี่แฉก 2H ที่เลื่อนไปถึง 4.1 ppm และมีหมู่เมทิลเดี่ยวที่ 2.0 ppm ซึ่งเป็นเมทิลข้างคาร์บอนิล</p>
-        <p>โครงสร้างคือเอทิลแอซีเตต CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub></p>
-        </div></details>
-      </li>
-      <li>สเปกตรัมมวลของสารหนึ่งแสดงพีคไอออนโมเลกุลที่ m/z 156 และ 158 ด้วยความเข้มใกล้เคียงกัน และสารมีสูตรโมเลกุลที่มีวงแอโรแมติกหนึ่งวง จงระบุสาร
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>อัตราส่วน M ต่อ M+2 ราว 1 ต่อ 1 บ่งชี้ว่ามีโบรมีนหนึ่งอะตอม เพราะไอโซโทป <sup>79</sup>Br กับ <sup>81</sup>Br มีปริมาณใกล้เคียงกัน</p>
-        <p>มวล 156 ลบมวลโบรมีน 79 เหลือ 77 ซึ่งตรงกับหมู่ฟีนิล C<sub>6</sub>H<sub>5</sub></p>
-        <p>สารคือโบรโมเบนซีน C<sub>6</sub>H<sub>5</sub>Br</p>
-        </div></details>
-      </li>
-      <li>คำนวณดีกรีความไม่อิ่มตัวของ C<sub>9</sub>H<sub>10</sub>O<sub>2</sub> และเสนอว่าหน่วยความไม่อิ่มตัวเหล่านั้นน่าจะเป็นอะไร
-        <details><summary>ดูเฉลย</summary><div class="ans">
-        <p>DBE = 9 &minus; 10/2 + 1 = 5</p>
-        <p>การตีความที่เป็นไปได้มากที่สุดคือวงเบนซีนหนึ่งวงซึ่งคิดเป็น 4 หน่วย บวกคาร์บอนิลอีกหนึ่งหน่วย</p>
-        <p>เมื่อรวมกับการมีออกซิเจนสองอะตอม สารน่าจะเป็นเอสเทอร์หรือกรดคาร์บอกซิลิกที่มีวงแอโรแมติก เช่นเมทิลฟีนิลแอซีเตตหรือกรดฟีนิลโพรพาโนอิก ต้องใช้ NMR แยกต่ออีกชั้น</p>
-        </div></details>
-      </li>
-    </ol>
-  </div>
-  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อเคมีอินทรีย์เบื้องต้นและปริมาณสัมพันธ์ การหาสูตรโมเลกุลจากร้อยละโดยมวลคือขั้นก่อนหน้าของโจทย์ชนิดนี้</p>
-</article>
+    <div class="topics">
+  <article class="tp" id="t15">
+    <div class="thead">
+      <div class="tnum">หัวข้อ 15</div>
+      <h3>สารประกอบโคออร์ดิเนชัน</h3>
+    </div>
+    <div class="slots">
+      <div class="slot" data-slot="doc-15">
+        <span class="sname">เอกสารบทเรียน</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="clip-15">
+        <span class="sname">คลิปบรรยาย</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="ex-15">
+        <span class="sname">แบบฝึกหัด</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+    </div>
+  </article>
+  <article class="tp" id="t16">
+    <div class="thead">
+      <div class="tnum">หัวข้อ 16</div>
+      <h3>ของแข็ง</h3>
+    </div>
+    <div class="slots">
+      <div class="slot" data-slot="doc-16">
+        <span class="sname">เอกสารบทเรียน</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="clip-16">
+        <span class="sname">คลิปบรรยาย</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="ex-16">
+        <span class="sname">แบบฝึกหัด</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+    </div>
+  </article>
+  <article class="tp" id="t17">
+    <div class="thead">
+      <div class="tnum">หัวข้อ 17</div>
+      <h3>อุณหพลศาสตร์เคมี</h3>
+    </div>
+    <div class="slots">
+      <div class="slot" data-slot="doc-17">
+        <span class="sname">เอกสารบทเรียน</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="clip-17">
+        <span class="sname">คลิปบรรยาย</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="ex-17">
+        <span class="sname">แบบฝึกหัด</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+    </div>
+  </article>
+  <article class="tp" id="t18">
+    <div class="thead">
+      <div class="tnum">หัวข้อ 18</div>
+      <h3>เคมีไฟฟ้า 2</h3>
+    </div>
+    <div class="slots">
+      <div class="slot" data-slot="doc-18">
+        <span class="sname">เอกสารบทเรียน</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="clip-18">
+        <span class="sname">คลิปบรรยาย</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="ex-18">
+        <span class="sname">แบบฝึกหัด</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+    </div>
+  </article>
+  <article class="tp" id="t19">
+    <div class="thead">
+      <div class="tnum">หัวข้อ 19</div>
+      <h3>จลนพลศาสตร์เคมี 2</h3>
+    </div>
+    <div class="slots">
+      <div class="slot" data-slot="doc-19">
+        <span class="sname">เอกสารบทเรียน</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="clip-19">
+        <span class="sname">คลิปบรรยาย</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="ex-19">
+        <span class="sname">แบบฝึกหัด</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+    </div>
+  </article>
+  <article class="tp" id="t20">
+    <div class="thead">
+      <div class="tnum">หัวข้อ 20</div>
+      <h3>ปฏิกิริยาเคมีอินทรีย์</h3>
+    </div>
+    <div class="slots">
+      <div class="slot" data-slot="doc-20">
+        <span class="sname">เอกสารบทเรียน</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="clip-20">
+        <span class="sname">คลิปบรรยาย</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="ex-20">
+        <span class="sname">แบบฝึกหัด</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+    </div>
+  </article>
+  <article class="tp" id="t21">
+    <div class="thead">
+      <div class="tnum">หัวข้อ 21</div>
+      <h3>การใช้หมู่ป้องกัน</h3>
+    </div>
+    <div class="slots">
+      <div class="slot" data-slot="doc-21">
+        <span class="sname">เอกสารบทเรียน</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="clip-21">
+        <span class="sname">คลิปบรรยาย</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="ex-21">
+        <span class="sname">แบบฝึกหัด</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+    </div>
+  </article>
+  <article class="tp" id="t22">
+    <div class="thead">
+      <div class="tnum">หัวข้อ 22</div>
+      <h3>การหาโครงสร้างด้วยเทคนิคสเปกโทรสโกปี</h3>
+    </div>
+    <div class="slots">
+      <div class="slot" data-slot="doc-22">
+        <span class="sname">เอกสารบทเรียน</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="clip-22">
+        <span class="sname">คลิปบรรยาย</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+      <div class="slot" data-slot="ex-22">
+        <span class="sname">แบบฝึกหัด</span>
+        <span class="sstate">รออัปโหลด</span>
+      </div>
+    </div>
+  </article>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">แผนอ่านแปดวัน</p><h2 style="margin-top:.6rem">ลำดับที่แนะนำ</h2></div>
-      <p class="lead">เรียงตามความต่อเนื่องของเนื้อหา ไม่ใช่ตามลำดับเลขหัวข้อ เพราะอุณหพลศาสตร์เป็นฐานของทั้งเคมีไฟฟ้าและสมดุล</p>
+      <div><p class="eyebrow">สำหรับนักเรียน</p><h2 style="margin-top:.6rem">ใช้หน้านี้อย่างไร</h2></div>
+      <p class="lead">ค่าย 2 เป็นค่ายที่เนื้อหาเดินเร็ว การอ่านล่วงหน้าทำให้ชั่วโมงบรรยายกลายเป็นการต่อยอดแทนการเริ่มใหม่</p>
     </div>
     <ol class="plan">
-      <li><b>วันที่ 1</b> หัวข้อ 17 อุณหพลศาสตร์เคมี เป็นฐานของทุกเรื่องที่เหลือ</li>
-      <li><b>วันที่ 2</b> หัวข้อ 18 เคมีไฟฟ้า 2 ต่อจากพลังงานเสรีทันทีขณะที่ยังจำสูตรได้</li>
-      <li><b>วันที่ 3</b> หัวข้อ 19 จลนพลศาสตร์เคมี 2 เพื่อแยกให้ชัดว่าเสถียรภาพกับความเร็วเป็นคนละเรื่อง</li>
-      <li><b>วันที่ 4</b> หัวข้อ 15 สารประกอบโคออร์ดิเนชัน</li>
-      <li><b>วันที่ 5</b> หัวข้อ 16 ของแข็ง ต่อจากโคออร์ดิเนชันเพราะใช้เรื่องการจัดเรียงอะตอมร่วมกัน</li>
-      <li><b>วันที่ 6</b> หัวข้อ 20 ปฏิกิริยาเคมีอินทรีย์</li>
-      <li><b>วันที่ 7</b> หัวข้อ 21 การใช้หมู่ป้องกัน ซึ่งต้องรู้ปฏิกิริยาในวันที่ 6 ก่อน</li>
-      <li><b>วันที่ 8</b> หัวข้อ 22 สเปกโทรสโกปี แล้วย้อนกลับไปทำแบบฝึกหัดข้อที่ยังติดค้าง</li>
+      <li><b>ดูก่อนว่าหัวข้อใดพร้อมแล้ว</b> รายการที่มีลิงก์คือรายการที่เปิดให้ดาวน์โหลดหรือรับชมได้แล้ว</li>
+      <li><b>อ่านเอกสารก่อนดูคลิป</b> แล้วค่อยใช้คลิปอธิบายส่วนที่อ่านแล้วยังไม่เข้าใจ</li>
+      <li><b>ทำแบบฝึกหัดด้วยมือ</b> เขียนหน่วยกำกับทุกบรรทัด เพราะข้อสอบค่าย 2 เป็นโจทย์บูรณาการที่ยาวหลายขั้น</li>
+      <li><b>ทบทวนเนื้อหาค่าย 1 ควบคู่</b> ข้อสอบค่าย 2 รวมเนื้อหาค่าย 1 เข้ามาด้วยเสมอ</li>
     </ol>
     <div class="callout">
-      <h4>ข้อสอบค่าย 2 เป็นโจทย์บูรณาการ</h4>
-      <p>โจทย์หนึ่งข้ออาจเริ่มจากการคำนวณปริมาณสัมพันธ์ของค่าย 1 ต่อด้วยสมดุลและพลังงานเสรี แล้วจบที่การระบุโครงสร้างจากสเปกตรัม การอ่านแยกเป็นหัวข้อจึงเป็นแค่จุดเริ่ม สิ่งที่ต้องฝึกต่อคือการมองเห็นว่าโจทย์หนึ่งข้อกำลังขอให้ใช้เครื่องมือตัวไหนในลำดับใด</p>
+      <h4>หน้านี้ไม่ใช่เอกสารลับของค่าย</h4>
+      <p>เอกสารที่เผยแพร่ในหน้านี้เป็นสื่อเตรียมความพร้อมที่เปิดให้นักเรียนทั่วไปใช้ได้ ส่วนเอกสารประกอบค่าย ชุดแบบฝึกหัดประจำค่าย และข้อสอบ เป็นเอกสารภายในของทีม ไม่เผยแพร่ในหน้านี้</p>
     </div>
   </div>
 </section>
@@ -1030,10 +757,9 @@ details[open] summary{margin-bottom:.7rem}
 <footer class="c2foot">
   <div class="wrap">
     <p><b>ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</b> ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
-    <p>หน้านี้เป็นบทเรียนเตรียมความพร้อมสำหรับเผยแพร่ทั่วไป ไม่ใช่เอกสารประกอบค่ายและไม่ใช่แนวข้อสอบ · <a href="posn.html">กลับหน้าหลักของศูนย์</a></p>
+    <p>หน้าเตรียมความพร้อมค่าย 2 · <a href="posn.html">กลับหน้าหลักของศูนย์</a></p>
   </div>
 </footer>
-
 <script>
 (function(){
   var btn=document.getElementById('menubtn'), links=document.getElementById('navlinks');
@@ -1044,27 +770,6 @@ details[open] summary{margin-bottom:.7rem}
   document.addEventListener('click',function(e){ if(links.classList.contains('open')&&!links.contains(e.target)&&e.target!==btn) set(false); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
   window.addEventListener('resize',function(){ if(window.innerWidth>720) set(false); });
-})();
-</script>
-<script>
-(function(){
-  var boxes=[].slice.call(document.querySelectorAll('.done input[data-k]'));
-  var fill=document.getElementById('pfill'), num=document.getElementById('pnum');
-  if(!boxes.length||!fill) return;
-  var KEY='posn-camp2-progress';
-  function load(){ try{ return JSON.parse(localStorage.getItem(KEY))||{} }catch(e){ return {} } }
-  function save(o){ try{ localStorage.setItem(KEY, JSON.stringify(o)) }catch(e){} }
-  function paint(){
-    var n=boxes.filter(function(b){return b.checked}).length;
-    fill.style.width=(n/boxes.length*100)+'%';
-    num.textContent=n+' จาก '+boxes.length+' หัวข้อ';
-  }
-  var st=load();
-  boxes.forEach(function(b){
-    b.checked=!!st[b.dataset.k];
-    b.addEventListener('change',function(){ var o=load(); o[b.dataset.k]=b.checked; save(o); paint(); });
-  });
-  paint();
 })();
 </script>
 </body>
