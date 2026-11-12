@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เตรียมความพร้อมค่าย 2 · ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</title>
+<meta name="description" content="บทเรียนล่วงหน้าแปดหัวข้อของค่าย 2 วิชาเคมี พร้อมแบบฝึกหัดและเฉลย">
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Sarabun:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: quiet editorial — narrow measure, generous white space, a single bronze accent, hairline rules that echo crystal lattice lines */
+:root{
+  --bg:#ffffff;          /* white */
+  --bg-2:#f4f6f8;        /* cool paper band */
+  --ink:#1b2430;         /* near-black, cool cast */
+  --ink-2:#4e5a68;       /* secondary text */
+  --ink-3:#848e9a;       /* captions */
+  --rule:#e2e7ec;        /* hairline */
+  --accent:#1a5f83;      /* deep petrol blue */
+  --accent-2:#3f90b4;    /* lighter blue */
+  --card:#ffffff;
+  --display:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --body:"Roboto","Sarabun","Helvetica Neue",Arial,sans-serif;
+  --thai:"Sarabun","Roboto",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1319;--bg-2:#161b23;--ink:#e8edf2;--ink-2:#aab6c2;--ink-3:#7c8793;--rule:#28303a;--accent:#63b3d6;--accent-2:#8fcde8;--card:#161b23;color-scheme:dark
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1319;--bg-2:#161b23;--ink:#e8edf2;--ink-2:#aab6c2;--ink-3:#7c8793;--rule:#28303a;--accent:#63b3d6;--accent-2:#8fcde8;--card:#161b23;color-scheme:dark
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:300;line-height:1.35;letter-spacing:-.015em;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.lead{font-size:1.05rem;color:var(--ink-2);max-width:62ch}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+.brand{font-family:var(--display);font-size:1.15rem;font-weight:500;letter-spacing:.02em}
+.brand span{color:var(--accent)}
+.links{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.links a:hover{color:var(--accent)}
+.navright{display:flex;align-items:center;gap:.6rem;flex:0 0 auto}
+.menubtn{display:none;width:2.5rem;height:2.5rem;align-items:center;justify-content:center;border:1px solid var(--rule);border-radius:3px;background:var(--card);cursor:pointer;flex:0 0 auto;padding:0}
+.menubtn i{display:block;width:1.05rem;height:1.5px;background:var(--ink);position:relative;transition:background .2s}
+.menubtn i::before,.menubtn i::after{content:"";position:absolute;left:0;width:100%;height:1.5px;background:var(--ink);transition:transform .25s,top .25s}
+.menubtn i::before{top:-5px}
+.menubtn i::after{top:5px}
+.menubtn[aria-expanded="true"] i{background:transparent}
+.menubtn[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+.menubtn[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+section[id],header[id]{scroll-margin-top:4.6rem}
+@media (max-width:720px){
+  .menubtn{display:flex}
+  .nav .wrap{flex-wrap:nowrap;gap:.8rem}
+  .brand{font-size:1.05rem}
+  .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;flex-wrap:nowrap;gap:0;background:var(--bg);border-bottom:1px solid var(--rule);box-shadow:0 20px 34px -24px rgba(0,0,0,.5);padding:.25rem 0;max-height:74vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .links.open{display:flex}
+  .links a{padding:.9rem 1.3rem;font-size:.78rem;border-bottom:1px solid var(--rule)}
+  .links a:last-child{border-bottom:0}
+  section[id],header[id]{scroll-margin-top:4rem}
+}
+
+/* hero */
+.labhero{border-bottom:1px solid var(--rule)}
+.labhero .wrap{padding-block:4rem 3.4rem}
+.labhero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:300;line-height:1.45;letter-spacing:-.03em;margin-top:.9rem;max-width:22ch}
+.labhero h1 em{font-style:normal;font-weight:500;color:var(--accent)}
+.labhero .thai{margin-top:.7rem;font-size:1rem;color:var(--ink-2)}
+.labshot{margin:2.4rem 0 0}
+.labshot img{width:100%;display:block;border-radius:3px;border:1px solid var(--rule);box-shadow:0 18px 40px -28px rgba(0,0,0,.5)}
+.labshot figcaption{margin-top:.7rem;font-size:.82rem;color:var(--ink-3);line-height:1.6}
+.labintro{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;margin-top:2.6rem}
+.labintro p{font-size:.97rem;line-height:1.8;color:var(--ink-2)}
+.labintro p+p{margin-top:1.1rem}
+.labintro .first{font-size:1.08rem;line-height:1.75;color:var(--ink)}
+@media(max-width:860px){.labintro{grid-template-columns:1fr;gap:1.4rem}}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding-block:4.5rem 4rem}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:300;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;font-weight:500;color:var(--accent)}
+.thai-name{font-family:var(--thai);font-size:1.15rem;color:var(--ink-2);margin-top:.6rem}
+.hero .role{margin-top:1.4rem;font-size:.95rem;color:var(--ink-2);line-height:1.7}
+.hero .role strong{color:var(--ink);font-weight:500}
+.hero .bio{margin-top:1.1rem;font-size:.95rem;line-height:1.75;color:var(--ink-2);max-width:56ch}
+.keywords{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1.8rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.keywords span::before{content:"◆";font-size:.5rem;color:var(--accent-2);margin-right:.5rem;vertical-align:middle}
+.portrait{position:relative;justify-self:center;width:min(100%,380px)}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:saturate(.92)}
+.portrait::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--rule);z-index:-1;border-radius:2px}
+.cta{display:inline-flex;gap:1.6rem;margin-top:2rem;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.cta a{border-bottom:1px solid var(--accent);padding-bottom:.25rem;color:var(--ink)}
+.cta a:hover{color:var(--accent)}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:3rem}.portrait{order:-1;width:min(100%,300px);justify-self:start}}
+
+/* sections */
+section{padding-block:4.5rem}
+section.band{background:var(--bg-2)}
+.sec-head{display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-bottom:2.6rem;align-items:end}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem)}
+@media (max-width:820px){.sec-head{grid-template-columns:1fr;gap:.8rem}}
+
+/* research grid — circular motifs */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem 2rem}
+.area{min-width:0;text-align:center}
+.figlink{display:block;width:min(100%,240px);margin:0 auto 1.2rem;cursor:pointer}
+.figlink:hover .fig{transform:scale(1.04)}
+.figlink:hover .ring text{fill:var(--ink)}
+.figwrap{position:relative;width:100%;aspect-ratio:1/1}
+.pubgroup h3{scroll-margin-top:5rem}
+.area .fig{position:absolute;top:26px;left:26px;width:calc(100% - 52px);height:calc(100% - 52px);object-fit:cover;border-radius:50%;border:1px solid var(--rule);background:#fff;display:block;transition:transform .3s}
+.ring{position:absolute;inset:0;width:100%;height:100%}
+.ring text{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.18em;fill:var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ring{animation:none}}
+.area .num{font-family:var(--display);font-size:1.6rem;color:var(--accent-2);line-height:1}
+.area h3{font-size:1.3rem;margin-top:.5rem}
+.area p{margin-top:.8rem;color:var(--ink-2);font-size:.92rem;text-align:left}
+.area .tags{margin-top:.9rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+@media (max-width:960px){.areas{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.areas{grid-template-columns:1fr}}
+/* statement */
+.statement{font-family:var(--display);font-size:clamp(1.45rem,2.6vw,2rem);font-weight:300;line-height:1.4;letter-spacing:-.02em;max-width:32ch;color:var(--ink)}
+.statement b{font-style:normal;font-weight:500;color:var(--accent)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;border-top:1px solid var(--rule);padding-top:2rem}
+.stat .n{font-family:var(--display);font-size:2.4rem;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:.5rem}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* publications */
+/* lab life */
+.lablife{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem 1.2rem;margin-top:2.2rem}
+.lifefig{margin:0;min-width:0}
+.lifefig img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule);transition:transform .35s}
+.lifefig:hover img{transform:scale(1.025)}
+.lifefig figcaption{margin-top:.55rem;font-size:.82rem;line-height:1.55;color:var(--ink-3)}
+.lifefig figcaption b{display:block;color:var(--ink-2);font-weight:500}
+@media (max-width:960px){.lablife{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.lablife{grid-template-columns:repeat(2,1fr);gap:1.1rem .8rem}}
+
+/* our structures */
+.structs{margin-top:1rem}
+.spart{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:3.4rem}
+.spart:first-child{margin-top:1.6rem}
+.sgroup{border-top:1px solid var(--rule);padding-top:1.5rem;margin-top:2.4rem}
+.sgroup h3{font-size:1.2rem;font-weight:400;line-height:1.3}
+.sgroup .src{font-size:.82rem;color:var(--ink-3);margin-top:.45rem}
+.sgroup .src a{color:var(--accent);border-bottom:1px solid transparent}
+.sgroup .src a:hover{border-bottom-color:var(--accent)}
+.strow{display:grid;grid-template-columns:11rem 1fr 7.5rem;gap:1.2rem;align-items:baseline;padding:.8rem 0;border-bottom:1px dashed var(--rule)}
+.strow:first-of-type{margin-top:1.1rem;border-top:1px dashed var(--rule)}
+.strow:has(.stimg){align-items:start}
+.strow .stimg{display:block;width:100%;max-width:9.5rem;margin-bottom:.55rem;background:transparent;mix-blend-mode:multiply}
+:root[data-theme="dark"] .strow .stimg{mix-blend-mode:normal;background:#fff;border-radius:2px;padding:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .strow .stimg{mix-blend-mode:normal;background:#fff;border-radius:2px;padding:2px}}
+.strow .rc{font-size:.82rem;letter-spacing:.1em;font-weight:600;text-transform:uppercase;color:var(--accent)}
+.strow .rc a{border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+.strow .rc a:hover{border-bottom-color:var(--accent)}
+.strow .rc small{display:block;letter-spacing:.06em;font-weight:400;text-transform:none;color:var(--ink-3);font-size:.76rem;margin-top:.15rem}
+.strow .nm{font-size:.93rem;color:var(--ink-2);line-height:1.5}
+.strow .cell{display:block;margin-top:.3rem;font-size:.78rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.strow .sg{font-size:.82rem;color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .strow{grid-template-columns:1fr;gap:.25rem;padding:.9rem 0}
+  .strow .sg{text-align:left}
+}
+.pubctl{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:1.6rem 0 .6rem}
+.pubctl input[type=search],.pubctl select{font:inherit;font-size:.88rem;color:var(--ink);background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:.5rem .7rem}
+.pubctl input[type=search]{flex:1 1 20rem;min-width:0}
+.pubctl input[type=search]::placeholder{color:var(--ink-3)}
+.segs{display:flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.seg{font:inherit;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:var(--card);border:0;padding:.55rem .9rem;cursor:pointer}
+.seg+.seg{border-left:1px solid var(--rule)}
+.seg[aria-pressed=true]{background:var(--accent);color:#fff}
+.pubcount{font-size:.8rem;color:var(--ink-3);margin-bottom:1.4rem}
+.pub[hidden],.pubgroup[hidden]{display:none}
+.pubmedia{display:flex;gap:.55rem;align-items:flex-start}
+.pubmedia>a:first-child{flex:0 0 4.2rem}
+.pubmedia>a:last-child{flex:1 1 auto;min-width:0}
+.pub .yr a{display:block}
+.pub .jcov{width:100%;margin-top:.6rem;border:1px solid var(--rule);border-radius:2px;box-shadow:0 2px 8px -4px rgba(0,0,0,.35);transition:opacity .15s}
+.pub .yr a:hover .jcov{opacity:.82}
+.pub .tocg{width:100%;margin-top:.6rem;transition:opacity .15s}
+.pubmedia .tocg{min-width:0}
+.pub .yr a:hover .tocg{opacity:.78}
+.pub .tocg{width:100%;margin-top:.6rem;border:0;border-radius:2px;background:transparent;mix-blend-mode:multiply}
+:root[data-theme="dark"] .pub .tocg{mix-blend-mode:normal;background:#fff;padding:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pub .tocg{mix-blend-mode:normal;background:#fff;padding:2px}}
+@media (max-width:860px){.pub{grid-template-columns:12rem 1fr;gap:1.1rem}.pubmedia>a:first-child{flex-basis:3.4rem}}
+@media (max-width:560px){.pub{grid-template-columns:1fr;gap:.5rem}.pubmedia{max-width:20rem}}
+@media (max-width:640px){.pubctl input[type=search]{flex-basis:100%}}
+.pubgroup{margin-bottom:3rem}
+.pubgroup h3{font-size:1.45rem;padding-bottom:.8rem;border-bottom:1px solid var(--accent-2);margin-bottom:.4rem}
+.pub{display:grid;grid-template-columns:17.5rem 1fr;gap:1.6rem;padding:1rem 0;border-bottom:1px solid var(--rule);min-width:0}
+.pub .yr{font-family:var(--display);font-size:1.25rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.pub .t{font-weight:500;line-height:1.45}
+.pub .t a{border-bottom:1px solid transparent;transition:border-color .15s,color .15s}
+.pub .t a:hover{color:var(--accent);border-bottom-color:var(--accent-2)}
+.pub .au{font-size:.88rem;color:var(--ink-2);margin-top:.3rem}
+.pub .au b{font-weight:600;color:var(--ink)}
+.pub .j{font-size:.85rem;color:var(--ink-3);margin-top:.2rem;font-style:italic}
+.pub .j span{font-style:normal}
+@media (max-width:600px){.pub{grid-template-columns:1fr;gap:.2rem}}
+.pub-note{font-size:.85rem;color:var(--ink-3);margin-top:1rem}
+
+/* timeline lists */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:7.5rem 1fr;gap:1.2rem;padding:.9rem 0;border-bottom:1px solid var(--rule)}
+.tl .d{font-size:.8rem;letter-spacing:.06em;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:.15rem}
+.tl .b{font-weight:500}
+.tl .s{font-size:.88rem;color:var(--ink-2);margin-top:.15rem}
+@media (max-width:600px){.tl li{grid-template-columns:1fr;gap:.2rem}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.two>div{min-width:0}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+h3.sub{font-size:1.45rem;margin-bottom:1rem}
+
+/* teaching */
+.courses{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem;margin-top:1rem}
+.course{background:var(--card);border:1px solid var(--rule);padding:.9rem 1rem;min-width:0}
+.course .code{font-size:.72rem;letter-spacing:.12em;color:var(--accent);font-weight:600}
+.course .name{font-size:.92rem;margin-top:.2rem}
+
+/* olympiad */
+.oly{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.oly>div{background:var(--card);padding:1.6rem 1.6rem;min-width:0}
+.oly .oly-img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px;border:1px solid var(--rule);margin-bottom:1rem;display:block}
+.oly .big{font-family:var(--display);font-size:1.5rem;line-height:1.2}
+.oly .small{font-size:.86rem;color:var(--ink-2);margin-top:.5rem}
+.oly .thai{font-family:var(--thai);color:var(--ink-3);font-size:.86rem;margin-top:.3rem}
+@media (max-width:720px){.oly{grid-template-columns:1fr}}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact .wrap>*{min-width:0}
+.addr,.mail{overflow-wrap:anywhere}
+.addr{font-size:.95rem;color:var(--ink-2);line-height:1.8}
+.addr b{color:var(--ink);font-weight:500}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin-top:1rem;font-family:var(--display);font-size:1.3rem;color:var(--ink)}
+.mail button{font:inherit;font-family:var(--body);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--rule);color:var(--ink-2);padding:.35rem .7rem;cursor:pointer;border-radius:2px}
+.mail button:hover{border-color:var(--accent);color:var(--accent)}
+.join{background:var(--card);border:1px solid var(--rule);padding:1.8rem;min-width:0}
+.join h3{font-size:1.5rem}
+.join p{margin-top:.8rem;color:var(--ink-2);font-size:.95rem}
+@media (max-width:820px){.contact .wrap{grid-template-columns:1fr}}
+
+
+/* news */
+.news{display:grid;grid-template-columns:9rem 1fr;gap:2rem;padding:2rem 0;border-top:1px solid var(--rule)}
+.news:last-child{border-bottom:1px solid var(--rule)}
+.news .when{font-family:var(--display);font-size:1.3rem;color:var(--accent);line-height:1.2}
+.news .photos{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:760px}
+.news .photos img.wide{grid-column:1/-1;aspect-ratio:16/10}
+.news .photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+@media (max-width:600px){.news .photos{grid-template-columns:1fr}}
+.news .photo{width:100%;max-width:760px;aspect-ratio:3/2;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+.news .cap{margin-top:1rem;font-weight:500;line-height:1.5}
+.news .cap-th{font-family:var(--thai);color:var(--ink-2);font-size:.95rem;margin-top:.4rem}
+@media (max-width:720px){.news{grid-template-columns:1fr;gap:.6rem}}
+.roster{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.2rem;font-family:var(--thai)}
+.roster>div{min-width:0}
+.roster-h{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;font-family:var(--body);margin-bottom:.4rem}
+.roster ul{list-style:none;margin:0;padding:0}
+.roster li{font-size:.92rem;padding:.3rem 0;border-bottom:1px solid var(--rule)}
+.roster li span{display:block;color:var(--ink-3);font-size:.82rem}
+@media (max-width:720px){.roster{grid-template-columns:1fr}}
+
+/* alumni */
+.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.alumni>div{min-width:0}
+.alumni h3{font-size:1.45rem;padding-bottom:.6rem;border-bottom:1px solid var(--accent-2);margin-bottom:.6rem}
+.al{list-style:none;margin:0;padding:0}
+.al li{display:grid;grid-template-columns:3.5rem 3.6rem 1fr;gap:.9rem;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--rule)}
+.al .av{width:3.6rem;height:3.6rem;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--bg-2)}
+.al .av.ph{display:block}
+.al .y{font-family:var(--display);font-size:1.1rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.al .n{font-weight:500}
+.al .n span{display:block;font-weight:400;font-size:.85rem;color:var(--ink-3)}
+.al li.empty{color:var(--ink-3);font-style:italic;grid-template-columns:1fr}
+@media (max-width:820px){.alumni{grid-template-columns:1fr}}
+
+/* news cards */
+.ngrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.ncard{display:block;min-width:0;border:1px solid var(--rule);background:var(--card);border-radius:2px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.ncard:hover{transform:translateY(-3px);box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.ncard .thumb{aspect-ratio:4/3;background:var(--bg-2);overflow:hidden}
+.ncard .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.ncard .nothumb{display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem;color:var(--accent-2)}
+.ncap{padding:.9rem 1rem 1.1rem}
+.nwhen{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.nwhen span{color:var(--ink-3);font-weight:400;letter-spacing:.04em;text-transform:none}
+.ntitle{font-weight:500;font-size:.92rem;line-height:1.45;margin-top:.4rem}
+.ncard:nth-child(n+5){display:none}
+.ngrid.all .ncard:nth-child(n+5){display:block}
+.btn{font:inherit;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid var(--accent);color:var(--accent);padding:.7rem 1.6rem;cursor:pointer;border-radius:2px}
+.btn:hover{background:var(--accent);color:var(--bg)}
+#allnews .news{scroll-margin-top:5rem}
+#allnews .news:first-child{border-top:1px solid var(--rule);margin-top:3rem}
+@media (max-width:960px){.ngrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.ngrid{grid-template-columns:1fr}}
+
+/* members */
+.members{display:grid;grid-template-columns:repeat(5,1fr);gap:2rem 1.5rem}
+.member{text-align:center;min-width:0}
+.member img{width:min(100%,150px);aspect-ratio:1/1;border-radius:50%;object-fit:cover;border:1px solid var(--rule);box-shadow:0 0 0 6px var(--bg),0 0 0 7px var(--accent-2);margin:0 auto 1rem;display:block}
+.mname{font-weight:500;line-height:1.3}
+.mrole{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-top:.3rem}
+@media (max-width:960px){.members{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.members{grid-template-columns:repeat(2,1fr)}}
+
+/* profiles */
+.plink{cursor:pointer}
+.al li.plink:hover .n,.member.plink:hover .mname{color:var(--accent)}
+.pmodal[hidden]{display:none}
+.pmodal{position:fixed;inset:0;z-index:50;background:color-mix(in srgb,var(--ink) 55%,transparent);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-left,0px))}
+.pbox{position:relative;background:var(--card);color:var(--ink);max-width:900px;width:100%;max-height:90vh;overflow:auto;border:1px solid var(--rule);border-radius:2px;padding:2.2rem;box-shadow:0 30px 80px -30px rgba(0,0,0,.5)}
+.pclose{position:absolute;top:.8rem;right:1rem;font:inherit;font-size:1.6rem;line-height:1;background:none;border:0;color:var(--ink-3);cursor:pointer}
+.pclose:hover{color:var(--accent)}
+.glogos{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.glogos .glogo{width:8.5rem;flex:0 0 auto}
+.glogo{display:block;width:11rem;max-width:60%;margin-top:.7rem;background:transparent;mix-blend-mode:multiply}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .glogo{mix-blend-mode:normal;background:#fff;padding:.35rem;border-radius:2px}}
+:root[data-theme="dark"] .glogo{mix-blend-mode:normal;background:#fff;padding:.35rem;border-radius:2px}
+.profile[hidden]{display:none}
+.profile{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:start}
+.profile:not(:has(>img)){grid-template-columns:1fr}
+.profile>img{width:200px;height:200px;border-radius:50%;object-fit:cover;border:1px solid var(--rule);box-shadow:0 0 0 8px var(--bg),0 0 0 9px var(--accent-2)}
+.profile h3{font-size:1.55rem;font-weight:400;margin-top:.4rem}
+.profile p{margin-top:.9rem;color:var(--ink-2);font-size:.95rem}
+.pgal{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.7rem;margin-top:1.4rem}
+.pgal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+.profile .now{color:var(--ink);font-weight:500;border-top:1px solid var(--rule);padding-top:.9rem}
+@media (max-width:560px){.profile{grid-template-columns:1fr}.profile>img{width:150px;height:150px}.pgal{grid-template-columns:1fr}.pbox{padding:1.5rem 1.2rem;max-height:92vh}}
+footer{border-top:1px solid var(--rule);padding-block:2rem;font-size:.8rem;color:var(--ink-3)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+</style>
+<style>
+:root{--display:"Roboto","Sarabun","Helvetica Neue",Arial,sans-serif}
+.th-lead{font-family:var(--thai)}
+.camps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:2.6rem}
+.camp{border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--card);display:flex;flex-direction:column}
+.camp img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-bottom:1px solid var(--rule)}
+.camp .cbody{padding:1.3rem 1.3rem 1.5rem}
+.camp .cno{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.camp h3{font-size:1.2rem;font-weight:500;margin-top:.5rem;line-height:1.4}
+.camp .cwhen{margin-top:.6rem;font-size:.86rem;color:var(--ink);font-weight:500}
+.camp .cwhere{margin-top:.2rem;font-size:.86rem;color:var(--ink-3)}
+.camp p{margin-top:.8rem;font-size:.92rem;line-height:1.75;color:var(--ink-2)}
+@media(max-width:900px){.camps{grid-template-columns:1fr}}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2.4rem}
+.step{border-top:2px solid var(--accent);padding-top:1rem}
+.step .sn{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.step h4{font-size:1.02rem;font-weight:500;margin-top:.45rem;line-height:1.45}
+.step p{margin-top:.5rem;font-size:.88rem;line-height:1.7;color:var(--ink-2)}
+@media(max-width:900px){.path{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.path{grid-template-columns:1fr}}
+.syl{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;margin-top:2.4rem}
+.syl h3{font-size:1.1rem;font-weight:500;padding-bottom:.6rem;border-bottom:1px solid var(--rule)}
+.syl ul{margin-top:1rem;list-style:none}
+.syl li{padding:.55rem 0;border-bottom:1px dashed var(--rule);font-size:.93rem;color:var(--ink-2);line-height:1.6}
+.syl li b{color:var(--ink);font-weight:500}
+@media(max-width:820px){.syl{grid-template-columns:1fr;gap:1.6rem}}
+.lifegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem 1.2rem;margin-top:1.6rem}
+@media(max-width:960px){.lifegrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.lifegrid{grid-template-columns:repeat(2,1fr);gap:1.1rem .8rem}}
+.lifeset{margin-top:2.6rem}
+.lifeset>h3{font-size:1.15rem;margin:0;padding-bottom:.5rem;border-bottom:1px solid var(--rule)}
+.lifeset>p.sub{margin:.6rem 0 0;color:var(--ink-3);font-size:.9rem;line-height:1.6;max-width:62ch}
+.newsflag{display:inline-block;font-family:var(--display);font-size:.72rem;letter-spacing:.08em;
+  text-transform:uppercase;padding:.18rem .5rem;border:1px solid var(--accent);color:var(--accent);
+  border-radius:2px;margin-bottom:.6rem}
+.news h3{font-size:1.2rem;margin:0 0 .5rem}
+.news .meta{color:var(--ink-3);font-size:.88rem;margin:.1rem 0 .7rem}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;border:1px solid var(--rule)}
+@media(max-width:960px){.gal{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.gal{grid-template-columns:repeat(2,1fr);gap:.7rem}}
+.prepcard{display:grid;grid-template-columns:1.25fr 1fr;gap:2.4rem;margin-top:2.4rem;align-items:start}
+@media(max-width:860px){.prepcard{grid-template-columns:1fr;gap:1.4rem}}
+.prepcard .box{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:1.4rem 1.5rem}
+.prepcard h3{font-size:1.1rem;font-weight:500}
+.prepcard ul{margin:.7rem 0 0;padding-left:1.2em;font-family:var(--thai);font-size:.92rem;color:var(--ink-2)}
+.prepcard li{margin:.3rem 0}
+.preplink{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.2rem;font-family:var(--thai);font-size:.92rem;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:3px;padding:.6rem 1.1rem}
+.prepnote{margin-top:1rem;font-family:var(--thai);font-size:.84rem;color:var(--ink-3)}
+.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2.4rem;margin-top:2.2rem}
+.doc{border-left:2px solid var(--rule);padding:.3rem 0 .3rem 1.1rem}
+.doc b{display:block;font-weight:500;color:var(--ink);font-size:.98rem}
+.doc span{display:block;margin-top:.35rem;font-size:.88rem;color:var(--ink-2);line-height:1.7}
+@media(max-width:820px){.docs{grid-template-columns:1fr}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news .photos img.tall,.news .photo.tall,.gal img.tall,.camp img.tall{object-fit:contain;background:var(--bg-2)}
+.news .photos img.hi,.news .photo.hi,.gal img.hi,.camp img.hi{object-position:50% 28%}
+
+.news .photos img.tall,.news .photo.tall,.gal img.tall,.camp img.tall{object-fit:contain;background:var(--bg-2)}
+.news .photos img.hi,.news .photo.hi,.gal img.hi,.camp img.hi{object-position:50% 28%}
+.news .photos img.card,.news .photos img.card.tall,.news .photos img.card.hi{aspect-ratio:16/9;object-fit:contain;object-position:50% 50%;background:var(--bg-2)}
+
+.rstats{display:flex;flex-wrap:wrap;gap:2.6rem;margin-top:2.2rem;padding-bottom:1.6rem;border-bottom:1px solid var(--rule)}
+.rstats>div{display:flex;flex-direction:column}
+.rstats b{font-size:2rem;font-weight:300;letter-spacing:-.02em;color:var(--accent)}
+.rstats span{font-size:.8rem;color:var(--ink-3);font-family:var(--thai)}
+.rctl{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:1.6rem}
+.rctl input,.rctl select{font-family:var(--thai);font-size:.88rem;padding:.5rem .7rem;border:1px solid var(--rule);border-radius:3px;background:var(--card);color:var(--ink)}
+.rctl input{flex:1 1 15rem;min-width:0}
+.rcount{font-size:.8rem;color:var(--ink-3);font-family:var(--thai)}
+.ryear{margin-top:2.2rem}
+.ryear h3{font-size:1.15rem;font-weight:500;letter-spacing:-.01em;padding-bottom:.5rem;border-bottom:1px solid var(--rule)}
+.ryear h3 span{font-weight:400;color:var(--ink-3);font-size:.9rem}
+.rlist{list-style:none;padding:0;margin:.2rem 0 0}
+.rlist li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem .8rem;padding:.6rem 0;border-bottom:1px solid var(--rule-2,var(--rule))}
+.rlist li:last-child{border-bottom:0}
+.rmed{flex:0 0 auto;font-size:.72rem;letter-spacing:.04em;font-family:var(--thai);padding:.15rem .5rem;border-radius:999px;border:1px solid}
+.rmed.g{color:#8a6a10;border-color:#d9b34a;background:#f7eccd}
+.rmed.s{color:#5f6670;border-color:#b6bdc6;background:#eef0f3}
+.rmed.b{color:#8a5230;border-color:#cf9a74;background:#f6e4d8}
+.rmed.h,.rmed.p,.rmed.n{color:var(--ink-3);border-color:var(--rule);background:transparent}
+.rname{font-family:var(--thai);font-size:.95rem}
+.rsch{font-family:var(--thai);font-size:.85rem;color:var(--ink-3)}
+.rlist em{font-style:normal;font-family:var(--thai);font-size:.75rem;color:var(--accent);border:1px solid var(--accent-2);border-radius:999px;padding:.1rem .45rem}
+.rnote{font-family:var(--thai);font-size:.75rem;color:var(--ink-3)}
+.rlist em.intl{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rsch-none{opacity:.55;font-style:italic}
+.rsrc{margin-top:2rem;font-size:.8rem;color:var(--ink-3);font-family:var(--thai)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rmed.g{background:#3a2f12;color:#e3c879;border-color:#7a6424}:root:not([data-theme="light"]) .rmed.s{background:#2a2e33;color:#c6ccd4;border-color:#555c66}:root:not([data-theme="light"]) .rmed.b{background:#3a2a20;color:#dfa884;border-color:#7d543a}}
+:root[data-theme="dark"] .rmed.g{background:#3a2f12;color:#e3c879;border-color:#7a6424}
+:root[data-theme="dark"] .rmed.s{background:#2a2e33;color:#c6ccd4;border-color:#555c66}
+:root[data-theme="dark"] .rmed.b{background:#3a2a20;color:#dfa884;border-color:#7d543a}
+@media(max-width:560px){.rstats{gap:1.6rem}.rstats b{font-size:1.5rem}}
+
+.rstats{display:flex;flex-wrap:wrap;gap:2.6rem;margin-top:2.2rem;padding-bottom:1.6rem;border-bottom:1px solid var(--rule)}
+.rstats>div{display:flex;flex-direction:column}
+.rstats b{font-size:2rem;font-weight:300;letter-spacing:-.02em;color:var(--accent)}
+.rstats span{font-size:.8rem;color:var(--ink-3);font-family:var(--thai)}
+.rctl{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:1.6rem}
+.rctl input,.rctl select{font-family:var(--thai);font-size:.88rem;padding:.5rem .7rem;border:1px solid var(--rule);border-radius:3px;background:var(--card);color:var(--ink)}
+.rctl input{flex:1 1 15rem;min-width:0}
+.rcount{font-size:.8rem;color:var(--ink-3);font-family:var(--thai)}
+.ryear{margin-top:2.2rem}
+.ryear h3{font-size:1.15rem;font-weight:500;letter-spacing:-.01em;padding-bottom:.5rem;border-bottom:1px solid var(--rule)}
+.ryear h3 span{font-weight:400;color:var(--ink-3);font-size:.9rem}
+.rlist{list-style:none;padding:0;margin:.2rem 0 0}
+.rlist li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem .8rem;padding:.6rem 0;border-bottom:1px solid var(--rule-2,var(--rule))}
+.rlist li:last-child{border-bottom:0}
+.rmed{flex:0 0 auto;font-size:.72rem;letter-spacing:.04em;font-family:var(--thai);padding:.15rem .5rem;border-radius:999px;border:1px solid}
+.rmed.g{color:#8a6a10;border-color:#d9b34a;background:#f7eccd}
+.rmed.s{color:#5f6670;border-color:#b6bdc6;background:#eef0f3}
+.rmed.b{color:#8a5230;border-color:#cf9a74;background:#f6e4d8}
+.rmed.h,.rmed.p,.rmed.n{color:var(--ink-3);border-color:var(--rule);background:transparent}
+.rname{font-family:var(--thai);font-size:.95rem}
+.rsch{font-family:var(--thai);font-size:.85rem;color:var(--ink-3)}
+.rlist em{font-style:normal;font-family:var(--thai);font-size:.75rem;color:var(--accent);border:1px solid var(--accent-2);border-radius:999px;padding:.1rem .45rem}
+.rnote{font-family:var(--thai);font-size:.75rem;color:var(--ink-3)}
+.rlist em.intl{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rsch-none{opacity:.55;font-style:italic}
+.rsrc{margin-top:2rem;font-size:.8rem;color:var(--ink-3);font-family:var(--thai)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rmed.g{background:#3a2f12;color:#e3c879;border-color:#7a6424}:root:not([data-theme="light"]) .rmed.s{background:#2a2e33;color:#c6ccd4;border-color:#555c66}:root:not([data-theme="light"]) .rmed.b{background:#3a2a20;color:#dfa884;border-color:#7d543a}}
+:root[data-theme="dark"] .rmed.g{background:#3a2f12;color:#e3c879;border-color:#7a6424}
+:root[data-theme="dark"] .rmed.s{background:#2a2e33;color:#c6ccd4;border-color:#555c66}
+:root[data-theme="dark"] .rmed.b{background:#3a2a20;color:#dfa884;border-color:#7d543a}
+@media(max-width:560px){.rstats{gap:1.6rem}.rstats b{font-size:1.5rem}}
+.backlink{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.6rem;font-size:.85rem;color:var(--accent);border-bottom:1px solid var(--accent-2);padding-bottom:.15rem}
+</style>
+<style>
+/* page-specific: pre-camp lessons */
+.c2hero{padding:clamp(3rem,6vw,5rem) 0 clamp(2rem,4vw,3rem);border-bottom:1px solid var(--rule)}
+.c2hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:300;letter-spacing:-.02em;margin:.6rem 0 0;
+  line-height:1.12;text-wrap:balance}
+.c2hero .lead{margin-top:1.4rem}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin-top:2.6rem}
+.facts>div{background:var(--bg);padding:1rem 1.1rem}
+.facts .fk{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.facts .fv{margin-top:.45rem;font-size:.95rem;line-height:1.5}
+@media(max-width:860px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.facts{grid-template-columns:1fr}}
+
+.callout{border-left:3px solid var(--accent);background:var(--bg-2);padding:1.2rem 1.4rem;margin-top:2.4rem}
+.callout h4{margin:0;font-size:1rem;font-weight:600}
+.callout p{margin:.5rem 0 0;font-size:.93rem;color:var(--ink-2);line-height:1.75}
+
+.prog{display:flex;align-items:center;gap:1rem;margin:0 0 2.4rem}
+.pbar{flex:1;height:6px;background:var(--rule);border-radius:3px;overflow:hidden}
+.pbar span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+@media(prefers-reduced-motion:reduce){.pbar span{transition:none}}
+.pnum{font-size:.85rem;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+.les{border-top:1px solid var(--rule);padding:2.4rem 0 2.8rem}
+.les:first-of-type{border-top:2px solid var(--accent)}
+.lhead{display:flex;justify-content:space-between;align-items:flex-start;gap:1.4rem;flex-wrap:wrap}
+.lnum{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.les h3{font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:500;margin:.4rem 0 0;line-height:1.3}
+.done{font-size:.85rem;color:var(--ink-3);display:flex;align-items:center;gap:.45rem;cursor:pointer;
+  white-space:nowrap;user-select:none}
+.done input{width:1.05rem;height:1.05rem;accent-color:var(--accent);cursor:pointer}
+.lgoal{margin:1rem 0 1.4rem;font-size:.95rem;color:var(--accent);line-height:1.7;max-width:70ch}
+.les p{margin:0 0 1rem;max-width:72ch;line-height:1.85}
+.keybox{background:var(--bg-2);border:1px solid var(--rule);padding:1.2rem 1.4rem;margin:1.6rem 0}
+.keybox h4{margin:0 0 .6rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.keybox ul{margin:0;padding-left:1.1rem}
+.keybox li{margin:.4rem 0;font-size:.93rem;line-height:1.75;color:var(--ink-2)}
+.ex{margin-top:1.8rem}
+.ex h4{margin:0 0 .8rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.ex ol{margin:0;padding-left:1.3rem}
+.ex>ol>li{margin:0 0 1.3rem;line-height:1.85;max-width:72ch}
+details{margin-top:.6rem}
+summary{cursor:pointer;display:inline-block;font-size:.85rem;color:var(--accent);font-weight:500;
+  border:1px solid var(--rule);border-radius:3px;padding:.3rem .8rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:hover{border-color:var(--accent)}
+summary:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px}
+details[open] summary{margin-bottom:.7rem}
+.ans{border-left:2px solid var(--accent-2);padding:.2rem 0 .2rem 1rem;background:transparent}
+.ans p{margin:0 0 .55rem;font-size:.93rem;color:var(--ink-2);line-height:1.8}
+.ans p:last-child{margin-bottom:0}
+.link1{margin-top:1.6rem;font-size:.88rem;color:var(--ink-3);border-top:1px dotted var(--rule);padding-top:.9rem}
+.plan{margin:0;padding-left:1.2rem;max-width:72ch}
+.plan li{margin:.55rem 0;line-height:1.8;color:var(--ink-2)}
+.plan b{color:var(--ink);font-weight:600}
+.c2foot{border-top:1px solid var(--rule);margin-top:3rem;padding:2.4rem 0 3.2rem;color:var(--ink-3);font-size:.88rem}
+.c2foot p{margin:0 0 .45rem;line-height:1.7}
+</style>
+<style>.links a.here{color:var(--accent);font-weight:600}</style>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="posn.html">POSN<span> CMU Chemistry</span></a>
+    <div class="links" id="navlinks">
+      <a href="posn.html#news">ข่าว</a>
+      <a href="posn.html#about">เกี่ยวกับศูนย์</a>
+      <a href="posn.html#path">เส้นทางนักเรียน</a>
+      <a href="posn.html#camps">ค่ายอบรม</a>
+      <a href="posn.html#syllabus">หลักสูตร</a>
+      <a class="here" href="camp2.html">เตรียมค่าย 2</a>
+      <a href="posn.html#tcho">ผลงาน</a>
+      <a href="posn.html#alumni">ทำเนียบผู้แทน</a>
+      <a href="posn.html#materials">เอกสารและสื่อ</a>
+      <a href="posn.html#contact">ติดต่อ</a>
+    </div>
+    <div class="navright">
+      <button class="menubtn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><i></i></button>
+    </div>
+  </div>
+</nav>
+<header class="c2hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">ค่าย 2 วิชาเคมี · ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</p>
+    <h1>เตรียมความพร้อมค่าย 2</h1>
+    <p class="lead">บทเรียนล่วงหน้าแปดหัวข้อของค่าย 2 พร้อมแบบฝึกหัดและเฉลย สำหรับนักเรียนที่ผ่านค่าย 1 แล้วและกำลังรอเปิดค่าย อ่านก่อนเข้าค่ายเพื่อให้ชั่วโมงบรรยายจริงเป็นการต่อยอด ไม่ใช่การเริ่มจากศูนย์</p>
+    <div class="facts">
+      <div><div class="fk">ช่วงค่าย</div><div class="fv">20 กุมภาพันธ์ ถึง 7 มีนาคม 2570</div></div>
+      <div><div class="fk">เวลาเรียน</div><div class="fv">08:30 ถึง 17:00 น.</div></div>
+      <div><div class="fk">สถานที่</div><div class="fv">ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</div></div>
+      <div><div class="fk">ขอบเขต</div><div class="fv">หัวข้อ 15 ถึง 22 ของหลักสูตร สอวน.</div></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">วิธีใช้หน้านี้</p><h2 style="margin-top:.6rem">อ่านอย่างไรให้ได้ผล</h2></div>
+      <p class="lead">แต่ละหัวข้อใช้เวลาอ่านราว 20 นาที ทำแบบฝึกหัดอีก 20 ถึง 40 นาที ถ้าทำวันละหัวข้อจะจบทั้งแปดหัวข้อในแปดวัน</p>
+    </div>
+    <div class="path">
+      <div class="step"><div class="sn">ขั้นที่ 1</div><h4>อ่านเป้าหมายก่อน</h4><p>ทุกหัวข้อขึ้นต้นด้วยบรรทัดเป้าหมาย บอกว่าเมื่ออ่านจบต้องทำอะไรได้ ถ้าอ่านจบแล้วยังทำไม่ได้ แปลว่ายังไม่ควรข้ามไปหัวข้อถัดไป</p></div>
+      <div class="step"><div class="sn">ขั้นที่ 2</div><h4>ปิดเฉลยก่อนลงมือ</h4><p>เฉลยซ่อนอยู่ใต้ปุ่ม กดเปิดได้ก็ต่อเมื่อเขียนคำตอบของตัวเองลงกระดาษแล้ว การอ่านเฉลยก่อนทำให้รู้สึกว่าเข้าใจ ทั้งที่ยังทำเองไม่ได้</p></div>
+      <div class="step"><div class="sn">ขั้นที่ 3</div><h4>เขียนหน่วยทุกบรรทัด</h4><p>ข้อสอบค่าย 2 เป็นโจทย์บูรณาการที่ยาวหลายบรรทัด การเขียนหน่วยกำกับทุกขั้นคือวิธีจับความผิดพลาดของตัวเองที่ถูกที่สุด</p></div>
+      <div class="step"><div class="sn">ขั้นที่ 4</div><h4>ทบทวนค่าย 1 ควบคู่</h4><p>ท้ายทุกหัวข้อมีบรรทัดบอกว่าเรื่องนี้ต่อยอดจากหัวข้อใดของค่าย 1 เพราะข้อสอบค่าย 2 รวมเนื้อหาค่าย 1 เข้ามาด้วยเสมอ</p></div>
+    </div>
+    <div class="callout">
+      <h4>หน้านี้ไม่ใช่เอกสารของค่าย</h4>
+      <p>บทเรียนและแบบฝึกหัดในหน้านี้เขียนขึ้นใหม่สำหรับเผยแพร่สาธารณะ เอกสารประกอบค่าย ชุดแบบฝึกหัดประจำค่าย และข้อสอบ เป็นเอกสารภายในของทีม ไม่เผยแพร่ในหน้านี้และไม่ควรส่งต่อออกนอกทีม</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">บทเรียนล่วงหน้า</p><h2 style="margin-top:.6rem">แปดหัวข้อของค่าย 2</h2></div>
+      <p class="lead">ติ๊กช่องเมื่ออ่านจบและทำแบบฝึกหัดครบ ความคืบหน้าเก็บไว้ในเบราว์เซอร์เครื่องนี้เท่านั้น</p>
+    </div>
+    <div class="prog"><div class="pbar"><span id="pfill"></span></div><div class="pnum" id="pnum">0 จาก 8 หัวข้อ</div></div>
+
+<article class="les" id="t15">
+  <div class="lhead">
+    <div><div class="lnum">หัวข้อ 15</div><h3>สารประกอบโคออร์ดิเนชัน</h3></div>
+    <label class="done"><input type="checkbox" data-k="t15"> อ่านจบแล้ว</label>
+  </div>
+  <p class="lgoal">เป้าหมาย เรียกชื่อและวาดไอโซเมอร์ของสารเชิงซ้อนได้ ทำนายจำนวนอิเล็กตรอนเดี่ยวและคำนวณพลังงานเสถียรภาพสนามผลึกของสารเชิงซ้อนแปดหน้าได้</p>
+  <p>สารเชิงซ้อนคือโลหะทรานซิชันที่มีลิแกนด์ล้อมรอบด้วยพันธะโคออร์ดิเนต สิ่งที่ต้องระบุให้ได้ก่อนเสมอมีสามอย่าง คือสถานะออกซิเดชันของโลหะ จำนวนอิเล็กตรอน d และเลขโคออร์ดิเนชัน จากนั้นจึงพูดถึงรูปทรงและสมบัติได้</p>
+  <p>ในสนามแปดหน้า ออร์บิทัล d ห้าออร์บิทัลแยกเป็นชุดล่าง t<sub>2g</sub> สามออร์บิทัล และชุดบน e<sub>g</sub> สองออร์บิทัล ห่างกันเป็นพลังงาน &Delta;<sub>o</sub> การที่อิเล็กตรอนจะเข้าคู่กันในชุดล่าง หรือกระโดดขึ้นชุดบนแบบเดี่ยว ขึ้นกับว่า &Delta;<sub>o</sub> ใหญ่กว่าหรือเล็กกว่าพลังงานการจับคู่ P ถ้า &Delta;<sub>o</sub> &gt; P จะได้สปินต่ำ ถ้า &Delta;<sub>o</sub> &lt; P จะได้สปินสูง</p>
+  <p>ลิแกนด์ชนิดใดให้ &Delta;<sub>o</sub> มากน้อยเพียงใด ดูจากอนุกรมสเปกโทรเคมี เรียงจากอ่อนไปแก่ I<sup>&minus;</sup> &lt; Br<sup>&minus;</sup> &lt; Cl<sup>&minus;</sup> &lt; F<sup>&minus;</sup> &lt; OH<sup>&minus;</sup> &lt; H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; en &lt; NO<sub>2</sub><sup>&minus;</sup> &lt; CN<sup>&minus;</sup> &asymp; CO ลิแกนด์สนามแก่ทางขวามือมักให้สารเชิงซ้อนสปินต่ำ ไม่มีสี หรือสีเข้มต่างจากลิแกนด์น้ำอย่างชัดเจน</p>
+  <div class="keybox">
+    <h4>ต้องจำให้ได้</h4>
+    <ul>
+      <li>CFSE ของสนามแปดหน้า เท่ากับ (&minus;0.4 n<sub>t2g</sub> + 0.6 n<sub>eg</sub>) &Delta;<sub>o</sub> บวกพลังงานการจับคู่ที่เพิ่มขึ้นจากสถานะอิสระ</li>
+      <li>โมเมนต์แม่เหล็กสปินอย่างเดียว &mu; = &radic;(n(n+2)) หน่วยโบร์แมกนีตอน เมื่อ n คือจำนวนอิเล็กตรอนเดี่ยว</li>
+      <li>ไอโซเมอร์ที่ต้องแยกออก เรขาคณิต (cis กับ trans, fac กับ mer) แสง ลิงก์เกจ และไอออไนเซชัน</li>
+      <li>ลิแกนด์คีเลตให้สารเชิงซ้อนเสถียรกว่าลิแกนด์เดี่ยวที่เทียบเคียงกัน เพราะเอนโทรปีของระบบเพิ่มขึ้น</li>
+    </ul>
+  </div>
+  <div class="ex">
+    <h4>แบบฝึกหัด</h4>
+    <ol>
+      <li>คำนวณ CFSE ในหน่วย &Delta;<sub>o</sub> ของ [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> และ [Fe(CN)<sub>6</sub>]<sup>4&minus;</sup> พร้อมระบุจำนวนอิเล็กตรอนเดี่ยวของแต่ละชนิด
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ทั้งสองชนิดเหล็กมีสถานะออกซิเดชัน +2 จึงเป็น d<sup>6</sup> เหมือนกัน</p>
+        <p>น้ำเป็นลิแกนด์สนามอ่อน ได้สปินสูง t<sub>2g</sub><sup>4</sup> e<sub>g</sub><sup>2</sup> อิเล็กตรอนเดี่ยว 4 ตัว<br>CFSE = (&minus;0.4 &times; 4 + 0.6 &times; 2) &Delta;<sub>o</sub> = &minus;0.4 &Delta;<sub>o</sub></p>
+        <p>ไซยาไนด์เป็นลิแกนด์สนามแก่ ได้สปินต่ำ t<sub>2g</sub><sup>6</sup> อิเล็กตรอนเดี่ยว 0 ตัว<br>CFSE = (&minus;0.4 &times; 6 + 0.6 &times; 0) &Delta;<sub>o</sub> = &minus;2.4 &Delta;<sub>o</sub> และต้องบวกพลังงานการจับคู่ที่เพิ่มขึ้นอีกสองคู่</p>
+        <p>สารเชิงซ้อนไซยาไนด์จึงเสถียรกว่ามาก และเป็นไดอะแมกเนติก ขณะที่สารเชิงซ้อนน้ำเป็นพาราแมกเนติก</p>
+        </div></details>
+      </li>
+      <li>คำนวณโมเมนต์แม่เหล็กสปินอย่างเดียวของ [Mn(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>แมงกานีสสถานะออกซิเดชัน +2 เป็น d<sup>5</sup> กับลิแกนด์สนามอ่อน จึงเป็นสปินสูง t<sub>2g</sub><sup>3</sup> e<sub>g</sub><sup>2</sup> มีอิเล็กตรอนเดี่ยว 5 ตัว</p>
+        <p>&mu; = &radic;(5 &times; 7) = &radic;35 = 5.92 โบร์แมกนีตอน</p>
+        <p>สังเกตว่า d<sup>5</sup> สปินสูงมี CFSE เท่ากับศูนย์พอดี จึงอธิบายได้ว่าทำไมไอออน Mn<sup>2+</sup> ในน้ำจึงมีสีจางมาก</p>
+        </div></details>
+      </li>
+      <li>[Co(en)<sub>2</sub>Cl<sub>2</sub>]<sup>+</sup> มีสเตอริโอไอโซเมอร์กี่ชนิด อะไรบ้าง
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>สามชนิด</p>
+        <p>แบบ trans ที่คลอไรด์สองตัวอยู่ตรงข้ามกัน มีระนาบสมมาตร จึงไม่มีแสงไอโซเมอร์</p>
+        <p>แบบ cis ที่คลอไรด์สองตัวอยู่ติดกัน ไม่มีระนาบสมมาตร จึงเป็นไครัล แยกได้เป็นคู่เอแนนทิโอเมอร์สองชนิด</p>
+        <p>รวมเป็น trans หนึ่งชนิด กับ cis สองชนิด</p>
+        </div></details>
+      </li>
+    </ol>
+  </div>
+  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อโครงสร้างอะตอมและพันธะเคมี การเขียนโครงแบบอิเล็กตรอนของไอออนโลหะทรานซิชันต้องแม่นก่อน จึงจะนับ d<sup>n</sup> ได้ถูก</p>
+</article>
+
+<article class="les" id="t16">
+  <div class="lhead">
+    <div><div class="lnum">หัวข้อ 16</div><h3>ของแข็ง</h3></div>
+    <label class="done"><input type="checkbox" data-k="t16"> อ่านจบแล้ว</label>
+  </div>
+  <p class="lgoal">เป้าหมาย คำนวณความหนาแน่นจากหน่วยเซลล์ได้ เชื่อมความยาวขอบเซลล์กับรัศมีอะตอมได้ และใช้กฎของแบรกก์หาระยะระหว่างระนาบได้</p>
+  <p>ผลึกคือการวางหน่วยเซลล์ซ้ำกันในสามมิติ สิ่งที่ต้องนับให้เป็นคือจำนวนอนุภาคต่อหนึ่งหน่วยเซลล์ อนุภาคที่มุมนับเป็นหนึ่งในแปด ที่หน้านับเป็นครึ่ง ที่ขอบนับเป็นหนึ่งในสี่ และที่ใจกลางนับเต็มหนึ่ง เซลล์ลูกบาศก์กลางหน้าจึงมี 4 อนุภาค และเซลล์ลูกบาศก์กลางตัวมี 2 อนุภาค</p>
+  <p>ความสัมพันธ์ระหว่างความยาวขอบ a กับรัศมี r ต่างกันตามชนิดเซลล์ ลูกบาศก์อย่างง่าย a = 2r ลูกบาศก์กลางตัวสัมผัสกันตามแนวทแยงมุมตัว &radic;3 a = 4r และลูกบาศก์กลางหน้าสัมผัสกันตามแนวทแยงมุมหน้า &radic;2 a = 4r สามบรรทัดนี้ต้องนึกออกจากรูป ไม่ใช่จากการท่อง</p>
+  <p>เมื่อยิงรังสีเอกซ์เข้าไปในผลึก ระนาบของอะตอมจะสะท้อนรังสีเสริมกันเมื่อผลต่างทางเดินเท่ากับจำนวนเต็มเท่าของความยาวคลื่นพอดี นั่นคือกฎของแบรกก์ และสำหรับผลึกลูกบาศก์ ระยะระหว่างระนาบคำนวณได้จากดัชนีมิลเลอร์โดยตรง</p>
+  <div class="keybox">
+    <h4>ต้องจำให้ได้</h4>
+    <ul>
+      <li>ความหนาแน่น &rho; = ZM / (a<sup>3</sup> N<sub>A</sub>) เมื่อ Z คือจำนวนหน่วยสูตรต่อเซลล์</li>
+      <li>กฎของแบรกก์ n&lambda; = 2d sin&theta;</li>
+      <li>ผลึกลูกบาศก์ d<sub>hkl</sub> = a / &radic;(h<sup>2</sup> + k<sup>2</sup> + l<sup>2</sup>)</li>
+      <li>สัดส่วนการบรรจุ ลูกบาศก์กลางหน้าและการบรรจุชิดแบบหกเหลี่ยม 74% ลูกบาศก์กลางตัว 68% ลูกบาศก์อย่างง่าย 52%</li>
+      <li>ช่องว่างแบบแปดหน้าต่อหนึ่งอนุภาคในการบรรจุชิด มี 1 ช่อง ช่องว่างแบบสี่หน้ามี 2 ช่อง</li>
+    </ul>
+  </div>
+  <div class="ex">
+    <h4>แบบฝึกหัด</h4>
+    <ol>
+      <li>ทองแดงตกผลึกแบบลูกบาศก์กลางหน้า รัศมีอะตอม 128 pm มวลอะตอม 63.55 g/mol คำนวณความยาวขอบเซลล์และความหนาแน่น
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ลูกบาศก์กลางหน้า อะตอมสัมผัสกันตามแนวทแยงมุมหน้า &radic;2 a = 4r</p>
+        <p>a = 4r / &radic;2 = 2&radic;2 r = 2 &times; 1.414 &times; 128 pm = 362 pm = 3.62 &times; 10<sup>&minus;8</sup> cm</p>
+        <p>a<sup>3</sup> = 4.74 &times; 10<sup>&minus;23</sup> cm<sup>3</sup> และ Z = 4</p>
+        <p>&rho; = (4 &times; 63.55 g/mol) / (4.74 &times; 10<sup>&minus;23</sup> cm<sup>3</sup> &times; 6.022 &times; 10<sup>23</sup> /mol) = 254.2 / 28.6 = 8.89 g/cm<sup>3</sup></p>
+        <p>ค่าที่วัดได้จริงคือ 8.96 g/cm<sup>3</sup> ต่างกันราวร้อยละหนึ่ง</p>
+        </div></details>
+      </li>
+      <li>ใช้ผลึกทองแดงจากข้อที่แล้ว ยิงด้วยรังสีเอกซ์ความยาวคลื่น 154 pm คำนวณมุมแบรกก์อันดับหนึ่งของระนาบ (111)
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>d<sub>111</sub> = a / &radic;(1 + 1 + 1) = 362 / 1.732 = 209 pm</p>
+        <p>sin&theta; = n&lambda; / (2d) = 154 / (2 &times; 209) = 0.368</p>
+        <p>&theta; = 21.6 องศา</p>
+        </div></details>
+      </li>
+      <li>โซเดียมคลอไรด์มีโครงสร้างแบบเกลือหิน ความยาวขอบเซลล์ 564 pm คำนวณความหนาแน่น กำหนดมวลสูตร 58.44 g/mol
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>โครงสร้างเกลือหินมี Z = 4 หน่วยสูตรต่อเซลล์</p>
+        <p>a<sup>3</sup> = (5.64 &times; 10<sup>&minus;8</sup> cm)<sup>3</sup> = 1.794 &times; 10<sup>&minus;22</sup> cm<sup>3</sup></p>
+        <p>&rho; = (4 &times; 58.44) / (1.794 &times; 10<sup>&minus;22</sup> &times; 6.022 &times; 10<sup>23</sup>) = 233.8 / 108.0 = 2.16 g/cm<sup>3</sup></p>
+        </div></details>
+      </li>
+    </ol>
+  </div>
+  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อแรงยึดเหนี่ยวระหว่างโมเลกุลและสถานะของสาร ชนิดของแรงที่ยึดผลึกเป็นตัวกำหนดจุดหลอมเหลวและความแข็ง</p>
+</article>
+
+<article class="les" id="t17">
+  <div class="lhead">
+    <div><div class="lnum">หัวข้อ 17</div><h3>อุณหพลศาสตร์เคมี</h3></div>
+    <label class="done"><input type="checkbox" data-k="t17"> อ่านจบแล้ว</label>
+  </div>
+  <p class="lgoal">เป้าหมาย แยกให้ออกว่าปริมาณใดเป็นฟังก์ชันสถานะ คำนวณ &Delta;H &Delta;S และ &Delta;G ของปฏิกิริยาได้ และเชื่อม &Delta;G&deg; กับค่าคงที่สมดุลได้</p>
+  <p>กฎข้อที่หนึ่งบอกว่าพลังงานภายในเปลี่ยนไปเท่ากับความร้อนที่ระบบรับบวกงานที่ทำต่อระบบ สำหรับปฏิกิริยาในภาชนะเปิดที่ความดันคงที่ ความร้อนที่วัดได้คือการเปลี่ยนแปลงเอนทาลปีพอดี นี่คือเหตุผลที่ตำราใช้ &Delta;H มากกว่า &Delta;U</p>
+  <p>กฎข้อที่สองเพิ่มทิศทางเข้ามา กระบวนการจะเกิดเองได้เมื่อเอนโทรปีรวมของจักรวาลเพิ่มขึ้น แต่การคำนวณเอนโทรปีของสิ่งแวดล้อมทุกครั้งไม่สะดวก จึงรวบเป็นพลังงานเสรีกิบส์ของระบบแทน เครื่องหมายลบของ &Delta;G ที่อุณหภูมิและความดันคงที่จึงหมายถึงเกิดเองได้</p>
+  <p>จุดที่นักเรียนพลาดบ่อยคือการสับสนระหว่าง &Delta;G&deg; กับ &Delta;G ค่าแรกเป็นค่าคงที่ของปฏิกิริยาที่สภาวะมาตรฐานและผูกกับ K โดยตรง ส่วนค่าหลังขึ้นกับความเข้มข้นขณะนั้นและเป็นศูนย์เมื่อระบบถึงสมดุล</p>
+  <div class="keybox">
+    <h4>ต้องจำให้ได้</h4>
+    <ul>
+      <li>&Delta;G = &Delta;H &minus; T&Delta;S ที่อุณหภูมิคงที่</li>
+      <li>&Delta;G&deg; = &minus;RT ln K และ &Delta;G = &Delta;G&deg; + RT ln Q</li>
+      <li>สมการของฟานต์ฮอฟฟ์ ln(K<sub>2</sub>/K<sub>1</sub>) = &minus;(&Delta;H&deg;/R)(1/T<sub>2</sub> &minus; 1/T<sub>1</sub>)</li>
+      <li>กฎของเฮสส์ เอนทาลปีเป็นฟังก์ชันสถานะ จึงบวกลบเส้นทางได้</li>
+      <li>เมื่อ &Delta;H และ &Delta;S เป็นบวกทั้งคู่ ปฏิกิริยาจะเกิดเองได้เมื่ออุณหภูมิสูงกว่า &Delta;H/&Delta;S</li>
+    </ul>
+  </div>
+  <div class="ex">
+    <h4>แบบฝึกหัด</h4>
+    <ol>
+      <li>ปฏิกิริยาหนึ่งมีค่าคงที่สมดุล 4.0 &times; 10<sup>3</sup> ที่ 298 K คำนวณ &Delta;G&deg;
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>&Delta;G&deg; = &minus;RT ln K = &minus;(8.314 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>)(298 K) ln(4.0 &times; 10<sup>3</sup>)</p>
+        <p>ln(4.0 &times; 10<sup>3</sup>) = 8.294</p>
+        <p>&Delta;G&deg; = &minus;8.314 &times; 298 &times; 8.294 = &minus;2.05 &times; 10<sup>4</sup> J mol<sup>&minus;1</sup> = &minus;20.5 kJ mol<sup>&minus;1</sup></p>
+        </div></details>
+      </li>
+      <li>การสลายตัวของแคลเซียมคาร์บอเนตมี &Delta;H&deg; = +178 kJ mol<sup>&minus;1</sup> และ &Delta;S&deg; = +161 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup> คำนวณอุณหภูมิต่ำสุดที่ปฏิกิริยาเกิดเองได้ สมมติว่าทั้งสองค่าไม่ขึ้นกับอุณหภูมิ
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ที่จุดเปลี่ยน &Delta;G = 0 จึง T = &Delta;H&deg; / &Delta;S&deg;</p>
+        <p>T = (178 &times; 10<sup>3</sup> J mol<sup>&minus;1</sup>) / (161 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>) = 1.11 &times; 10<sup>3</sup> K</p>
+        <p>คือราว 1106 K หรือ 833 องศาเซลเซียส สูงกว่านี้ปฏิกิริยาจึงเกิดเองได้ สอดคล้องกับการเผาปูนในเตาเผาจริง</p>
+        </div></details>
+      </li>
+      <li>ค่าคงที่สมดุลของปฏิกิริยาหนึ่งเพิ่มเป็นสองเท่าเมื่ออุณหภูมิเพิ่มจาก 300 K เป็น 320 K คำนวณ &Delta;H&deg;
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ln(K<sub>2</sub>/K<sub>1</sub>) = &minus;(&Delta;H&deg;/R)(1/T<sub>2</sub> &minus; 1/T<sub>1</sub>) = (&Delta;H&deg;/R)(1/T<sub>1</sub> &minus; 1/T<sub>2</sub>)</p>
+        <p>1/300 &minus; 1/320 = 3.333 &times; 10<sup>&minus;3</sup> &minus; 3.125 &times; 10<sup>&minus;3</sup> = 2.083 &times; 10<sup>&minus;4</sup> K<sup>&minus;1</sup></p>
+        <p>&Delta;H&deg; = R ln2 / 2.083 &times; 10<sup>&minus;4</sup> = (8.314 &times; 0.693) / 2.083 &times; 10<sup>&minus;4</sup> = 2.77 &times; 10<sup>4</sup> J mol<sup>&minus;1</sup></p>
+        <p>เท่ากับ +27.7 kJ mol<sup>&minus;1</sup> เครื่องหมายบวกสอดคล้องกับที่ K เพิ่มเมื่ออุณหภูมิสูงขึ้น ตามหลักของเลอชาเตอลิเอ</p>
+        </div></details>
+      </li>
+    </ol>
+  </div>
+  <p class="link1">ต่อยอดจากค่าย 1 หัวข้ออุณหเคมีและสมดุลเคมี การเขียนนิพจน์ K และการอ่านทิศทางการเลื่อนสมดุลต้องคล่องก่อน</p>
+</article>
+
+<article class="les" id="t18">
+  <div class="lhead">
+    <div><div class="lnum">หัวข้อ 18</div><h3>เคมีไฟฟ้า 2</h3></div>
+    <label class="done"><input type="checkbox" data-k="t18"> อ่านจบแล้ว</label>
+  </div>
+  <p class="lgoal">เป้าหมาย ใช้สมการเนินสท์กับเซลล์ที่ไม่อยู่ที่สภาวะมาตรฐานได้ เชื่อม E&deg; กับ &Delta;G&deg; และ K ได้ และคำนวณปริมาณสารจากการแยกสลายด้วยไฟฟ้าได้</p>
+  <p>ศักย์ไฟฟ้าของเซลล์คือพลังงานเสรีต่อประจุหนึ่งหน่วย ความสัมพันธ์ &Delta;G = &minus;nFE จึงเป็นสะพานเชื่อมอุณหพลศาสตร์กับเคมีไฟฟ้าทั้งหมด เมื่อใดที่โจทย์ให้ E&deg; มาแล้วถามเรื่องสมดุล ให้นึกถึงสะพานเส้นนี้ก่อน</p>
+  <p>สมการเนินสท์บอกว่าศักย์ไฟฟ้าลดลงตามลอการิทึมของผลหารปฏิกิริยา ที่ 298 K พจน์ RT/F คิดเป็น 0.0592 V เมื่อใช้ลอการิทึมฐานสิบ ค่านี้ใช้บ่อยจนควรจำ แต่ต้องรู้ว่ามันผูกกับอุณหภูมิ 298 K เท่านั้น</p>
+  <p>เซลล์ความเข้มข้นเป็นกรณีพิเศษที่ขั้วทั้งสองเป็นสารเดียวกัน ทำให้ E&deg; เท่ากับศูนย์ ศักย์ไฟฟ้าที่วัดได้มาจากพจน์ความเข้มข้นล้วน ๆ โจทย์ชนิดนี้ใช้วัดค่าคงที่การละลายหรือค่า pH ได้</p>
+  <div class="keybox">
+    <h4>ต้องจำให้ได้</h4>
+    <ul>
+      <li>&Delta;G&deg; = &minus;nFE&deg; เมื่อ F = 96485 C mol<sup>&minus;1</sup></li>
+      <li>สมการเนินสท์ที่ 298 K E = E&deg; &minus; (0.0592/n) log Q</li>
+      <li>log K = nE&deg; / 0.0592 ที่ 298 K</li>
+      <li>กฎของฟาราเดย์ ประจุ Q = It และจำนวนโมลอิเล็กตรอนเท่ากับ Q/F</li>
+      <li>แคโทดคือขั้วที่เกิดรีดักชันเสมอ ทั้งในเซลล์กัลวานิกและเซลล์อิเล็กโทรลิติก</li>
+    </ul>
+  </div>
+  <div class="ex">
+    <h4>แบบฝึกหัด</h4>
+    <ol>
+      <li>เซลล์ Zn | Zn<sup>2+</sup> (0.10 M) || Cu<sup>2+</sup> (1.00 M) | Cu มี E&deg; = 1.10 V คำนวณศักย์ไฟฟ้าของเซลล์ที่ 298 K
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ปฏิกิริยารวม Zn(s) + Cu<sup>2+</sup> &rarr; Zn<sup>2+</sup> + Cu(s) และ n = 2</p>
+        <p>Q = [Zn<sup>2+</sup>] / [Cu<sup>2+</sup>] = 0.10 / 1.00 = 0.10</p>
+        <p>E = 1.10 &minus; (0.0592/2) log(0.10) = 1.10 &minus; 0.0296 &times; (&minus;1) = 1.13 V</p>
+        <p>ศักย์ไฟฟ้าสูงกว่าค่ามาตรฐาน เพราะความเข้มข้นของผลิตภัณฑ์ต่ำกว่ามาตรฐาน</p>
+        </div></details>
+      </li>
+      <li>คำนวณค่าคงที่สมดุลของปฏิกิริยาในข้อที่แล้วที่ 298 K
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>log K = nE&deg; / 0.0592 = (2 &times; 1.10) / 0.0592 = 37.2</p>
+        <p>K = 10<sup>37.2</sup> = 1.5 &times; 10<sup>37</sup></p>
+        <p>ค่ามหาศาลนี้หมายความว่าปฏิกิริยาเกิดไปจนแทบสมบูรณ์ ซึ่งตรงกับที่แผ่นสังกะสีจุ่มในสารละลายคอปเปอร์ซัลเฟตแล้วมีทองแดงเกาะจนสีฟ้าจางหายไป</p>
+        </div></details>
+      </li>
+      <li>ผ่านกระแส 1.50 A เป็นเวลา 30.0 นาทีลงในสารละลายคอปเปอร์ซัลเฟต คำนวณมวลทองแดงที่เกาะบนแคโทด
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>Q = It = 1.50 A &times; 1800 s = 2700 C</p>
+        <p>n(e<sup>&minus;</sup>) = 2700 C &times; (1 mol e<sup>&minus;</sup> / 96485 C) = 2.798 &times; 10<sup>&minus;2</sup> mol e<sup>&minus;</sup></p>
+        <p>Cu<sup>2+</sup> + 2 e<sup>&minus;</sup> &rarr; Cu ดังนั้น n(Cu) = 2.798 &times; 10<sup>&minus;2</sup> / 2 = 1.399 &times; 10<sup>&minus;2</sup> mol Cu</p>
+        <p>m = 1.399 &times; 10<sup>&minus;2</sup> mol Cu &times; (63.55 g Cu / 1 mol Cu) = 0.889 g Cu</p>
+        </div></details>
+      </li>
+    </ol>
+  </div>
+  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อเคมีไฟฟ้า 1 และปฏิกิริยารีดอกซ์ การดุลสมการรีดอกซ์ในกรดและเบสต้องทำได้โดยไม่ต้องคิดนาน</p>
+</article>
+
+<article class="les" id="t19">
+  <div class="lhead">
+    <div><div class="lnum">หัวข้อ 19</div><h3>จลนพลศาสตร์เคมี 2</h3></div>
+    <label class="done"><input type="checkbox" data-k="t19"> อ่านจบแล้ว</label>
+  </div>
+  <p class="lgoal">เป้าหมาย หาอันดับปฏิกิริยาจากข้อมูลการทดลองได้ ใช้สมการอาร์เรเนียสหาพลังงานกระตุ้นได้ และอนุมานกฎอัตราจากกลไกที่กำหนดให้ได้</p>
+  <p>กฎอัตรามาจากการทดลอง ไม่ได้มาจากสัมประสิทธิ์ในสมการเคมี ข้อนี้เป็นกับดักที่นักเรียนค่าย 2 ยังพลาดอยู่บ่อย วิธีหาอันดับที่เร็วที่สุดคือดูว่าเมื่อความเข้มข้นของสารหนึ่งเพิ่มเป็นสองเท่าโดยสารอื่นคงที่ อัตราเปลี่ยนไปกี่เท่า</p>
+  <p>สมการอัตราเชิงปริพันธ์ของแต่ละอันดับให้กราฟเส้นตรงคนละแบบ อันดับศูนย์เขียน [A] กับ t อันดับหนึ่งเขียน ln[A] กับ t และอันดับสองเขียน 1/[A] กับ t ถ้าโจทย์ให้ตารางความเข้มข้นกับเวลา ให้ลองพล็อตในใจทั้งสามแบบ</p>
+  <p>เมื่อโจทย์ให้กลไกมา ให้หาขั้นกำหนดอัตราก่อน แล้วเขียนอัตราจากขั้นนั้น ถ้าในนิพจน์มีสารมัธยันตร์ปรากฏอยู่ ต้องกำจัดออกด้วยสมมติฐานสมดุลเร็วหรือสมมติฐานสภาวะคงตัว ให้เหลือเฉพาะสารตั้งต้นที่วัดความเข้มข้นได้จริง</p>
+  <div class="keybox">
+    <h4>ต้องจำให้ได้</h4>
+    <ul>
+      <li>อันดับหนึ่ง ln[A]<sub>t</sub> = ln[A]<sub>0</sub> &minus; kt และครึ่งชีวิต t<sub>1/2</sub> = 0.693/k ไม่ขึ้นกับความเข้มข้นเริ่มต้น</li>
+      <li>อันดับสอง 1/[A]<sub>t</sub> = 1/[A]<sub>0</sub> + kt และครึ่งชีวิตขึ้นกับความเข้มข้นเริ่มต้น</li>
+      <li>สมการอาร์เรเนียส k = A e<sup>&minus;E<sub>a</sub>/RT</sup> และรูปสองอุณหภูมิ ln(k<sub>2</sub>/k<sub>1</sub>) = &minus;(E<sub>a</sub>/R)(1/T<sub>2</sub> &minus; 1/T<sub>1</sub>)</li>
+      <li>ตัวเร่งปฏิกิริยาลดพลังงานกระตุ้นของทั้งไปและกลับเท่ากัน จึงไม่เปลี่ยนค่าคงที่สมดุล</li>
+    </ul>
+  </div>
+  <div class="ex">
+    <h4>แบบฝึกหัด</h4>
+    <ol>
+      <li>ปฏิกิริยาอันดับหนึ่งมี k = 2.00 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup> ต้องใช้เวลาเท่าใดจึงจะเหลือสารตั้งต้นร้อยละ 12.5
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ร้อยละ 12.5 คือหนึ่งในแปด จึงเท่ากับผ่านไปสามครึ่งชีวิตพอดี</p>
+        <p>t<sub>1/2</sub> = 0.693 / (2.00 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup>) = 347 s</p>
+        <p>t = 3 &times; 347 s = 1.04 &times; 10<sup>3</sup> s หรือราว 17 นาที</p>
+        </div></details>
+      </li>
+      <li>ค่าคงที่อัตราของปฏิกิริยาหนึ่งเท่ากับ 2.00 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup> ที่ 300 K และ 8.00 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup> ที่ 320 K คำนวณพลังงานกระตุ้น
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ln(k<sub>2</sub>/k<sub>1</sub>) = ln 4 = 1.386</p>
+        <p>1/T<sub>1</sub> &minus; 1/T<sub>2</sub> = 1/300 &minus; 1/320 = 2.083 &times; 10<sup>&minus;4</sup> K<sup>&minus;1</sup></p>
+        <p>E<sub>a</sub> = R ln(k<sub>2</sub>/k<sub>1</sub>) / (1/T<sub>1</sub> &minus; 1/T<sub>2</sub>) = (8.314 &times; 1.386) / (2.083 &times; 10<sup>&minus;4</sup>)</p>
+        <p>E<sub>a</sub> = 5.53 &times; 10<sup>4</sup> J mol<sup>&minus;1</sup> = 55.3 kJ mol<sup>&minus;1</sup></p>
+        </div></details>
+      </li>
+      <li>ปฏิกิริยา 2 NO + O<sub>2</sub> &rarr; 2 NO<sub>2</sub> เสนอกลไกสองขั้น ขั้นแรก 2 NO &rightleftharpoons; N<sub>2</sub>O<sub>2</sub> เกิดเร็วและเข้าสู่สมดุล ขั้นที่สอง N<sub>2</sub>O<sub>2</sub> + O<sub>2</sub> &rarr; 2 NO<sub>2</sub> เกิดช้า จงหากฎอัตรา
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ขั้นช้าเป็นขั้นกำหนดอัตรา จึง อัตรา = k<sub>2</sub>[N<sub>2</sub>O<sub>2</sub>][O<sub>2</sub>]</p>
+        <p>N<sub>2</sub>O<sub>2</sub> เป็นสารมัธยันตร์ ต้องกำจัดออก จากสมดุลเร็วในขั้นแรก K<sub>1</sub> = [N<sub>2</sub>O<sub>2</sub>]/[NO]<sup>2</sup> ดังนั้น [N<sub>2</sub>O<sub>2</sub>] = K<sub>1</sub>[NO]<sup>2</sup></p>
+        <p>แทนกลับ อัตรา = k<sub>2</sub>K<sub>1</sub>[NO]<sup>2</sup>[O<sub>2</sub>] = k<sub>obs</sub>[NO]<sup>2</sup>[O<sub>2</sub>]</p>
+        <p>ได้อันดับสองเทียบกับ NO อันดับหนึ่งเทียบกับ O<sub>2</sub> รวมเป็นอันดับสาม ซึ่งตรงกับผลการทดลอง</p>
+        </div></details>
+      </li>
+    </ol>
+  </div>
+  <p class="link1">ต่อยอดจากค่าย 1 หัวข้ออัตราการเกิดปฏิกิริยาเคมี ความต่างคือค่าย 2 เพิ่มกลไกและการจัดการสารมัธยันตร์เข้ามา</p>
+</article>
+
+<article class="les" id="t20">
+  <div class="lhead">
+    <div><div class="lnum">หัวข้อ 20</div><h3>ปฏิกิริยาเคมีอินทรีย์</h3></div>
+    <label class="done"><input type="checkbox" data-k="t20"> อ่านจบแล้ว</label>
+  </div>
+  <p class="lgoal">เป้าหมาย เลือกได้ว่าสภาวะที่กำหนดจะพาไปทางการแทนที่หรือการขจัด ทำนายผลิตภัณฑ์หลักพร้อมสเตอริโอเคมี และอธิบายผลของหมู่แทนที่ต่อวงแอโรแมติกได้</p>
+  <p>ปฏิกิริยาอินทรีย์ในค่าย 2 แทบทั้งหมดอธิบายได้ด้วยคำถามสามข้อ คือตรงไหนเป็นนิวคลีโอไฟล์ ตรงไหนเป็นอิเล็กโทรไฟล์ และอิเล็กตรอนคู่ไหนเคลื่อนไปที่ใด การวาดลูกศรหัวโค้งให้ถูกจึงสำคัญกว่าการท่องชื่อปฏิกิริยา</p>
+  <p>การแข่งกันระหว่าง S<sub>N</sub>1 S<sub>N</sub>2 E1 และ E2 ตัดสินด้วยสามปัจจัย คือระดับขั้นของคาร์บอนที่ถูกโจมตี ความแรงและความเกะกะของนิวคลีโอไฟล์หรือเบส และชนิดของตัวทำละลาย คาร์บอนตติยภูมิกับเบสแก่ที่เกะกะมักให้ E2 ส่วนคาร์บอนปฐมภูมิกับนิวคลีโอไฟล์แรงมักให้ S<sub>N</sub>2</p>
+  <p>ในวงแอโรแมติก หมู่แทนที่ที่ให้อิเล็กตรอนทำให้วงว่องไวขึ้นและนำหมู่ใหม่เข้าที่ออร์โทกับพารา ส่วนหมู่ที่ดึงอิเล็กตรอนทำให้วงเฉื่อยลงและนำเข้าที่เมทา ยกเว้นแฮโลเจนซึ่งทำให้วงเฉื่อยลงแต่ยังนำเข้าที่ออร์โทกับพารา ข้อยกเว้นนี้ออกสอบบ่อย</p>
+  <div class="keybox">
+    <h4>ต้องจำให้ได้</h4>
+    <ul>
+      <li>S<sub>N</sub>2 เกิดการกลับด้านของโครงแบบที่คาร์บอนไครัล ส่วน S<sub>N</sub>1 ผ่านคาร์โบแคตไอออนแบนราบ จึงได้ผลิตภัณฑ์ราซีมิก</li>
+      <li>E2 ต้องการให้ไฮโดรเจนกับหมู่ที่หลุดอยู่ในระนาบเดียวกันแบบแอนไทเพริเพลนาร์</li>
+      <li>กฎของซัยต์เซฟให้แอลคีนที่มีหมู่แทนที่มากกว่าเป็นผลิตภัณฑ์หลัก แต่เบสที่เกะกะอย่าง tert-butoxide ให้ผลิตภัณฑ์ตามกฎของฮอฟมันน์</li>
+      <li>การเติม HBr แบบปกติเป็นไปตามกฎของมาร์คอฟนิคอฟ แต่เมื่อมีเพอร์ออกไซด์จะเกิดผ่านอนุมูลอิสระและได้ผลตรงข้าม</li>
+      <li>ความเสถียรของคาร์โบแคตไอออน ตติยภูมิ &gt; ทุติยภูมิ &gt; ปฐมภูมิ และการจัดเรียงตัวใหม่เกิดได้เสมอเมื่อทำให้เสถียรขึ้น</li>
+    </ul>
+  </div>
+  <div class="ex">
+    <h4>แบบฝึกหัด</h4>
+    <ol>
+      <li>2-โบรโม-2-เมทิลโพรเพน ทำปฏิกิริยากับเอทานอลที่อุณหภูมิห้อง เทียบกับทำปฏิกิริยากับโซเดียมเอทอกไซด์ในเอทานอลร้อน จงทำนายผลิตภัณฑ์หลักและกลไกของแต่ละกรณี
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>กรณีแรก เอทานอลเป็นนิวคลีโอไฟล์อ่อนและเป็นตัวทำละลายมีขั้วโปรติก คาร์บอนเป็นตติยภูมิ จึงเกิดผ่านคาร์โบแคตไอออนแบบ S<sub>N</sub>1 ได้ 2-เอทอกซี-2-เมทิลโพรเพนเป็นผลิตภัณฑ์หลัก พร้อมผลิตภัณฑ์ขจัดแบบ E1 ปนเล็กน้อย</p>
+        <p>กรณีที่สอง เอทอกไซด์เป็นเบสแก่และความร้อนเอื้อการขจัด จึงเกิด E2 ได้ 2-เมทิลโพรพีนเป็นผลิตภัณฑ์หลัก</p>
+        <p>หลักที่ใช้ตัดสิน คาร์บอนตติยภูมิไม่เกิด S<sub>N</sub>2 เพราะเกะกะเกินไป เบสแก่จึงพาไปทางการขจัดเสมอ</p>
+        </div></details>
+      </li>
+      <li>โพรพีนทำปฏิกิริยากับ HBr ในสภาวะปกติ และในสภาวะที่มีเพอร์ออกไซด์ จงเปรียบเทียบผลิตภัณฑ์พร้อมเหตุผล
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>สภาวะปกติ โปรตอนเข้าที่คาร์บอนปลายเพื่อให้ได้คาร์โบแคตไอออนทุติยภูมิที่เสถียรกว่า โบรไมด์จึงเข้าที่คาร์บอนกลาง ได้ 2-โบรโมโพรเพน ตามกฎของมาร์คอฟนิคอฟ</p>
+        <p>มีเพอร์ออกไซด์ กลไกเปลี่ยนเป็นอนุมูลอิสระ อะตอมโบรมีนเข้าที่คาร์บอนปลายเพื่อให้ได้อนุมูลคาร์บอนทุติยภูมิที่เสถียรกว่า ได้ 1-โบรโมโพรเพน</p>
+        <p>ทั้งสองกรณีตัวกลางที่เสถียรกว่าเป็นตัวกำหนดเหมือนกัน แต่ตัวกลางคนละชนิด ผลจึงกลับกัน</p>
+        </div></details>
+      </li>
+      <li>เปรียบเทียบอัตราการเกิดไนเทรชันของโทลูอีนกับไนโตรเบนซีนเทียบกับเบนซีน พร้อมระบุตำแหน่งที่หมู่ไนโทรเข้าไป
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>โทลูอีนเร็วกว่าเบนซีน เพราะหมู่เมทิลให้อิเล็กตรอนด้วยผลเหนี่ยวนำและไฮเพอร์คอนจูเกชัน ทำให้วงมีอิเล็กตรอนหนาแน่นขึ้นและทำให้ตัวกลางอะริเนียมเสถียรขึ้น หมู่ไนโทรเข้าที่ออร์โทและพารา</p>
+        <p>ไนโตรเบนซีนช้ากว่าเบนซีนมาก เพราะหมู่ไนโทรดึงอิเล็กตรอนทั้งด้วยผลเหนี่ยวนำและเรโซแนนซ์ หมู่ไนโทรตัวใหม่เข้าที่เมทา เพราะเป็นตำแหน่งที่ประจุบวกในตัวกลางไม่ไปอยู่บนคาร์บอนที่ติดหมู่ไนโทรเดิม</p>
+        </div></details>
+      </li>
+    </ol>
+  </div>
+  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อเคมีอินทรีย์เบื้องต้น การเรียกชื่อตามระบบ IUPAC และการระบุหมู่ฟังก์ชันต้องทำได้ทันที</p>
+</article>
+
+<article class="les" id="t21">
+  <div class="lhead">
+    <div><div class="lnum">หัวข้อ 21</div><h3>การใช้หมู่ป้องกัน</h3></div>
+    <label class="done"><input type="checkbox" data-k="t21"> อ่านจบแล้ว</label>
+  </div>
+  <p class="lgoal">เป้าหมาย บอกได้ว่าเมื่อใดจำเป็นต้องป้องกันหมู่ฟังก์ชัน เลือกหมู่ป้องกันที่เหมาะกับสภาวะ และวางลำดับขั้นการสังเคราะห์ที่มีการป้องกันและการถอดได้</p>
+  <p>ปัญหาที่หมู่ป้องกันแก้คือการที่โมเลกุลมีหมู่ฟังก์ชันมากกว่าหนึ่งหมู่ซึ่งว่องไวต่อรีเอเจนต์เดียวกัน เช่นจะใช้รีเอเจนต์กรีญารด์เข้าที่เอสเทอร์ แต่ในโมเลกุลมีคีโตนอยู่ด้วย คีโตนว่องไวกว่าจึงถูกโจมตีก่อน ทางแก้คือปิดคีโตนไว้ชั่วคราว</p>
+  <p>หมู่ป้องกันที่ดีต้องใส่ง่าย ทนต่อสภาวะของขั้นกลาง และถอดออกได้ด้วยสภาวะที่ไม่ทำลายส่วนอื่นของโมเลกุล แนวคิดสำคัญคือออร์โทโกนัลลิตี นั่นคือเลือกหมู่ป้องกันสองชนิดที่ถอดด้วยสภาวะคนละแบบ จึงถอดทีละหมู่ได้ตามต้องการ</p>
+  <p>คีโตนและแอลดีไฮด์นิยมป้องกันเป็นอะซีทัลด้วยไดออลในกรด แอลกอฮอล์นิยมป้องกันเป็นซิลิลอีเทอร์ซึ่งถอดด้วยไอออนฟลูออไรด์ ส่วนเอมีนนิยมป้องกันด้วยหมู่ Boc ที่ถอดด้วยกรด หรือหมู่ Cbz ที่ถอดด้วยไฮโดรจิโนไลซิส สองหมู่หลังนี้เป็นคู่ออร์โทโกนัลที่ใช้กันมากที่สุด</p>
+  <div class="keybox">
+    <h4>ต้องจำให้ได้</h4>
+    <ul>
+      <li>อะซีทัลเสถียรในเบสแต่สลายในกรดที่มีน้ำ จึงใช้ป้องกันคาร์บอนิลระหว่างทำปฏิกิริยากับเบสแก่หรือรีเอเจนต์กรีญารด์</li>
+      <li>ซิลิลอีเทอร์เช่น TBS ถอดด้วยแหล่งฟลูออไรด์เช่น TBAF ซึ่งไม่กระทบหมู่อื่นเลย</li>
+      <li>Boc ถอดด้วยกรด ส่วน Cbz ถอดด้วยไฮโดรเจนกับตัวเร่งแพลเลเดียม สองสภาวะนี้ไม่รบกวนกัน</li>
+      <li>ทุกขั้นของการป้องกันและการถอดคือขั้นที่เสียผลได้ จึงใช้เมื่อจำเป็นเท่านั้น</li>
+    </ul>
+  </div>
+  <div class="ex">
+    <h4>แบบฝึกหัด</h4>
+    <ol>
+      <li>ต้องการเปลี่ยนหมู่เอสเทอร์ในโมเลกุลที่มีทั้งคีโตนและเอสเทอร์ ให้กลายเป็นแอลกอฮอล์ตติยภูมิด้วยรีเอเจนต์กรีญารด์ โดยคงคีโตนไว้ จงวางลำดับขั้น
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>ขั้นที่ 1 ป้องกันคีโตนเป็นอะซีทัล ด้วย 1,2-เอเทนไดออล และกรดเร่งปฏิกิริยา พร้อมกำจัดน้ำออกเพื่อดันสมดุล</p>
+        <p>ขั้นที่ 2 ทำปฏิกิริยากับรีเอเจนต์กรีญารด์สองสมมูล เพราะเอสเทอร์ต้องการสองสมมูลจึงจะได้แอลกอฮอล์ตติยภูมิ แล้วทำปฏิกิริยากับน้ำในขั้นตอนท้าย</p>
+        <p>ขั้นที่ 3 ถอดอะซีทัลด้วยกรดเจือจางที่มีน้ำ ได้คีโตนกลับคืน</p>
+        <p>เหตุผลที่ต้องป้องกัน คีโตนว่องไวต่อรีเอเจนต์กรีญารด์มากกว่าเอสเทอร์ ถ้าไม่ป้องกันจะถูกโจมตีก่อน</p>
+        </div></details>
+      </li>
+      <li>โมเลกุลหนึ่งมีเอมีนสองหมู่ ต้องการดัดแปลงทีละหมู่ จงเลือกคู่หมู่ป้องกันที่เหมาะสมพร้อมสภาวะการถอด
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>เลือกคู่ออร์โทโกนัล Boc กับ Cbz</p>
+        <p>ถอด Boc ด้วยกรด เช่นกรดไตรฟลูออโรแอซีติก โดย Cbz ยังอยู่ครบ จึงดัดแปลงเอมีนตัวแรกได้</p>
+        <p>จากนั้นถอด Cbz ด้วยไฮโดรเจนกับแพลเลเดียมบนถ่าน ซึ่งเป็นสภาวะกลาง ไม่กระทบส่วนอื่น จึงดัดแปลงเอมีนตัวที่สองต่อได้</p>
+        <p>ข้อควรระวัง ถ้าโมเลกุลมีพันธะคู่หรือหมู่เบนซิลอื่น ไฮโดรจิโนไลซิสอาจไปลดหมู่เหล่านั้นด้วย ต้องเปลี่ยนไปใช้คู่อื่นเช่น Fmoc ที่ถอดด้วยเบสอ่อนแทน</p>
+        </div></details>
+      </li>
+      <li>เหตุใดจึงไม่ควรใช้หมู่อะซีทัลป้องกันคีโตน ในขั้นที่ต้องทำปฏิกิริยาในสารละลายกรดที่มีน้ำ
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>เพราะการเกิดอะซีทัลเป็นสมดุลที่ย้อนกลับได้ และกรดกับน้ำคือสภาวะที่ใช้ถอดอะซีทัลพอดี หมู่ป้องกันจะหลุดออกระหว่างปฏิกิริยา ทำให้คีโตนกลับมาว่องไวอีกครั้ง</p>
+        <p>ในกรณีเช่นนี้ควรเลือกหมู่ป้องกันที่ทนกรด เช่นเปลี่ยนไปใช้ไดไทโอเอซีทัล ซึ่งถอดด้วยรีเอเจนต์ปรอทหรือตัวออกซิไดซ์แทน</p>
+        </div></details>
+      </li>
+    </ol>
+  </div>
+  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อปฏิกิริยาของหมู่ฟังก์ชัน ต้องรู้ลำดับความว่องไวของคาร์บอนิลก่อนจึงจะเห็นว่าทำไมต้องป้องกัน</p>
+</article>
+
+<article class="les" id="t22">
+  <div class="lhead">
+    <div><div class="lnum">หัวข้อ 22</div><h3>การหาโครงสร้างด้วยเทคนิคสเปกโทรสโกปี</h3></div>
+    <label class="done"><input type="checkbox" data-k="t22"> อ่านจบแล้ว</label>
+  </div>
+  <p class="lgoal">เป้าหมาย คำนวณจำนวนดีกรีความไม่อิ่มตัวจากสูตรโมเลกุล อ่าน IR และ <sup>1</sup>H NMR เพื่อระบุหมู่ฟังก์ชันและโครงร่าง และใช้รูปแบบไอโซโทปใน MS ระบุแฮโลเจนได้</p>
+  <p>การหาโครงสร้างเริ่มจากสูตรโมเลกุลเสมอ คำนวณดีกรีความไม่อิ่มตัวเพื่อรู้ว่าต้องมีวงหรือพันธะไพกี่หน่วย ตัวเลขนี้จำกัดความเป็นไปได้ลงมากก่อนที่จะดูสเปกตรัมใด ๆ</p>
+  <p>IR ใช้ตอบคำถามเดียวคือมีหมู่ฟังก์ชันใดบ้าง แถบที่ต้องจำมีไม่กี่แถบ คาร์บอนิลราว 1700 cm<sup>&minus;1</sup> ไฮดรอกซิลเป็นแถบกว้างราว 3300 cm<sup>&minus;1</sup> และพันธะสามของไนไทรล์ราว 2250 cm<sup>&minus;1</sup> ตำแหน่งที่เลื่อนไปจากค่ากลางบอกข้อมูลเพิ่ม เช่นคาร์บอนิลของเอสเทอร์อยู่สูงกว่าของคีโตน</p>
+  <p><sup>1</sup>H NMR ให้ข้อมูลสามชั้นพร้อมกัน ค่าการเลื่อนทางเคมีบอกสภาพแวดล้อมอิเล็กตรอน พื้นที่ใต้พีคบอกอัตราส่วนจำนวนโปรตอน และการแยกพีคบอกจำนวนโปรตอนข้างเคียงตามกฎ n บวกหนึ่ง การอ่านทั้งสามชั้นพร้อมกันคือทักษะที่ต้องฝึก</p>
+  <div class="keybox">
+    <h4>ต้องจำให้ได้</h4>
+    <ul>
+      <li>ดีกรีความไม่อิ่มตัว DBE = C &minus; H/2 + N/2 + 1 โดยไม่นับออกซิเจน และนับแฮโลเจนเหมือนไฮโดรเจน</li>
+      <li>วงเบนซีนคิดเป็น 4 หน่วย คือหนึ่งวงบวกสามพันธะคู่</li>
+      <li>ค่าการเลื่อนที่ใช้บ่อย โปรตอนแอโรแมติก 6.5 ถึง 8.0 ppm โปรตอนข้างคาร์บอนิล 2.0 ถึง 2.6 ppm โปรตอนบนคาร์บอนที่ติดออกซิเจน 3.5 ถึง 4.5 ppm</li>
+      <li>รูปแบบไอโซโทปใน MS อัตราส่วน M ต่อ M+2 ราว 3 ต่อ 1 บ่งชี้คลอรีนหนึ่งอะตอม และราว 1 ต่อ 1 บ่งชี้โบรมีนหนึ่งอะตอม</li>
+    </ul>
+  </div>
+  <div class="ex">
+    <h4>แบบฝึกหัด</h4>
+    <ol>
+      <li>สารมีสูตรโมเลกุล C<sub>4</sub>H<sub>8</sub>O<sub>2</sub> IR แสดงแถบแรงที่ 1740 cm<sup>&minus;1</sup> และไม่มีแถบกว้างบริเวณ 3300 cm<sup>&minus;1</sup> <sup>1</sup>H NMR แสดงพีคที่ 4.1 ppm สี่แฉก 2H, 2.0 ppm พีคเดี่ยว 3H และ 1.25 ppm สามแฉก 3H จงระบุโครงสร้าง
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>DBE = 4 &minus; 8/2 + 1 = 1 จึงมีพันธะไพหรือวงเพียงหนึ่งหน่วย</p>
+        <p>IR ที่ 1740 cm<sup>&minus;1</sup> เป็นคาร์บอนิล และตำแหน่งที่สูงกว่าคีโตนทั่วไปบ่งชี้เอสเทอร์ การไม่มีแถบกว้างตัดกรดคาร์บอกซิลิกออก</p>
+        <p>NMR อ่านได้ว่ามีหมู่เอทิลที่ติดออกซิเจน คือสามแฉก 3H คู่กับสี่แฉก 2H ที่เลื่อนไปถึง 4.1 ppm และมีหมู่เมทิลเดี่ยวที่ 2.0 ppm ซึ่งเป็นเมทิลข้างคาร์บอนิล</p>
+        <p>โครงสร้างคือเอทิลแอซีเตต CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub></p>
+        </div></details>
+      </li>
+      <li>สเปกตรัมมวลของสารหนึ่งแสดงพีคไอออนโมเลกุลที่ m/z 156 และ 158 ด้วยความเข้มใกล้เคียงกัน และสารมีสูตรโมเลกุลที่มีวงแอโรแมติกหนึ่งวง จงระบุสาร
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>อัตราส่วน M ต่อ M+2 ราว 1 ต่อ 1 บ่งชี้ว่ามีโบรมีนหนึ่งอะตอม เพราะไอโซโทป <sup>79</sup>Br กับ <sup>81</sup>Br มีปริมาณใกล้เคียงกัน</p>
+        <p>มวล 156 ลบมวลโบรมีน 79 เหลือ 77 ซึ่งตรงกับหมู่ฟีนิล C<sub>6</sub>H<sub>5</sub></p>
+        <p>สารคือโบรโมเบนซีน C<sub>6</sub>H<sub>5</sub>Br</p>
+        </div></details>
+      </li>
+      <li>คำนวณดีกรีความไม่อิ่มตัวของ C<sub>9</sub>H<sub>10</sub>O<sub>2</sub> และเสนอว่าหน่วยความไม่อิ่มตัวเหล่านั้นน่าจะเป็นอะไร
+        <details><summary>ดูเฉลย</summary><div class="ans">
+        <p>DBE = 9 &minus; 10/2 + 1 = 5</p>
+        <p>การตีความที่เป็นไปได้มากที่สุดคือวงเบนซีนหนึ่งวงซึ่งคิดเป็น 4 หน่วย บวกคาร์บอนิลอีกหนึ่งหน่วย</p>
+        <p>เมื่อรวมกับการมีออกซิเจนสองอะตอม สารน่าจะเป็นเอสเทอร์หรือกรดคาร์บอกซิลิกที่มีวงแอโรแมติก เช่นเมทิลฟีนิลแอซีเตตหรือกรดฟีนิลโพรพาโนอิก ต้องใช้ NMR แยกต่ออีกชั้น</p>
+        </div></details>
+      </li>
+    </ol>
+  </div>
+  <p class="link1">ต่อยอดจากค่าย 1 หัวข้อเคมีอินทรีย์เบื้องต้นและปริมาณสัมพันธ์ การหาสูตรโมเลกุลจากร้อยละโดยมวลคือขั้นก่อนหน้าของโจทย์ชนิดนี้</p>
+</article>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">แผนอ่านแปดวัน</p><h2 style="margin-top:.6rem">ลำดับที่แนะนำ</h2></div>
+      <p class="lead">เรียงตามความต่อเนื่องของเนื้อหา ไม่ใช่ตามลำดับเลขหัวข้อ เพราะอุณหพลศาสตร์เป็นฐานของทั้งเคมีไฟฟ้าและสมดุล</p>
+    </div>
+    <ol class="plan">
+      <li><b>วันที่ 1</b> หัวข้อ 17 อุณหพลศาสตร์เคมี เป็นฐานของทุกเรื่องที่เหลือ</li>
+      <li><b>วันที่ 2</b> หัวข้อ 18 เคมีไฟฟ้า 2 ต่อจากพลังงานเสรีทันทีขณะที่ยังจำสูตรได้</li>
+      <li><b>วันที่ 3</b> หัวข้อ 19 จลนพลศาสตร์เคมี 2 เพื่อแยกให้ชัดว่าเสถียรภาพกับความเร็วเป็นคนละเรื่อง</li>
+      <li><b>วันที่ 4</b> หัวข้อ 15 สารประกอบโคออร์ดิเนชัน</li>
+      <li><b>วันที่ 5</b> หัวข้อ 16 ของแข็ง ต่อจากโคออร์ดิเนชันเพราะใช้เรื่องการจัดเรียงอะตอมร่วมกัน</li>
+      <li><b>วันที่ 6</b> หัวข้อ 20 ปฏิกิริยาเคมีอินทรีย์</li>
+      <li><b>วันที่ 7</b> หัวข้อ 21 การใช้หมู่ป้องกัน ซึ่งต้องรู้ปฏิกิริยาในวันที่ 6 ก่อน</li>
+      <li><b>วันที่ 8</b> หัวข้อ 22 สเปกโทรสโกปี แล้วย้อนกลับไปทำแบบฝึกหัดข้อที่ยังติดค้าง</li>
+    </ol>
+    <div class="callout">
+      <h4>ข้อสอบค่าย 2 เป็นโจทย์บูรณาการ</h4>
+      <p>โจทย์หนึ่งข้ออาจเริ่มจากการคำนวณปริมาณสัมพันธ์ของค่าย 1 ต่อด้วยสมดุลและพลังงานเสรี แล้วจบที่การระบุโครงสร้างจากสเปกตรัม การอ่านแยกเป็นหัวข้อจึงเป็นแค่จุดเริ่ม สิ่งที่ต้องฝึกต่อคือการมองเห็นว่าโจทย์หนึ่งข้อกำลังขอให้ใช้เครื่องมือตัวไหนในลำดับใด</p>
+    </div>
+  </div>
+</section>
+
+<footer class="c2foot">
+  <div class="wrap">
+    <p><b>ศูนย์ สอวน. มหาวิทยาลัยเชียงใหม่</b> ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
+    <p>หน้านี้เป็นบทเรียนเตรียมความพร้อมสำหรับเผยแพร่ทั่วไป ไม่ใช่เอกสารประกอบค่ายและไม่ใช่แนวข้อสอบ · <a href="posn.html">กลับหน้าหลักของศูนย์</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menubtn'), links=document.getElementById('navlinks');
+  if(!btn||!links) return;
+  function set(open){ links.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false'); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); set(!links.classList.contains('open')); });
+  links.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('click',function(e){ if(links.classList.contains('open')&&!links.contains(e.target)&&e.target!==btn) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+  window.addEventListener('resize',function(){ if(window.innerWidth>720) set(false); });
+})();
+</script>
+<script>
+(function(){
+  var boxes=[].slice.call(document.querySelectorAll('.done input[data-k]'));
+  var fill=document.getElementById('pfill'), num=document.getElementById('pnum');
+  if(!boxes.length||!fill) return;
+  var KEY='posn-camp2-progress';
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY))||{} }catch(e){ return {} } }
+  function save(o){ try{ localStorage.setItem(KEY, JSON.stringify(o)) }catch(e){} }
+  function paint(){
+    var n=boxes.filter(function(b){return b.checked}).length;
+    fill.style.width=(n/boxes.length*100)+'%';
+    num.textContent=n+' จาก '+boxes.length+' หัวข้อ';
+  }
+  var st=load();
+  boxes.forEach(function(b){
+    b.checked=!!st[b.dataset.k];
+    b.addEventListener('change',function(){ var o=load(); o[b.dataset.k]=b.checked; save(o); paint(); });
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
