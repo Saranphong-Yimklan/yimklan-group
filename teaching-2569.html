@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teaching Calendar 2/2569 · Yimklan Research Group</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Sarabun:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  --bg:#ffffff;--bg-2:#f4f6f8;--ink:#1b2430;--ink-2:#4e5a68;--ink-3:#848e9a;--rule:#e2e7ec;
+  --accent:#1a5f83;--accent-2:#3f90b4;--card:#ffffff;--holi:#b3261e;
+  --display:"Roboto","Sarabun","Helvetica Neue",Arial,sans-serif;
+  --body:"Roboto","Sarabun","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0f1319;--bg-2:#161b23;--ink:#e8edf2;--ink-2:#aab6c2;--ink-3:#7c8793;--rule:#28303a;--accent:#63b3d6;--accent-2:#8fcde8;--card:#161b23;--holi:#f08a80;color-scheme:dark}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:300;line-height:1.2;letter-spacing:-.015em;margin:0}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.lead{font-size:1.02rem;color:var(--ink-2);max-width:70ch}
+.nav{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+.brand{font-family:var(--display);font-size:1.15rem;font-weight:500;letter-spacing:.02em}
+.brand span{color:var(--accent)}
+.back{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.back:hover{color:var(--accent)}
+header{padding:3.2rem 0 1.6rem}
+header h1{font-size:clamp(1.9rem,4vw,2.7rem);margin:.6rem 0 .8rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:1.1rem;font-size:.9rem;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+section{padding:1.6rem 0}
+h2{font-size:1.5rem;margin-bottom:1rem}
+.courses{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.8rem}
+.course{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--c);border-radius:3px;padding:1rem 1.1rem}
+.course .code{font-size:.78rem;letter-spacing:.12em;font-weight:600;color:var(--c)}
+.course .name{font-size:1rem;margin:.15rem 0 .5rem;font-weight:500}
+.course .t{font-size:.86rem;color:var(--ink-2)}
+.course .h{font-size:.86rem;color:var(--ink-3);margin-top:.35rem}
+.tblwrap{overflow-x:auto;border:1px solid var(--rule);border-radius:3px}
+table.wk{width:100%;border-collapse:collapse;font-size:.88rem;min-width:720px}
+.wk th,.wk td{border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);padding:.6rem .7rem;text-align:left;vertical-align:top}
+.wk th{background:var(--bg-2);font-weight:500;font-size:.8rem;letter-spacing:.06em;color:var(--ink-2)}
+.wk td:first-child{white-space:nowrap;color:var(--ink-2)}
+.wk tr:last-child td{border-bottom:0}.wk th:last-child,.wk td:last-child{border-right:0}
+.wk .k{display:inline-block;font-weight:600;color:var(--c)}
+.toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem;align-items:center;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{border:1px solid var(--c);background:transparent;color:var(--ink);border-radius:999px;padding:.22rem .8rem;cursor:pointer;font:inherit;font-size:.82rem;letter-spacing:.04em}
+.chip.on{background:var(--c);color:#fff}
+.tabs{display:flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.tab{border:0;background:var(--card);color:var(--ink-2);padding:.4rem 1rem;cursor:pointer;font:inherit;font-size:.85rem}
+.tab.on{background:var(--accent);color:#fff}
+.month{border:1px solid var(--rule);border-radius:3px;margin-bottom:1.4rem;overflow:hidden;background:var(--card)}
+.month h3{padding:.7rem 1rem;font-size:1.15rem;background:var(--bg-2);border-bottom:1px solid var(--rule)}
+.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.dow{font-size:.74rem;letter-spacing:.08em;text-align:center;padding:.35rem;color:var(--ink-3);border-bottom:1px solid var(--rule)}
+.day{min-height:96px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:.3rem .35rem;font-size:.78rem}
+.day:nth-child(7n){border-right:0}
+.day.out{background:var(--bg-2);opacity:.55}
+.day .d{font-weight:500;font-size:.85rem;color:var(--ink-2)}
+.day.hol .d{color:var(--holi)}
+.tag{font-size:.7rem;color:var(--holi);line-height:1.25;margin-bottom:.15rem}
+.tag.n{color:var(--ink-3)}
+.rng{font-size:.68rem;color:var(--ink-2);background:var(--bg-2);border-left:2px solid var(--accent-2);padding:0 .3rem;margin-bottom:.15rem;line-height:1.35}
+.ev{display:block;border-radius:2px;padding:.05rem .3rem;margin:.15rem 0;background:var(--c);color:#fff;font-size:.72rem;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ev.soft{background:transparent;color:var(--ink);border:1px dashed var(--c)}
+.list{border:1px solid var(--rule);border-radius:3px;background:var(--card)}
+.row{display:grid;grid-template-columns:160px 150px 80px 1fr;gap:.8rem;padding:.65rem 1rem;border-bottom:1px solid var(--rule);font-size:.9rem}
+.row:last-child{border-bottom:0}
+.row.mh{display:block;background:var(--bg-2);font-weight:500;letter-spacing:.04em}
+.row .code{font-weight:600;color:var(--c)}
+.row .t,.row .nt{color:var(--ink-2)}.row .nt{font-size:.82rem}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:.8rem;color:var(--ink-3);margin-top:.6rem}
+.legend i{display:inline-block;width:.9rem;height:.6rem;border-radius:2px;margin-right:.35rem;vertical-align:middle}
+footer{border-top:1px solid var(--rule);padding-block:2rem;margin-top:2rem;font-size:.8rem;color:var(--ink-3)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media(max-width:720px){
+  .day{min-height:62px;padding:.15rem}.ev{font-size:.6rem;padding:0 .15rem}.ev .x{display:none}
+  .tag,.rng{font-size:.56rem}.row{grid-template-columns:1fr;gap:.1rem}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html">IPCRL<span> Yimklan Group</span></a>
+  <a class="back" href="index.html#teaching">← Teaching</a>
+</div></nav>
+
+<header><div class="wrap">
+  <p class="eyebrow">Teaching Calendar · Semester 2/2026</p>
+  <h1>ปฏิทินการเรียนการสอน ภาคเรียนที่ 2 ปีการศึกษา 2569</h1>
+  <p class="lead">รองศาสตราจารย์ ดร.ศรัญพงศ์ ยิ้มกลั่น · ภาควิชาเคมี คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
+  <div class="meta">
+    <span>เปิดภาคเรียน <b>16 พ.ย. 2569</b></span>
+    <span>งดการเรียน (เตรียมสอบ/สอบกลางภาค) <b>11–24 ม.ค. 2570</b></span>
+    <span>เรียนวันสุดท้าย <b>14 มี.ค. 2570</b></span>
+    <span>สอบไล่ <b>15–28 มี.ค. 2570</b></span>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <h2>Courses this semester</h2>
+  <div class="courses" id="cards"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Weekly timetable</h2>
+  <div class="tblwrap"><table class="wk">
+    <tr><th>เวลา</th><th>จันทร์</th><th>อังคาร</th><th>พุธ</th><th>พฤหัสบดี</th><th>ศุกร์</th></tr>
+    <tr><td>08.00–09.00</td><td></td><td><span class="k" style="--c:var(--c203211)">203211</span><br>22 ธ.ค.–8 ม.ค. · 12 ก.พ.–12 มี.ค.</td><td></td><td></td><td><span class="k" style="--c:var(--c203211)">203211</span><br>22 ธ.ค.–8 ม.ค. · 12 ก.พ.–12 มี.ค.</td></tr>
+    <tr><td>11.00–12.30</td><td><span class="k" style="--c:var(--c203815)">203815</span> 11.00–12.30 · CB1313<br>16 พ.ย.–21 ธ.ค.</td><td><span class="k" style="--c:var(--c203415)">203415</span> 26 ม.ค.–19 ก.พ.<br><span class="k" style="--c:var(--c203300)">203300</span> CB1310 · 9 ก.พ.–12 มี.ค.</td><td><span class="k" style="--c:var(--cAP)">AP</span> 11.10–12.00<br>25 พ.ย., 2, 9, 23 ธ.ค.</td><td><span class="k" style="--c:var(--c203815)">203815</span> 11.00–12.30 · CB1313<br>19 พ.ย.–24 ธ.ค.</td><td><span class="k" style="--c:var(--c203415)">203415</span> 26 ม.ค.–19 ก.พ.<br><span class="k" style="--c:var(--c203300)">203300</span> CB1310 · 9 ก.พ.–12 มี.ค.</td></tr>
+    <tr><td>13.00–14.45</td><td></td><td><span class="k" style="--c:var(--c201111)">201111</span> 13.00–14.30 · ScB2100</td><td><span class="k" style="--c:var(--cAP)">AP</span> 13.00–14.45<br>25 พ.ย., 2, 9, 23 ธ.ค.</td><td><span class="k" style="--c:var(--cAP)">AP</span> 13.00–14.45<br>26 พ.ย., 24 ธ.ค.</td><td><span class="k" style="--c:var(--c201111)">201111</span> 13.00–14.30 · ScB2100</td></tr>
+    <tr><td>14.30–17.30</td><td></td><td><span class="k" style="--c:var(--c203318)">203318</span> Lab · 24 พ.ย.</td><td></td><td><span class="k" style="--c:var(--c203318)">203318</span> Lab · 3, 17 ธ.ค.</td><td></td></tr>
+  </table></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Calendar</h2>
+  <div class="toolbar">
+    <div class="chips" id="filters"></div>
+    <div class="tabs"><button class="tab on" data-v="cal">รายเดือน</button><button class="tab" data-v="list">ตามวันที่</button></div>
+  </div>
+  <div id="view"></div>
+  <div class="legend"><span><i style="background:var(--accent)"></i>สอน/สอบ</span><span><i style="border:1px dashed var(--accent)"></i>กิจกรรมร่วมกับคณาจารย์ / ตามนัดหมาย</span><span style="color:var(--holi)">ตัวเลขสีแดง = วันหยุด</span></div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Yimklan Research Group · Department of Chemistry, Chiang Mai University</span>
+  <span>ปรับปรุงล่าสุด 14 พ.ย. 2569 · ตารางอาจเปลี่ยนแปลงตามประกาศของกระบวนวิชา</span>
+</div></footer>
+
+<script>
+const DATA={"ev": [{"date": "2026-12-22", "time": "08.00–09.00", "course": "203211", "title": "3.1 Brønsted–Lowry acids and bases", "note": "บทที่ 3 ชั่วโมงที่ 1/5", "kind": "teach", "room": ""}, {"date": "2026-12-25", "time": "08.00–09.00", "course": "203211", "title": "3.2 Lewis acids and bases", "note": "บทที่ 3 ชั่วโมงที่ 2/5", "kind": "teach", "room": ""}, {"date": "2026-12-29", "time": "08.00–09.00", "course": "203211", "title": "3.3 Hard–soft acids and bases", "note": "บทที่ 3 ชั่วโมงที่ 3/5", "kind": "teach", "room": ""}, {"date": "2027-01-05", "time": "08.00–09.00", "course": "203211", "title": "บทที่ 3 Acids and bases (ต่อ)", "note": "บทที่ 3 ชั่วโมงที่ 4/5", "kind": "teach", "room": ""}, {"date": "2027-01-08", "time": "08.00–09.00", "course": "203211", "title": "บทที่ 3 Acids and bases (ต่อ)", "note": "บทที่ 3 ชั่วโมงที่ 5/5", "kind": "teach", "room": ""}, {"date": "2027-02-12", "time": "08.00–09.00", "course": "203211", "title": "4.1 Description of the structure of solids", "note": "บทที่ 4 ชั่วโมงที่ 1/10", "kind": "teach", "room": ""}, {"date": "2027-02-16", "time": "08.00–09.00", "course": "203211", "title": "4.2 Structure of metals and alloys", "note": "บทที่ 4 ชั่วโมงที่ 2/10", "kind": "teach", "room": ""}, {"date": "2027-02-19", "time": "08.00–09.00", "course": "203211", "title": "4.3 Ionic solids", "note": "บทที่ 4 ชั่วโมงที่ 3/10", "kind": "teach", "room": ""}, {"date": "2027-02-23", "time": "08.00–09.00", "course": "203211", "title": "4.4 Energetics of ionic bonding", "note": "บทที่ 4 ชั่วโมงที่ 4/10", "kind": "teach", "room": ""}, {"date": "2027-02-26", "time": "08.00–09.00", "course": "203211", "title": "4.5 Defects and nonstoichiometry", "note": "บทที่ 4 ชั่วโมงที่ 5/10", "kind": "teach", "room": ""}, {"date": "2027-03-02", "time": "08.00–09.00", "course": "203211", "title": "4.6 Electronic structure of solids", "note": "บทที่ 4 ชั่วโมงที่ 6/10", "kind": "teach", "room": ""}, {"date": "2027-03-05", "time": "08.00–09.00", "course": "203211", "title": "4.7 Modern materials for 21st century technologies", "note": "บทที่ 4 ชั่วโมงที่ 7/10", "kind": "teach", "room": ""}, {"date": "2027-03-09", "time": "08.00–09.00", "course": "203211", "title": "บทที่ 4 Solid state chemistry (ต่อ)", "note": "บทที่ 4 ชั่วโมงที่ 8/10", "kind": "teach", "room": ""}, {"date": "2027-03-12", "time": "08.00–09.00", "course": "203211", "title": "บทที่ 4 Solid state chemistry (ต่อ)", "note": "บทที่ 4 ชั่วโมงที่ 9/10 · ชั่วโมงที่ 10 เป็นคาบชดเชย TBA", "kind": "teach", "room": ""}, {"date": "2027-01-24", "time": "12.00–15.00", "course": "203211", "title": "สอบกลางภาค (รวมบทที่ 3 กรด-เบส)", "note": "วันอาทิตย์", "kind": "exam", "room": ""}, {"date": "2027-03-24", "time": "12.00–15.00", "course": "203211", "title": "สอบไล่ (รวมบทที่ 4 เคมีสถานะของแข็ง)", "note": "", "kind": "exam", "room": ""}, {"date": "2027-02-09", "time": "11.00–12.00", "course": "203300", "title": "5. เครื่องมือและวิธีการเขียนผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 1/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-02-12", "time": "11.00–12.00", "course": "203300", "title": "5. เครื่องมือและวิธีการเขียนผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 2/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-02-16", "time": "11.00–12.00", "course": "203300", "title": "5. เครื่องมือและวิธีการเขียนผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 3/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-02-19", "time": "11.00–12.00", "course": "203300", "title": "5. เครื่องมือและวิธีการเขียนผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 4/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-02-23", "time": "11.00–12.00", "course": "203300", "title": "5. เครื่องมือและวิธีการเขียนผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 5/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-02-26", "time": "11.00–12.00", "course": "203300", "title": "6. เครื่องมือและวิธีการนำเสนอผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 6/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-03-02", "time": "11.00–12.00", "course": "203300", "title": "6. เครื่องมือและวิธีการนำเสนอผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 7/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-03-05", "time": "11.00–12.00", "course": "203300", "title": "6. เครื่องมือและวิธีการนำเสนอผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 8/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-03-09", "time": "11.00–12.00", "course": "203300", "title": "6. เครื่องมือและวิธีการนำเสนอผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 9/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-03-12", "time": "11.00–12.00", "course": "203300", "title": "6. เครื่องมือและวิธีการนำเสนอผลงานทางวิทยาศาสตร์", "note": "ส่วนที่ 3 ชั่วโมงที่ 10/10", "kind": "teach", "room": "CB1310 / ห้องคอมพิวเตอร์"}, {"date": "2027-01-26", "time": "11.00–12.00", "course": "203415", "title": "4.1 วัสดุซีโอไลต์ที่สำคัญในอุตสาหกรรม", "note": "หัวข้อ 4 วัสดุโครงสร้าง ชั่วโมงที่ 1/8", "kind": "teach", "room": ""}, {"date": "2027-01-29", "time": "11.00–12.00", "course": "203415", "title": "4.1 วัสดุซีโอไลต์ที่สำคัญในอุตสาหกรรม", "note": "หัวข้อ 4 วัสดุโครงสร้าง ชั่วโมงที่ 2/8", "kind": "teach", "room": ""}, {"date": "2027-02-02", "time": "11.00–12.00", "course": "203415", "title": "4.1 วัสดุซีโอไลต์ที่สำคัญในอุตสาหกรรม", "note": "หัวข้อ 4 วัสดุโครงสร้าง ชั่วโมงที่ 3/8", "kind": "teach", "room": ""}, {"date": "2027-02-05", "time": "11.00–12.00", "course": "203415", "title": "4.1 วัสดุซีโอไลต์ที่สำคัญในอุตสาหกรรม", "note": "หัวข้อ 4 วัสดุโครงสร้าง ชั่วโมงที่ 4/8", "kind": "teach", "room": ""}, {"date": "2027-02-09", "time": "11.00–12.00", "course": "203415", "title": "4.2 โครงข่ายโลหะอินทรีย์", "note": "หัวข้อ 4 วัสดุโครงสร้าง ชั่วโมงที่ 5/8", "kind": "teach", "room": ""}, {"date": "2027-02-12", "time": "11.00–12.00", "course": "203415", "title": "4.2 โครงข่ายโลหะอินทรีย์", "note": "หัวข้อ 4 วัสดุโครงสร้าง ชั่วโมงที่ 6/8", "kind": "teach", "room": ""}, {"date": "2027-02-16", "time": "11.00–12.00", "course": "203415", "title": "4.2 โครงข่ายโลหะอินทรีย์", "note": "หัวข้อ 4 วัสดุโครงสร้าง ชั่วโมงที่ 7/8", "kind": "teach", "room": ""}, {"date": "2027-02-19", "time": "11.00–12.00", "course": "203415", "title": "4.2 โครงข่ายโลหะอินทรีย์", "note": "หัวข้อ 4 วัสดุโครงสร้าง ชั่วโมงที่ 8/8", "kind": "teach", "room": ""}, {"date": "2026-11-17", "time": "13.00–14.30", "course": "201111", "title": "แนะนำกระบวนวิชา จัดกลุ่มนักศึกษา + กระบวนการและจริยธรรมทางวิทยาศาสตร์", "note": "", "kind": "teach", "room": "ScB2100"}, {"date": "2026-11-20", "time": "13.00–14.30", "course": "201111", "title": "กระบวนการทางวิทยาศาสตร์และจริยธรรมทางวิทยาศาสตร์", "note": "", "kind": "teach", "room": "ScB2100"}, {"date": "2026-11-24", "time": "13.00–14.30", "course": "201111", "title": "กระบวนการทางวิทยาศาสตร์และจริยธรรมทางวิทยาศาสตร์", "note": "", "kind": "teach", "room": "ScB2100"}, {"date": "2026-11-27", "time": "13.00–14.30", "course": "201111", "title": "วิทยาศาสตร์และเทคโนโลยีกับวัฒนธรรมและสังคม", "note": "", "kind": "teach", "room": "ScB2100"}, {"date": "2027-01-23", "time": "12.00–14.00", "course": "201111", "title": "สอบกลางภาค", "note": "วันเสาร์ คณาจารย์ร่วมกัน", "kind": "exam", "room": ""}, {"date": "2027-01-26", "time": "13.00–14.30", "course": "201111", "title": "พบอาจารย์ประจำกลุ่ม เลือกหัวข้อ รูปแบบ และลำดับการนำเสนอ", "note": "คณาจารย์ร่วมกัน", "kind": "group", "room": "ScB2100"}, {"date": "2027-01-29", "time": "13.00–14.30", "course": "201111", "title": "กิจกรรมกลุ่มย่อย ให้คำปรึกษากลุ่ม", "note": "ตามนัดหมายกับกลุ่ม", "kind": "group", "room": ""}, {"date": "2027-02-02", "time": "13.00–14.30", "course": "201111", "title": "กิจกรรมกลุ่มย่อย ให้คำปรึกษากลุ่ม", "note": "ตามนัดหมายกับกลุ่ม", "kind": "group", "room": ""}, {"date": "2027-02-05", "time": "13.00–14.30", "course": "201111", "title": "กิจกรรมกลุ่มย่อย ให้คำปรึกษากลุ่ม", "note": "ตามนัดหมายกับกลุ่ม", "kind": "group", "room": ""}, {"date": "2027-02-09", "time": "13.00–14.30", "course": "201111", "title": "กิจกรรมกลุ่มย่อย ให้คำปรึกษากลุ่ม", "note": "ตามนัดหมายกับกลุ่ม", "kind": "group", "room": ""}, {"date": "2027-02-12", "time": "13.00–14.30", "course": "201111", "title": "กิจกรรมกลุ่มย่อย ให้คำปรึกษากลุ่ม", "note": "ตามนัดหมายกับกลุ่ม", "kind": "group", "room": ""}, {"date": "2027-02-16", "time": "13.00–14.30", "course": "201111", "title": "กิจกรรมกลุ่มย่อย ให้คำปรึกษากลุ่ม", "note": "ตามนัดหมายกับกลุ่ม", "kind": "group", "room": ""}, {"date": "2027-02-19", "time": "13.00–14.30", "course": "201111", "title": "กิจกรรมกลุ่มย่อย ให้คำปรึกษากลุ่ม", "note": "ตามนัดหมายกับกลุ่ม", "kind": "group", "room": ""}, {"date": "2027-02-22", "time": "—", "course": "201111", "title": "กำหนดส่งไฟล์งานนำเสนอ", "note": "", "kind": "deadline", "room": ""}, {"date": "2027-02-23", "time": "13.00–14.30", "course": "201111", "title": "นักศึกษานำเสนอและประเมินการนำเสนอ", "note": "คณาจารย์ร่วมกัน เช็คชื่อทุกครั้ง", "kind": "group", "room": "ScB2100"}, {"date": "2027-02-26", "time": "13.00–14.30", "course": "201111", "title": "นักศึกษานำเสนอและประเมินการนำเสนอ", "note": "คณาจารย์ร่วมกัน เช็คชื่อทุกครั้ง", "kind": "group", "room": "ScB2100"}, {"date": "2027-03-02", "time": "13.00–14.30", "course": "201111", "title": "นักศึกษานำเสนอและประเมินการนำเสนอ", "note": "คณาจารย์ร่วมกัน เช็คชื่อทุกครั้ง", "kind": "group", "room": "ScB2100"}, {"date": "2027-03-05", "time": "13.00–14.30", "course": "201111", "title": "นักศึกษานำเสนอและประเมินการนำเสนอ", "note": "คณาจารย์ร่วมกัน เช็คชื่อทุกครั้ง", "kind": "group", "room": "ScB2100"}, {"date": "2027-03-09", "time": "13.00–14.30", "course": "201111", "title": "นักศึกษานำเสนอและประเมินการนำเสนอ", "note": "คณาจารย์ร่วมกัน เช็คชื่อทุกครั้ง", "kind": "group", "room": "ScB2100"}, {"date": "2027-03-12", "time": "13.00–14.30", "course": "201111", "title": "นักศึกษานำเสนอและประเมินการนำเสนอ", "note": "คณาจารย์ร่วมกัน เช็คชื่อทุกครั้ง", "kind": "group", "room": "ScB2100"}, {"date": "2026-11-24", "time": "14.30–17.30", "course": "203318", "title": "Linkage Isomers: [Co(NH₃)₅ONO]Cl₂ / [Co(NH₃)₅NO₂]Cl₂ Part I", "note": "", "kind": "lab", "room": ""}, {"date": "2026-12-03", "time": "14.30–17.30", "course": "203318", "title": "Linkage Isomers: [Co(NH₃)₅ONO]Cl₂ / [Co(NH₃)₅NO₂]Cl₂ Part II", "note": "Sec 2", "kind": "lab", "room": ""}, {"date": "2026-12-17", "time": "14.30–17.30", "course": "203318", "title": "Linkage Isomers: [Co(NH₃)₅ONO]Cl₂ / [Co(NH₃)₅NO₂]Cl₂ Part II", "note": "Sec 2", "kind": "lab", "room": ""}, {"date": "2027-02-20", "time": "09.00–12.00", "course": "203318", "title": "สอบข้อเขียนปฏิบัติการปลายภาค", "note": "วันเสาร์", "kind": "info", "room": ""}, {"date": "2026-11-16", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 1/10 (ชั่วโมงที่ 0–1.5 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-11-19", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 2/10 (ชั่วโมงที่ 1.5–3 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-11-23", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 3/10 (ชั่วโมงที่ 3–4.5 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-11-26", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 4/10 (ชั่วโมงที่ 4.5–6 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-11-30", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 5/10 (ชั่วโมงที่ 6–7.5 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-12-03", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 6/10 (ชั่วโมงที่ 7.5–9 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-12-14", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 7/10 (ชั่วโมงที่ 9–10.5 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-12-17", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 8/10 (ชั่วโมงที่ 10.5–12 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-12-21", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 9/10 (ชั่วโมงที่ 12–13.5 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-12-24", "time": "11.00–12.30", "course": "203815", "title": "Coordination Polymers and Metal–Organic Frameworks", "note": "ครั้งที่ 10/10 (ชั่วโมงที่ 13.5–15 จาก 15)", "kind": "teach", "room": "CB1313"}, {"date": "2026-11-25", "time": "11.10–12.00, 13.00–14.45", "course": "AP", "title": "สารละลายและคอลลอยด์", "note": "AP เคมี ห้องเรียนวิทยาศาสตร์ ม.6/6–7", "kind": "teach", "room": ""}, {"date": "2026-11-26", "time": "13.00–14.45", "course": "AP", "title": "กรด-เบส", "note": "AP เคมี ห้องเรียนวิทยาศาสตร์ ม.6/6–7", "kind": "teach", "room": ""}, {"date": "2026-12-02", "time": "11.10–12.00, 13.00–14.45", "course": "AP", "title": "กรด-เบส", "note": "AP เคมี ห้องเรียนวิทยาศาสตร์ ม.6/6–7", "kind": "teach", "room": ""}, {"date": "2026-12-09", "time": "11.10–12.00, 13.00–14.45", "course": "AP", "title": "กรด-เบส", "note": "AP เคมี ห้องเรียนวิทยาศาสตร์ ม.6/6–7", "kind": "teach", "room": ""}, {"date": "2026-12-23", "time": "11.10–12.00, 13.00–14.45", "course": "AP", "title": "จลนศาสตร์เคมี", "note": "AP เคมี ห้องเรียนวิทยาศาสตร์ ม.6/6–7", "kind": "teach", "room": ""}, {"date": "2026-12-24", "time": "13.00–14.45", "course": "AP", "title": "จลนศาสตร์เคมี", "note": "AP เคมี ห้องเรียนวิทยาศาสตร์ ม.6/6–7", "kind": "teach", "room": ""}], "marks": {"2026-11-16": "เปิดภาคเรียน", "2026-11-24": "วันลอยกระทง (ไม่หยุด)", "2026-12-07": "วันหยุดชดเชย 5 ธ.ค.", "2026-12-05": "วันพ่อแห่งชาติ", "2026-12-10": "วันรัฐธรรมนูญ", "2026-12-31": "วันสิ้นปี", "2027-01-01": "วันขึ้นปีใหม่", "2027-03-14": "วันสุดท้ายของการเรียน"}, "ranges": [["2027-01-11", "2027-01-17", "สัปดาห์เตรียมสอบ งดการเรียน"], ["2027-01-18", "2027-01-24", "สอบกลางภาค งดการเรียน"], ["2027-03-15", "2027-03-28", "สอบไล่"]], "conf": []};
+const C={
+"203211":{c:"#2a73a0",n:"Fundamental Inorganic Chemistry",t:"อังคาร–ศุกร์ 08.00–09.00 น.",h:"บทที่ 3 กรด-เบส และบทที่ 4 เคมีสถานะของแข็ง"},
+"203815":{c:"#6a4c93",n:"Coordination Polymers and Metal–Organic Frameworks",t:"จันทร์–พฤหัสบดี 11.00–12.30 น. · CB1313",h:"15 ชั่วโมงแรก (16 พ.ย.–24 ธ.ค. 2569)"},
+"203415":{c:"#b5651d",n:"Frontier Inorganic Materials Chemistry",t:"อังคาร–ศุกร์ 11.00–12.00 น.",h:"วัสดุโครงสร้าง: ซีโอไลต์และ MOF (26 ม.ค.–19 ก.พ. 2570)"},
+"203300":{c:"#2e7d5b",n:"ทักษะพื้นฐานและจริยธรรมทางวิทยาศาสตร์",t:"อังคาร–ศุกร์ 11.00–12.00 น. · CB1310",h:"ส่วนที่ 3 การเขียนและการนำเสนอผลงาน (9 ก.พ.–12 มี.ค. 2570)"},
+"201111":{c:"#a23b6c",n:"โลกแห่งวิทยาศาสตร์ ตอน 001",t:"อังคาร–ศุกร์ 13.00–14.30 น. · ScB2100",h:"บรรยาย 17–27 พ.ย. 2569 · กิจกรรมกลุ่มและนำเสนอ 26 ม.ค.–12 มี.ค. 2570"},
+"203318":{c:"#5d6b2f",n:"Inorganic Chemistry Laboratory",t:"14.30–17.30 น.",h:"Linkage isomers · 24 พ.ย., 3 และ 17 ธ.ค. 2569"},
+"AP":{c:"#0e7c86",n:"AP เคมี ห้องเรียนวิทยาศาสตร์ ม.6/6–7",t:"พุธ 11.10–12.00, 13.00–14.45 น. · พฤหัสบดี 13.00–14.45 น.",h:"สารละลาย/คอลลอยด์ · กรด-เบส · จลนศาสตร์เคมี"}};
+for(const[k,v]of Object.entries(C))document.documentElement.style.setProperty("--c"+k,v.c);
+const TM=["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
+const TMF=["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"];
+const TD=["อา.","จ.","อ.","พ.","พฤ.","ศ.","ส."];
+const pd=s=>{const[y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+const th=s=>{const d=pd(s);return `${TD[d.getDay()]} ${d.getDate()} ${TM[d.getMonth()]} ${d.getFullYear()+543}`};
+const notHol=mk=>/ไม่หยุด|เปิดภาค|วันสุดท้าย/.test(mk);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let on=new Set(Object.keys(C)),view="cal";
+try{const v=localStorage.getItem("ygtc-view");if(v==="cal"||v==="list")view=v}catch(e){}
+document.getElementById("cards").innerHTML=Object.entries(C).map(([k,v])=>`<div class="course" style="--c:${v.c}"><div class="code">${k}</div><div class="name">${v.n}</div><div class="t">${v.t}</div><div class="h">${v.h}</div></div>`).join("");
+const fl=document.getElementById("filters");
+fl.innerHTML=Object.entries(C).map(([k,v])=>`<button class="chip on" data-k="${k}" style="--c:${v.c}" aria-pressed="true">${k}</button>`).join("");
+fl.onclick=e=>{const b=e.target.closest(".chip");if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);b.classList.toggle("on");b.setAttribute("aria-pressed",on.has(k));render()};
+document.querySelectorAll(".tab").forEach(b=>{b.classList.toggle("on",b.dataset.v===view);b.onclick=()=>{view=b.dataset.v;try{localStorage.setItem("ygtc-view",view)}catch(e){}document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));render()}});
+const rng=s=>DATA.ranges.filter(r=>s>=r[0]&&s<=r[1]).map(r=>r[2]);
+const evs=s=>DATA.ev.filter(e=>e.date===s&&on.has(e.course)).sort((a,b)=>a.time.localeCompare(b.time));
+function chip(e){const v=C[e.course],soft=["group","deadline","info"].includes(e.kind);
+ const t=e.time.split("–")[0].replace("—","");
+ return `<span class="ev ${soft?"soft":""}" style="--c:${v.c}" title="${esc(e.course+" "+e.time+" "+e.title)}">${t} ${e.course}<span class="x">${e.kind==="exam"?" สอบ":e.kind==="deadline"?" ส่งงาน":""}</span></span>`}
+function render(){const el=document.getElementById("view");
+ if(view==="cal"){let h="";
+  for(const[y,m]of[[2026,10],[2026,11],[2027,0],[2027,1],[2027,2]]){
+   h+=`<div class="month"><h3>${TMF[m]} ${y+543}</h3><div class="grid">${TD.map(d=>`<div class="dow">${d}</div>`).join("")}`;
+   const f=new Date(y,m,1),st=new Date(y,m,1-f.getDay());
+   for(let i=0;i<42;i++){const d=new Date(st);d.setDate(st.getDate()+i);if(i%7===0&&i>=28&&d.getMonth()!==m)break;
+    const s=iso(d),o=d.getMonth()!==m,mk=DATA.marks[s],r=rng(s);
+    h+=`<div class="day ${o?"out":""} ${!o&&mk&&!notHol(mk)?"hol":""}"><div class="d">${d.getDate()}</div>${!o&&mk?`<div class="tag ${notHol(mk)?"n":""}">${mk}</div>`:""}${o?"":r.map(x=>`<div class="rng">${x}</div>`).join("")+evs(s).map(chip).join("")}</div>`}
+   h+="</div></div>"}
+  el.innerHTML=h}
+ else{const ds=[...new Set(DATA.ev.filter(e=>on.has(e.course)).map(e=>e.date))].sort();let h='<div class="list">',cm="";
+  for(const s of ds){const d=pd(s),mm=TMF[d.getMonth()]+" "+(d.getFullYear()+543);if(mm!==cm){h+=`<div class="row mh">${mm}</div>`;cm=mm}
+   for(const e of evs(s)){const v=C[e.course],mk=DATA.marks[s];
+    h+=`<div class="row" style="--c:${v.c}"><div>${th(s)}${mk?`<div class="nt" ${notHol(mk)?"":'style="color:var(--holi)"'}>${mk}</div>`:""}</div><div class="t">${e.time}</div><div class="code">${e.course}</div><div>${esc(e.title)}<div class="nt">${esc([e.note,e.room].filter(Boolean).join(" · "))}</div></div></div>`}}
+  el.innerHTML=h+"</div>"}}
+render();
+</script>
+</body>
+</html>
