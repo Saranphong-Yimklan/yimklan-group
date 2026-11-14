@@ -84,6 +84,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   .day{min-height:62px;padding:.15rem}.ev{font-size:.6rem;padding:0 .15rem}.ev .x{display:none}
   .tag,.rng{font-size:.56rem}.row{grid-template-columns:1fr;gap:.1rem}
 }
+.termwrap{overflow-x:auto}
+.term{display:grid;grid-template-columns:104px 78px repeat(5,minmax(78px,1fr)) repeat(2,minmax(52px,.6fr));border:1px solid var(--rule,var(--line));border-radius:4px;background:var(--card);min-width:760px}
+.term>div{border-right:1px solid var(--rule,var(--line))}
+.term .tth{font-size:.74rem;text-align:center;padding:.35rem;color:var(--ink-3,var(--mute));background:var(--bg-2,#efeaf8);font-weight:600;border-bottom:1px solid var(--rule,var(--line));position:sticky;top:0}
+.term .tw{padding:.4rem .5rem;font-size:.74rem;background:var(--bg-2,#f3f0f9);line-height:1.3;border-bottom:2px solid var(--ink-3,#aaa)}
+.term .tw b{display:block;font-size:.8rem;font-weight:600}.term .tw span{color:var(--ink-3,var(--mute))}
+.term .tw.x b{color:var(--accent)}
+.term .ts{font-size:.64rem;color:var(--ink-3,var(--mute));padding:.1rem .35rem;border-bottom:1px dotted var(--rule,var(--line));white-space:nowrap}
+.term .tc{padding:.1rem .2rem;border-bottom:1px dotted var(--rule,var(--line));min-height:21px;font-size:.7rem}
+.term .dr{background:color-mix(in srgb,var(--bg-2,#f3f0f9) 70%,transparent);border-bottom:1px solid var(--rule,var(--line))}
+.term .last{border-bottom:2px solid var(--ink-3,#aaa)}
+.term .tc.we{background:color-mix(in srgb,var(--bg-2,#f3f0f9) 55%,transparent)}
+.term .x{background-image:repeating-linear-gradient(135deg,transparent 0 6px,color-mix(in srgb,var(--ink-3,#999) 14%,transparent) 6px 7px)}
+.term .d{font-size:.72rem;font-weight:600;color:var(--ink-2,#555)}.term .hol .d{color:var(--holi,#c62828)}
+.term .tag{font-size:.6rem}.term .tag.n{color:var(--ink-3,var(--mute))}
+.term .ev{margin:.08rem 0;font-size:.66rem;padding:0 .25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media print{.nav,.toolbar,.bar,#filters,.tabs,.legend,footer{display:none!important}.termwrap{overflow:visible}.term{min-width:0;font-size:8px}.ev{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -121,10 +138,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 </div></section>
 
 <section><div class="wrap">
-  <h2>Calendar</h2>
+  <h2>Semester calendar</h2>
   <div class="toolbar">
     <div class="chips" id="filters"></div>
-    <div class="tabs"><button class="tab on" data-v="cal">รายเดือน</button><button class="tab" data-v="list">ตามวันที่</button></div>
+    <div class="tabs"><button class="tab on" data-v="term">รายเทอม</button><button class="tab" data-v="cal">รายเดือน</button><button class="tab" data-v="list">ตามวันที่</button></div>
   </div>
   <div id="view"></div>
   <div class="legend"><span><i style="background:var(--accent)"></i>สอน/สอบ</span><span><i style="border:1px dashed var(--accent)"></i>กิจกรรมร่วมกับคณาจารย์ / ตามนัดหมาย</span><span style="color:var(--holi)">ตัวเลขสีแดง = วันหยุด</span></div>
@@ -154,19 +171,20 @@ const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${Str
 const th=s=>{const d=pd(s);return `${TD[d.getDay()]} ${d.getDate()} ${TM[d.getMonth()]} ${d.getFullYear()+543}`};
 const notHol=mk=>/ไม่หยุด|เปิดภาค|วันสุดท้าย/.test(mk);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let on=new Set(Object.keys(C)),view="cal";
-try{const v=localStorage.getItem("ygtc-view");if(v==="cal"||v==="list")view=v}catch(e){}
+let on=new Set(Object.keys(C)),view="term";
+try{const v=localStorage.getItem("ygtc-view2");if(["term","cal","list"].includes(v))view=v}catch(e){}
 document.getElementById("cards").innerHTML=Object.entries(C).map(([k,v])=>`<div class="course" style="--c:${v.c}"><div class="code">${v.lab||k}</div><div class="name">${v.n}</div><div class="t">${v.t}</div><div class="h">${v.h}</div></div>`).join("");
 const fl=document.getElementById("filters");
 fl.innerHTML=Object.entries(C).map(([k,v])=>`<button class="chip on" data-k="${k}" style="--c:${v.c}" aria-pressed="true">${v.lab||k}</button>`).join("");
 fl.onclick=e=>{const b=e.target.closest(".chip");if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);b.classList.toggle("on");b.setAttribute("aria-pressed",on.has(k));render()};
-document.querySelectorAll(".tab").forEach(b=>{b.classList.toggle("on",b.dataset.v===view);b.onclick=()=>{view=b.dataset.v;try{localStorage.setItem("ygtc-view",view)}catch(e){}document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));render()}});
+document.querySelectorAll(".tab").forEach(b=>{b.classList.toggle("on",b.dataset.v===view);b.onclick=()=>{view=b.dataset.v;try{localStorage.setItem("ygtc-view2",view)}catch(e){}document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));render()}});
 const rng=s=>DATA.ranges.filter(r=>s>=r[0]&&s<=r[1]).map(r=>r[2]);
 const evs=s=>DATA.ev.filter(e=>e.date===s&&on.has(e.course)).sort((a,b)=>a.time.localeCompare(b.time));
 function chip(e){const v=C[e.course],soft=["group","deadline","info"].includes(e.kind);
  const t=e.time.split("–")[0].replace("—","");
  return `<span class="ev ${soft?"soft":""}" style="--c:${v.c}" title="${esc((v.lab||e.course)+" "+e.time+" "+e.title)}">${t} ${v.lab||e.course}<span class="x">${e.kind==="exam"?" สอบ":e.kind==="deadline"?" ส่งงาน":""}</span></span>`}
 function render(){const el=document.getElementById("view");
+ if(view==="term"){el.innerHTML=renderTerm();return}
  if(view==="cal"){let h="";
   for(const[y,m]of[[2026,10],[2026,11],[2027,0],[2027,1],[2027,2]]){
    h+=`<div class="month"><h3>${TMF[m]} ${y+543}</h3><div class="grid">${TD.map(d=>`<div class="dow">${d}</div>`).join("")}`;
@@ -181,6 +199,28 @@ function render(){const el=document.getElementById("view");
    for(const e of evs(s)){const v=C[e.course],mk=DATA.marks[s];
     h+=`<div class="row" style="--c:${v.c}"><div>${th(s)}${mk?`<div class="nt" ${notHol(mk)?"":'style="color:var(--holi)"'}>${mk}</div>`:""}</div><div class="t">${e.time}</div><div class="code">${v.lab||e.course}</div><div>${esc(e.title)}<div class="nt">${esc([e.note,e.room].filter(Boolean).join(" · "))}</div></div></div>`}}
   el.innerHTML=h+"</div>"}}
+const SLOTS=[["08.00","08.00–10.00"],["11.00","11.00–12.30"],["13.00","12.00–14.45"],["14.30","14.30–17.30"]];
+function slotsOf(t){if(!/^\d/.test(t))return [-1];return t.split(",").map(p=>{const m=p.trim().slice(0,5).split(".").map(Number),x=m[0]*60+m[1];return x<600?0:x<720?1:x<870?2:3})}
+function tchip(e){const v=C[e.course],soft=["group","deadline","info"].includes(e.kind);
+ return `<span class="ev ${soft?"soft":""}" style="--c:${v.c}" title="${(v.lab||e.course)+" "+e.time+" "+e.title}">${v.lab||e.course}<span class="x">${e.kind==="exam"?" สอบ":e.kind==="deadline"?" ส่งงาน":""}</span></span>`}
+function renderTerm(){
+ const s0=new Date(2026,10,16);
+ const lab=i=>{const d=new Date(s0);d.setDate(d.getDate()+7*i);const s=iso(d);
+  if(s>="2027-01-11"&&s<="2027-01-17")return["เตรียมสอบ","x"];if(s>="2027-01-18"&&s<="2027-01-24")return["สอบกลางภาค","x"];if(s>="2027-03-15")return["สอบไล่","x"];return[null,""]};
+ let n=0,h=`<div class="termwrap"><div class="term"><div class="tth">สัปดาห์</div><div class="tth">เวลา</div>${["จ.","อ.","พ.","พฤ.","ศ.","ส.","อา."].map(x=>`<div class="tth">${x}</div>`).join("")}`;
+ for(let i=0;i<19;i++){const[l,cls]=lab(i);const wl=l||("สัปดาห์ที่ "+(++n));
+  const a=new Date(s0);a.setDate(a.getDate()+7*i);const b=new Date(a);b.setDate(b.getDate()+6);
+  const days=[...Array(7)].map((_,j)=>{const d=new Date(a);d.setDate(d.getDate()+j);return d});
+  h+=`<div class="tw ${cls}" style="grid-row:span 5"><b>${wl}</b><span>${a.getDate()} ${TM[a.getMonth()]} – ${b.getDate()} ${TM[b.getMonth()]}</span></div>`;
+  // date row
+  h+=`<div class="ts dr"></div>`+days.map((d,j)=>{const s=iso(d),mk=DATA.marks[s],hol=mk&&!/ไม่หยุด|เปิดภาค|วันสุดท้าย/.test(mk);
+    const un=evs(s).filter(e=>slotsOf(e.time)[0]<0);
+    return `<div class="tc dr ${j>4?"we":""} ${cls} ${hol?"hol":""}"><span class="d">${d.getDate()===1||(i===0&&j===0)?d.getDate()+" "+TM[d.getMonth()]:d.getDate()}</span>${mk?` <span class="tag ${hol?"":"n"}">${mk}</span>`:""}${un.map(tchip).join("")}</div>`}).join("");
+  SLOTS.forEach(([k,lbl],si)=>{h+=`<div class="ts ${si===3?"last":""}">${lbl}</div>`;
+   h+=days.map((d,j)=>`<div class="tc ${j>4?"we":""} ${cls} ${si===3?"last":""}">${evs(iso(d)).filter(e=>slotsOf(e.time).includes(si)).map(tchip).join("")}</div>`).join("")});
+ }
+ return h+"</div></div>"}
+
 render();
 </script>
 </body>
